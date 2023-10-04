@@ -14,7 +14,7 @@ DIRS=seguecg-libjpeg seguecg-wasm2c rlbox rlbox_wasm2c_sandbox
 
 bootstrap:
 	echo "Bootstrapping"
-	sudo apt install -y make gcc g++ clang cmake \
+	sudo apt install -y gcc g++ g++-12 libc++-dev clang make cmake \
 		python3 python3-dev python-is-python3 python3-pip \
 		cpuset cpufrequtils
 	pip3 install simplejson matplotlib
@@ -57,17 +57,23 @@ pull:
 	$(MAKE) pull_subrepos
 
 build-wasm2c-release:
-	cmake -S seguecg-wasm2c -B seguecg-wasm2c/build -DCMAKE_BUILD_TYPE=Release
-	cd seguecg-wasm2c/build && make -j${PARALLEL_COUNT}
+	cmake -S seguecg-wasm2c -B seguecg-wasm2c/build_release -DCMAKE_BUILD_TYPE=Release
+	cd seguecg-wasm2c/build_release && make -j${PARALLEL_COUNT}
 
 build-wasm2c-debug:
 	cmake -S seguecg-wasm2c -B seguecg-wasm2c/build_debug -DCMAKE_BUILD_TYPE=Debug
 	cd seguecg-wasm2c/build_debug && make -j${PARALLEL_COUNT}
 
-build: bootstrap get_source build-wasm2c-release
+build-libjpeg-release:
+	cd seguecg-libjpeg/benchmark && make
+
+build-libjpeg-debug:
+	cd seguecg-libjpeg/benchmark && DEBUG=1 make
+
+build: bootstrap get_source build-wasm2c-release build-libjpeg-release
 	echo "Build complete!"
 
-build-debug: bootstrap get_source build-wasm2c-debug
+build-debug: bootstrap get_source build-wasm2c-debug build-libjpeg-debug
 	echo "Debug build complete!"
 
 helper_disable_hyperthreading:
@@ -96,21 +102,30 @@ benchmark_shell:
 		$(MAKE) helper_shielding_on; \
 		sudo cset shield -e sudo -- -u ${CURR_USER} env "PATH=${CURR_PATH}" bash --init-file ${ROOT_PATH}/init_benchmark_shell.sh; \
 	else \
-		echo "Shielded shell already running. Close existing shielded shell first."; \
+		echo "Shielded shell already running. Close existing shielded shell first and then run make benchmark_shell_close."; \
 	fi
 
 benchmark_shell_close:
-	if ! ps -p $(shell cat ./benchmark_shell.pid) > /dev/null; then \
-		echo "Removing stale benchmark_shell.pid"; \
-		rm ./benchmark_shell.pid; \
-	fi
-	if [ ! -e "./benchmark_shell.pid" ]; then \
+	if ps -p $(shell cat ./benchmark_shell.pid) > /dev/null; then \
+		echo "Shielded shell still running. Close existing shielded shell first."; \
+	else \
+		-echo "Removing stale benchmark_shell.pid"; \
+		-rm ./benchmark_shell.pid; \
 		$(MAKE) helper_restore_hyperthreading; \
 		$(MAKE) helper_restore_freqscaling; \
 		$(MAKE) helper_shielding_off; \
-	else \
-		echo "Shielded shell already running. Close existing shielded shell first."; \
 	fi
+
+benchmark_jpeg:
+	echo "JPEG Stock" | tee $(ROOT_PATH)/benchmarks/jpeg_benchmark_$(CURR_TIME).txt
+	cd seguecg-libjpeg/build_release && ./image_change_quality_rlbox_noop | tee -a $(ROOT_PATH)/benchmarks/jpeg_benchmark_$(CURR_TIME).txt
+	sleep 1
+	echo "JPEG Stock NoSIMD" | tee -a $(ROOT_PATH)/benchmarks/jpeg_benchmark_$(CURR_TIME).txt
+	cd seguecg-libjpeg/build_nosimd_release && ./image_change_quality_rlbox_noop | tee -a $(ROOT_PATH)/benchmarks/jpeg_benchmark_$(CURR_TIME).txt
+	sleep 1
+	echo "JPEG Wasm" | tee -a $(ROOT_PATH)/benchmarks/jpeg_benchmark_$(CURR_TIME).txt
+	cd seguecg-libjpeg/build_wasmrelease && ./image_change_quality_rlbox_wasm2c | tee -a $(ROOT_PATH)/benchmarks/jpeg_benchmark_$(CURR_TIME).txt
+	sleep 1
 
 clean:
 	echo "Done"
