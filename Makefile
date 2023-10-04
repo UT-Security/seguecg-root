@@ -14,7 +14,7 @@ DIRS=seguecg-libjpeg seguecg-wasm2c rlbox rlbox_wasm2c_sandbox
 
 bootstrap:
 	echo "Bootstrapping"
-	sudo apt install -y gcc g++ g++-12 libc++-dev clang make cmake \
+	sudo apt install -y gcc g++ g++-12 libc++-dev clang make cmake nasm \
 		python3 python3-dev python-is-python3 python3-pip \
 		cpuset cpufrequtils
 	pip3 install simplejson matplotlib
@@ -109,8 +109,8 @@ benchmark_shell_close:
 	if ps -p $(shell cat ./benchmark_shell.pid) > /dev/null; then \
 		echo "Shielded shell still running. Close existing shielded shell first."; \
 	else \
-		-echo "Removing stale benchmark_shell.pid"; \
-		-rm ./benchmark_shell.pid; \
+		echo "Removing stale benchmark_shell.pid"; \
+		rm -f ./benchmark_shell.pid; \
 		$(MAKE) helper_restore_hyperthreading; \
 		$(MAKE) helper_restore_freqscaling; \
 		$(MAKE) helper_shielding_off; \
