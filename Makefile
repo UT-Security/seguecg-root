@@ -95,7 +95,7 @@ helper_shielding_on:
 	sudo cset shield -c 1 -k on
 
 helper_shielding_off:
-	sudo cset shield --reset
+	sudo cset shield --reset || echo "Done"
 
 benchmark_shell:
 	if [ ! -e "./benchmark_shell.pid" ]; then \
@@ -105,15 +105,10 @@ benchmark_shell:
 		echo "Shielded shell already running. Close existing shielded shell first and then run make benchmark_shell_close."; \
 	fi
 
-benchmark_shell_close:
-	if ps -p $(shell cat ./benchmark_shell.pid) > /dev/null; then \
-		echo "Shielded shell still running. Close existing shielded shell first."; \
-	else \
+benchmark_shell_close: helper_restore_hyperthreading helper_restore_freqscaling helper_shielding_off
+	if [ -e "./benchmark_shell.pid" ]; then \
 		echo "Removing stale benchmark_shell.pid"; \
-		rm -f ./benchmark_shell.pid; \
-		$(MAKE) helper_restore_hyperthreading; \
-		$(MAKE) helper_restore_freqscaling; \
-		$(MAKE) helper_shielding_off; \
+		CURR_PID=$(shell cat ./benchmark_shell.pid) && rm ./benchmark_shell.pid && kill -SIGKILL $$CURR_PID; \
 	fi
 
 benchmark_jpeg:
