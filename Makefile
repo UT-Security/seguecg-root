@@ -10,7 +10,7 @@ CURR_USER=${USER}
 CURR_PATH=${PATH}
 CURR_TIME=$(shell date --iso=seconds)
 PARALLEL_COUNT=$(shell nproc)
-REPO_PATH=$(shell realpath .)
+ROOT_PATH=$(shell realpath .)
 
 DIRS=seguecg-libjpeg
 
@@ -76,7 +76,7 @@ helper_shielding_off:
 benchmark_shell:
 	if [ ! -e "./benchmark_shell.pid" ]; then \
 		$(MAKE) helper_shielding_on; \
-		sudo cset shield -e sudo -- -u ${CURR_USER} env "PATH=${CURR_PATH}" bash --init-file ${REPO_PATH}/init_benchmark_shell.sh; \
+		sudo cset shield -e sudo -- -u ${CURR_USER} env "PATH=${CURR_PATH}" bash --init-file ${ROOT_PATH}/init_benchmark_shell.sh; \
 	else \
 		echo "Shielded shell already running. Close existing shielded shell first."; \
 	fi
