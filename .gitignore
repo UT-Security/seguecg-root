@@ -1,2 +1,8 @@
-seguecg-libjpeg
 bootstrap
+get_source
+wasi-sdk-20.0.threads-linux.tar.gz
+wasi-sdk
+seguecg-libjpeg
+seguecg-wasm2c
+rlbox
+rlbox_wasm2c_sandbox

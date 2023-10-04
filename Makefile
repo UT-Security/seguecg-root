@@ -1,7 +1,5 @@
 NOTPARALLEL:
 
-.PHONY: build pull pull_subrepos clean
-
 .DEFAULT_GOAL := build
 
 SHELL := /bin/bash
@@ -12,7 +10,7 @@ CURR_TIME=$(shell date --iso=seconds)
 PARALLEL_COUNT=$(shell nproc)
 ROOT_PATH=$(shell realpath .)
 
-DIRS=seguecg-libjpeg
+DIRS=seguecg-libjpeg seguecg-wasm2c rlbox rlbox_wasm2c_sandbox
 
 bootstrap:
 	echo "Bootstrapping"
@@ -36,9 +34,18 @@ wasi-sdk: wasi-sdk-20.0.threads-linux.tar.gz
 	tar -zxf $< -C $@ --strip-components 1
 
 fetch_%:
-	git --recursive git@github.com:UT-Security/%.git
+	if [ ! -e "./$*" ]; then \
+		git clone --recursive git@github.com:UT-Security/$*.git; \
+	fi
+
+# Get the rlbox repos from PLSysSec
+fetch_rlbo%:
+	if [ ! -e "./rlbo$*" ]; then \
+		git clone --recursive git@github.com:PLSysSec/rlbo$*.git; \
+	fi
 
 get_source: $(addprefix fetch_,$(DIRS)) wasi-sdk
+	touch ./get_source
 
 autopull_%:
 	cd $* && git pull --rebase --autostash
@@ -49,8 +56,19 @@ pull:
 	git pull --rebase --autostash
 	$(MAKE) pull_subrepos
 
-build: bootstrap
-	echo "Running build"
+build-wasm2c-release:
+	cmake -S seguecg-wasm2c -B seguecg-wasm2c/build -DCMAKE_BUILD_TYPE=Release
+	cd seguecg-wasm2c/build && make -j${PARALLEL_COUNT}
+
+build-wasm2c-debug:
+	cmake -S seguecg-wasm2c -B seguecg-wasm2c/build_debug -DCMAKE_BUILD_TYPE=Debug
+	cd seguecg-wasm2c/build_debug && make -j${PARALLEL_COUNT}
+
+build: bootstrap get_source build-wasm2c-release
+	echo "Build complete!"
+
+build-debug: bootstrap get_source build-wasm2c-debug
+	echo "Debug build complete!"
 
 helper_disable_hyperthreading:
 	sudo bash -c "echo off > /sys/devices/system/cpu/smt/control"
