@@ -112,15 +112,7 @@ benchmark_shell_close: helper_restore_hyperthreading helper_restore_freqscaling 
 	fi
 
 benchmark_jpeg:
-	echo "JPEG Stock" | tee $(ROOT_PATH)/benchmarks/jpeg_benchmark_$(CURR_TIME).txt
-	cd seguecg-libjpeg/build_release && ./image_change_quality_rlbox_noop | tee -a $(ROOT_PATH)/benchmarks/jpeg_benchmark_$(CURR_TIME).txt
-	sleep 1
-	echo "JPEG Stock NoSIMD" | tee -a $(ROOT_PATH)/benchmarks/jpeg_benchmark_$(CURR_TIME).txt
-	cd seguecg-libjpeg/build_nosimd_release && ./image_change_quality_rlbox_noop | tee -a $(ROOT_PATH)/benchmarks/jpeg_benchmark_$(CURR_TIME).txt
-	sleep 1
-	echo "JPEG Wasm" | tee -a $(ROOT_PATH)/benchmarks/jpeg_benchmark_$(CURR_TIME).txt
-	cd seguecg-libjpeg/build_wasmrelease && ./image_change_quality_rlbox_wasm2c | tee -a $(ROOT_PATH)/benchmarks/jpeg_benchmark_$(CURR_TIME).txt
-	sleep 1
+	cd seguecg-libjpeg/benchmark && $(MAKE) test | tee $(ROOT_PATH)/benchmarks/jpeg_benchmark_$(CURR_TIME).txt
 
 clean:
 	echo "Done"
