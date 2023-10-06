@@ -112,7 +112,7 @@ benchmark_shell_close: helper_restore_hyperthreading helper_restore_freqscaling 
 	fi
 
 benchmark_jpeg:
-	cd seguecg-libjpeg/benchmark && $(MAKE) test | tee $(ROOT_PATH)/benchmarks/jpeg_benchmark_$(CURR_TIME).txt
+	cd seguecg-libjpeg/benchmark && $(MAKE) test | grep "^JPEG" | tee $(ROOT_PATH)/benchmarks/jpeg_benchmark_$(CURR_TIME).txt
 
 clean:
 	echo "Done"
