@@ -1,0 +1,29 @@
+JPEG Stock JPEG recoding time: 8327687
+JPEG Stock NoSIMD JPEG recoding time: 23912908
+JPEG Wasm Guard pages JPEG recoding time: 39172643
+JPEG Wasm Guard pages with segue JPEG recoding time: 33329630
+JPEG Wasm Bounds checks JPEG recoding time: 51678239
+JPEG Wasm Shadow page right 12 JPEG recoding time: 61286968
+JPEG Wasm Shadow page right 12 shadowsegue JPEG recoding time: 54571971
+JPEG Wasm Shadow page right 16 left 4 JPEG recoding time: 67959491
+JPEG Wasm Shadow page right 12 write JPEG recoding time: 61205595
+JPEG Wasm Shadow page right 12 write shadowsegue JPEG recoding time: 56459066
+JPEG Wasm Shadow page right 16 left 4 write JPEG recoding time: 65682542
+JPEG Wasm Shadow bytes - read4per4gb JPEG recoding time: 56368454
+JPEG Wasm Shadow bytes - read1per4gb JPEG recoding time: 59672050
+JPEG Wasm Shadow bytes - read1per64kb JPEG recoding time: 60925889
+JPEG Wasm Shadow bytes - read1per16mb JPEG recoding time: 61128985
+JPEG Wasm Shadow bytes - write4per4gb JPEG recoding time: 53209560
+JPEG Wasm Shadow bytes - write1per4gb JPEG recoding time: 53280383
+JPEG Wasm Shadow bytes - write1per64kb JPEG recoding time: 60339971
+JPEG Wasm Shadow bytes - write1per16mb JPEG recoding time: 60660649
+JPEG Wasm Shadow bytes - read4per4gb shadowsegue JPEG recoding time: 48437839
+JPEG Wasm Shadow bytes - read1per4gb shadowsegue JPEG recoding time: 48564885
+JPEG Wasm Shadow bytes - read1per64kb shadowsegue JPEG recoding time: 55369753
+JPEG Wasm Shadow bytes - read1per16mb shadowsegue JPEG recoding time: 54390977
+JPEG Wasm Shadow bytes - write4per4gb shadowsegue JPEG recoding time: 48685036
+JPEG Wasm Shadow bytes - write1per4gb shadowsegue JPEG recoding time: 51267479
+JPEG Wasm Shadow bytes - write1per64kb shadowsegue JPEG recoding time: 59996060
+JPEG Wasm Shadow bytes - write1per16mb shadowsegue JPEG recoding time: 60279880
+JPEG Wasm watch JPEG recoding time: 43442162
+JPEG Wasm watch shadowsegue JPEG recoding time: 46846820
