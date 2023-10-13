@@ -16,7 +16,8 @@ bootstrap:
 	echo "Bootstrapping"
 	sudo apt install -y gcc g++ g++-12 libc++-dev clang make cmake nasm \
 		python3 python3-dev python-is-python3 python3-pip \
-		cpuset cpufrequtils
+		cpuset cpufrequtils curl
+	curl https://wasmtime.dev/install.sh -sSf | bash
 	pip3 install simplejson matplotlib
 	pip3 install --upgrade requests
 	npm install autocannon
