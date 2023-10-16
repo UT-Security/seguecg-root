@@ -1,0 +1,45 @@
+Stock JPEG recoding time: 14965365
+Stock NoSIMD JPEG recoding time: 42832182
+Wasmtime Guard pages JPEG recoding time: 65004977
+Wasmtime Bounds checks JPEG recoding time: 92192617
+Wasmtime Bounds checks spectre JPEG recoding time: 105838035
+Wasm2c Guard pages JPEG recoding time: 72833939
+Wasm2c Guard pages with segue JPEG recoding time: 60007903
+Wasm2c Bounds checks JPEG recoding time: 104950754
+Wasm2c Bounds checks spectre JPEG recoding time: 141979879
+Wasm2c Bounds checks asm JPEG recoding time: 148060588
+Wasm2c Bounds checks asm spectre JPEG recoding time: 148048843
+Wasm2c Shadow page read JPEG recoding time: 118417728
+Wasm2c Shadow page read shadowsegue JPEG recoding time: 100853721
+Wasm2c Shadow page read shadowsegue spectre JPEG recoding time: 124632673
+Wasm2c Shadow page read first byte JPEG recoding time: 124390982
+Wasm2c Shadow page write JPEG recoding time: 114471332
+Wasm2c Shadow page write shadowsegue JPEG recoding time: 99278296
+Wasm2c Shadow page write first byte JPEG recoding time: 124723941
+Wasm2c Shadow bytes - read1per64kb JPEG recoding time: 118231186
+Wasm2c Shadow bytes - read1per16mb JPEG recoding time: 118294891
+Wasm2c Shadow bytes - read1per4gb JPEG recoding time: 114539767
+Wasm2c Shadow bytes - read4per4gb JPEG recoding time: 111611638
+Wasm2c Shadow bytes - read1per4gb spectre JPEG recoding time: 123709668
+Wasm2c Shadow bytes - read4per4gb spectre JPEG recoding time: 125067369
+Wasm2c Shadow bytes - write1per64kb JPEG recoding time: 114628567
+Wasm2c Shadow bytes - write1per16mb JPEG recoding time: 114886779
+Wasm2c Shadow bytes - write1per4gb JPEG recoding time: 98318091
+Wasm2c Shadow bytes - write4per4gb JPEG recoding time: 101550362
+Wasm2c Shadow bytes - read1per64kb shadowsegue JPEG recoding time: 103235302
+Wasm2c Shadow bytes - read1per16mb shadowsegue JPEG recoding time: 102798175
+Wasm2c Shadow bytes - read1per4gb shadowsegue JPEG recoding time: 91803413
+Wasm2c Shadow bytes - read4per4gb shadowsegue JPEG recoding time: 91407054
+Wasm2c Shadow bytes - read1per4gb shadowsegue spectre JPEG recoding time: 105242947
+Wasm2c Shadow bytes - read4per4gb shadowsegue spectre JPEG recoding time: 104072848
+Wasm2c Shadow bytes - write1per64kb shadowsegue JPEG recoding time: 105196332
+Wasm2c Shadow bytes - write1per16mb shadowsegue JPEG recoding time: 102779799
+Wasm2c Shadow bytes - write1per4gb shadowsegue JPEG recoding time: 88117171
+Wasm2c Shadow bytes - write4per4gb shadowsegue JPEG recoding time: 82891062
+Wasm2c PreShadow bytes - read1per4gb JPEG recoding time: 126819706
+Wasm2c PreShadow bytes - read1per4gb segue JPEG recoding time: 107195518
+Wasm2c PreShadow bytes - read1per4gb shadowsegue JPEG recoding time: 122109612
+Wasm2c PreShadow bytes - read1per4gb segue shadowsegue JPEG recoding time: 98657203
+Wasm2c PreShadow bytes - read1per4gb segue shadowsegue spectre JPEG recoding time: 120527390
+Wasm2c watch JPEG recoding time: 81790710
+Wasm2c watch shadowsegue JPEG recoding time: 82409557

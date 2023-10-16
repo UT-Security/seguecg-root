@@ -1,7 +1,6 @@
 bootstrap
 get_source
-wasi-sdk-20.0.threads-linux.tar.gz
-wasi-sdk
+wasi-sdk*
 seguecg-libjpeg
 seguecg-wasm2c
 rlbox
