@@ -1,0 +1,4 @@
+Stock NoSIMD JPEG recoding time: 46295870
+Wasm2c Guard pages JPEG recoding time: 77877906
+Wasm2c Bounds checks JPEG recoding time: 112677746
+Wasm2c MPX JPEG recoding time: 87440609

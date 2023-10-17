@@ -71,6 +71,12 @@ build-libjpeg-release:
 build-libjpeg-debug:
 	cd seguecg-libjpeg/benchmark && DEBUG=1 make
 
+build-libjpeg-mpx-release:
+	cd seguecg-libjpeg/benchmark && make build_mpx
+
+build-libjpeg-mpx-debug:
+	cd seguecg-libjpeg/benchmark && DEBUG=1 make build_mpx
+
 build: bootstrap get_source build-wasm2c-release build-libjpeg-release
 	echo "Build complete!"
 
@@ -114,6 +120,9 @@ benchmark_shell_close: helper_restore_hyperthreading helper_restore_freqscaling 
 
 benchmark_jpeg:
 	cd seguecg-libjpeg/benchmark && $(MAKE) -s test | tee $(ROOT_PATH)/benchmarks/jpeg_benchmark_$(CURR_TIME).txt
+
+benchmark_jpeg_mpx:
+	cd seguecg-libjpeg/benchmark && $(MAKE) -s test_mpx | tee $(ROOT_PATH)/benchmarks/jpeg_benchmark_mpx_$(CURR_TIME).txt
 
 clean:
 	echo "Done"
