@@ -1,0 +1,26 @@
+Stock JPEG recoding time: 8323542
+Stock NoSIMD JPEG recoding time: 23601079
+Wasmtime Guard pages JPEG recoding time: 34504684
+Wasmtime Bounds checks JPEG recoding time: 49692407
+Wasmtime Bounds checks spectre JPEG recoding time: 58629512
+Wasm2c Guard pages JPEG recoding time: 38840068
+Wasm2c Guard pages with segue JPEG recoding time: 33488589
+Wasm2c Bounds checks JPEG recoding time: 51798505
+Wasm2c Bounds checks spectre JPEG recoding time: 68037970
+Wasm2c Shadow bytes - read1per4gb JPEG recoding time: 59458874
+Wasm2c Shadow bytes - read4per4gb JPEG recoding time: 57872016
+Wasm2c Shadow bytes - read1per4gb spectre JPEG recoding time: 65731823
+Wasm2c Shadow bytes - read4per4gb spectre JPEG recoding time: 69277145
+Wasm2c Shadow bytes - write1per4gb JPEG recoding time: 53285161
+Wasm2c Shadow bytes - write4per4gb JPEG recoding time: 53576051
+Wasm2c Shadow bytes - read1per4gb shadowsegue JPEG recoding time: 48911452
+Wasm2c Shadow bytes - read4per4gb shadowsegue JPEG recoding time: 49167730
+Wasm2c Shadow bytes - read1per4gb shadowsegue spectre JPEG recoding time: 56815690
+Wasm2c Shadow bytes - read4per4gb shadowsegue spectre JPEG recoding time: 57577625
+Wasm2c Shadow bytes - write1per4gb shadowsegue JPEG recoding time: 51244091
+Wasm2c Shadow bytes - write4per4gb shadowsegue JPEG recoding time: 48351805
+Wasm2c Shadow bytes tag (floatzone) JPEG recoding time: 69835812
+Wasm2c Shadow bytes tag (floatzone) shadowsegue JPEG recoding time: 62173979
+Wasm2c Shadow bytes tag (floatzone) virtpinned JPEG recoding time: 73082421
+Wasm2c Shadow bytes tag (floatzone) virtpinned shadowsegue JPEG recoding time: 67146906
+Wasm2c mask pdep JPEG recoding time: 56884707

@@ -1,0 +1,31 @@
+Stock JPEG recoding time: 8301673
+Stock NoSIMD JPEG recoding time: 23439316
+
+Wasmtime Guard pages JPEG recoding time: 34474569
+Wasmtime Bounds checks (nospectre) JPEG recoding time: 49666335
+
+Wasm2c Guard pages JPEG recoding time: 39043179
+Wasm2c Guard pages segue JPEG recoding time: 33440609
+Wasm2c Bounds checks JPEG recoding time: 51899118
+Wasm2c Bounds checks segue JPEG recoding time: 44876244
+
+Wasm2c Shadow bytes - read1per4gb JPEG recoding time: 59402990
+Wasm2c Shadow bytes - read4per4gb JPEG recoding time: 57927874
+Wasm2c Shadow bytes - write1per4gb JPEG recoding time: 53523896
+Wasm2c Shadow bytes - write4per4gb JPEG recoding time: 53678970
+Wasm2c Shadow bytes - read1per4gb shadowsegue JPEG recoding time: 48874962
+Wasm2c Shadow bytes - read4per4gb shadowsegue JPEG recoding time: 49057937
+Wasm2c Shadow bytes - write1per4gb shadowsegue JPEG recoding time: 51305063
+Wasm2c Shadow bytes - write4per4gb shadowsegue JPEG recoding time: 48457107
+
+Wasm2c Shadow bytes tag (floatzone) JPEG recoding time: 68805548
+Wasm2c Shadow bytes tag (floatzone) shadowsegue JPEG recoding time: 63410122
+
+Wasm2c mask pdep JPEG recoding time: 56881679
+
+Wasmtime Bounds checks spectre JPEG recoding time: 58629223
+Wasm2c Bounds checks spectre JPEG recoding time: 68064446
+Wasm2c Shadow bytes - read1per4gb spectre JPEG recoding time: 65933021
+Wasm2c Shadow bytes - read4per4gb spectre JPEG recoding time: 70623042
+Wasm2c Shadow bytes - read1per4gb shadowsegue spectre JPEG recoding time: 57390297
+Wasm2c Shadow bytes - read4per4gb shadowsegue spectre JPEG recoding time: 58212767
