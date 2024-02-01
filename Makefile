@@ -59,23 +59,23 @@ pull:
 
 build-wasm2c-release:
 	cmake -S seguecg-wasm2c -B seguecg-wasm2c/build_release -DCMAKE_BUILD_TYPE=Release
-	cd seguecg-wasm2c/build_release && make -j${PARALLEL_COUNT}
+	cd seguecg-wasm2c/build_release && $(MAKE) -j${PARALLEL_COUNT}
 
 build-wasm2c-debug:
 	cmake -S seguecg-wasm2c -B seguecg-wasm2c/build_debug -DCMAKE_BUILD_TYPE=Debug
-	cd seguecg-wasm2c/build_debug && make -j${PARALLEL_COUNT}
+	cd seguecg-wasm2c/build_debug && $(MAKE) -j${PARALLEL_COUNT}
 
 build-libjpeg-release:
-	cd seguecg-libjpeg/benchmark && make
+	cd seguecg-libjpeg/benchmark && $(MAKE) -j${PARALLEL_COUNT}
 
 build-libjpeg-debug:
-	cd seguecg-libjpeg/benchmark && DEBUG=1 make
+	cd seguecg-libjpeg/benchmark && DEBUG=1 $(MAKE) -j${PARALLEL_COUNT}
 
 build-libjpeg-mpx-release:
-	cd seguecg-libjpeg/benchmark && make build_mpx
+	cd seguecg-libjpeg/benchmark && $(MAKE) build_mpx -j${PARALLEL_COUNT}
 
 build-libjpeg-mpx-debug:
-	cd seguecg-libjpeg/benchmark && DEBUG=1 make build_mpx
+	cd seguecg-libjpeg/benchmark && DEBUG=1 $(MAKE) build_mpx -j${PARALLEL_COUNT}
 
 build: bootstrap get_source build-wasm2c-release build-libjpeg-release
 	echo "Build complete!"
@@ -120,6 +120,10 @@ benchmark_shell_close: helper_restore_hyperthreading helper_restore_freqscaling 
 
 benchmark_jpeg:
 	cd seguecg-libjpeg/benchmark && $(MAKE) -s test | tee $(ROOT_PATH)/benchmarks/jpeg_benchmark_$(CURR_TIME).txt
+
+benchmark_jpeg_all:
+	cd seguecg-libjpeg/benchmark && $(MAKE) -s test | tee $(ROOT_PATH)/benchmarks/jpeg_benchmark_$(CURR_TIME).txt
+	cd seguecg-libjpeg/benchmark && $(MAKE) -s tests_old | tee -a $(ROOT_PATH)/benchmarks/jpeg_benchmark_$(CURR_TIME).txt
 
 benchmark_jpeg_mpx:
 	cd seguecg-libjpeg/benchmark && $(MAKE) -s test_mpx | tee $(ROOT_PATH)/benchmarks/jpeg_benchmark_mpx_$(CURR_TIME).txt
