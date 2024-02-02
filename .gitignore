@@ -5,4 +5,5 @@ seguecg-libjpeg
 seguecg-wasm2c
 rlbox
 rlbox_wasm2c_sandbox
+spec_benchmarks
 benchmark_shell.pid

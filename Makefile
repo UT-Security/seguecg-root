@@ -58,11 +58,11 @@ pull:
 	$(MAKE) pull_subrepos
 
 build-wasm2c-release:
-	cmake -S seguecg-wasm2c -B seguecg-wasm2c/build_release -DCMAKE_BUILD_TYPE=Release
+	cmake -S seguecg-wasm2c -B seguecg-wasm2c/build_release -DWITH_WASI=ON -DCMAKE_BUILD_TYPE=Release
 	cd seguecg-wasm2c/build_release && $(MAKE) -j${PARALLEL_COUNT}
 
 build-wasm2c-debug:
-	cmake -S seguecg-wasm2c -B seguecg-wasm2c/build_debug -DCMAKE_BUILD_TYPE=Debug
+	cmake -S seguecg-wasm2c -B seguecg-wasm2c/build_debug -DWITH_WASI=ON -DCMAKE_BUILD_TYPE=Debug
 	cd seguecg-wasm2c/build_debug && $(MAKE) -j${PARALLEL_COUNT}
 
 build-libjpeg-release:
@@ -127,6 +127,37 @@ benchmark_jpeg_all:
 
 benchmark_jpeg_mpx:
 	cd seguecg-libjpeg/benchmark && $(MAKE) -s test_mpx | tee $(ROOT_PATH)/benchmarks/jpeg_benchmark_mpx_$(CURR_TIME).txt
+
+#### Keep Spec stuff separate so we can easily release other artifacts
+ # wasm_hfi_wasm2c_masking
+SPEC_BUILDS=wasm_seguecg_wasm2c_guardpages wasm_seguecg_wasm2c_boundschecks wasm_seguecg_wasm2c_guardpages_fsgs wasm_seguecg_wasm2c_boundschecks_fsgs
+
+spec_benchmarks:
+	git clone --recursive git@github.com:PLSysSec/hfi_spec.git $@
+	cd $@ && SPEC_INSTALL_NOCHECK=1 SPEC_FORCE_INSTALL=1 sh install.sh -f
+
+clean-spec:
+	cd spec_benchmarks && source shrc &&  cd config && \
+	echo "Cleaning dirs..." && \
+	for spec_build in $(SPEC_BUILDS); do \
+		runspec --config=$$spec_build.cfg --action=clobber --define cores=1 --iterations=1 --noreportable --size=ref wasmint 2&>1 > /dev/null; \
+	done
+
+build-spec: spec_benchmarks build-wasm2c-release clean_spec
+	cd spec_benchmarks && source shrc &&  cd config && \
+	for spec_build in $(SPEC_BUILDS); do \
+		echo "Building $$spec_build"; \
+		runspec --config=$$spec_build.cfg --action=build --define cores=1 --iterations=1 --noreportable --size=ref wasmint | grep "Build "; \
+	done
+
+benchmark-spec:
+	cd spec_benchmarks && source shrc && cd config && \
+	for spec_build in $(SPEC_BUILDS); do \
+		runspec --config=$$spec_build.cfg --action=run --define cores=1 --iterations=1 --noreportable --size=ref wasmint; \
+	done
+	python3 spec_stats.py -i spec_benchmarks/result --filter  \
+		"spec_benchmarks/result/spec_results=seguecg_wasm2c_boundschecks:BoundsChecks,seguecg_wasm2c_boundschecks_fsgs:BoundsChecksSegue,seguecg_wasm2c_guardpages:GuardPages,seguecg_wasm2c_guardpages_fsgs:GuardPagesSegue" -n $(words $(SPEC_BUILDS)) --usePercent
+	mv spec_benchmarks/result/ benchmarks/spec_$(CURR_TIME)
 
 clean:
 	echo "Done"
