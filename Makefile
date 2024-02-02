@@ -10,13 +10,15 @@ CURR_TIME=$(shell date --iso=seconds)
 PARALLEL_COUNT=$(shell nproc)
 ROOT_PATH=$(shell realpath .)
 
-DIRS=seguecg-libjpeg seguecg-wasm2c rlbox rlbox_wasm2c_sandbox
+DIRS=seguecg-libjpeg seguecg-wasm2c rlbox rlbox_wasm2c_sandbox wasmtime
 
 bootstrap:
 	echo "Bootstrapping"
 	sudo apt install -y gcc g++ g++-12 libc++-dev clang make cmake nasm \
 		python3 python3-dev python-is-python3 python3-pip \
-		cpuset cpufrequtils curl
+		cpuset cpufrequtils curl gnuplot
+	curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain 1.73.0 -y
+	rustup target add wasm32-unknown-unknown wasm32-wasi
 	curl https://wasmtime.dev/install.sh -sSf | bash
 	pip3 install simplejson matplotlib
 	pip3 install --upgrade requests
@@ -45,6 +47,9 @@ fetch_rlbo%:
 		git clone --recursive git@github.com:PLSysSec/rlbo$*.git; \
 	fi
 
+fetch_wasmtime:
+	git clone --recursive --branch v17.0.0 https://github.com/bytecodealliance/wasmtime
+
 get_source: $(addprefix fetch_,$(DIRS)) wasi-sdk
 	touch ./get_source
 
@@ -57,30 +62,37 @@ pull:
 	git pull --rebase --autostash
 	$(MAKE) pull_subrepos
 
-build-wasm2c-release:
+
+build_wasmtime_release:
+	cd wasmtime && cargo build --release &&  cargo build --release --benches
+
+build_wasmtime_debug:
+	cd wasmtime && cargo build
+
+build_wasm2c_release:
 	cmake -S seguecg-wasm2c -B seguecg-wasm2c/build_release -DWITH_WASI=ON -DCMAKE_BUILD_TYPE=Release
 	cd seguecg-wasm2c/build_release && $(MAKE) -j${PARALLEL_COUNT}
 
-build-wasm2c-debug:
+build_wasm2c_debug:
 	cmake -S seguecg-wasm2c -B seguecg-wasm2c/build_debug -DWITH_WASI=ON -DCMAKE_BUILD_TYPE=Debug
 	cd seguecg-wasm2c/build_debug && $(MAKE) -j${PARALLEL_COUNT}
 
-build-libjpeg-release:
+build_libjpeg_release:
 	cd seguecg-libjpeg/benchmark && $(MAKE) -j${PARALLEL_COUNT}
 
-build-libjpeg-debug:
+build_libjpeg_debug:
 	cd seguecg-libjpeg/benchmark && DEBUG=1 $(MAKE) -j${PARALLEL_COUNT}
 
-build-libjpeg-mpx-release:
+build_libjpeg_mpx_release:
 	cd seguecg-libjpeg/benchmark && $(MAKE) build_mpx -j${PARALLEL_COUNT}
 
-build-libjpeg-mpx-debug:
+build_libjpeg_mpx_debug:
 	cd seguecg-libjpeg/benchmark && DEBUG=1 $(MAKE) build_mpx -j${PARALLEL_COUNT}
 
-build: bootstrap get_source build-wasm2c-release build-libjpeg-release
+build: bootstrap get_source build_wasm2c_release build_wasmtime_release build_libjpeg_release
 	echo "Build complete!"
 
-build-debug: bootstrap get_source build-wasm2c-debug build-libjpeg-debug
+build_debug: bootstrap get_source build_wasm2c_debug build_wasmtime_debug build_libjpeg_debug
 	echo "Debug build complete!"
 
 helper_disable_hyperthreading:
@@ -128,6 +140,11 @@ benchmark_jpeg_all:
 benchmark_jpeg_mpx:
 	cd seguecg-libjpeg/benchmark && $(MAKE) -s test_mpx | tee $(ROOT_PATH)/benchmarks/jpeg_benchmark_mpx_$(CURR_TIME).txt
 
+benchmark_wasmtime_transitions:
+	cd wasmtime && cargo bench -- 'sync-pool/no-hook/core .+ nop$$' | tee $(ROOT_PATH)/benchmarks/wasmtime_transitions_$(CURR_TIME).txt
+	echo -e "-------MPK--------\n"  | tee -a $(ROOT_PATH)/benchmarks/wasmtime_transitions_$(CURR_TIME).txt
+	cd wasmtime && WASMTIME_TEST_FORCE_MPK=1 cargo bench -- 'sync-pool/no-hook/core .+ nop$$' | tee -a $(ROOT_PATH)/benchmarks/wasmtime_transitions_$(CURR_TIME).txt
+
 #### Keep Spec stuff separate so we can easily release other artifacts
  # wasm_hfi_wasm2c_masking
 SPEC_BUILDS=wasm_seguecg_wasm2c_guardpages wasm_seguecg_wasm2c_boundschecks wasm_seguecg_wasm2c_guardpages_fsgs wasm_seguecg_wasm2c_boundschecks_fsgs
@@ -143,7 +160,7 @@ clean_spec:
 		runspec --config=$$spec_build.cfg --action=clobber --define cores=1 --iterations=1 --noreportable --size=ref wasmint 2&>1 > /dev/null; \
 	done
 
-build_spec: spec_benchmarks build-wasm2c-release clean_spec
+build_spec: spec_benchmarks build_wasm2c_release clean_spec
 	cd spec_benchmarks && source shrc &&  cd config && \
 	for spec_build in $(SPEC_BUILDS); do \
 		echo "Building $$spec_build"; \
