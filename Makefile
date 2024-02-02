@@ -136,21 +136,21 @@ spec_benchmarks:
 	git clone --recursive git@github.com:PLSysSec/hfi_spec.git $@
 	cd $@ && SPEC_INSTALL_NOCHECK=1 SPEC_FORCE_INSTALL=1 sh install.sh -f
 
-clean-spec:
+clean_spec:
 	cd spec_benchmarks && source shrc &&  cd config && \
 	echo "Cleaning dirs..." && \
 	for spec_build in $(SPEC_BUILDS); do \
 		runspec --config=$$spec_build.cfg --action=clobber --define cores=1 --iterations=1 --noreportable --size=ref wasmint 2&>1 > /dev/null; \
 	done
 
-build-spec: spec_benchmarks build-wasm2c-release clean_spec
+build_spec: spec_benchmarks build-wasm2c-release clean_spec
 	cd spec_benchmarks && source shrc &&  cd config && \
 	for spec_build in $(SPEC_BUILDS); do \
 		echo "Building $$spec_build"; \
 		runspec --config=$$spec_build.cfg --action=build --define cores=1 --iterations=1 --noreportable --size=ref wasmint | grep "Build "; \
 	done
 
-benchmark-spec:
+benchmark_spec:
 	cd spec_benchmarks && source shrc && cd config && \
 	for spec_build in $(SPEC_BUILDS); do \
 		runspec --config=$$spec_build.cfg --action=run --define cores=1 --iterations=1 --noreportable --size=ref wasmint; \
