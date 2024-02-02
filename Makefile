@@ -156,8 +156,14 @@ benchmark_spec:
 		runspec --config=$$spec_build.cfg --action=run --define cores=1 --iterations=1 --noreportable --size=ref wasmint; \
 	done
 	python3 spec_stats.py -i spec_benchmarks/result --filter  \
-		"spec_benchmarks/result/spec_results=seguecg_wasm2c_boundschecks:BoundsChecks,seguecg_wasm2c_boundschecks_fsgs:BoundsChecksSegue,seguecg_wasm2c_guardpages:GuardPages,seguecg_wasm2c_guardpages_fsgs:GuardPagesSegue" -n $(words $(SPEC_BUILDS)) --usePercent
+		"spec_benchmarks/result/spec_results=seguecg_wasm2c_guardpages:GuardPage,seguecg_wasm2c_guardpages_fsgs:GuardPage + Segue,seguecg_wasm2c_boundschecks:BoundCheck,seguecg_wasm2c_boundschecks_fsgs:BoundCheck + Segue" \
+		-n $(words $(SPEC_BUILDS)) --usePercent --baseline seguecg_wasm2c_guardpages
 	mv spec_benchmarks/result/ benchmarks/spec_$(CURR_TIME)
+
+spec_graph:
+	python3 spec_stats.py -i benchmarks/spec_2024-02-02T12:52:53-06:00 --filter  \
+		"benchmarks/spec_2024-02-02T12:52:53-06:00/spec_results=seguecg_wasm2c_guardpages:GuardPage,seguecg_wasm2c_guardpages_fsgs:GuardPage + Segue,seguecg_wasm2c_boundschecks:BoundCheck,seguecg_wasm2c_boundschecks_fsgs:BoundCheck + Segue" \
+		-n $(words $(SPEC_BUILDS)) --usePercent --baseline seguecg_wasm2c_guardpages
 
 clean:
 	echo "Done"

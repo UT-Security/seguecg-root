@@ -139,7 +139,7 @@ def make_graph(all_times, output_path, use_percent=False):
 
     ax.set_xticklabels(labels)
     if use_percent:
-        ax.legend( tuple(rects), all_times.keys(), frameon=True, ncol=3, loc='upper center', prop={'size':10.5}, bbox_to_anchor=(0.5,1.05))
+        ax.legend( tuple(rects), all_times.keys(), frameon=True, ncol=2, loc=(0, .85), prop={'size':10.5})
     else:
         ax.legend( tuple(rects), all_times.keys(), frameon=False, ncol=1, loc=(0.7, .79))
     #fig.subplots_adjust(bottom=0.25)
@@ -198,18 +198,13 @@ def get_merged_summary_spec2017(result_path, n):
     assert(name2 == name3)
     return name1,times
 
-def normalize_times(times):
+def normalize_times(times, baseline):
     normalized_times = defaultdict(dict)
-    if "Stock" in times:
-        base_times = times["Stock"]
-    elif "wasm_lucet" in times:
-        base_times = times["wasm_lucet"]
-    elif "hfi_wasm2c_guardpages" in times:
-        base_times = times["hfi_wasm2c_guardpages"]
-    elif "hfi_wasm2c_guardpagespure" in times:
-        base_times = times["hfi_wasm2c_guardpagespure"]
-    else:
-        raise Exception("Could not find baseline times to normalize against. Expected either 'Stock' or 'wasm_lucet'. Got " + str(times.keys()))
+
+    if baseline is None or baseline not in times:
+        raise Exception("Baseline times to normalize against is not specified/specified correctly. Pick from " + str(times.keys()))
+
+    base_times = times[baseline]
 
     for bench in base_times:
         base_time = base_times[bench]
@@ -224,7 +219,7 @@ def normalize_times(times):
     return dict(normalized_times)
 
 # "spec.cpu2006.results.464_h264ref.base.000.valid:"
-def run(result_path, n, output_path,speclocknum=None):
+def run(result_path, n, output_path,speclocknum=None,baseline=None):
     lock_num = get_lock_num(result_path,speclocknum=speclocknum)
     all_times = {}
     for idx in range(n):
@@ -232,13 +227,13 @@ def run(result_path, n, output_path,speclocknum=None):
         print(name, times)
         all_times[name] = times
 
-    normalized_times = normalize_times(all_times)
+    normalized_times = normalize_times(all_times, baseline)
 
     #{mitigation name -> {}}      --- here is where we cut
     make_graph(normalized_times, output_path)
 
 
-def run_w_filter(result_path, bench_filter, n, use_percent, spec2017=False, extra_spec2017_path=None, extra_spec2017_n=None,speclocknum=None):
+def run_w_filter(result_path, bench_filter, n, use_percent, spec2017=False, extra_spec2017_path=None, extra_spec2017_n=None,speclocknum=None, baseline=None):
     all_times = {}
     lock_num = get_lock_num(result_path, spec2017=spec2017,speclocknum=speclocknum)
     if spec2017:
@@ -246,7 +241,7 @@ def run_w_filter(result_path, bench_filter, n, use_percent, spec2017=False, extr
             name,times = get_merged_summary_spec2017(result_path, lock_num - n + idx + 1)
             print(name, times)
             all_times[name] = times
-        normalized_times = normalize_times(all_times)
+        normalized_times = normalize_times(all_times, baseline)
         print("Normalized Spec2017 Times: ")
         for name,times in normalized_times.items():
             print(name, times)
@@ -260,7 +255,7 @@ def run_w_filter(result_path, bench_filter, n, use_percent, spec2017=False, extr
             print(name, times)
             all_times[name] = times
 
-        normalized_times = normalize_times(all_times)
+        normalized_times = normalize_times(all_times, baseline)
 
         # If we're using a merged run
         if extra_spec2017_path != None:
@@ -270,7 +265,7 @@ def run_w_filter(result_path, bench_filter, n, use_percent, spec2017=False, extr
             for idx in range(extra_spec2017_n):
                 name,times = get_merged_summary_spec2017(extra_spec2017_path, lock_num - extra_spec2017_n + idx + 1)
                 all_times_extra[name] = times
-            normalized_times_extra = normalize_times(all_times_extra)
+            normalized_times_extra = normalize_times(all_times_extra, baseline)
             #normalized_times.update(normalized_times_extra)
             for name,extra_times in normalized_times_extra.items():
                 print(name, extra_times, normalized_times[name])
@@ -365,6 +360,7 @@ def main():
     parser.add_argument('-i', dest='input_path', help='input directory (should be a spec results directory)')
     parser.add_argument('--extraSpec2017Path', dest='extra_spec2017_path', default=None, help='extra input directory (should be a spec2017 results directory)')
     parser.add_argument("--extraSpec2017n", dest="extra_spec2017_n", default=None, type=int)
+    parser.add_argument('--baseline', dest='baseline', default=None, help='set the baseline for comparison')
     parser.add_argument('--usePercent', dest='usePercent', default=False, action='store_true')
     parser.add_argument('--spec2017', dest='spec2017', default=False, action='store_true')
     parser.add_argument("--filter", dest="filter", type=BenchFilter)
@@ -375,7 +371,7 @@ def main():
     with open(args.input_path + '/spec_results.cmd', 'w') as f:
         f.write("Command: " + str(sys.argv))
 
-    run_w_filter(args.input_path, args.filter, args.n, use_percent=args.usePercent, spec2017=args.spec2017, extra_spec2017_path=args.extra_spec2017_path, extra_spec2017_n=args.extra_spec2017_n,speclocknum=args.speclocknum)
+    run_w_filter(args.input_path, args.filter, args.n, use_percent=args.usePercent, spec2017=args.spec2017, extra_spec2017_path=args.extra_spec2017_path, extra_spec2017_n=args.extra_spec2017_n,speclocknum=args.speclocknum,baseline=args.baseline)
 
 
 if __name__ == '__main__':
