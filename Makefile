@@ -20,7 +20,6 @@ bootstrap:
 		build-essential g++-multilib libgcc-11-dev lib32gcc-11-dev ccache
 	curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain 1.73.0 -y
 	rustup target add wasm32-unknown-unknown wasm32-wasi
-	curl https://wasmtime.dev/install.sh -sSf | bash
 	pip3 install simplejson matplotlib
 	pip3 install --upgrade requests
 	npm install autocannon
