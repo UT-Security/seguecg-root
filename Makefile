@@ -10,13 +10,14 @@ CURR_TIME=$(shell date --iso=seconds)
 PARALLEL_COUNT=$(shell nproc)
 ROOT_PATH=$(shell realpath .)
 
-DIRS=seguecg-libjpeg seguecg-wasm2c rlbox rlbox_wasm2c_sandbox wasmtime
+DIRS=seguecg-libjpeg seguecg-wasm2c rlbox rlbox_wasm2c_sandbox wasmtime wamr
 
 bootstrap:
 	echo "Bootstrapping"
 	sudo apt install -y gcc g++ g++-12 libc++-dev clang make cmake nasm \
 		python3 python3-dev python-is-python3 python3-pip \
-		cpuset cpufrequtils curl gnuplot
+		cpuset cpufrequtils curl gnuplot \
+		build-essential g++-multilib libgcc-11-dev lib32gcc-11-dev ccache
 	curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain 1.73.0 -y
 	rustup target add wasm32-unknown-unknown wasm32-wasi
 	curl https://wasmtime.dev/install.sh -sSf | bash
@@ -35,6 +36,7 @@ wasi-sdk-20.0.threads-linux.tar.gz:
 wasi-sdk: wasi-sdk-20.0.threads-linux.tar.gz
 	mkdir -p $@
 	tar -zxf $< -C $@ --strip-components 1
+	sudo cp -r $@ /opt/wasi-sdk
 
 fetch_%:
 	if [ ! -e "./$*" ]; then \
@@ -49,6 +51,10 @@ fetch_rlbo%:
 
 fetch_wasmtime:
 	git clone --recursive --branch v17.0.0 https://github.com/bytecodealliance/wasmtime
+
+fetch_wamr:
+	git clone --recursive https://github.com/bytecodealliance/wasm-micro-runtime wamr
+	cd wamr && git checkout -b v1.3.2 2eb60060d8eb6556ebbe411b22ee7b15ba4f7ec1
 
 get_source: $(addprefix fetch_,$(DIRS)) wasi-sdk
 	touch ./get_source
@@ -68,6 +74,32 @@ build_wasmtime_release:
 
 build_wasmtime_debug:
 	cd wasmtime && cargo build
+
+build_wamr_release:
+	cd wamr/wamr-compiler \
+		&& ./build_llvm.sh \
+		&& mkdir -p build && cd build \
+		&& cmake .. \
+		&& $(MAKE) -j${PARALLEL_COUNT}
+	cd wamr/product-mini/platforms/linux/ \
+		&& mkdir -p build && cd build \
+		&& cmake .. \
+		&& $(MAKE) -j${PARALLEL_COUNT}
+	if [ ! -e "./wamr/tests/benchmarks/coremark/build_complete.txt" ]; then \
+		cd wamr/tests/benchmarks/coremark/ && ./build.sh && touch ./build_complete.txt; \
+	fi
+	if [ ! -e "./wamr/tests/benchmarks/dhrystone/build_complete.txt" ]; then \
+		cd wamr/tests/benchmarks/dhrystone/ && ./build.sh && touch ./build_complete.txt; \
+	fi
+	if [ ! -e "./wamr/tests/benchmarks/jetstream/build_complete.txt" ]; then \
+		cd wamr/tests/benchmarks/jetstream/ && ./build.sh && touch ./build_complete.txt; \
+	fi
+	if [ ! -e "./wamr/tests/benchmarks/polybench/build_complete.txt" ]; then \
+		cd wamr/tests/benchmarks/polybench/ && ./build.sh && touch ./build_complete.txt; \
+	fi
+	if [ ! -e "./wamr/tests/benchmarks/sightglass/build_complete.txt" ]; then \
+		cd wamr/tests/benchmarks/sightglass/ && ./build.sh && touch ./build_complete.txt; \
+	fi
 
 build_wasm2c_release:
 	cmake -S seguecg-wasm2c -B seguecg-wasm2c/build_release -DWITH_WASI=ON -DCMAKE_BUILD_TYPE=Release
@@ -89,7 +121,7 @@ build_libjpeg_mpx_release:
 build_libjpeg_mpx_debug:
 	cd seguecg-libjpeg/benchmark && DEBUG=1 $(MAKE) build_mpx -j${PARALLEL_COUNT}
 
-build: bootstrap get_source build_wasm2c_release build_wasmtime_release build_libjpeg_release
+build: bootstrap get_source build_wasm2c_release build_wasmtime_release build_wamr_release build_libjpeg_release
 	echo "Build complete!"
 
 build_debug: bootstrap get_source build_wasm2c_debug build_wasmtime_debug build_libjpeg_debug
@@ -144,6 +176,13 @@ benchmark_wasmtime_transitions:
 	cd wasmtime && cargo bench -- 'sync-pool/no-hook/core .+ nop$$' | tee $(ROOT_PATH)/benchmarks/wasmtime_transitions_$(CURR_TIME).txt
 	echo -e "-------MPK--------\n"  | tee -a $(ROOT_PATH)/benchmarks/wasmtime_transitions_$(CURR_TIME).txt
 	cd wasmtime && WASMTIME_TEST_FORCE_MPK=1 cargo bench -- 'sync-pool/no-hook/core .+ nop$$' | tee -a $(ROOT_PATH)/benchmarks/wasmtime_transitions_$(CURR_TIME).txt
+
+benchmark_wamr_segue:
+	cd $(ROOT_PATH)/wamr/tests/benchmarks/coremark/ && ./run.sh | tee $(ROOT_PATH)/benchmarks/wamr_segue_coremark_$(CURR_TIME).txt
+	cd $(ROOT_PATH)/wamr/tests/benchmarks/dhrystone/ && ./run.sh | tee $(ROOT_PATH)/benchmarks/wamr_segue_dhrystone_$(CURR_TIME).txt
+	cd $(ROOT_PATH)/wamr/tests/benchmarks/jetstream/ && ./run_aot.sh && mv ./report.txt $(ROOT_PATH)/benchmarks/wamr_segue_jetstream_$(CURR_TIME).txt
+	cd $(ROOT_PATH)/wamr/tests/benchmarks/polybench/ && ./run_aot.sh && mv ./report.txt $(ROOT_PATH)/benchmarks/wamr_segue_polybench_$(CURR_TIME).txt
+	cd $(ROOT_PATH)/wamr/tests/benchmarks/sightglass/ && ./run_aot.sh && mv ./report.txt $(ROOT_PATH)/benchmarks/wamr_segue_sightglass_$(CURR_TIME).txt
 
 #### Keep Spec stuff separate so we can easily release other artifacts
  # wasm_hfi_wasm2c_masking
