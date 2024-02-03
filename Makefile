@@ -10,14 +10,15 @@ CURR_TIME=$(shell date --iso=seconds)
 PARALLEL_COUNT=$(shell nproc)
 ROOT_PATH=$(shell realpath .)
 
-DIRS=seguecg-libjpeg seguecg-wasm2c rlbox rlbox_wasm2c_sandbox wasmtime wamr
+DIRS=seguecg-libjpeg seguecg-wasm2c rlbox rlbox_wasm2c_sandbox wasmtime wamr seguecg-firefox
 
-bootstrap:
+bootstrap: get_source
 	echo "Bootstrapping"
 	sudo apt install -y gcc g++ g++-12 libc++-dev clang make cmake nasm \
 		python3 python3-dev python-is-python3 python3-pip \
 		cpuset cpufrequtils curl gnuplot \
-		build-essential g++-multilib libgcc-11-dev lib32gcc-11-dev ccache
+		build-essential g++-multilib libgcc-11-dev lib32gcc-11-dev ccache \
+		python3.10-venv
 	curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain 1.73.0 -y
 	rustup target add wasm32-unknown-unknown wasm32-wasi
 	pip3 install simplejson matplotlib
@@ -27,6 +28,7 @@ bootstrap:
 	echo "fs.inotify.max_user_watches=524288" | sudo tee -a /etc/sysctl.conf
 	echo "vm.max_map_count=1128000" | sudo tee -a /etc/sysctl.conf
 	sudo sysctl -p
+	cd seguecg-firefox/mybuild && $(MAKE) bootstrap
 	touch ./$@
 
 wasi-sdk-20.0.threads-linux.tar.gz:
@@ -121,10 +123,16 @@ build_libjpeg_mpx_release:
 build_libjpeg_mpx_debug:
 	cd seguecg-libjpeg/benchmark && DEBUG=1 $(MAKE) build_mpx -j${PARALLEL_COUNT}
 
-build: bootstrap get_source build_wasm2c_release build_wasmtime_release build_wamr_release build_libjpeg_release
+build_firefox_release:
+	cd seguecg-firefox/mybuild && $(MAKE) build
+
+build_firefox_debug:
+	cd seguecg-firefox/mybuild && $(MAKE) build-debug
+
+build: bootstrap get_source build_wasm2c_release build_wasmtime_release build_wamr_release build_libjpeg_release build_firefox_release
 	echo "Build complete!"
 
-build_debug: bootstrap get_source build_wasm2c_debug build_wasmtime_debug build_libjpeg_debug
+build_debug: bootstrap get_source build_wasm2c_debug build_wasmtime_debug build_libjpeg_debug build_firefox_debug
 	echo "Debug build complete!"
 
 helper_disable_hyperthreading:
@@ -184,8 +192,15 @@ benchmark_wamr_segue:
 	cd $(ROOT_PATH)/wamr/tests/benchmarks/polybench/ && ./run_aot.sh && mv ./report.txt $(ROOT_PATH)/benchmarks/wamr_segue_polybench_$(CURR_TIME).txt
 	cd $(ROOT_PATH)/wamr/tests/benchmarks/sightglass/ && ./run_aot.sh && mv ./report.txt $(ROOT_PATH)/benchmarks/wamr_segue_sightglass_$(CURR_TIME).txt
 
+benchmark_graphite_segue:
+	cd seguecg-firefox && ./testsRunBenchmark "../benchmarks/graphite_test_segue_$(CURR_TIME)" "graphite_perf_test" "stock segue"
+
+benchmark_jpeg_segue:
+	cd seguecg-firefox && ./testsRunBenchmark "../benchmarks/jpeg_test_segue_$(CURR_TIME)" "jpeg_perf" "stock segue"
+	./seguecg-firefox/testsProduceImagePlotData.py ./benchmarks/jpeg_test_segue_$(CURR_TIME)/compare_stock_terminal_analysis.json.dat ./benchmarks/jpeg_test_segue_$(CURR_TIME)/jpeg_perf.plotdat
+	gnuplot -e "inputfilename='./benchmarks/jpeg_test_segue_$(CURR_TIME)/jpeg_perf.plotdat';outputfilename='./benchmarks/jpeg_test_segue_$(CURR_TIME)/jpeg_perf.pdf'" ./seguecg-firefox/testsProduceImagePlot.gnu
+
 #### Keep Spec stuff separate so we can easily release other artifacts
- # wasm_hfi_wasm2c_masking
 SPEC_BUILDS=wasm_seguecg_wasm2c_guardpages wasm_seguecg_wasm2c_boundschecks wasm_seguecg_wasm2c_guardpages_fsgs wasm_seguecg_wasm2c_boundschecks_fsgs
 
 spec_benchmarks:

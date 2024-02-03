@@ -8,3 +8,4 @@ rlbox_wasm2c_sandbox
 spec_benchmarks
 benchmark_shell.pid
 wasmtime
+seguecg-firefox*
