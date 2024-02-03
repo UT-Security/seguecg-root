@@ -201,7 +201,7 @@ benchmark_jpeg_segue:
 	gnuplot -e "inputfilename='./benchmarks/jpeg_test_segue_$(CURR_TIME)/jpeg_perf.plotdat';outputfilename='./benchmarks/jpeg_test_segue_$(CURR_TIME)/jpeg_perf.pdf'" ./seguecg-firefox/testsProduceImagePlot.gnu
 
 #### Keep Spec stuff separate so we can easily release other artifacts
-SPEC_BUILDS=wasm_seguecg_wasm2c_guardpages wasm_seguecg_wasm2c_boundschecks wasm_seguecg_wasm2c_guardpages_fsgs wasm_seguecg_wasm2c_boundschecks_fsgs
+SPEC_BUILDS=native_clang wasm_seguecg_wasm2c_guardpages wasm_seguecg_wasm2c_boundschecks wasm_seguecg_wasm2c_guardpages_fsgs wasm_seguecg_wasm2c_boundschecks_fsgs
 
 spec_benchmarks:
 	git clone --recursive git@github.com:PLSysSec/hfi_spec.git $@
@@ -228,26 +228,15 @@ benchmark_spec:
 	done
 	python3 spec_stats.py -i spec_benchmarks/result --filter  \
 		"spec_benchmarks/result/spec_results=seguecg_wasm2c_guardpages:GuardPage,seguecg_wasm2c_guardpages_fsgs:GuardPage + Segue,seguecg_wasm2c_boundschecks:BoundCheck,seguecg_wasm2c_boundschecks_fsgs:BoundCheck + Segue" \
-		-n $(words $(SPEC_BUILDS)) --usePercent --baseline seguecg_wasm2c_guardpages
+		-n $(words $(SPEC_BUILDS)) --usePercent --baseline native_clang
 	python3 spec_stats.py -i spec_benchmarks/result --filter  \
 		"spec_benchmarks/result/spec_results_guard=seguecg_wasm2c_guardpages:GuardPage,seguecg_wasm2c_guardpages_fsgs:GuardPage + Segue" \
-		-n $(words $(SPEC_BUILDS)) --usePercent --baseline seguecg_wasm2c_guardpages
+		-n $(words $(SPEC_BUILDS)) --usePercent --baseline native_clang
 	python3 spec_stats.py -i spec_benchmarks/result --filter  \
 		"spec_benchmarks/result/spec_results_bounds=seguecg_wasm2c_boundschecks:BoundCheck,seguecg_wasm2c_boundschecks_fsgs:BoundCheck + Segue" \
-		-n $(words $(SPEC_BUILDS)) --usePercent --baseline seguecg_wasm2c_boundschecks
+		-n $(words $(SPEC_BUILDS)) --usePercent --baseline native_clang
 	./spec_file_size.sh | tee spec_benchmarks/result/spec_results_size.txt
 	mv spec_benchmarks/result/ benchmarks/spec_$(CURR_TIME)
-
-spec_graph:
-	python3 spec_stats.py -i benchmarks/spec_2024-02-02T12:52:53-06:00 --filter  \
-		"benchmarks/spec_2024-02-02T12:52:53-06:00/spec_results=seguecg_wasm2c_guardpages:GuardPage,seguecg_wasm2c_guardpages_fsgs:GuardPage + Segue,seguecg_wasm2c_boundschecks:BoundCheck,seguecg_wasm2c_boundschecks_fsgs:BoundCheck + Segue" \
-		-n $(words $(SPEC_BUILDS)) --usePercent --baseline seguecg_wasm2c_guardpages
-	python3 spec_stats.py -i benchmarks/spec_2024-02-02T12:52:53-06:00 --filter  \
-		"benchmarks/spec_2024-02-02T12:52:53-06:00/spec_results_guard=seguecg_wasm2c_guardpages:GuardPage,seguecg_wasm2c_guardpages_fsgs:GuardPage + Segue" \
-		-n $(words $(SPEC_BUILDS)) --usePercent --baseline seguecg_wasm2c_guardpages
-	python3 spec_stats.py -i benchmarks/spec_2024-02-02T12:52:53-06:00 --filter  \
-		"benchmarks/spec_2024-02-02T12:52:53-06:00/spec_results_bounds=seguecg_wasm2c_boundschecks:BoundCheck,seguecg_wasm2c_boundschecks_fsgs:BoundCheck + Segue" \
-		-n $(words $(SPEC_BUILDS)) --usePercent --baseline seguecg_wasm2c_boundschecks
 
 clean:
 	echo "Done"
