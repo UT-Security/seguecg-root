@@ -1,0 +1,43 @@
+bziptwo: 484 KB
+mcf: 396 KB
+milc: 780 KB
+namd: 1036 KB
+gobmk: 4692 KB
+sjeng: 652 KB
+libquantum: 468 KB
+htwosixfourref: 1600 KB
+lbm: 396 KB
+astar: 568 KB
+
+bziptwo + Segue:448 KB
+mcf + Segue:384 KB
+milc + Segue:692 KB
+namd + Segue:948 KB
+gobmk + Segue:4444 KB
+sjeng + Segue:616 KB
+libquantum + Segue:448 KB
+htwosixfourref + Segue:1404 KB
+lbm + Segue:388 KB
+astar + Segue:532 KB
+
+\newcommand\bziptwoSize{484 KB\xspace}
+\newcommand\mcfSize{396 KB\xspace}
+\newcommand\milcSize{780 KB\xspace}
+\newcommand\namdSize{1036 KB\xspace}
+\newcommand\gobmkSize{4692 KB\xspace}
+\newcommand\sjengSize{652 KB\xspace}
+\newcommand\libquantumSize{468 KB\xspace}
+\newcommand\htwosixfourrefSize{1600 KB\xspace}
+\newcommand\lbmSize{396 KB\xspace}
+\newcommand\astarSize{568 KB\xspace}
+
+\newcommand\bziptwoSegueSize{448 KB\xspace}
+\newcommand\mcfSegueSize{384 KB\xspace}
+\newcommand\milcSegueSize{692 KB\xspace}
+\newcommand\namdSegueSize{948 KB\xspace}
+\newcommand\gobmkSegueSize{4444 KB\xspace}
+\newcommand\sjengSegueSize{616 KB\xspace}
+\newcommand\libquantumSegueSize{448 KB\xspace}
+\newcommand\htwosixfourrefSegueSize{1404 KB\xspace}
+\newcommand\lbmSegueSize{388 KB\xspace}
+\newcommand\astarSegueSize{532 KB\xspace}

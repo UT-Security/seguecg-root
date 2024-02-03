@@ -49,7 +49,8 @@ fetch_rlbo%:
 	fi
 
 fetch_wasmtime:
-	git clone --recursive --branch v17.0.0 https://github.com/bytecodealliance/wasmtime
+	git clone --recursive https://github.com/bytecodealliance/wasmtime
+	cd wasmtime && git checkout -b fixed 220139b026d81f01a152c0bd9f0f0daa965bc75c
 
 fetch_wamr:
 	git clone --recursive https://github.com/bytecodealliance/wasm-micro-runtime wamr
@@ -213,12 +214,25 @@ benchmark_spec:
 	python3 spec_stats.py -i spec_benchmarks/result --filter  \
 		"spec_benchmarks/result/spec_results=seguecg_wasm2c_guardpages:GuardPage,seguecg_wasm2c_guardpages_fsgs:GuardPage + Segue,seguecg_wasm2c_boundschecks:BoundCheck,seguecg_wasm2c_boundschecks_fsgs:BoundCheck + Segue" \
 		-n $(words $(SPEC_BUILDS)) --usePercent --baseline seguecg_wasm2c_guardpages
+	python3 spec_stats.py -i spec_benchmarks/result --filter  \
+		"spec_benchmarks/result/spec_results_guard=seguecg_wasm2c_guardpages:GuardPage,seguecg_wasm2c_guardpages_fsgs:GuardPage + Segue" \
+		-n $(words $(SPEC_BUILDS)) --usePercent --baseline seguecg_wasm2c_guardpages
+	python3 spec_stats.py -i spec_benchmarks/result --filter  \
+		"spec_benchmarks/result/spec_results_bounds=seguecg_wasm2c_boundschecks:BoundCheck,seguecg_wasm2c_boundschecks_fsgs:BoundCheck + Segue" \
+		-n $(words $(SPEC_BUILDS)) --usePercent --baseline seguecg_wasm2c_boundschecks
+	./spec_file_size.sh | tee spec_benchmarks/result/spec_results_size.txt
 	mv spec_benchmarks/result/ benchmarks/spec_$(CURR_TIME)
 
 spec_graph:
 	python3 spec_stats.py -i benchmarks/spec_2024-02-02T12:52:53-06:00 --filter  \
 		"benchmarks/spec_2024-02-02T12:52:53-06:00/spec_results=seguecg_wasm2c_guardpages:GuardPage,seguecg_wasm2c_guardpages_fsgs:GuardPage + Segue,seguecg_wasm2c_boundschecks:BoundCheck,seguecg_wasm2c_boundschecks_fsgs:BoundCheck + Segue" \
 		-n $(words $(SPEC_BUILDS)) --usePercent --baseline seguecg_wasm2c_guardpages
+	python3 spec_stats.py -i benchmarks/spec_2024-02-02T12:52:53-06:00 --filter  \
+		"benchmarks/spec_2024-02-02T12:52:53-06:00/spec_results_guard=seguecg_wasm2c_guardpages:GuardPage,seguecg_wasm2c_guardpages_fsgs:GuardPage + Segue" \
+		-n $(words $(SPEC_BUILDS)) --usePercent --baseline seguecg_wasm2c_guardpages
+	python3 spec_stats.py -i benchmarks/spec_2024-02-02T12:52:53-06:00 --filter  \
+		"benchmarks/spec_2024-02-02T12:52:53-06:00/spec_results_bounds=seguecg_wasm2c_boundschecks:BoundCheck,seguecg_wasm2c_boundschecks_fsgs:BoundCheck + Segue" \
+		-n $(words $(SPEC_BUILDS)) --usePercent --baseline seguecg_wasm2c_boundschecks
 
 clean:
 	echo "Done"
