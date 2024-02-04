@@ -182,12 +182,12 @@ benchmark_wamr_segue:
 	./tsv_to_plot.py "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/sightglass.txt" "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/sightglass.pdf" -s "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/sightglass.stats" -r "native:Native" -r "iwasm-aot:Wamr" -r "iwasm-aot-segue:Wamr+Segue" -b Native -g
 
 benchmark_graphite_segue:
-	cd seguecg-firefox && ./testsRunBenchmark "../benchmarks/graphite_test_segue_$(CURR_TIME)" "graphite_perf_test" "stock segue"
+	cd seguecg-firefox && ./testsRunBenchmark "../benchmarks/graphite_test_segue_$(CURR_TIME)" "graphite_perf_test" "native stock segue"
 
-benchmark_jpeg_segue:
-	cd seguecg-firefox && ./testsRunBenchmark "../benchmarks/jpeg_test_segue_$(CURR_TIME)" "jpeg_perf" "stock segue"
-	./seguecg-firefox/testsProduceImagePlotData.py ./benchmarks/jpeg_test_segue_$(CURR_TIME)/compare_stock_terminal_analysis.json.dat ./benchmarks/jpeg_test_segue_$(CURR_TIME)/jpeg_perf.plotdat
-	gnuplot -e "inputfilename='./benchmarks/jpeg_test_segue_$(CURR_TIME)/jpeg_perf.plotdat';outputfilename='./benchmarks/jpeg_test_segue_$(CURR_TIME)/jpeg_perf.pdf'" ./seguecg-firefox/testsProduceImagePlot.gnu
+# benchmark_jpeg_segue:
+# 	cd seguecg-firefox && ./testsRunBenchmark "../benchmarks/jpeg_test_segue_$(CURR_TIME)" "jpeg_perf" "stock segue"
+# 	./seguecg-firefox/testsProduceImagePlotData.py ./benchmarks/jpeg_test_segue_$(CURR_TIME)/compare_stock_terminal_analysis.json.dat ./benchmarks/jpeg_test_segue_$(CURR_TIME)/jpeg_perf.plotdat
+# 	gnuplot -e "inputfilename='./benchmarks/jpeg_test_segue_$(CURR_TIME)/jpeg_perf.plotdat';outputfilename='./benchmarks/jpeg_test_segue_$(CURR_TIME)/jpeg_perf.pdf'" ./seguecg-firefox/testsProduceImagePlot.gnu
 
 #### Keep Spec stuff separate so we can easily release other artifacts
 SPEC_BUILDS=native_clang wasm_seguecg_wasm2c_guardpages wasm_seguecg_wasm2c_boundschecks wasm_seguecg_wasm2c_guardpages_fsgs wasm_seguecg_wasm2c_boundschecks_fsgs
