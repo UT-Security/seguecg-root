@@ -1,0 +1,1 @@
+Failed to run test benchmark for /mnt/seconddrive/Code/seguecg-root/benchmarks/jpeg_test_segue_2024-02-03T02:36:07-06:00/stock.
