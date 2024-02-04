@@ -1,0 +1,19 @@
+Stock JPEG recoding time: 8323789
+Stock NoSIMD JPEG recoding time: 23442165
+
+Wasm2c Guard pages JPEG recoding time: 39642623
+Wasm2c Guard pages segue JPEG recoding time: 31216187
+Wasm2c Bounds checks JPEG recoding time: 49650409
+Wasm2c Bounds checks segue JPEG recoding time: 43110635
+
+Wasm2c Shadow bytes - read1per4gb shadowsegue JPEG recoding time: 50336155
+Wasm2c Shadow bytes - read4per4gb shadowsegue JPEG recoding time: 50805818
+Wasm2c Shadow bytes - write1per4gb shadowsegue JPEG recoding time: 51121221
+Wasm2c Shadow bytes - write4per4gb shadowsegue JPEG recoding time: 47840790
+
+Wasm2c PreShadow page read4per256mb  JPEG recoding time: 64889375
+Wasm2c PreShadow page read4per256mb segue JPEG recoding time: 57549885
+Wasm2c PreShadow page read4per256mb shadowsegue JPEG recoding time: 60412881
+Wasm2c PreShadow page read4per256mb segue shadowsegue JPEG recoding time: 52326503
+
+Wasm2c Bounds check dummy JPEG recoding time: 43270746
