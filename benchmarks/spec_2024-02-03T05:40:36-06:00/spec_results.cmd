@@ -1,0 +1,1 @@
+Command: ['spec_stats.py', '-i', 'spec_benchmarks/result', '--filter', 'spec_benchmarks/result/spec_results_bounds=seguecg_wasm2c_boundschecks:BoundCheck,seguecg_wasm2c_boundschecks_fsgs:BoundCheck + Segue', '-n', '5', '--usePercent', '--baseline', 'native_clang']

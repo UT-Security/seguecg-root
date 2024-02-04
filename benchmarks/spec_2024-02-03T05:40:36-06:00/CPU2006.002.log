@@ -1,0 +1,24 @@
+runspec v6152 started at Sat Feb  3 02:06:14 2024 on "shr-work"
+runspec is: /mnt/seconddrive/Code/seguecg-root/spec_benchmarks/bin/runspec
+runspec: runspec --config=wasm_seguecg_wasm2c_guardpages.cfg --action=clobber --define cores=1 --iterations=1 --noreportable --size=ref wasmint 2
+toolset: linux-suse101-AMD64
+
+Locating benchmarks...found 31 benchmarks in 10 benchsets.
+Reading config file '/mnt/seconddrive/Code/seguecg-root/spec_benchmarks/config/wasm_seguecg_wasm2c_guardpages.cfg'
+
+Can't find benchmark '2'
+Can't parse '2' into a benchmark
+Verbosity = 5
+Action    = clobber
+Tune      = base
+Ext       = seguecg_wasm2c_guardpages
+Size      = ref
+Machine   = default
+benchmarks= 401.bzip2,429.mcf,433.milc,444.namd,445.gobmk,458.sjeng,462.libquantum,464.h264ref,470.lbm,473.astar
+outputs   = asc
+username  = shr
+Benchmarks selected: 401.bzip2, 429.mcf, 433.milc, 444.namd, 445.gobmk, 458.sjeng, 462.libquantum, 464.h264ref, 470.lbm, 473.astar
+
+The log for this run is in /mnt/seconddrive/Code/seguecg-root/spec_benchmarks/result/CPU2006.002.log
+
+runspec finished at Sat Feb  3 02:06:15 2024; 1 total seconds elapsed
