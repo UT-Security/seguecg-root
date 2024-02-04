@@ -1,0 +1,103 @@
+============> run dhrystone native
+
+Dhrystone Benchmark, Version 2.1 (Language: C or C++)
+
+10000 runs 0.000120 seconds 
+100000 runs 0.001142 seconds 
+1000000 runs 0.011967 seconds 
+10000000 runs 0.118907 seconds 
+20000000 runs 0.237853 seconds 
+40000000 runs 0.475883 seconds 
+80000000 runs 0.951991 seconds 
+160000000 runs 1.902103 seconds 
+320000000 runs 3.806396 seconds 
+640000000 runs 7.608747 seconds 
+
+Final values (* implementation-dependent):
+
+Int_Glob:      O.K.  5  Bool_Glob:     O.K.  1
+Ch_1_Glob:     O.K.  A  Ch_2_Glob:     O.K.  B
+Arr_1_Glob[8]: O.K.  7  Arr_2_Glob8/7: O.K.   640000010
+Ptr_Glob->              Ptr_Comp:       *    0x5f34ba7b62a0
+  Discr:       O.K.  0  Enum_Comp:     O.K.  2
+  Int_Comp:    O.K.  17 Str_Comp:      O.K.  DHRYSTONE PROGRAM, SOME STRING
+Next_Ptr_Glob->         Ptr_Comp:       *    0x5f34ba7b62a0 same as above
+  Discr:       O.K.  0  Enum_Comp:     O.K.  1
+  Int_Comp:    O.K.  18 Str_Comp:      O.K.  DHRYSTONE PROGRAM, SOME STRING
+Int_1_Loc:     O.K.  5  Int_2_Loc:     O.K.  13
+Int_3_Loc:     O.K.  7  Enum_Loc:      O.K.  1
+Str_1_Loc:                             O.K.  DHRYSTONE PROGRAM, 1'ST STRING
+Str_2_Loc:                             O.K.  DHRYSTONE PROGRAM, 2'ND STRING
+
+Microseconds for one run through Dhrystone: 0.011889 
+Dhrystones per Second:                      84113718.066851 
+VAX  MIPS rating =                          47873.487801 
+
+============> run dhrystone.aot
+
+Dhrystone Benchmark, Version 2.1 (Language: C or C++)
+
+10000 runs 0.000117 seconds 
+100000 runs 0.001073 seconds 
+1000000 runs 0.010778 seconds 
+10000000 runs 0.107528 seconds 
+20000000 runs 0.214935 seconds 
+40000000 runs 0.429890 seconds 
+80000000 runs 0.859766 seconds 
+160000000 runs 1.719544 seconds 
+320000000 runs 3.439054 seconds 
+640000000 runs 6.878062 seconds 
+
+Final values (* implementation-dependent):
+
+Int_Glob:      O.K.  5  Bool_Glob:     O.K.  1
+Ch_1_Glob:     O.K.  A  Ch_2_Glob:     O.K.  B
+Arr_1_Glob[8]: O.K.  7  Arr_2_Glob8/7: O.K.   640000010
+Ptr_Glob->              Ptr_Comp:       *    0x140a0
+  Discr:       O.K.  0  Enum_Comp:     O.K.  2
+  Int_Comp:    O.K.  17 Str_Comp:      O.K.  DHRYSTONE PROGRAM, SOME STRING
+Next_Ptr_Glob->         Ptr_Comp:       *    0x140a0 same as above
+  Discr:       O.K.  0  Enum_Comp:     O.K.  1
+  Int_Comp:    O.K.  18 Str_Comp:      O.K.  DHRYSTONE PROGRAM, SOME STRING
+Int_1_Loc:     O.K.  5  Int_2_Loc:     O.K.  13
+Int_3_Loc:     O.K.  7  Enum_Loc:      O.K.  1
+Str_1_Loc:                             O.K.  DHRYSTONE PROGRAM, 1'ST STRING
+Str_2_Loc:                             O.K.  DHRYSTONE PROGRAM, 2'ND STRING
+
+Microseconds for one run through Dhrystone: 0.010747 
+Dhrystones per Second:                      93049466.550316 
+VAX  MIPS rating =                          52959.286597 
+
+============> run dhrystone_segue.aot
+
+Dhrystone Benchmark, Version 2.1 (Language: C or C++)
+
+10000 runs 0.000098 seconds 
+100000 runs 0.000869 seconds 
+1000000 runs 0.008536 seconds 
+10000000 runs 0.085198 seconds 
+100000000 runs 0.851295 seconds 
+200000000 runs 1.702399 seconds 
+400000000 runs 3.404931 seconds 
+800000000 runs 6.810910 seconds 
+
+Final values (* implementation-dependent):
+
+Int_Glob:      O.K.  5  Bool_Glob:     O.K.  1
+Ch_1_Glob:     O.K.  A  Ch_2_Glob:     O.K.  B
+Arr_1_Glob[8]: O.K.  7  Arr_2_Glob8/7: O.K.   800000010
+Ptr_Glob->              Ptr_Comp:       *    0x140a0
+  Discr:       O.K.  0  Enum_Comp:     O.K.  2
+  Int_Comp:    O.K.  17 Str_Comp:      O.K.  DHRYSTONE PROGRAM, SOME STRING
+Next_Ptr_Glob->         Ptr_Comp:       *    0x140a0 same as above
+  Discr:       O.K.  0  Enum_Comp:     O.K.  1
+  Int_Comp:    O.K.  18 Str_Comp:      O.K.  DHRYSTONE PROGRAM, SOME STRING
+Int_1_Loc:     O.K.  5  Int_2_Loc:     O.K.  13
+Int_3_Loc:     O.K.  7  Enum_Loc:      O.K.  1
+Str_1_Loc:                             O.K.  DHRYSTONE PROGRAM, 1'ST STRING
+Str_2_Loc:                             O.K.  DHRYSTONE PROGRAM, 2'ND STRING
+
+Microseconds for one run through Dhrystone: 0.008514 
+Dhrystones per Second:                      117458606.852829 
+VAX  MIPS rating =                          66851.796729 
+

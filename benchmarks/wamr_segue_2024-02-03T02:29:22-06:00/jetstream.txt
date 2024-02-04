@@ -1,0 +1,6 @@
+					  native	iwasm-aot	iwasm-aot-segue
+gcc-loops           	0.71	0.00	0.00
+HashSet             	0.15	0.00	0.00
+tsf                 	0.40	0.38	0.38
+float-mm            	0.04	0.00	0.00
+quicksort           	0.01	0.00	0.00

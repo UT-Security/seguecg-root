@@ -1,0 +1,219 @@
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 5 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 0.00s
+
+sync-pool/no-hook/core - host-to-wasm - typed - nop
+                        time:   [12.993 ns 13.004 ns 13.016 ns]
+                        change: [-63.105% -62.950% -62.702%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 7 outliers among 100 measurements (7.00%)
+  1 (1.00%) low severe
+  4 (4.00%) high mild
+  2 (2.00%) high severe
+sync-pool/no-hook/core - host-to-wasm - untyped - nop
+                        time:   [18.425 ns 18.449 ns 18.473 ns]
+                        change: [-53.174% -52.998% -52.742%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 6 outliers among 100 measurements (6.00%)
+  1 (1.00%) low mild
+  4 (4.00%) high mild
+  1 (1.00%) high severe
+sync-pool/no-hook/core - host-to-wasm - unchecked - nop
+                        time:   [14.231 ns 14.243 ns 14.255 ns]
+                        change: [-60.587% -60.501% -60.425%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 9 outliers among 100 measurements (9.00%)
+  1 (1.00%) low severe
+  7 (7.00%) low mild
+  1 (1.00%) high severe
+
+async-pool/no-hook/core - host-to-wasm - typed - nop
+                        time:   [127.77 ns 127.82 ns 127.87 ns]
+                        change: [-14.256% -14.184% -14.114%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 7 outliers among 100 measurements (7.00%)
+  2 (2.00%) low mild
+  3 (3.00%) high mild
+  2 (2.00%) high severe
+async-pool/no-hook/core - host-to-wasm - untyped - nop
+                        time:   [138.56 ns 138.59 ns 138.62 ns]
+                        change: [-12.843% -12.787% -12.713%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 4 outliers among 100 measurements (4.00%)
+  1 (1.00%) low mild
+  1 (1.00%) high mild
+  2 (2.00%) high severe
+
+sync-pool/no-hook/core - wasm-to-host - typed - nop
+                        time:   [5.7308 ns 5.7364 ns 5.7421 ns]
+                        change: [-78.078% -78.039% -77.997%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 10 outliers among 100 measurements (10.00%)
+  1 (1.00%) low severe
+  1 (1.00%) low mild
+  5 (5.00%) high mild
+  3 (3.00%) high severe
+sync-pool/no-hook/core - wasm-to-host - untyped - nop
+                        time:   [9.0042 ns 9.0210 ns 9.0379 ns]
+                        change: [-70.143% -69.987% -69.787%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 8 outliers among 100 measurements (8.00%)
+  2 (2.00%) low mild
+  5 (5.00%) high mild
+  1 (1.00%) high severe
+sync-pool/no-hook/core - wasm-to-host - unchecked - nop
+                        time:   [5.1502 ns 5.1603 ns 5.1702 ns]
+                        change: [-80.037% -79.937% -79.811%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 6 outliers among 100 measurements (6.00%)
+  1 (1.00%) low mild
+  3 (3.00%) high mild
+  2 (2.00%) high severe
+
+async-pool/no-hook/core - wasm-to-host - typed - nop
+                        time:   [5.7302 ns 5.7363 ns 5.7427 ns]
+                        change: [-78.034% -77.919% -77.742%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 10 outliers among 100 measurements (10.00%)
+  1 (1.00%) low mild
+  5 (5.00%) high mild
+  4 (4.00%) high severe
+async-pool/no-hook/core - wasm-to-host - untyped - nop
+                        time:   [9.0088 ns 9.0273 ns 9.0466 ns]
+                        change: [-70.092% -69.947% -69.676%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 6 outliers among 100 measurements (6.00%)
+  5 (5.00%) high mild
+  1 (1.00%) high severe
+async-pool/no-hook/core - wasm-to-host - unchecked - nop
+                        time:   [5.1478 ns 5.1579 ns 5.1679 ns]
+                        change: [-80.037% -79.919% -79.792%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 10 outliers among 100 measurements (10.00%)
+  3 (3.00%) low mild
+  4 (4.00%) high mild
+  3 (3.00%) high severe
+async-pool/no-hook/core - wasm-to-host - async-typed - nop
+                        time:   [12.473 ns 12.484 ns 12.495 ns]
+                        change: [-63.749% -63.656% -63.511%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 5 outliers among 100 measurements (5.00%)
+  1 (1.00%) low severe
+  2 (2.00%) high mild
+  2 (2.00%) high severe
+
+Building WASI example module...
+-------MPK--------
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 5 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 0.00s
+
+sync-pool/no-hook/core - host-to-wasm - typed - nop
+                        time:   [35.159 ns 35.185 ns 35.213 ns]
+                        change: [+167.79% +169.58% +170.69%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 5 outliers among 100 measurements (5.00%)
+  2 (2.00%) low mild
+  2 (2.00%) high mild
+  1 (1.00%) high severe
+sync-pool/no-hook/core - host-to-wasm - untyped - nop
+                        time:   [39.629 ns 39.671 ns 39.713 ns]
+                        change: [+113.40% +114.60% +115.41%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 3 outliers among 100 measurements (3.00%)
+  1 (1.00%) low mild
+  1 (1.00%) high mild
+  1 (1.00%) high severe
+sync-pool/no-hook/core - host-to-wasm - unchecked - nop
+                        time:   [36.015 ns 36.028 ns 36.042 ns]
+                        change: [+152.89% +153.40% +153.88%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 7 outliers among 100 measurements (7.00%)
+  2 (2.00%) low mild
+  3 (3.00%) high mild
+  2 (2.00%) high severe
+
+async-pool/no-hook/core - host-to-wasm - typed - nop
+                        time:   [151.05 ns 151.36 ns 151.71 ns]
+                        change: [+18.010% +18.239% +18.463%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+async-pool/no-hook/core - host-to-wasm - untyped - nop
+                        time:   [158.71 ns 158.76 ns 158.81 ns]
+                        change: [+14.497% +14.602% +14.708%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 5 outliers among 100 measurements (5.00%)
+  2 (2.00%) low severe
+  3 (3.00%) high severe
+
+sync-pool/no-hook/core - wasm-to-host - typed - nop
+                        time:   [26.120 ns 26.124 ns 26.127 ns]
+                        change: [+354.75% +355.72% +356.69%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 11 outliers among 100 measurements (11.00%)
+  1 (1.00%) low mild
+  4 (4.00%) high mild
+  6 (6.00%) high severe
+sync-pool/no-hook/core - wasm-to-host - untyped - nop
+                        time:   [30.206 ns 30.210 ns 30.215 ns]
+                        change: [+230.80% +233.21% +234.80%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 3 outliers among 100 measurements (3.00%)
+  1 (1.00%) low mild
+  1 (1.00%) high mild
+  1 (1.00%) high severe
+sync-pool/no-hook/core - wasm-to-host - unchecked - nop
+                        time:   [25.848 ns 25.852 ns 25.855 ns]
+                        change: [+395.39% +398.82% +401.31%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 6 outliers among 100 measurements (6.00%)
+  4 (4.00%) high mild
+  2 (2.00%) high severe
+
+async-pool/no-hook/core - wasm-to-host - typed - nop
+                        time:   [26.126 ns 26.129 ns 26.131 ns]
+                        change: [+349.93% +353.38% +355.94%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 14 outliers among 100 measurements (14.00%)
+  3 (3.00%) low mild
+  4 (4.00%) high mild
+  7 (7.00%) high severe
+async-pool/no-hook/core - wasm-to-host - untyped - nop
+                        time:   [30.205 ns 30.210 ns 30.214 ns]
+                        change: [+230.18% +232.70% +234.33%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 4 outliers among 100 measurements (4.00%)
+  1 (1.00%) low severe
+  1 (1.00%) high mild
+  2 (2.00%) high severe
+async-pool/no-hook/core - wasm-to-host - unchecked - nop
+                        time:   [25.838 ns 25.843 ns 25.847 ns]
+                        change: [+394.72% +398.35% +401.14%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 8 outliers among 100 measurements (8.00%)
+  1 (1.00%) low severe
+  1 (1.00%) low mild
+  4 (4.00%) high mild
+  2 (2.00%) high severe
+async-pool/no-hook/core - wasm-to-host - async-typed - nop
+                        time:   [34.426 ns 34.437 ns 34.448 ns]
+                        change: [+174.20% +175.36% +176.14%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 9 outliers among 100 measurements (9.00%)
+  2 (2.00%) low severe
+  3 (3.00%) high mild
+  4 (4.00%) high severe
+
+Building WASI example module...
