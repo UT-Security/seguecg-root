@@ -10,7 +10,7 @@ CURR_TIME=$(shell date --iso=seconds)
 PARALLEL_COUNT=$(shell nproc)
 ROOT_PATH=$(shell realpath .)
 
-DIRS=seguecg-libjpeg seguecg-wasm2c rlbox rlbox_wasm2c_sandbox wasmtime wamr seguecg-firefox
+DIRS=seguecg-libjpeg seguecg-wasm2c rlbox rlbox_wasm2c_sandbox wasmtime seguecg-wamr seguecg-firefox
 
 bootstrap: get_source
 	echo "Bootstrapping"
@@ -54,10 +54,6 @@ fetch_wasmtime:
 	git clone --recursive https://github.com/bytecodealliance/wasmtime
 	cd wasmtime && git checkout -b fixed 220139b026d81f01a152c0bd9f0f0daa965bc75c
 
-fetch_wamr:
-	git clone --recursive https://github.com/bytecodealliance/wasm-micro-runtime wamr
-	cd wamr && git checkout -b v1.3.2 2eb60060d8eb6556ebbe411b22ee7b15ba4f7ec1
-
 get_source: $(addprefix fetch_,$(DIRS)) wasi-sdk
 	touch ./get_source
 
@@ -78,29 +74,29 @@ build_wasmtime_debug:
 	cd wasmtime && cargo build
 
 build_wamr_release:
-	cd wamr/wamr-compiler \
+	cd seguecg-wamr/wamr-compiler \
 		&& ./build_llvm.sh \
 		&& mkdir -p build && cd build \
 		&& cmake .. \
 		&& $(MAKE) -j${PARALLEL_COUNT}
-	cd wamr/product-mini/platforms/linux/ \
+	cd seguecg-wamr/product-mini/platforms/linux/ \
 		&& mkdir -p build && cd build \
 		&& cmake .. \
 		&& $(MAKE) -j${PARALLEL_COUNT}
-	if [ ! -e "./wamr/tests/benchmarks/coremark/build_complete.txt" ]; then \
-		cd wamr/tests/benchmarks/coremark/ && ./build.sh && touch ./build_complete.txt; \
+	if [ ! -e "./seguecg-wamr/tests/benchmarks/coremark/build_complete.txt" ]; then \
+		cd seguecg-wamr/tests/benchmarks/coremark/ && ./build.sh && touch ./build_complete.txt; \
 	fi
-	if [ ! -e "./wamr/tests/benchmarks/dhrystone/build_complete.txt" ]; then \
-		cd wamr/tests/benchmarks/dhrystone/ && ./build.sh && touch ./build_complete.txt; \
+	if [ ! -e "./seguecg-wamr/tests/benchmarks/dhrystone/build_complete.txt" ]; then \
+		cd seguecg-wamr/tests/benchmarks/dhrystone/ && ./build.sh && touch ./build_complete.txt; \
 	fi
-	if [ ! -e "./wamr/tests/benchmarks/jetstream/build_complete.txt" ]; then \
-		cd wamr/tests/benchmarks/jetstream/ && ./build.sh && touch ./build_complete.txt; \
+	if [ ! -e "./seguecg-wamr/tests/benchmarks/jetstream/build_complete.txt" ]; then \
+		cd seguecg-wamr/tests/benchmarks/jetstream/ && ./build.sh && touch ./build_complete.txt; \
 	fi
-	if [ ! -e "./wamr/tests/benchmarks/polybench/build_complete.txt" ]; then \
-		cd wamr/tests/benchmarks/polybench/ && ./build.sh && touch ./build_complete.txt; \
+	if [ ! -e "./seguecg-wamr/tests/benchmarks/polybench/build_complete.txt" ]; then \
+		cd seguecg-wamr/tests/benchmarks/polybench/ && ./build.sh && touch ./build_complete.txt; \
 	fi
-	if [ ! -e "./wamr/tests/benchmarks/sightglass/build_complete.txt" ]; then \
-		cd wamr/tests/benchmarks/sightglass/ && ./build.sh && touch ./build_complete.txt; \
+	if [ ! -e "./seguecg-wamr/tests/benchmarks/sightglass/build_complete.txt" ]; then \
+		cd seguecg-wamr/tests/benchmarks/sightglass/ && ./build.sh && touch ./build_complete.txt; \
 	fi
 
 build_wasm2c_release:
@@ -187,11 +183,11 @@ benchmark_wasmtime_transitions:
 
 benchmark_wamr_segue:
 	mkdir -p $(ROOT_PATH)/benchmarks/wamr_segue_coremark_$(CURR_TIME)
-	cd $(ROOT_PATH)/wamr/tests/benchmarks/coremark/ && ./run.sh | tee $(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/coremark.txt
-	cd $(ROOT_PATH)/wamr/tests/benchmarks/dhrystone/ && ./run.sh | tee $(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/dhrystone.txt
-	# cd $(ROOT_PATH)/wamr/tests/benchmarks/jetstream/ && ./run_aot.sh && mv ./report.txt $(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/jetstream.txt
-	cd $(ROOT_PATH)/wamr/tests/benchmarks/polybench/ && ./run_aot.sh && mv ./report.txt $(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/polybench.txt
-	cd $(ROOT_PATH)/wamr/tests/benchmarks/sightglass/ && ./run_aot.sh && mv ./report.txt $(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/sightglass.txt
+	cd $(ROOT_PATH)/seguecg-wamr/tests/benchmarks/coremark/ && ./run.sh | tee $(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/coremark.txt
+	cd $(ROOT_PATH)/seguecg-wamr/tests/benchmarks/dhrystone/ && ./run.sh | tee $(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/dhrystone.txt
+	# cd $(ROOT_PATH)/seguecg-wamr/tests/benchmarks/jetstream/ && ./run_aot.sh && mv ./report.txt $(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/jetstream.txt
+	cd $(ROOT_PATH)/seguecg-wamr/tests/benchmarks/polybench/ && ./run_aot.sh && mv ./report.txt $(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/polybench.txt
+	cd $(ROOT_PATH)/seguecg-wamr/tests/benchmarks/sightglass/ && ./run_aot.sh && mv ./report.txt $(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/sightglass.txt
 	./tsv_to_plot.py "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/polybench.txt" "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/polybench.pdf" -s "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/polybench.stats" -r "native:Native" -r "iwasm-aot:Wamr" -r "iwasm-aot-segue:Wamr+Segue" -b Native -g
 	./tsv_to_plot.py "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/sightglass.txt" "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/sightglass.pdf" -s "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/sightglass.stats" -r "native:Native" -r "iwasm-aot:Wamr" -r "iwasm-aot-segue:Wamr+Segue" -b Native -g
 
