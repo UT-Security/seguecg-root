@@ -186,11 +186,14 @@ benchmark_wasmtime_transitions:
 	cd wasmtime && WASMTIME_TEST_FORCE_MPK=1 cargo bench -- 'sync-pool/no-hook/core .+ nop$$' | tee -a $(ROOT_PATH)/benchmarks/wasmtime_transitions_$(CURR_TIME).txt
 
 benchmark_wamr_segue:
-	cd $(ROOT_PATH)/wamr/tests/benchmarks/coremark/ && ./run.sh | tee $(ROOT_PATH)/benchmarks/wamr_segue_coremark_$(CURR_TIME).txt
-	cd $(ROOT_PATH)/wamr/tests/benchmarks/dhrystone/ && ./run.sh | tee $(ROOT_PATH)/benchmarks/wamr_segue_dhrystone_$(CURR_TIME).txt
-	cd $(ROOT_PATH)/wamr/tests/benchmarks/jetstream/ && ./run_aot.sh && mv ./report.txt $(ROOT_PATH)/benchmarks/wamr_segue_jetstream_$(CURR_TIME).txt
-	cd $(ROOT_PATH)/wamr/tests/benchmarks/polybench/ && ./run_aot.sh && mv ./report.txt $(ROOT_PATH)/benchmarks/wamr_segue_polybench_$(CURR_TIME).txt
-	cd $(ROOT_PATH)/wamr/tests/benchmarks/sightglass/ && ./run_aot.sh && mv ./report.txt $(ROOT_PATH)/benchmarks/wamr_segue_sightglass_$(CURR_TIME).txt
+	mkdir -p $(ROOT_PATH)/benchmarks/wamr_segue_coremark_$(CURR_TIME)
+	cd $(ROOT_PATH)/wamr/tests/benchmarks/coremark/ && ./run.sh | tee $(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/coremark.txt
+	cd $(ROOT_PATH)/wamr/tests/benchmarks/dhrystone/ && ./run.sh | tee $(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/dhrystone.txt
+	# cd $(ROOT_PATH)/wamr/tests/benchmarks/jetstream/ && ./run_aot.sh && mv ./report.txt $(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/jetstream.txt
+	cd $(ROOT_PATH)/wamr/tests/benchmarks/polybench/ && ./run_aot.sh && mv ./report.txt $(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/polybench.txt
+	cd $(ROOT_PATH)/wamr/tests/benchmarks/sightglass/ && ./run_aot.sh && mv ./report.txt $(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/sightglass.txt
+	./tsv_to_plot.py "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/polybench.txt" "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/polybench.pdf" -s "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/polybench.stats" -r "native:Native" -r "iwasm-aot:Wamr" -r "iwasm-aot-segue:Wamr+Segue" -b Native -g
+	./tsv_to_plot.py "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/sightglass.txt" "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/sightglass.pdf" -s "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/sightglass.stats" -r "native:Native" -r "iwasm-aot:Wamr" -r "iwasm-aot-segue:Wamr+Segue" -b Native -g
 
 benchmark_graphite_segue:
 	cd seguecg-firefox && ./testsRunBenchmark "../benchmarks/graphite_test_segue_$(CURR_TIME)" "graphite_perf_test" "stock segue"
