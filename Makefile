@@ -18,7 +18,7 @@ bootstrap: get_source
 		python3 python3-dev python-is-python3 python3-pip \
 		cpuset cpufrequtils curl gnuplot \
 		build-essential g++-multilib libgcc-11-dev lib32gcc-11-dev ccache \
-		python3.10-venv
+		python3.10-venv jq
 	curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain 1.73.0 -y
 	rustup target add wasm32-unknown-unknown wasm32-wasi
 	pip3 install simplejson matplotlib
@@ -28,6 +28,8 @@ bootstrap: get_source
 	echo "fs.inotify.max_user_watches=524288" | sudo tee -a /etc/sysctl.conf
 	echo "vm.max_map_count=1128000" | sudo tee -a /etc/sysctl.conf
 	sudo sysctl -p
+	wget https://github.com/sharkdp/hyperfine/releases/download/v1.18.0/hyperfine_1.18.0_amd64.deb
+	sudo dpkg -i hyperfine_1.18.0_amd64.deb
 	cd seguecg-firefox/mybuild && $(MAKE) bootstrap
 	touch ./$@
 
@@ -83,21 +85,10 @@ build_wamr_release:
 		&& mkdir -p build && cd build \
 		&& cmake .. \
 		&& $(MAKE) -j${PARALLEL_COUNT}
-	if [ ! -e "./seguecg-wamr/tests/benchmarks/coremark/build_complete.txt" ]; then \
-		cd seguecg-wamr/tests/benchmarks/coremark/ && ./build.sh && touch ./build_complete.txt; \
-	fi
-	if [ ! -e "./seguecg-wamr/tests/benchmarks/dhrystone/build_complete.txt" ]; then \
-		cd seguecg-wamr/tests/benchmarks/dhrystone/ && ./build.sh && touch ./build_complete.txt; \
-	fi
-	if [ ! -e "./seguecg-wamr/tests/benchmarks/jetstream/build_complete.txt" ]; then \
-		cd seguecg-wamr/tests/benchmarks/jetstream/ && ./build.sh && touch ./build_complete.txt; \
-	fi
-	if [ ! -e "./seguecg-wamr/tests/benchmarks/polybench/build_complete.txt" ]; then \
-		cd seguecg-wamr/tests/benchmarks/polybench/ && ./build.sh && touch ./build_complete.txt; \
-	fi
-	if [ ! -e "./seguecg-wamr/tests/benchmarks/sightglass/build_complete.txt" ]; then \
-		cd seguecg-wamr/tests/benchmarks/sightglass/ && ./build.sh && touch ./build_complete.txt; \
-	fi
+	cd seguecg-wamr/tests/benchmarks/coremark/ && ./build.sh
+	cd seguecg-wamr/tests/benchmarks/dhrystone/ && ./build.sh
+	cd seguecg-wamr/tests/benchmarks/polybench/ && ./build.sh
+	cd seguecg-wamr/tests/benchmarks/sightglass/ && ./build.sh
 
 build_wasm2c_release:
 	cmake -S seguecg-wasm2c -B seguecg-wasm2c/build_release -DWITH_WASI=ON -DCMAKE_BUILD_TYPE=Release
@@ -185,7 +176,6 @@ benchmark_wamr_segue:
 	mkdir -p $(ROOT_PATH)/benchmarks/wamr_segue_coremark_$(CURR_TIME)
 	cd $(ROOT_PATH)/seguecg-wamr/tests/benchmarks/coremark/ && ./run.sh | tee $(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/coremark.txt
 	cd $(ROOT_PATH)/seguecg-wamr/tests/benchmarks/dhrystone/ && ./run.sh | tee $(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/dhrystone.txt
-	# cd $(ROOT_PATH)/seguecg-wamr/tests/benchmarks/jetstream/ && ./run_aot.sh && mv ./report.txt $(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/jetstream.txt
 	cd $(ROOT_PATH)/seguecg-wamr/tests/benchmarks/polybench/ && ./run_aot.sh && mv ./report.txt $(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/polybench.txt
 	cd $(ROOT_PATH)/seguecg-wamr/tests/benchmarks/sightglass/ && ./run_aot.sh && mv ./report.txt $(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/sightglass.txt
 	./tsv_to_plot.py "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/polybench.txt" "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/polybench.pdf" -s "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/polybench.stats" -r "native:Native" -r "iwasm-aot:Wamr" -r "iwasm-aot-segue:Wamr+Segue" -b Native -g
