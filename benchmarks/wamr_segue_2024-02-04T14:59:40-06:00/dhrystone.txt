@@ -1,0 +1,10 @@
+============> run dhrystone native
+Microseconds for one run through Dhrystone: 0.011902 
+============> run dhrystone.aot
+Microseconds for one run through Dhrystone: 0.010751 
+============> run dhrystone_segue.aot
+Microseconds for one run through Dhrystone: 0.008544 
+============> run dhrystone_segue_store.aot
+Microseconds for one run through Dhrystone: 0.009838 
+============> run dhrystone_segue_load.aot
+Microseconds for one run through Dhrystone: 0.011394 
