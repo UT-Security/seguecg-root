@@ -57,18 +57,13 @@ def write_stat(f, name, func, build_testtimingsarray_map):
 
 
 def main():
-    # if len(sys.argv) < 3:
-    #     print("Expected " + sys.argv[0] + " inputFile outputFile")
-    #     exit(1)
-
-    # inputFile = sys.argv[1]
-    # outputFile = sys.argv[2]
     parser = argparse.ArgumentParser()
     parser.add_argument('inputFile', help='input csv file')
     parser.add_argument('outputFile', help='output pdf file')
     parser.add_argument('-b', dest='baseline', help='column to be used as baseline')
     parser.add_argument('-g', dest='add_geomean', help='specify if you want the geomean to be included', default=False, action='store_true')
     parser.add_argument('-r', dest='replacements', default=[], action='append', type=lambda s: ( s.split(':', 1)[0], s.split(':', 1)[1] ), help='replacements of the form abc:def where name abc is replaced with def in the data. You can specify this flag multiple times for multiple replacements')
+    parser.add_argument('-f', dest='filter', default=[], action='append', help='filter data from particular builds. You can specify this flag multiple times for multiple filters')
     parser.add_argument('-s', dest='statsfile', help='output stats file')
 
     args = parser.parse_args()
@@ -91,7 +86,8 @@ def main():
 
     build_testtimingsarray_map = {}
     for build in builds:
-        build_testtimingsarray_map[build] = []
+        if build not in args.filter:
+            build_testtimingsarray_map[build] = []
 
     test_names = []
 
@@ -109,7 +105,8 @@ def main():
             test_names.append(name)
 
             for (build, val) in zip(builds, testdata):
-                build_testtimingsarray_map[build].append(val)
+                if build not in args.filter:
+                    build_testtimingsarray_map[build].append(val)
 
 
     if args.statsfile:
@@ -124,8 +121,9 @@ def main():
         test_names.append("Geomean")
 
         for build in builds:
-            curr_geomean = round(statistics.geometric_mean(build_testtimingsarray_map[build]), 2)
-            build_testtimingsarray_map[build].append(curr_geomean)
+            if build not in args.filter:
+                curr_geomean = round(statistics.geometric_mean(build_testtimingsarray_map[build]), 2)
+                build_testtimingsarray_map[build].append(curr_geomean)
 
     print("test_names: " + str(test_names))
     print("build_testtimingsarray_map: " + str(build_testtimingsarray_map))
