@@ -1,0 +1,162 @@
+Run coremark with native ..
+2K performance run parameters for coremark.
+CoreMark Size    : 666
+Total ticks      : 16668
+Total time (secs): 16.668000
+Iterations/Sec   : 23998.080154
+Iterations       : 400000
+Compiler version : GCC11.4.0
+Compiler flags   : -O3 -DPERFORMANCE_RUN=1  -lrt
+Memory location  : Please put data memory location here
+			(e.g. code in flash, data on heap etc)
+seedcrc          : 0xe9f5
+[0]crclist       : 0xe714
+[0]crcmatrix     : 0x1fd7
+[0]crcstate      : 0x8e3a
+[0]crcfinal      : 0x65c5
+Correct operation validated. See README.md for run and reporting rules.
+CoreMark 1.0 : 23998.080154 / GCC11.4.0 -O3 -DPERFORMANCE_RUN=1  -lrt / Heap
+Run coremark with iwasm aot mode ..
+2K performance run parameters for coremark.
+CoreMark Size    : 666
+Total ticks      : 21450
+Total time (secs): 21.450000
+Iterations/Sec   : 18648.018648
+Iterations       : 400000
+Compiler version : Clang 16.0.0 (https://github.com/llvm/llvm-project 434575c026c81319b393f64047025b54e69e24c2)
+Compiler flags   : -O3 -DPERFORMANCE_RUN=1
+Memory location  : Please put data memory location here
+			(e.g. code in flash, data on heap etc)
+seedcrc          : 0xe9f5
+[0]crclist       : 0xe714
+[0]crcmatrix     : 0x1fd7
+[0]crcstate      : 0x8e3a
+[0]crcfinal      : 0x65c5
+Correct operation validated. See README.md for run and reporting rules.
+CoreMark 1.0 : 18648.018648 / Clang 16.0.0 (https://github.com/llvm/llvm-project 434575c026c81319b393f64047025b54e69e24c2) -O3 -DPERFORMANCE_RUN=1 / Heap
+Run coremark with iwasm aot-segue mode ..
+2K performance run parameters for coremark.
+CoreMark Size    : 666
+Total ticks      : 22945
+Total time (secs): 22.945000
+Iterations/Sec   : 17432.991937
+Iterations       : 400000
+Compiler version : Clang 16.0.0 (https://github.com/llvm/llvm-project 434575c026c81319b393f64047025b54e69e24c2)
+Compiler flags   : -O3 -DPERFORMANCE_RUN=1
+Memory location  : Please put data memory location here
+			(e.g. code in flash, data on heap etc)
+seedcrc          : 0xe9f5
+[0]crclist       : 0xe714
+[0]crcmatrix     : 0x1fd7
+[0]crcstate      : 0x8e3a
+[0]crcfinal      : 0x65c5
+Correct operation validated. See README.md for run and reporting rules.
+CoreMark 1.0 : 17432.991937 / Clang 16.0.0 (https://github.com/llvm/llvm-project 434575c026c81319b393f64047025b54e69e24c2) -O3 -DPERFORMANCE_RUN=1 / Heap
+Run coremark with iwasm aot-segue store mode ..
+2K performance run parameters for coremark.
+CoreMark Size    : 666
+Total ticks      : 19775
+Total time (secs): 19.775000
+Iterations/Sec   : 20227.560051
+Iterations       : 400000
+Compiler version : Clang 16.0.0 (https://github.com/llvm/llvm-project 434575c026c81319b393f64047025b54e69e24c2)
+Compiler flags   : -O3 -DPERFORMANCE_RUN=1
+Memory location  : Please put data memory location here
+			(e.g. code in flash, data on heap etc)
+seedcrc          : 0xe9f5
+[0]crclist       : 0xe714
+[0]crcmatrix     : 0x1fd7
+[0]crcstate      : 0x8e3a
+[0]crcfinal      : 0x65c5
+Correct operation validated. See README.md for run and reporting rules.
+CoreMark 1.0 : 20227.560051 / Clang 16.0.0 (https://github.com/llvm/llvm-project 434575c026c81319b393f64047025b54e69e24c2) -O3 -DPERFORMANCE_RUN=1 / Heap
+Run coremark with iwasm aot-segue load mode ..
+2K performance run parameters for coremark.
+CoreMark Size    : 666
+Total ticks      : 21159
+Total time (secs): 21.159000
+Iterations/Sec   : 18904.485089
+Iterations       : 400000
+Compiler version : Clang 16.0.0 (https://github.com/llvm/llvm-project 434575c026c81319b393f64047025b54e69e24c2)
+Compiler flags   : -O3 -DPERFORMANCE_RUN=1
+Memory location  : Please put data memory location here
+			(e.g. code in flash, data on heap etc)
+seedcrc          : 0xe9f5
+[0]crclist       : 0xe714
+[0]crcmatrix     : 0x1fd7
+[0]crcstate      : 0x8e3a
+[0]crcfinal      : 0x65c5
+Correct operation validated. See README.md for run and reporting rules.
+CoreMark 1.0 : 18904.485089 / Clang 16.0.0 (https://github.com/llvm/llvm-project 434575c026c81319b393f64047025b54e69e24c2) -O3 -DPERFORMANCE_RUN=1 / Heap
+Run coremark with wasm2c ..
+2K performance run parameters for coremark.
+CoreMark Size    : 666
+Total ticks      : 21717
+Total time (secs): 21.717000
+Iterations/Sec   : 18418.750288
+Iterations       : 400000
+Compiler version : Clang 16.0.0 (https://github.com/llvm/llvm-project 434575c026c81319b393f64047025b54e69e24c2)
+Compiler flags   : -O3 -DPERFORMANCE_RUN=1
+Memory location  : Please put data memory location here
+			(e.g. code in flash, data on heap etc)
+seedcrc          : 0xe9f5
+[0]crclist       : 0xe714
+[0]crcmatrix     : 0x1fd7
+[0]crcstate      : 0x8e3a
+[0]crcfinal      : 0x65c5
+Correct operation validated. See README.md for run and reporting rules.
+CoreMark 1.0 : 18418.750288 / Clang 16.0.0 (https://github.com/llvm/llvm-project 434575c026c81319b393f64047025b54e69e24c2) -O3 -DPERFORMANCE_RUN=1 / Heap
+Run coremark with wasm2c-segue ..
+2K performance run parameters for coremark.
+CoreMark Size    : 666
+Total ticks      : 23949
+Total time (secs): 23.949000
+Iterations/Sec   : 16702.158754
+Iterations       : 400000
+Compiler version : Clang 16.0.0 (https://github.com/llvm/llvm-project 434575c026c81319b393f64047025b54e69e24c2)
+Compiler flags   : -O3 -DPERFORMANCE_RUN=1
+Memory location  : Please put data memory location here
+			(e.g. code in flash, data on heap etc)
+seedcrc          : 0xe9f5
+[0]crclist       : 0xe714
+[0]crcmatrix     : 0x1fd7
+[0]crcstate      : 0x8e3a
+[0]crcfinal      : 0x65c5
+Correct operation validated. See README.md for run and reporting rules.
+CoreMark 1.0 : 16702.158754 / Clang 16.0.0 (https://github.com/llvm/llvm-project 434575c026c81319b393f64047025b54e69e24c2) -O3 -DPERFORMANCE_RUN=1 / Heap
+Run coremark with wasm2c-segue store mode ..
+2K performance run parameters for coremark.
+CoreMark Size    : 666
+Total ticks      : 21715
+Total time (secs): 21.715000
+Iterations/Sec   : 18420.446696
+Iterations       : 400000
+Compiler version : Clang 16.0.0 (https://github.com/llvm/llvm-project 434575c026c81319b393f64047025b54e69e24c2)
+Compiler flags   : -O3 -DPERFORMANCE_RUN=1
+Memory location  : Please put data memory location here
+			(e.g. code in flash, data on heap etc)
+seedcrc          : 0xe9f5
+[0]crclist       : 0xe714
+[0]crcmatrix     : 0x1fd7
+[0]crcstate      : 0x8e3a
+[0]crcfinal      : 0x65c5
+Correct operation validated. See README.md for run and reporting rules.
+CoreMark 1.0 : 18420.446696 / Clang 16.0.0 (https://github.com/llvm/llvm-project 434575c026c81319b393f64047025b54e69e24c2) -O3 -DPERFORMANCE_RUN=1 / Heap
+Run coremark with wasm2c-segue load mode..
+2K performance run parameters for coremark.
+CoreMark Size    : 666
+Total ticks      : 21550
+Total time (secs): 21.550000
+Iterations/Sec   : 18561.484919
+Iterations       : 400000
+Compiler version : Clang 16.0.0 (https://github.com/llvm/llvm-project 434575c026c81319b393f64047025b54e69e24c2)
+Compiler flags   : -O3 -DPERFORMANCE_RUN=1
+Memory location  : Please put data memory location here
+			(e.g. code in flash, data on heap etc)
+seedcrc          : 0xe9f5
+[0]crclist       : 0xe714
+[0]crcmatrix     : 0x1fd7
+[0]crcstate      : 0x8e3a
+[0]crcfinal      : 0x65c5
+Correct operation validated. See README.md for run and reporting rules.
+CoreMark 1.0 : 18561.484919 / Clang 16.0.0 (https://github.com/llvm/llvm-project 434575c026c81319b393f64047025b54e69e24c2) -O3 -DPERFORMANCE_RUN=1 / Heap
