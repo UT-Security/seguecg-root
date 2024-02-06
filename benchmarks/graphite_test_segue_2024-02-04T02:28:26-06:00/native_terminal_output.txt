@@ -1,0 +1,1045 @@
+08:28:30     INFO - ConsoleLogger online at 20240204 08:28:30Z in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox
+08:28:30     INFO - Run as ./mach talos-test --activeTests graphite_perf_test
+08:28:30     INFO - Dumping config to /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozharness/logs/localconfig.json.
+08:28:30     INFO - {'append_to_log': False,
+08:28:30     INFO -  'base_work_dir': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozharness',
+08:28:30     INFO -  'binary_path': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/dist/bin/firefox',
+08:28:30     INFO -  'code_coverage': False,
+08:28:30     INFO -  'config_files': (),
+08:28:30     INFO -  'default_actions': ('populate-webroot', 'create-virtualenv', 'run-tests'),
+08:28:30     INFO -  'disable_ccov_upload': False,
+08:28:30     INFO -  'e10s': True,
+08:28:30     INFO -  'exes': {'python': '/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/common/bin/python',
+08:28:30     INFO -           'virtualenv': ('/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/common/bin/python',
+08:28:30     INFO -                          '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/third_party/python/virtualenv/virtualenv.py')},
+08:28:30     INFO -  'extra_prefs': (),
+08:28:30     INFO -  'find_links': ('https://pypi.pub.build.mozilla.org/pub/',),
+08:28:30     INFO -  'fission': True,
+08:28:30     INFO -  'gecko_profile': False,
+08:28:30     INFO -  'java_code_coverage': False,
+08:28:30     INFO -  'log_level': 'info',
+08:28:30     INFO -  'log_name': 'talos',
+08:28:30     INFO -  'log_to_console': True,
+08:28:30     INFO -  'obj_path': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release',
+08:28:30     INFO -  'opt_config_files': (),
+08:28:30     INFO -  'per_test_coverage': False,
+08:28:30     INFO -  'pip_index': False,
+08:28:30     INFO -  'pypi_url': 'http://pypi.python.org/simple',
+08:28:30     INFO -  'python3_manifest': {'win32': 'python3.manifest',
+08:28:30     INFO -                       'win64': 'python3_x64.manifest'},
+08:28:30     INFO -  'repo_path': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox',
+08:28:30     INFO -  'requires_gpu': False,
+08:28:30     INFO -  'run_local': True,
+08:28:30     INFO -  'screenshot_on_failure': False,
+08:28:30     INFO -  'skip_preflight': False,
+08:28:30     INFO -  'system_bits': '32',
+08:28:30     INFO -  'talos_extra_options': ('--develop', '--activeTests', 'graphite_perf_test'),
+08:28:30     INFO -  'talos_json': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/talos.json',
+08:28:30     INFO -  'title': 'shr-work',
+08:28:30     INFO -  'use_talos_json': False,
+08:28:30     INFO -  'verify': False,
+08:28:30     INFO -  'virtualenv_path': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv',
+08:28:30     INFO -  'volatile_config': {'actions': None, 'add_actions': None, 'no_actions': None},
+08:28:30     INFO -  'work_dir': 'build'}
+08:28:30     INFO - [mozharness: 2024-02-04 08:28:30.449161Z] Skipping clobber step.
+08:28:30     INFO - [mozharness: 2024-02-04 08:28:30.449190Z] Skipping download-and-extract step.
+08:28:30     INFO - [mozharness: 2024-02-04 08:28:30.449216Z] Running populate-webroot step.
+08:28:30     INFO - Running pre-action listener: _resource_record_pre_action
+08:28:30     INFO - Running main action method: populate_webroot
+08:28:30     INFO - {'suites': {'bcv': {'tests': ['basic_compositor_video']},
+08:28:30     INFO -             'chromez': {'tests': ['about_preferences_basic', 'tresize']},
+08:28:30     INFO -             'damp': {'extra_prefs': ['talos.damp.suite=all'],
+08:28:30     INFO -                      'pagesets_name': 'tp5n.zip',
+08:28:30     INFO -                      'tests': ['damp']},
+08:28:30     INFO -             'damp-inspector': {'extra_prefs': ['talos.damp.suite=inspector'],
+08:28:30     INFO -                                'pagesets_name': 'tp5n.zip',
+08:28:30     INFO -                                'tests': ['damp']},
+08:28:30     INFO -             'damp-other': {'extra_prefs': ['talos.damp.suite=other'],
+08:28:30     INFO -                            'pagesets_name': 'tp5n.zip',
+08:28:30     INFO -                            'tests': ['damp']},
+08:28:30     INFO -             'damp-webconsole': {'extra_prefs': ['talos.damp.suite=webconsole'],
+08:28:30     INFO -                                 'pagesets_name': 'tp5n.zip',
+08:28:30     INFO -                                 'tests': ['damp']},
+08:28:30     INFO -             'dromaeojs': {'tests': ['dromaeo_css', 'kraken']},
+08:28:30     INFO -             'g1': {'pagesets_name': 'tp5n.zip', 'tests': ['tp5o_scroll']},
+08:28:30     INFO -             'g3': {'tests': ['dromaeo_dom']},
+08:28:30     INFO -             'g4': {'tests': ['displaylist_mutate',
+08:28:30     INFO -                              'rasterflood_svg',
+08:28:30     INFO -                              'rasterflood_gradient']},
+08:28:30     INFO -             'g5': {'pagesets_name': 'tp5n.zip',
+08:28:30     INFO -                    'tests': ['ts_paint_webext', 'tp5o_webext']},
+08:28:30     INFO -             'h1': {'tests': ['ts_paint_heavy']},
+08:28:30     INFO -             'motionmark': {'benchmark_zip': 'jetstream.zip',
+08:28:30     INFO -                            'tests': ['motionmark_animometer',
+08:28:30     INFO -                                      'motionmark_htmlsuite',
+08:28:30     INFO -                                      'JetStream',
+08:28:30     INFO -                                      'ARES6']},
+08:28:30     INFO -             'other': {'tests': ['a11yr',
+08:28:30     INFO -                                 'ts_paint',
+08:28:30     INFO -                                 'twinopen',
+08:28:30     INFO -                                 'sessionrestore',
+08:28:30     INFO -                                 'sessionrestore_no_auto_restore',
+08:28:30     INFO -                                 'tabpaint',
+08:28:30     INFO -                                 'cpstartup',
+08:28:30     INFO -                                 'startup_about_home_paint',
+08:28:30     INFO -                                 'pdfpaint',
+08:28:30     INFO -                                 'cross_origin_pageload',
+08:28:30     INFO -                                 'startup_about_home_paint_cached']},
+08:28:30     INFO -             'perf-reftest': {'tests': ['perf_reftest']},
+08:28:30     INFO -             'perf-reftest-singletons': {'tests': ['perf_reftest_singletons']},
+08:28:30     INFO -             'realworld-webextensions': {'tests': ['startup_about_home_paint_realworld_webextensions'],
+08:28:30     INFO -                                         'webextensions_zip': 'webextensions.zip'},
+08:28:30     INFO -             'seguecg': {'tests': ['jpeg_perf',
+08:28:30     INFO -                                   'jpeg_black_width_perf',
+08:28:30     INFO -                                   'graphite_perf_test',
+08:28:30     INFO -                                   'graphite_perf_test_mini']},
+08:28:30     INFO -             'sessionrestore-many-windows': {'tests': ['sessionrestore_many_windows']},
+08:28:30     INFO -             'svgr': {'tests': ['tsvgx',
+08:28:30     INFO -                                'tsvgr_opacity',
+08:28:30     INFO -                                'tscrollx',
+08:28:30     INFO -                                'tsvg_static',
+08:28:30     INFO -                                'tart']},
+08:28:30     INFO -             'tabswitch': {'pagesets_name': 'tp5n.zip', 'tests': ['tabswitch']},
+08:28:30     INFO -             'tp5o': {'pagesets_name': 'tp5n.zip', 'tests': ['tp5o']},
+08:28:30     INFO -             'webgl': {'tests': ['canvas2dvideo',
+08:28:30     INFO -                                 'glterrain',
+08:28:30     INFO -                                 'glvideo',
+08:28:30     INFO -                                 'motionmark_webgl',
+08:28:30     INFO -                                 'offscreencanvas_webcodecs_main_webgl_h264',
+08:28:30     INFO -                                 'offscreencanvas_webcodecs_main_webgl_vp9',
+08:28:30     INFO -                                 'offscreencanvas_webcodecs_main_webgl_av1',
+08:28:30     INFO -                                 'offscreencanvas_webcodecs_worker_webgl_h264',
+08:28:30     INFO -                                 'offscreencanvas_webcodecs_worker_webgl_vp9',
+08:28:30     INFO -                                 'offscreencanvas_webcodecs_worker_webgl_av1',
+08:28:30     INFO -                                 'offscreencanvas_webcodecs_main_2d_h264',
+08:28:30     INFO -                                 'offscreencanvas_webcodecs_main_2d_vp9',
+08:28:30     INFO -                                 'offscreencanvas_webcodecs_main_2d_av1',
+08:28:30     INFO -                                 'offscreencanvas_webcodecs_worker_2d_h264',
+08:28:30     INFO -                                 'offscreencanvas_webcodecs_worker_2d_vp9',
+08:28:30     INFO -                                 'offscreencanvas_webcodecs_worker_2d_av1']},
+08:28:30     INFO -             'xperf': {'pagesets_name': 'tp5n.zip',
+08:28:30     INFO -                       'talos_options': ['--xperf_path',
+08:28:30     INFO -                                         '"c:/Program Files (x86)/Windows '
+08:28:30     INFO -                                         'Kits/10/Windows Performance '
+08:28:30     INFO -                                         'Toolkit/xperf.exe"'],
+08:28:30     INFO -                       'tests': ['tp5n']}}}
+08:28:30     INFO - Running post-action listener: _resource_record_post_action
+08:28:30     INFO - [mozharness: 2024-02-04 08:28:30.451424Z] Finished populate-webroot step (success)
+08:28:30     INFO - [mozharness: 2024-02-04 08:28:30.451452Z] Running create-virtualenv step.
+08:28:30     INFO - Running pre-action listener: _resource_record_pre_action
+08:28:30     INFO - Running main action method: create_virtualenv
+08:28:30     INFO - Creating virtualenv /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv
+08:28:30     INFO - Running command: ['/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/common/bin/python', '--version']
+08:28:30     INFO - Copy/paste: /home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/common/bin/python --version
+08:28:30     INFO -  Python 3.10.12
+08:28:30     INFO - Return code: 0
+08:28:30     INFO - Running command: ['/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/common/bin/python', '-m', 'venv', '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv'] in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozharness/build
+08:28:30     INFO - Copy/paste: /home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/common/bin/python -m venv /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv
+08:28:31     INFO - Return code: 0
+08:28:31     INFO - Running command: ['/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin/python', '-m', 'pip', 'install', '--only-binary', ':all:', '--disable-pip-version-check', '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/third_party/python/_venv/wheels/pip-23.0.1-py3-none-any.whl', '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/third_party/python/_venv/wheels/setuptools-51.2.0-py3-none-any.whl'] in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozharness/build
+08:28:31     INFO - Copy/paste: /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin/python -m pip install --only-binary :all: --disable-pip-version-check /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/third_party/python/_venv/wheels/pip-23.0.1-py3-none-any.whl /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/third_party/python/_venv/wheels/setuptools-51.2.0-py3-none-any.whl
+08:28:31     INFO -  Processing /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/third_party/python/_venv/wheels/pip-23.0.1-py3-none-any.whl
+08:28:31     INFO -  Processing /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/third_party/python/_venv/wheels/setuptools-51.2.0-py3-none-any.whl
+08:28:31     INFO -  Installing collected packages: setuptools, pip
+08:28:31     INFO -    Attempting uninstall: setuptools
+08:28:31     INFO -      Found existing installation: setuptools 59.6.0
+08:28:31     INFO -      Uninstalling setuptools-59.6.0:
+08:28:31     INFO -        Successfully uninstalled setuptools-59.6.0
+08:28:32     INFO -    Attempting uninstall: pip
+08:28:32     INFO -      Found existing installation: pip 22.0.2
+08:28:32     INFO -      Uninstalling pip-22.0.2:
+08:28:32     INFO -        Successfully uninstalled pip-22.0.2
+08:28:32     INFO -  Successfully installed pip-23.0.1 setuptools-51.2.0
+08:28:32     INFO - Return code: 0
+08:28:32     INFO - linux64
+08:28:32     INFO - Installing psutil>=5.9.0 into virtualenv /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv
+08:28:33     INFO - find_links: connection checks passed for https://pypi.pub.build.mozilla.org/pub/, adding.
+08:28:33     INFO - retry: Calling run_command with args: [['/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin/pip', 'install', '--timeout', '120', '--no-index', '--find-links', 'https://pypi.pub.build.mozilla.org/pub/', 'psutil>=5.9.0']], kwargs: {'error_list': [{'substr': 'not found or a compiler error:', 'level': 'warning'}, {'regex': re.compile('\\d+: error: '), 'level': 'error'}, {'regex': re.compile('\\d+: warning: '), 'level': 'warning'}, {'regex': re.compile('Downloading .* \\(.*\\): *([0-9]+%)? *[0-9\\.]+[kmKM]b'), 'level': 'debug'}, {'substr': 'command not found', 'level': 'error'}, {'regex': re.compile('Warning:.*Error: '), 'level': 'warning'}, {'regex': re.compile('package.*> Error:'), 'level': 'error'}, {'substr': 'Traceback (most recent call last)', 'level': 'error'}, {'substr': 'SyntaxError: ', 'level': 'error'}, {'substr': 'TypeError: ', 'level': 'error'}, {'substr': 'NameError: ', 'level': 'error'}, {'substr': 'ZeroDivisionError: ', 'level': 'error'}, {'regex': re.compile('raise \\w*Exception: '), 'level': 'critical'}, {'regex': re.compile('raise \\w*Error: '), 'level': 'critical'}], 'cwd': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozharness/build', 'env': {'MOZCONFIG': 'mozconfig_native_release', 'SHELL': '/bin/bash', 'COLORTERM': 'truecolor', 'SUDO_GID': '0', 'MAKE_TERMOUT': '/dev/pts/1', 'SUDO_COMMAND': '/usr/bin/env PATH=/mnt/seconddrive/Code/seguecg-root/spec_benchmarks/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin bash --init-file /mnt/seconddrive/Code/seguecg-root/init_benchmark_shell.sh', 'SUDO_USER': 'root', 'PWD': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox', 'LOGNAME': 'shr', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'HOME': '/home/shr', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_LANG': 'C', 'MFLAGS': '', 'MAKEFLAGS': '', 'TERM': 'xterm-256color', 'USER': 'shr', 'MAKE_TERMERR': '/dev/pts/1', 'DISPLAY': ':1', 'SHLVL': '1', 'MAKELEVEL': '1', 'LC_ALL': 'C', 'PATH': '/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/common/bin:/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/mach/bin:/mnt/seconddrive/Code/seguecg-root/spec_benchmarks/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SUDO_UID': '0', 'MAIL': '/var/mail/shr', 'OLDPWD': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox', '_': '/usr/bin/taskset', 'VIRTUAL_ENV': '/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/common', 'MACH_MAIN_PID': '1063945', 'REQUIRE_GPU': '0'}, 'error_level': 'warning'}, attempt #1
+08:28:33     INFO - Running command: ['/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin/pip', 'install', '--timeout', '120', '--no-index', '--find-links', 'https://pypi.pub.build.mozilla.org/pub/', 'psutil>=5.9.0'] in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozharness/build
+08:28:33     INFO - Copy/paste: /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin/pip install --timeout 120 --no-index --find-links https://pypi.pub.build.mozilla.org/pub/ psutil>=5.9.0
+08:28:33     INFO - Using env: {'COLORTERM': 'truecolor',
+08:28:33     INFO -  'DISPLAY': ':1',
+08:28:33     INFO -  'HOME': '/home/shr',
+08:28:33     INFO -  'LANG': 'en_US.UTF-8',
+08:28:33     INFO -  'LC_ALL': 'C',
+08:28:33     INFO -  'LC_LANG': 'C',
+08:28:33     INFO -  'LOGNAME': 'shr',
+08:28:33     INFO -  'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:',
+08:28:33     INFO -  'MACH_MAIN_PID': '1063945',
+08:28:33     INFO -  'MAIL': '/var/mail/shr',
+08:28:33     INFO -  'MAKEFLAGS': '',
+08:28:33     INFO -  'MAKELEVEL': '1',
+08:28:33     INFO -  'MAKE_TERMERR': '/dev/pts/1',
+08:28:33     INFO -  'MAKE_TERMOUT': '/dev/pts/1',
+08:28:33     INFO -  'MFLAGS': '',
+08:28:33     INFO -  'MOZCONFIG': 'mozconfig_native_release',
+08:28:33     INFO -  'OLDPWD': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox',
+08:28:33     INFO -  'PATH': '/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/common/bin:/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/mach/bin:/mnt/seconddrive/Code/seguecg-root/spec_benchmarks/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin',
+08:28:33     INFO -  'PWD': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox',
+08:28:33     INFO -  'REQUIRE_GPU': '0',
+08:28:33     INFO -  'SHELL': '/bin/bash',
+08:28:33     INFO -  'SHLVL': '1',
+08:28:33     INFO -  'SUDO_COMMAND': '/usr/bin/env '
+08:28:33     INFO -                  'PATH=/mnt/seconddrive/Code/seguecg-root/spec_benchmarks/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin '
+08:28:33     INFO -                  'bash --init-file '
+08:28:33     INFO -                  '/mnt/seconddrive/Code/seguecg-root/init_benchmark_shell.sh',
+08:28:33     INFO -  'SUDO_GID': '0',
+08:28:33     INFO -  'SUDO_UID': '0',
+08:28:33     INFO -  'SUDO_USER': 'root',
+08:28:33     INFO -  'TERM': 'xterm-256color',
+08:28:33     INFO -  'USER': 'shr',
+08:28:33     INFO -  'VIRTUAL_ENV': '/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/common',
+08:28:33     INFO -  'XAUTHORITY': '/run/user/1000/gdm/Xauthority',
+08:28:33     INFO -  'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME',
+08:28:33     INFO -  '_': '/usr/bin/taskset'}
+08:28:33     INFO -  Looking in links: https://pypi.pub.build.mozilla.org/pub/
+08:28:34     INFO -  Collecting psutil>=5.9.0
+08:28:34     INFO -    Using cached https://pypi.pub.build.mozilla.org/pub/psutil-5.9.3-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (292 kB)
+08:28:34     INFO -  Installing collected packages: psutil
+08:28:34     INFO -  Successfully installed psutil-5.9.3
+08:28:34     INFO - Return code: 0
+08:28:34     INFO - Installing jsonschema==2.5.1 into virtualenv /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv
+08:28:35     INFO - find_links: connection checks passed for https://pypi.pub.build.mozilla.org/pub/, adding.
+08:28:35     INFO - retry: Calling run_command with args: [['/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin/pip', 'install', '--timeout', '120', '--no-index', '--find-links', 'https://pypi.pub.build.mozilla.org/pub/', 'jsonschema==2.5.1']], kwargs: {'error_list': [{'substr': 'not found or a compiler error:', 'level': 'warning'}, {'regex': re.compile('\\d+: error: '), 'level': 'error'}, {'regex': re.compile('\\d+: warning: '), 'level': 'warning'}, {'regex': re.compile('Downloading .* \\(.*\\): *([0-9]+%)? *[0-9\\.]+[kmKM]b'), 'level': 'debug'}, {'substr': 'command not found', 'level': 'error'}, {'regex': re.compile('Warning:.*Error: '), 'level': 'warning'}, {'regex': re.compile('package.*> Error:'), 'level': 'error'}, {'substr': 'Traceback (most recent call last)', 'level': 'error'}, {'substr': 'SyntaxError: ', 'level': 'error'}, {'substr': 'TypeError: ', 'level': 'error'}, {'substr': 'NameError: ', 'level': 'error'}, {'substr': 'ZeroDivisionError: ', 'level': 'error'}, {'regex': re.compile('raise \\w*Exception: '), 'level': 'critical'}, {'regex': re.compile('raise \\w*Error: '), 'level': 'critical'}], 'cwd': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozharness/build', 'env': {'MOZCONFIG': 'mozconfig_native_release', 'SHELL': '/bin/bash', 'COLORTERM': 'truecolor', 'SUDO_GID': '0', 'MAKE_TERMOUT': '/dev/pts/1', 'SUDO_COMMAND': '/usr/bin/env PATH=/mnt/seconddrive/Code/seguecg-root/spec_benchmarks/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin bash --init-file /mnt/seconddrive/Code/seguecg-root/init_benchmark_shell.sh', 'SUDO_USER': 'root', 'PWD': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox', 'LOGNAME': 'shr', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'HOME': '/home/shr', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_LANG': 'C', 'MFLAGS': '', 'MAKEFLAGS': '', 'TERM': 'xterm-256color', 'USER': 'shr', 'MAKE_TERMERR': '/dev/pts/1', 'DISPLAY': ':1', 'SHLVL': '1', 'MAKELEVEL': '1', 'LC_ALL': 'C', 'PATH': '/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/common/bin:/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/mach/bin:/mnt/seconddrive/Code/seguecg-root/spec_benchmarks/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SUDO_UID': '0', 'MAIL': '/var/mail/shr', 'OLDPWD': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox', '_': '/usr/bin/taskset', 'VIRTUAL_ENV': '/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/common', 'MACH_MAIN_PID': '1063945', 'REQUIRE_GPU': '0'}, 'error_level': 'warning'}, attempt #1
+08:28:35     INFO - Running command: ['/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin/pip', 'install', '--timeout', '120', '--no-index', '--find-links', 'https://pypi.pub.build.mozilla.org/pub/', 'jsonschema==2.5.1'] in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozharness/build
+08:28:35     INFO - Copy/paste: /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin/pip install --timeout 120 --no-index --find-links https://pypi.pub.build.mozilla.org/pub/ jsonschema==2.5.1
+08:28:35     INFO - Using env: (same as previous command)
+08:28:35     INFO -  Looking in links: https://pypi.pub.build.mozilla.org/pub/
+08:28:35     INFO -  Collecting jsonschema==2.5.1
+08:28:35     INFO -    Using cached https://pypi.pub.build.mozilla.org/pub/jsonschema-2.5.1-py2.py3-none-any.whl (38 kB)
+08:28:35     INFO -  Installing collected packages: jsonschema
+08:28:35     INFO -  Successfully installed jsonschema-2.5.1
+08:28:35     INFO - Return code: 0
+08:28:35     INFO - Installing None into virtualenv /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv
+08:28:36     INFO - find_links: connection checks passed for https://pypi.pub.build.mozilla.org/pub/, adding.
+08:28:36     INFO - retry: Calling run_command with args: [['/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin/pip', 'install', '--no-deps', '--timeout', '120', '-r', '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt', '--no-index', '--find-links', 'https://pypi.pub.build.mozilla.org/pub/']], kwargs: {'error_list': [{'substr': 'not found or a compiler error:', 'level': 'warning'}, {'regex': re.compile('\\d+: error: '), 'level': 'error'}, {'regex': re.compile('\\d+: warning: '), 'level': 'warning'}, {'regex': re.compile('Downloading .* \\(.*\\): *([0-9]+%)? *[0-9\\.]+[kmKM]b'), 'level': 'debug'}, {'substr': 'command not found', 'level': 'error'}, {'regex': re.compile('Warning:.*Error: '), 'level': 'warning'}, {'regex': re.compile('package.*> Error:'), 'level': 'error'}, {'substr': 'Traceback (most recent call last)', 'level': 'error'}, {'substr': 'SyntaxError: ', 'level': 'error'}, {'substr': 'TypeError: ', 'level': 'error'}, {'substr': 'NameError: ', 'level': 'error'}, {'substr': 'ZeroDivisionError: ', 'level': 'error'}, {'regex': re.compile('raise \\w*Exception: '), 'level': 'critical'}, {'regex': re.compile('raise \\w*Error: '), 'level': 'critical'}], 'cwd': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config', 'env': {'MOZCONFIG': 'mozconfig_native_release', 'SHELL': '/bin/bash', 'COLORTERM': 'truecolor', 'SUDO_GID': '0', 'MAKE_TERMOUT': '/dev/pts/1', 'SUDO_COMMAND': '/usr/bin/env PATH=/mnt/seconddrive/Code/seguecg-root/spec_benchmarks/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin bash --init-file /mnt/seconddrive/Code/seguecg-root/init_benchmark_shell.sh', 'SUDO_USER': 'root', 'PWD': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox', 'LOGNAME': 'shr', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'HOME': '/home/shr', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_LANG': 'C', 'MFLAGS': '', 'MAKEFLAGS': '', 'TERM': 'xterm-256color', 'USER': 'shr', 'MAKE_TERMERR': '/dev/pts/1', 'DISPLAY': ':1', 'SHLVL': '1', 'MAKELEVEL': '1', 'LC_ALL': 'C', 'PATH': '/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/common/bin:/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/mach/bin:/mnt/seconddrive/Code/seguecg-root/spec_benchmarks/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SUDO_UID': '0', 'MAIL': '/var/mail/shr', 'OLDPWD': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox', '_': '/usr/bin/taskset', 'VIRTUAL_ENV': '/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/common', 'MACH_MAIN_PID': '1063945', 'REQUIRE_GPU': '0'}, 'error_level': 'warning'}, attempt #1
+08:28:36     INFO - Running command: ['/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin/pip', 'install', '--no-deps', '--timeout', '120', '-r', '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt', '--no-index', '--find-links', 'https://pypi.pub.build.mozilla.org/pub/'] in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config
+08:28:36     INFO - Copy/paste: /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin/pip install --no-deps --timeout 120 -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt --no-index --find-links https://pypi.pub.build.mozilla.org/pub/
+08:28:36     INFO - Using env: (same as previous command)
+08:28:36     INFO -  Looking in links: https://pypi.pub.build.mozilla.org/pub/
+08:28:36     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/python/mozterm (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 1))
+08:28:36     INFO -    Preparing metadata (setup.py): started
+08:28:36     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:36     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/xpcom/geckoprocesstypes_generator (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 2))
+08:28:36     INFO -    Preparing metadata (setup.py): started
+08:28:36     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:36     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/manifestparser (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 4))
+08:28:36     INFO -    Preparing metadata (setup.py): started
+08:28:36     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:36     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozcrash (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 5))
+08:28:36     INFO -    Preparing metadata (setup.py): started
+08:28:36     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:36     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozdebug (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 6))
+08:28:36     INFO -    Preparing metadata (setup.py): started
+08:28:36     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:36     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozdevice (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 7))
+08:28:36     INFO -    Preparing metadata (setup.py): started
+08:28:37     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:37     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozfile (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 8))
+08:28:37     INFO -    Preparing metadata (setup.py): started
+08:28:37     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:37     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozgeckoprofiler (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 9))
+08:28:37     INFO -    Preparing metadata (setup.py): started
+08:28:37     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:37     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozhttpd (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 10))
+08:28:37     INFO -    Preparing metadata (setup.py): started
+08:28:37     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:37     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozinfo (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 11))
+08:28:37     INFO -    Preparing metadata (setup.py): started
+08:28:37     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:37     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozinstall (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 12))
+08:28:37     INFO -    Preparing metadata (setup.py): started
+08:28:37     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:37     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozleak (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 13))
+08:28:37     INFO -    Preparing metadata (setup.py): started
+08:28:37     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:37     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozlog (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 14))
+08:28:37     INFO -    Preparing metadata (setup.py): started
+08:28:37     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:37     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/moznetwork (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 15))
+08:28:37     INFO -    Preparing metadata (setup.py): started
+08:28:37     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:37     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozpower (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 16))
+08:28:37     INFO -    Preparing metadata (setup.py): started
+08:28:37     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:37     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozprocess (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 17))
+08:28:37     INFO -    Preparing metadata (setup.py): started
+08:28:37     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:37     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozprofile (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 18))
+08:28:37     INFO -    Preparing metadata (setup.py): started
+08:28:37     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:37     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozproxy (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 19))
+08:28:37     INFO -    Preparing metadata (setup.py): started
+08:28:37     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:37     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozrunner (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 20))
+08:28:37     INFO -    Preparing metadata (setup.py): started
+08:28:38     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:38     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozserve (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 21))
+08:28:38     INFO -    Preparing metadata (setup.py): started
+08:28:38     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:38     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozscreenshot (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 22))
+08:28:38     INFO -    Preparing metadata (setup.py): started
+08:28:38     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:38     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/moztest (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 23))
+08:28:38     INFO -    Preparing metadata (setup.py): started
+08:28:38     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:38     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozversion (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 24))
+08:28:38     INFO -    Preparing metadata (setup.py): started
+08:28:38     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:38     INFO -  Installing collected packages: mozversion, moztest, mozterm, mozserve, mozscreenshot, mozrunner, mozproxy, mozprofile, mozprocess, mozpower, moznetwork, mozlog, mozleak, mozInstall, mozinfo, mozhttpd, mozgeckoprofiler, mozfile, mozdevice, mozdebug, mozcrash, manifestparser, geckoprocesstypes
+08:28:38     INFO -    Running setup.py develop for mozversion
+08:28:38     INFO -    Running setup.py develop for moztest
+08:28:38     INFO -    Running setup.py develop for mozterm
+08:28:38     INFO -    Running setup.py develop for mozserve
+08:28:38     INFO -    Running setup.py develop for mozscreenshot
+08:28:38     INFO -    Running setup.py develop for mozrunner
+08:28:38     INFO -    Running setup.py develop for mozproxy
+08:28:38     INFO -    Running setup.py develop for mozprofile
+08:28:39     INFO -    Running setup.py develop for mozprocess
+08:28:39     INFO -    Running setup.py develop for mozpower
+08:28:39     INFO -    Running setup.py develop for moznetwork
+08:28:39     INFO -    Running setup.py develop for mozlog
+08:28:39     INFO -    Running setup.py develop for mozleak
+08:28:39     INFO -    Running setup.py develop for mozInstall
+08:28:39     INFO -    Running setup.py develop for mozinfo
+08:28:39     INFO -    Running setup.py develop for mozhttpd
+08:28:39     INFO -    Running setup.py develop for mozgeckoprofiler
+08:28:39     INFO -    Running setup.py develop for mozfile
+08:28:39     INFO -    Running setup.py develop for mozdevice
+08:28:40     INFO -    Running setup.py develop for mozdebug
+08:28:40     INFO -    Running setup.py develop for mozcrash
+08:28:40     INFO -    Running setup.py develop for manifestparser
+08:28:40     INFO -    Running setup.py develop for geckoprocesstypes
+08:28:40     INFO -  Successfully installed geckoprocesstypes-1.0 manifestparser mozInstall mozcrash mozdebug mozdevice mozfile mozgeckoprofiler-1.0.0 mozhttpd mozinfo mozleak-1.0.0 mozlog moznetwork mozpower mozprocess mozprofile mozproxy mozrunner mozscreenshot mozserve-0.1 mozterm moztest mozversion
+08:28:40     INFO - Return code: 0
+08:28:40     INFO - Installing None into virtualenv /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv
+08:28:41     INFO - find_links: connection checks passed for https://pypi.pub.build.mozilla.org/pub/, adding.
+08:28:41     INFO - retry: Calling run_command with args: [['/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin/pip', 'install', '--timeout', '120', '-r', '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt', '--no-index', '--find-links', 'https://pypi.pub.build.mozilla.org/pub/']], kwargs: {'error_list': [{'substr': 'not found or a compiler error:', 'level': 'warning'}, {'regex': re.compile('\\d+: error: '), 'level': 'error'}, {'regex': re.compile('\\d+: warning: '), 'level': 'warning'}, {'regex': re.compile('Downloading .* \\(.*\\): *([0-9]+%)? *[0-9\\.]+[kmKM]b'), 'level': 'debug'}, {'substr': 'command not found', 'level': 'error'}, {'regex': re.compile('Warning:.*Error: '), 'level': 'warning'}, {'regex': re.compile('package.*> Error:'), 'level': 'error'}, {'substr': 'Traceback (most recent call last)', 'level': 'error'}, {'substr': 'SyntaxError: ', 'level': 'error'}, {'substr': 'TypeError: ', 'level': 'error'}, {'substr': 'NameError: ', 'level': 'error'}, {'substr': 'ZeroDivisionError: ', 'level': 'error'}, {'regex': re.compile('raise \\w*Exception: '), 'level': 'critical'}, {'regex': re.compile('raise \\w*Error: '), 'level': 'critical'}], 'cwd': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config', 'env': {'MOZCONFIG': 'mozconfig_native_release', 'SHELL': '/bin/bash', 'COLORTERM': 'truecolor', 'SUDO_GID': '0', 'MAKE_TERMOUT': '/dev/pts/1', 'SUDO_COMMAND': '/usr/bin/env PATH=/mnt/seconddrive/Code/seguecg-root/spec_benchmarks/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin bash --init-file /mnt/seconddrive/Code/seguecg-root/init_benchmark_shell.sh', 'SUDO_USER': 'root', 'PWD': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox', 'LOGNAME': 'shr', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'HOME': '/home/shr', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_LANG': 'C', 'MFLAGS': '', 'MAKEFLAGS': '', 'TERM': 'xterm-256color', 'USER': 'shr', 'MAKE_TERMERR': '/dev/pts/1', 'DISPLAY': ':1', 'SHLVL': '1', 'MAKELEVEL': '1', 'LC_ALL': 'C', 'PATH': '/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/common/bin:/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/mach/bin:/mnt/seconddrive/Code/seguecg-root/spec_benchmarks/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SUDO_UID': '0', 'MAIL': '/var/mail/shr', 'OLDPWD': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox', '_': '/usr/bin/taskset', 'VIRTUAL_ENV': '/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/common', 'MACH_MAIN_PID': '1063945', 'REQUIRE_GPU': '0'}, 'error_level': 'warning'}, attempt #1
+08:28:41     INFO - Running command: ['/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin/pip', 'install', '--timeout', '120', '-r', '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt', '--no-index', '--find-links', 'https://pypi.pub.build.mozilla.org/pub/'] in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config
+08:28:41     INFO - Copy/paste: /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin/pip install --timeout 120 -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt --no-index --find-links https://pypi.pub.build.mozilla.org/pub/
+08:28:41     INFO - Using env: (same as previous command)
+08:28:41     INFO -  Looking in links: https://pypi.pub.build.mozilla.org/pub/
+08:28:41     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/python/mozterm (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 1))
+08:28:41     INFO -    Preparing metadata (setup.py): started
+08:28:41     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:41     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/xpcom/geckoprocesstypes_generator (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 2))
+08:28:41     INFO -    Preparing metadata (setup.py): started
+08:28:41     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:41     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/manifestparser (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 4))
+08:28:41     INFO -    Preparing metadata (setup.py): started
+08:28:41     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:41     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozcrash (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 5))
+08:28:41     INFO -    Preparing metadata (setup.py): started
+08:28:41     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:41     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozdebug (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 6))
+08:28:41     INFO -    Preparing metadata (setup.py): started
+08:28:41     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:41     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozdevice (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 7))
+08:28:41     INFO -    Preparing metadata (setup.py): started
+08:28:41     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:41     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozfile (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 8))
+08:28:41     INFO -    Preparing metadata (setup.py): started
+08:28:41     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:41     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozgeckoprofiler (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 9))
+08:28:41     INFO -    Preparing metadata (setup.py): started
+08:28:41     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:41     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozhttpd (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 10))
+08:28:41     INFO -    Preparing metadata (setup.py): started
+08:28:41     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:41     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozinfo (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 11))
+08:28:41     INFO -    Preparing metadata (setup.py): started
+08:28:42     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:42     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozinstall (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 12))
+08:28:42     INFO -    Preparing metadata (setup.py): started
+08:28:42     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:42     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozleak (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 13))
+08:28:42     INFO -    Preparing metadata (setup.py): started
+08:28:42     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:42     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozlog (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 14))
+08:28:42     INFO -    Preparing metadata (setup.py): started
+08:28:42     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:42     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/moznetwork (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 15))
+08:28:42     INFO -    Preparing metadata (setup.py): started
+08:28:42     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:42     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozpower (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 16))
+08:28:42     INFO -    Preparing metadata (setup.py): started
+08:28:42     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:42     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozprocess (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 17))
+08:28:42     INFO -    Preparing metadata (setup.py): started
+08:28:42     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:42     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozprofile (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 18))
+08:28:42     INFO -    Preparing metadata (setup.py): started
+08:28:42     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:42     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozproxy (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 19))
+08:28:42     INFO -    Preparing metadata (setup.py): started
+08:28:42     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:42     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozrunner (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 20))
+08:28:42     INFO -    Preparing metadata (setup.py): started
+08:28:42     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:42     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozserve (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 21))
+08:28:42     INFO -    Preparing metadata (setup.py): started
+08:28:42     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:42     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozscreenshot (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 22))
+08:28:42     INFO -    Preparing metadata (setup.py): started
+08:28:42     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:42     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/moztest (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 23))
+08:28:42     INFO -    Preparing metadata (setup.py): started
+08:28:42     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:42     INFO -  Obtaining file:///mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozversion (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/config/mozbase_source_requirements.txt (line 24))
+08:28:42     INFO -    Preparing metadata (setup.py): started
+08:28:43     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:43     INFO -  Collecting six>=1.13.0
+08:28:43     INFO -    Using cached https://pypi.pub.build.mozilla.org/pub/six-1.15.0-py2.py3-none-any.whl (10 kB)
+08:28:43     INFO -  Collecting toml>=0.10.2
+08:28:43     INFO -    Using cached https://pypi.pub.build.mozilla.org/pub/toml-0.10.2-py2.py3-none-any.whl (16 kB)
+08:28:43     INFO -  Collecting tomlkit>=0.11.8
+08:28:43     INFO -    Using cached https://pypi.pub.build.mozilla.org/pub/tomlkit-0.12.3-py3-none-any.whl (37 kB)
+08:28:43     INFO -  Collecting distro>=1.4.0
+08:28:44     INFO -    Using cached https://pypi.pub.build.mozilla.org/pub/distro-1.4.0.tar.gz (53 kB)
+08:28:44     INFO -    Preparing metadata (setup.py): started
+08:28:44     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:44     INFO -  Collecting requests
+08:28:44     INFO -    Using cached https://pypi.pub.build.mozilla.org/pub/requests-2.27.1-py2.py3-none-any.whl (63 kB)
+08:28:44     INFO -  Collecting blessed>=1.19.1
+08:28:44     INFO -    Using cached https://pypi.pub.build.mozilla.org/pub/blessed-1.19.1-py2.py3-none-any.whl (58 kB)
+08:28:44     INFO -  Collecting redo
+08:28:44     INFO -    Using cached redo-2.0.4-py2.py3-none-any.whl
+08:28:44     INFO -  Collecting wcwidth>=0.1.4
+08:28:44     INFO -    Using cached https://pypi.pub.build.mozilla.org/pub/wcwidth-0.1.7.tar.gz (22 kB)
+08:28:44     INFO -    Preparing metadata (setup.py): started
+08:28:44     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:44     INFO -  Collecting certifi>=2017.4.17
+08:28:44     INFO -    Using cached https://pypi.pub.build.mozilla.org/pub/certifi-2020.12.5-py2.py3-none-any.whl (147 kB)
+08:28:44     INFO -  Collecting charset-normalizer~=2.0.0
+08:28:44     INFO -    Using cached https://pypi.pub.build.mozilla.org/pub/charset-normalizer-2.0.12.tar.gz (79 kB)
+08:28:44     INFO -    Preparing metadata (setup.py): started
+08:28:45     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:45     INFO -  Collecting idna<4,>=2.5
+08:28:45     INFO -    Using cached https://pypi.pub.build.mozilla.org/pub/idna-2.10-py2.py3-none-any.whl (58 kB)
+08:28:45     INFO -  Collecting urllib3<1.27,>=1.21.1
+08:28:45     INFO -    Using cached https://pypi.pub.build.mozilla.org/pub/urllib3-1.26.9-py2.py3-none-any.whl (138 kB)
+08:28:45     INFO -  Installing collected packages: wcwidth, redo, mozserve, mozleak, mozgeckoprofiler, geckoprocesstypes, distro, certifi, urllib3, tomlkit, toml, six, idna, charset-normalizer, requests, mozterm, mozfile, blessed, mozlog, mozinfo, mozversion, moztest, mozscreenshot, mozproxy, mozprofile, mozprocess, moznetwork, mozInstall, mozdevice, mozdebug, mozcrash, manifestparser, mozrunner, mozpower, mozhttpd
+08:28:45     INFO -    DEPRECATION: wcwidth is being installed using the legacy 'setup.py install' method, because it does not have a 'pyproject.toml' and the 'wheel' package is not installed. pip 23.1 will enforce this behaviour change. A possible replacement is to enable the '--use-pep517' option. Discussion can be found at https://github.com/pypa/pip/issues/8559
+08:28:45     INFO -    Running setup.py install for wcwidth: started
+08:28:45     INFO -    Running setup.py install for wcwidth: finished with status 'done'
+08:28:45     INFO -    Attempting uninstall: mozserve
+08:28:45     INFO -      Found existing installation: mozserve 0.1
+08:28:45     INFO -      Uninstalling mozserve-0.1:
+08:28:45     INFO -        Successfully uninstalled mozserve-0.1
+08:28:45     INFO -    Running setup.py develop for mozserve
+08:28:45     INFO -    Attempting uninstall: mozleak
+08:28:45     INFO -      Found existing installation: mozleak 1.0.0
+08:28:45     INFO -      Uninstalling mozleak-1.0.0:
+08:28:45     INFO -        Successfully uninstalled mozleak-1.0.0
+08:28:45     INFO -    Running setup.py develop for mozleak
+08:28:45     INFO -    Attempting uninstall: mozgeckoprofiler
+08:28:45     INFO -      Found existing installation: mozgeckoprofiler 1.0.0
+08:28:45     INFO -      Uninstalling mozgeckoprofiler-1.0.0:
+08:28:45     INFO -        Successfully uninstalled mozgeckoprofiler-1.0.0
+08:28:45     INFO -    Running setup.py develop for mozgeckoprofiler
+08:28:45     INFO -    Attempting uninstall: geckoprocesstypes
+08:28:45     INFO -      Found existing installation: geckoprocesstypes 1.0
+08:28:45     INFO -      Uninstalling geckoprocesstypes-1.0:
+08:28:45     INFO -        Successfully uninstalled geckoprocesstypes-1.0
+08:28:45     INFO -    Running setup.py develop for geckoprocesstypes
+08:28:45     INFO -    DEPRECATION: distro is being installed using the legacy 'setup.py install' method, because it does not have a 'pyproject.toml' and the 'wheel' package is not installed. pip 23.1 will enforce this behaviour change. A possible replacement is to enable the '--use-pep517' option. Discussion can be found at https://github.com/pypa/pip/issues/8559
+08:28:45     INFO -    Running setup.py install for distro: started
+08:28:45     INFO -    Running setup.py install for distro: finished with status 'done'
+08:28:46     INFO -    DEPRECATION: charset-normalizer is being installed using the legacy 'setup.py install' method, because it does not have a 'pyproject.toml' and the 'wheel' package is not installed. pip 23.1 will enforce this behaviour change. A possible replacement is to enable the '--use-pep517' option. Discussion can be found at https://github.com/pypa/pip/issues/8559
+08:28:46     INFO -    Running setup.py install for charset-normalizer: started
+08:28:46     INFO -    Running setup.py install for charset-normalizer: finished with status 'done'
+08:28:46     INFO -    Attempting uninstall: mozterm
+08:28:46     INFO -      Found existing installation: mozterm 1.0.0
+08:28:46     INFO -      Uninstalling mozterm-1.0.0:
+08:28:46     INFO -        Successfully uninstalled mozterm-1.0.0
+08:28:46     INFO -    Running setup.py develop for mozterm
+08:28:46     INFO -    Attempting uninstall: mozfile
+08:28:46     INFO -      Found existing installation: mozfile 3.0.0
+08:28:46     INFO -      Uninstalling mozfile-3.0.0:
+08:28:46     INFO -        Successfully uninstalled mozfile-3.0.0
+08:28:46     INFO -    Running setup.py develop for mozfile
+08:28:46     INFO -    Attempting uninstall: mozlog
+08:28:46     INFO -      Found existing installation: mozlog 8.0.0
+08:28:46     INFO -      Uninstalling mozlog-8.0.0:
+08:28:46     INFO -        Successfully uninstalled mozlog-8.0.0
+08:28:46     INFO -    Running setup.py develop for mozlog
+08:28:46     INFO -    Attempting uninstall: mozinfo
+08:28:46     INFO -      Found existing installation: mozinfo 1.2.3
+08:28:46     INFO -      Uninstalling mozinfo-1.2.3:
+08:28:46     INFO -        Successfully uninstalled mozinfo-1.2.3
+08:28:46     INFO -    Running setup.py develop for mozinfo
+08:28:46     INFO -    Attempting uninstall: mozversion
+08:28:46     INFO -      Found existing installation: mozversion 2.4.0
+08:28:46     INFO -      Uninstalling mozversion-2.4.0:
+08:28:46     INFO -        Successfully uninstalled mozversion-2.4.0
+08:28:46     INFO -    Running setup.py develop for mozversion
+08:28:46     INFO -    Attempting uninstall: moztest
+08:28:46     INFO -      Found existing installation: moztest 1.1.0
+08:28:46     INFO -      Uninstalling moztest-1.1.0:
+08:28:46     INFO -        Successfully uninstalled moztest-1.1.0
+08:28:46     INFO -    Running setup.py develop for moztest
+08:28:46     INFO -    Attempting uninstall: mozscreenshot
+08:28:46     INFO -      Found existing installation: mozscreenshot 1.0.0
+08:28:46     INFO -      Uninstalling mozscreenshot-1.0.0:
+08:28:46     INFO -        Successfully uninstalled mozscreenshot-1.0.0
+08:28:46     INFO -    Running setup.py develop for mozscreenshot
+08:28:47     INFO -    Attempting uninstall: mozproxy
+08:28:47     INFO -      Found existing installation: mozproxy 1.0
+08:28:47     INFO -      Uninstalling mozproxy-1.0:
+08:28:47     INFO -        Successfully uninstalled mozproxy-1.0
+08:28:47     INFO -    Running setup.py develop for mozproxy
+08:28:47     INFO -    Attempting uninstall: mozprofile
+08:28:47     INFO -      Found existing installation: mozprofile 2.6.1
+08:28:47     INFO -      Uninstalling mozprofile-2.6.1:
+08:28:47     INFO -        Successfully uninstalled mozprofile-2.6.1
+08:28:47     INFO -    Running setup.py develop for mozprofile
+08:28:47     INFO -    Attempting uninstall: mozprocess
+08:28:47     INFO -      Found existing installation: mozprocess 1.3.1
+08:28:47     INFO -      Uninstalling mozprocess-1.3.1:
+08:28:47     INFO -        Successfully uninstalled mozprocess-1.3.1
+08:28:47     INFO -    Running setup.py develop for mozprocess
+08:28:47     INFO -    Attempting uninstall: moznetwork
+08:28:47     INFO -      Found existing installation: moznetwork 1.1.0
+08:28:47     INFO -      Uninstalling moznetwork-1.1.0:
+08:28:47     INFO -        Successfully uninstalled moznetwork-1.1.0
+08:28:47     INFO -    Running setup.py develop for moznetwork
+08:28:47     INFO -    Attempting uninstall: mozInstall
+08:28:47     INFO -      Found existing installation: mozInstall 2.1.0
+08:28:47     INFO -      Uninstalling mozInstall-2.1.0:
+08:28:47     INFO -        Successfully uninstalled mozInstall-2.1.0
+08:28:47     INFO -    Running setup.py develop for mozInstall
+08:28:47     INFO -    Attempting uninstall: mozdevice
+08:28:47     INFO -      Found existing installation: mozdevice 4.1.1
+08:28:47     INFO -      Uninstalling mozdevice-4.1.1:
+08:28:47     INFO -        Successfully uninstalled mozdevice-4.1.1
+08:28:47     INFO -    Running setup.py develop for mozdevice
+08:28:47     INFO -    Attempting uninstall: mozdebug
+08:28:47     INFO -      Found existing installation: mozdebug 0.3.0
+08:28:47     INFO -      Uninstalling mozdebug-0.3.0:
+08:28:47     INFO -        Successfully uninstalled mozdebug-0.3.0
+08:28:47     INFO -    Running setup.py develop for mozdebug
+08:28:47     INFO -    Attempting uninstall: mozcrash
+08:28:47     INFO -      Found existing installation: mozcrash 2.2.0
+08:28:47     INFO -      Uninstalling mozcrash-2.2.0:
+08:28:47     INFO -        Successfully uninstalled mozcrash-2.2.0
+08:28:47     INFO -    Running setup.py develop for mozcrash
+08:28:47     INFO -    Attempting uninstall: manifestparser
+08:28:47     INFO -      Found existing installation: manifestparser 2.3.0
+08:28:47     INFO -      Uninstalling manifestparser-2.3.0:
+08:28:47     INFO -        Successfully uninstalled manifestparser-2.3.0
+08:28:47     INFO -    Running setup.py develop for manifestparser
+08:28:48     INFO -    Attempting uninstall: mozrunner
+08:28:48     INFO -      Found existing installation: mozrunner 8.3.0
+08:28:48     INFO -      Uninstalling mozrunner-8.3.0:
+08:28:48     INFO -        Successfully uninstalled mozrunner-8.3.0
+08:28:48     INFO -    Running setup.py develop for mozrunner
+08:28:48     INFO -    Attempting uninstall: mozpower
+08:28:48     INFO -      Found existing installation: mozpower 1.1.2
+08:28:48     INFO -      Uninstalling mozpower-1.1.2:
+08:28:48     INFO -        Successfully uninstalled mozpower-1.1.2
+08:28:48     INFO -    Running setup.py develop for mozpower
+08:28:48     INFO -    Attempting uninstall: mozhttpd
+08:28:48     INFO -      Found existing installation: mozhttpd 0.7.1
+08:28:48     INFO -      Uninstalling mozhttpd-0.7.1:
+08:28:48     INFO -        Successfully uninstalled mozhttpd-0.7.1
+08:28:48     INFO -    Running setup.py develop for mozhttpd
+08:28:48     INFO -  Successfully installed blessed-1.19.1 certifi-2020.12.5 charset-normalizer-2.0.12 distro-1.4.0 geckoprocesstypes-1.0 idna-2.10 manifestparser-2.3.0 mozInstall-2.1.0 mozcrash-2.2.0 mozdebug-0.3.0 mozdevice-4.1.1 mozfile-3.0.0 mozgeckoprofiler-1.0.0 mozhttpd-0.7.1 mozinfo-1.2.3 mozleak-1.0.0 mozlog-8.0.0 moznetwork-1.1.0 mozpower-1.1.2 mozprocess-1.3.1 mozprofile-2.6.1 mozproxy-1.0 mozrunner-8.3.0 mozscreenshot-1.0.0 mozserve-0.1 mozterm-1.0.0 moztest-1.1.0 mozversion-2.4.0 redo-2.0.4 requests-2.27.1 six-1.15.0 toml-0.10.2 tomlkit-0.12.3 urllib3-1.26.9 wcwidth-0.1.7
+08:28:48     INFO - Return code: 0
+08:28:48     INFO - Done creating virtualenv /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv.
+08:28:48     INFO - Getting output from command: ['/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin/pip', 'list', '--format', 'freeze', '--no-index']
+08:28:48     INFO - Copy/paste: /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin/pip list --format freeze --no-index
+08:28:48     INFO - Reading from file tmpfile_stdout
+08:28:48     INFO - Return code: 0
+08:28:48     INFO - Current package versions:
+08:28:48     INFO -   blessed == 1.19.1
+08:28:48     INFO -   certifi == 2020.12.5
+08:28:48     INFO -   charset-normalizer == 2.0.12
+08:28:48     INFO -   distro == 1.4.0
+08:28:48     INFO -   geckoprocesstypes == 1.0
+08:28:48     INFO -   idna == 2.10
+08:28:48     INFO -   jsonschema == 2.5.1
+08:28:48     INFO -   manifestparser == 2.3.0
+08:28:48     INFO -   mozInstall == 2.1.0
+08:28:48     INFO -   mozcrash == 2.2.0
+08:28:48     INFO -   mozdebug == 0.3.0
+08:28:48     INFO -   mozdevice == 4.1.1
+08:28:48     INFO -   mozfile == 3.0.0
+08:28:48     INFO -   mozgeckoprofiler == 1.0.0
+08:28:48     INFO -   mozhttpd == 0.7.1
+08:28:48     INFO -   mozinfo == 1.2.3
+08:28:48     INFO -   mozleak == 1.0.0
+08:28:48     INFO -   mozlog == 8.0.0
+08:28:48     INFO -   moznetwork == 1.1.0
+08:28:48     INFO -   mozpower == 1.1.2
+08:28:48     INFO -   mozprocess == 1.3.1
+08:28:48     INFO -   mozprofile == 2.6.1
+08:28:48     INFO -   mozproxy == 1.0
+08:28:48     INFO -   mozrunner == 8.3.0
+08:28:48     INFO -   mozscreenshot == 1.0.0
+08:28:48     INFO -   mozserve == 0.1
+08:28:48     INFO -   mozterm == 1.0.0
+08:28:48     INFO -   moztest == 1.1.0
+08:28:48     INFO -   mozversion == 2.4.0
+08:28:48     INFO -   pip == 23.0.1
+08:28:48     INFO -   psutil == 5.9.3
+08:28:48     INFO -   redo == 2.0.4
+08:28:48     INFO -   requests == 2.27.1
+08:28:48     INFO -   setuptools == 51.2.0
+08:28:48     INFO -   six == 1.15.0
+08:28:48     INFO -   toml == 0.10.2
+08:28:48     INFO -   tomlkit == 0.12.3
+08:28:48     INFO -   urllib3 == 1.26.9
+08:28:48     INFO -   wcwidth == 0.1.7
+08:28:48     INFO - Installing None into virtualenv /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv
+08:28:49     INFO - find_links: connection checks passed for https://pypi.pub.build.mozilla.org/pub/, adding.
+08:28:49     INFO - retry: Calling run_command with args: [['/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin/pip', 'install', '--timeout', '120', '-r', '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/source_requirements.txt', '--no-index', '--find-links', 'https://pypi.pub.build.mozilla.org/pub/']], kwargs: {'error_list': [{'substr': 'not found or a compiler error:', 'level': 'warning'}, {'regex': re.compile('\\d+: error: '), 'level': 'error'}, {'regex': re.compile('\\d+: warning: '), 'level': 'warning'}, {'regex': re.compile('Downloading .* \\(.*\\): *([0-9]+%)? *[0-9\\.]+[kmKM]b'), 'level': 'debug'}, {'substr': 'command not found', 'level': 'error'}, {'regex': re.compile('Warning:.*Error: '), 'level': 'warning'}, {'regex': re.compile('package.*> Error:'), 'level': 'error'}, {'substr': 'Traceback (most recent call last)', 'level': 'error'}, {'substr': 'SyntaxError: ', 'level': 'error'}, {'substr': 'TypeError: ', 'level': 'error'}, {'substr': 'NameError: ', 'level': 'error'}, {'substr': 'ZeroDivisionError: ', 'level': 'error'}, {'regex': re.compile('raise \\w*Exception: '), 'level': 'critical'}, {'regex': re.compile('raise \\w*Error: '), 'level': 'critical'}], 'cwd': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos', 'env': {'MOZCONFIG': 'mozconfig_native_release', 'SHELL': '/bin/bash', 'COLORTERM': 'truecolor', 'SUDO_GID': '0', 'MAKE_TERMOUT': '/dev/pts/1', 'SUDO_COMMAND': '/usr/bin/env PATH=/mnt/seconddrive/Code/seguecg-root/spec_benchmarks/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin bash --init-file /mnt/seconddrive/Code/seguecg-root/init_benchmark_shell.sh', 'SUDO_USER': 'root', 'PWD': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox', 'LOGNAME': 'shr', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'HOME': '/home/shr', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_LANG': 'C', 'MFLAGS': '', 'MAKEFLAGS': '', 'TERM': 'xterm-256color', 'USER': 'shr', 'MAKE_TERMERR': '/dev/pts/1', 'DISPLAY': ':1', 'SHLVL': '1', 'MAKELEVEL': '1', 'LC_ALL': 'C', 'PATH': '/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/common/bin:/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/mach/bin:/mnt/seconddrive/Code/seguecg-root/spec_benchmarks/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SUDO_UID': '0', 'MAIL': '/var/mail/shr', 'OLDPWD': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox', '_': '/usr/bin/taskset', 'VIRTUAL_ENV': '/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/common', 'MACH_MAIN_PID': '1063945', 'REQUIRE_GPU': '0'}, 'error_level': 'warning'}, attempt #1
+08:28:49     INFO - Running command: ['/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin/pip', 'install', '--timeout', '120', '-r', '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/source_requirements.txt', '--no-index', '--find-links', 'https://pypi.pub.build.mozilla.org/pub/'] in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos
+08:28:49     INFO - Copy/paste: /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin/pip install --timeout 120 -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/source_requirements.txt --no-index --find-links https://pypi.pub.build.mozilla.org/pub/
+08:28:49     INFO - Using env: (same as previous command)
+08:28:49     INFO -  Looking in links: https://pypi.pub.build.mozilla.org/pub/
+08:28:49     INFO -  Processing /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/web-platform/tests/tools/wptserve
+08:28:49     INFO -    Preparing metadata (setup.py): started
+08:28:49     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:49     INFO -  Processing /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/web-platform/tests/tools/third_party/h2
+08:28:49     INFO -    Preparing metadata (setup.py): started
+08:28:49     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:49     INFO -  Processing /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/web-platform/tests/tools/third_party/pywebsocket3
+08:28:49     INFO -    Preparing metadata (setup.py): started
+08:28:49     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:49     INFO -  Requirement already satisfied: jsonschema>=2.5.1 in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/lib/python3.10/site-packages (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/source_requirements.txt (line 3)) (2.5.1)
+08:28:49     INFO -  Requirement already satisfied: mozlog>=6.0 in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozlog (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/source_requirements.txt (line 4)) (8.0.0)
+08:28:49     INFO -  Requirement already satisfied: mozcrash>=2.0 in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozcrash (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/source_requirements.txt (line 5)) (2.2.0)
+08:28:49     INFO -  Requirement already satisfied: mozfile>=1.2 in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozfile (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/source_requirements.txt (line 6)) (3.0.0)
+08:28:49     INFO -  Requirement already satisfied: mozinfo>=0.8 in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozinfo (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/source_requirements.txt (line 7)) (1.2.3)
+08:28:49     INFO -  Requirement already satisfied: mozprocess>=0.22 in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozprocess (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/source_requirements.txt (line 8)) (1.3.1)
+08:28:49     INFO -  Requirement already satisfied: mozversion>=1.3 in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozversion (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/source_requirements.txt (line 9)) (2.4.0)
+08:28:49     INFO -  Requirement already satisfied: mozprofile>=0.25 in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozprofile (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/source_requirements.txt (line 10)) (2.6.1)
+08:28:49     INFO -  Requirement already satisfied: mozrunner>=7.1.0 in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozrunner (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/source_requirements.txt (line 11)) (8.3.0)
+08:28:49     INFO -  Requirement already satisfied: psutil>=3.1.1 in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/lib/python3.10/site-packages (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/source_requirements.txt (line 12)) (5.9.3)
+08:28:50     INFO -  Collecting simplejson>=2.1.1
+08:28:50     INFO -    Using cached https://pypi.pub.build.mozilla.org/pub/simplejson-3.3.0.tar.gz (67 kB)
+08:28:50     INFO -    Preparing metadata (setup.py): started
+08:28:50     INFO -    Preparing metadata (setup.py): finished with status 'done'
+08:28:50     INFO -  Requirement already satisfied: requests>=2.9.1 in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/lib/python3.10/site-packages (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/source_requirements.txt (line 14)) (2.27.1)
+08:28:50     INFO -  Requirement already satisfied: manifestparser>=2.1.0 in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/manifestparser (from -r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/source_requirements.txt (line 18)) (2.3.0)
+08:28:50     INFO -  Requirement already satisfied: blessed>=1.19.1 in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/lib/python3.10/site-packages (from mozlog>=6.0->-r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/source_requirements.txt (line 4)) (1.19.1)
+08:28:50     INFO -  Requirement already satisfied: mozterm in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/python/mozterm (from mozlog>=6.0->-r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/source_requirements.txt (line 4)) (1.0.0)
+08:28:50     INFO -  Requirement already satisfied: six>=1.13.0 in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/lib/python3.10/site-packages (from mozlog>=6.0->-r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/source_requirements.txt (line 4)) (1.15.0)
+08:28:50     INFO -  Requirement already satisfied: distro>=1.4.0 in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/lib/python3.10/site-packages (from mozinfo>=0.8->-r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/source_requirements.txt (line 7)) (1.4.0)
+08:28:50     INFO -  Requirement already satisfied: mozdevice<5,>=4.0.0 in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozbase/mozdevice (from mozrunner>=7.1.0->-r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/source_requirements.txt (line 11)) (4.1.1)
+08:28:50     INFO -  Requirement already satisfied: charset-normalizer~=2.0.0 in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/lib/python3.10/site-packages (from requests>=2.9.1->-r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/source_requirements.txt (line 14)) (2.0.12)
+08:28:50     INFO -  Requirement already satisfied: urllib3<1.27,>=1.21.1 in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/lib/python3.10/site-packages (from requests>=2.9.1->-r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/source_requirements.txt (line 14)) (1.26.9)
+08:28:50     INFO -  Requirement already satisfied: certifi>=2017.4.17 in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/lib/python3.10/site-packages (from requests>=2.9.1->-r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/source_requirements.txt (line 14)) (2020.12.5)
+08:28:50     INFO -  Requirement already satisfied: idna<4,>=2.5 in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/lib/python3.10/site-packages (from requests>=2.9.1->-r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/source_requirements.txt (line 14)) (2.10)
+08:28:50     INFO -  Collecting hyperframe<7,>=6.0
+08:28:50     INFO -    Using cached https://pypi.pub.build.mozilla.org/pub/hyperframe-6.0.0-py3-none-any.whl (11 kB)
+08:28:50     INFO -  Collecting hpack<5,>=4.0
+08:28:50     INFO -    Using cached https://pypi.pub.build.mozilla.org/pub/hpack-4.0.0-py3-none-any.whl (32 kB)
+08:28:50     INFO -  Requirement already satisfied: toml>=0.10.2 in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/lib/python3.10/site-packages (from manifestparser>=2.1.0->-r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/source_requirements.txt (line 18)) (0.10.2)
+08:28:50     INFO -  Requirement already satisfied: tomlkit>=0.11.8 in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/lib/python3.10/site-packages (from manifestparser>=2.1.0->-r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/source_requirements.txt (line 18)) (0.12.3)
+08:28:50     INFO -  Requirement already satisfied: wcwidth>=0.1.4 in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/lib/python3.10/site-packages (from blessed>=1.19.1->mozlog>=6.0->-r /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/source_requirements.txt (line 4)) (0.1.7)
+08:28:50     INFO -  Installing collected packages: simplejson, mod-pywebsocket, hyperframe, hpack, h2, wptserve
+08:28:50     INFO -    DEPRECATION: simplejson is being installed using the legacy 'setup.py install' method, because it does not have a 'pyproject.toml' and the 'wheel' package is not installed. pip 23.1 will enforce this behaviour change. A possible replacement is to enable the '--use-pep517' option. Discussion can be found at https://github.com/pypa/pip/issues/8559
+08:28:50     INFO -    Running setup.py install for simplejson: started
+08:28:51     INFO -    Running setup.py install for simplejson: finished with status 'done'
+08:28:51     INFO -    DEPRECATION: mod-pywebsocket is being installed using the legacy 'setup.py install' method, because it does not have a 'pyproject.toml' and the 'wheel' package is not installed. pip 23.1 will enforce this behaviour change. A possible replacement is to enable the '--use-pep517' option. Discussion can be found at https://github.com/pypa/pip/issues/8559
+08:28:51     INFO -    Running setup.py install for mod-pywebsocket: started
+08:28:51     INFO -    Running setup.py install for mod-pywebsocket: finished with status 'done'
+08:28:51     INFO -    DEPRECATION: h2 is being installed using the legacy 'setup.py install' method, because it does not have a 'pyproject.toml' and the 'wheel' package is not installed. pip 23.1 will enforce this behaviour change. A possible replacement is to enable the '--use-pep517' option. Discussion can be found at https://github.com/pypa/pip/issues/8559
+08:28:51     INFO -    Running setup.py install for h2: started
+08:28:51     INFO -    Running setup.py install for h2: finished with status 'done'
+08:28:51     INFO -    DEPRECATION: wptserve is being installed using the legacy 'setup.py install' method, because it does not have a 'pyproject.toml' and the 'wheel' package is not installed. pip 23.1 will enforce this behaviour change. A possible replacement is to enable the '--use-pep517' option. Discussion can be found at https://github.com/pypa/pip/issues/8559
+08:28:51     INFO -    Running setup.py install for wptserve: started
+08:28:51     INFO -    Running setup.py install for wptserve: finished with status 'done'
+08:28:51     INFO -  Successfully installed h2-4.1.0 hpack-4.0.0 hyperframe-6.0.0 mod-pywebsocket-3.0.2 simplejson-3.3.0 wptserve-4.0
+08:28:51     INFO - Return code: 0
+08:28:51     INFO - Running post-action listener: _resource_record_post_action
+08:28:51     INFO - Running post-action listener: _start_resource_monitoring
+08:28:51     INFO - Starting resource monitoring.
+08:28:51     INFO - [mozharness: 2024-02-04 08:28:51.618656Z] Finished create-virtualenv step (success)
+08:28:51     INFO - [mozharness: 2024-02-04 08:28:51.620667Z] Skipping install step.
+08:28:51     INFO - [mozharness: 2024-02-04 08:28:51.620721Z] Running run-tests step.
+08:28:51     INFO - Running pre-action listener: _resource_record_pre_action
+08:28:51     INFO - Running pre-action listener: _set_gcov_prefix
+08:28:51     INFO - Running main action method: run_tests
+08:28:51     INFO - Running command: ['/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin/python', '--version']
+08:28:51     INFO - Copy/paste: /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin/python --version
+08:28:51     INFO -  Python 3.10.12
+08:28:51     INFO - Return code: 0
+08:28:51     INFO - ENV: MOZ_UPLOAD_DIR is now /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozharness/build/blobber_upload_dir
+08:28:51     INFO - ENV: MINIDUMP_SAVE_PATH is now /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozharness/build/blobber_upload_dir
+08:28:51     INFO - ENV: RUST_BACKTRACE is now full
+08:28:51     INFO - Running command: ['/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin/python', '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/talos/run_tests.py', '--executablePath', '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/dist/bin/firefox', '--title', 'shr-work', '--develop', '--activeTests', 'graphite_perf_test', '--log-tbpl-level=info'] in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozharness/build
+08:28:51     INFO - Copy/paste: /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin/python /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/talos/run_tests.py --executablePath /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/dist/bin/firefox --title shr-work --develop --activeTests graphite_perf_test --log-tbpl-level=info
+08:28:51     INFO - Using env: {'COLORTERM': 'truecolor',
+08:28:51     INFO -  'DISPLAY': ':1',
+08:28:51     INFO -  'HOME': '/home/shr',
+08:28:51     INFO -  'LANG': 'en_US.UTF-8',
+08:28:51     INFO -  'LC_ALL': 'C',
+08:28:51     INFO -  'LC_LANG': 'C',
+08:28:51     INFO -  'LOGNAME': 'shr',
+08:28:51     INFO -  'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:',
+08:28:51     INFO -  'MACH_MAIN_PID': '1063945',
+08:28:51     INFO -  'MAIL': '/var/mail/shr',
+08:28:51     INFO -  'MAKEFLAGS': '',
+08:28:51     INFO -  'MAKELEVEL': '1',
+08:28:51     INFO -  'MAKE_TERMERR': '/dev/pts/1',
+08:28:51     INFO -  'MAKE_TERMOUT': '/dev/pts/1',
+08:28:51     INFO -  'MFLAGS': '',
+08:28:51     INFO -  'MINIDUMP_SAVE_PATH': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozharness/build/blobber_upload_dir',
+08:28:51     INFO -  'MOZCONFIG': 'mozconfig_native_release',
+08:28:51     INFO -  'MOZ_DEVELOPER_OBJ_DIR': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release',
+08:28:51     INFO -  'MOZ_DEVELOPER_REPO_DIR': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox',
+08:28:51     INFO -  'MOZ_UPLOAD_DIR': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozharness/build/blobber_upload_dir',
+08:28:51     INFO -  'OLDPWD': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox',
+08:28:51     INFO -  'PATH': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin:/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/common/bin:/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/mach/bin:/mnt/seconddrive/Code/seguecg-root/spec_benchmarks/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin',
+08:28:51     INFO -  'PWD': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox',
+08:28:51     INFO -  'PYTHONPATH': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos',
+08:28:51     INFO -  'REQUIRE_GPU': '0',
+08:28:51     INFO -  'RUST_BACKTRACE': 'full',
+08:28:51     INFO -  'SHELL': '/bin/bash',
+08:28:51     INFO -  'SHLVL': '1',
+08:28:51     INFO -  'SUDO_COMMAND': '/usr/bin/env '
+08:28:51     INFO -                  'PATH=/mnt/seconddrive/Code/seguecg-root/spec_benchmarks/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin '
+08:28:51     INFO -                  'bash --init-file '
+08:28:51     INFO -                  '/mnt/seconddrive/Code/seguecg-root/init_benchmark_shell.sh',
+08:28:51     INFO -  'SUDO_GID': '0',
+08:28:51     INFO -  'SUDO_UID': '0',
+08:28:51     INFO -  'SUDO_USER': 'root',
+08:28:51     INFO -  'TERM': 'xterm-256color',
+08:28:51     INFO -  'USER': 'shr',
+08:28:51     INFO -  'VIRTUAL_ENV': 'talos-venv',
+08:28:51     INFO -  'XAUTHORITY': '/run/user/1000/gdm/Xauthority',
+08:28:51     INFO -  'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME',
+08:28:51     INFO -  '_': '/usr/bin/taskset'}
+08:28:51     INFO - Calling ['/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin/python', '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/talos/run_tests.py', '--executablePath', '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/dist/bin/firefox', '--title', 'shr-work', '--develop', '--activeTests', 'graphite_perf_test', '--log-tbpl-level=info'] with output_timeout 3600
+08:28:51     INFO -  mozversion application_buildid: 20240204020029
+08:28:51     INFO -  mozversion application_changeset: 4a223e3aab98f1c3ab862c6f08c3ffd1b3fabe8b
+08:28:51     INFO -  mozversion application_display_name: Nightly
+08:28:51     INFO -  mozversion application_id: {ec8030f7-c20a-464f-9b0e-13a3a9e97384}
+08:28:51     INFO -  mozversion application_name: Firefox
+08:28:51     INFO -  mozversion application_remotingname: firefox-default
+08:28:51     INFO -  mozversion application_vendor: Mozilla
+08:28:51     INFO -  mozversion application_version: 122.0
+08:28:51     INFO -  mozversion platform_buildid: 20240204020029
+08:28:51     INFO -  mozversion platform_changeset: 4a223e3aab98f1c3ab862c6f08c3ffd1b3fabe8b
+08:28:51     INFO -  mozversion platform_version: 122.0
+08:28:51     INFO -  starting webserver on '127.0.0.1:33565'
+08:28:51     INFO -  SUITE-START | Running 1 tests
+08:28:51     INFO -  TEST-START | graphite_perf_test
+08:28:51     INFO -  Initialising browser for graphite_perf_test test...
+08:28:51     INFO -  Cloning profile located at /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/talos/base_profile
+08:28:51     INFO -  Merging profile: /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/profiles/base
+08:28:51     INFO -  Merging profile: /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/profiles/common
+08:28:51     INFO -  Merging profile: /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/profiles/perf
+08:28:51     INFO -  Installing Add-ons:
+08:28:51     INFO -  ['/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/talos/talos-powers', '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/talos/pageloader']
+08:28:51     INFO -  Installing Webextensions:
+08:28:51     INFO -  Application command: /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/dist/bin/firefox --no-remote http://127.0.0.1:33565/getInfo.html -profile /tmp/tmpdfv5atxj/profile
+08:28:51     INFO -  TEST-INFO | started process 1064195 (/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/dist/bin/firefox --no-remote http://127.0.0.1:33565/getInfo.html)
+08:28:52     INFO -  console.error: ({})
+08:28:53     INFO -  console.error: (new TypeError("this._searchProviderInfo is null", "resource:///modules/SearchSERPTelemetry.sys.mjs", 743))
+08:28:53     INFO -  __metrics
+08:28:53     INFO -  	Screen width/height: 1920/1080 (scaled from 3840/2160)
+08:28:53     INFO -  	colorDepth: 24
+08:28:53     INFO -  	Browser inner width/height: 1280/887
+08:28:53     INFO -  __metrics
+08:28:54     INFO -  JavaScript warning: resource://gre/modules/Troubleshoot.sys.mjs, line 738: WebGL context was lost.
+08:28:56     INFO -  JavaScript warning: resource://gre/modules/Troubleshoot.sys.mjs, line 738: WebGL context was lost.
+08:28:58     INFO -  about:support	{"application":{"name":"Firefox","osVersion":"Linux 6.6.6-76060606-generic #202312111032~1702306143~22.04~d28ffec~dev-Ubuntu SMP PREEMPT_DY","version":"122.0","buildID":"20240204020026","distributionID":"","userAgent":"Mozilla/5.0 (X11; Linux x86_64; rv:122.0) Gecko/20100101 Firefox/122.0","safeMode":false,"memorySizeBytes":134814408704,"diskAvailableBytes":3711547592704,"updateChannel":"default","supportURL":"https://support.mozilla.org/1/firefox/122.0/Linux/en-US/","osTheme":"Yaru / Yaru","numTotalWindows":1,"numFissionWindows":1,"numRemoteWindows":1,"fissionAutoStart":true,"fissionDecisionStatus":"enabledByDefault","remoteAutoStart":true,"policiesStatus":0,"keyLocationServiceGoogleFound":false,"keySafebrowsingGoogleFound":false,"keyMozillaFound":false},"securitySoftware":{"registeredAntiVirus":"","registeredAntiSpyware":"","registeredFirewall":""},"environmentVariables":{"DISPLAY":":1","MOZ_UPLOAD_DIR":"/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozharness/build/blobber_upload_dir","MOZ_DEVELOPER_REPO_DIR":"/mnt/seconddrive/Code/seguecg-root/seguecg-firefox","MOZ_DEVELOPER_OBJ_DIR":"/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release","MOZ_CRASHREPORTER_NO_REPORT":"1","MOZ_CRASHREPORTER":"1","MOZ_DISABLE_NONLOCAL_CONNECTIONS":"1","MOZ_NO_REMOTE":"","XRE_NO_WINDOWS_CRASH_DIALOG":"1","MOZ_ASSUME_USER_NS":"1","MOZ_CRASHREPORTER_EVENTS_DIRECTORY":"/tmp/tmpdfv5atxj/profile/crashes/events","MOZ_CRASHREPORTER_RESTART_ARG_0":"/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/dist/bin/firefox","MOZ_CRASHREPORTER_RESTART_ARG_1":"--no-remote","MOZ_CRASHREPORTER_RESTART_ARG_2":"http://127.0.0.1:33565/getInfo.html","MOZ_CRASHREPORTER_RESTART_ARG_3":"-profile","MOZ_CRASHREPORTER_RESTART_ARG_4":"/tmp/tmpdfv5atxj/profile","MOZ_CRASHREPORTER_RESTART_ARG_5":"","MOZ_CRASHREPORTER_DATA_DIRECTORY":"/home/shr/.mozilla/firefox/Crash Reports","MOZ_CRASHREPORTER_PING_DIRECTORY":"/home/shr/.mozilla/firefox/Pending Pings","MOZ_CRASHREPORTER_STRINGS_OVERRIDE":"/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/dist/bin/browser/crashreporter-override.ini","MOZ_LAUNCHED_CHILD":"","MOZ_APP_SILENT_START":"","XRE_PROFILE_PATH":"","XRE_PROFILE_LOCAL_PATH":"","XRE_START_OFFLINE":"","XRE_BINARY_PATH":"","XRE_RESTARTED_BY_PROFILE_MANAGER":""},"modifiedPreferences":{"browser.cache.disk.smart_size.enabled":false,"browser.contentblocking.category":"custom","browser.link.open_newwindow":2,"browser.search.region":"US","browser.startup.homepage_override.mstone":"122.0","browser.startup.homepage_override.buildID":"20240204020026","browser.tabs.remote.autostart":true,"browser.tabs.remote.systemTriggeredAboutBlankAnywhere":true,"browser.tabs.unloadOnLowMemory":false,"browser.urlbar.quicksuggest.migrationVersion":2,"browser.urlbar.quicksuggest.scenario":"offline","doh-rollout.home-region":"US","dom.forms.autocomplete.formautofill":true,"dom.allow_scripts_to_close_windows":true,"dom.disable_open_during_load":false,"dom.disable_window_flip":true,"dom.disable_window_move_resize":true,"dom.input_events.security.minNumTicks":0,"dom.input_events.security.minTimeElapsedInMS":0,"dom.max_chrome_script_run_time":0,"dom.max_script_run_time":0,"dom.push.connection.enabled":false,"dom.send_after_paint_to_content":true,"extensions.checkCompatibility":false,"extensions.lastAppVersion":"122.0","general.useragent.updates.enabled":false,"gfx.webrender.all":true,"idle.lastDailyNotification":-1,"media.gmp.storage.version.observed":1,"media.allowed-to-play.enabled":true,"media.autoplay.ask-permission":false,"media.autoplay.blocking_policy":0,"media.autoplay.default":0,"media.block-autoplay-until-in-foreground":false,"media.capturestream_hints.enabled":true,"media.geckoview.autoplay.request":false,"media.gmp-manager.updateEnabled":false,"media.gmp-manager.url":"http://127.0.0.1/gmpmanager-dummy/update.xml","media.libavcodec.allow-obsolete":true,"media.navigator.enabled":true,"media.navigator.permission.disabled":true,"media.peerconnection.enabled":true,"media.webspeech.synth.dont_notify_on_error":true,"places.database.lastMaintenance":2147483647,"privacy.trackingprotection.introURL":"http://127.0.0.1/trackingprotection/tour","privacy.sanitize.pending":"[{\"id\":\"newtab-container\",\"itemsToClear\":[],\"options\":{}}]","privacy.reduceTimerPrecision":false,"privacy.trackingprotection.annotate_channels":false,"privacy.trackingprotection.enabled":false,"privacy.trackingprotection.pbmode.enabled":false,"security.certerrors.mitm.priming.enabled":false,"security.enable_java":false,"security.external_protocol_requires_permission":false,"security.fileuri.strict_origin_policy":false,"security.sandbox.content.tempDirSuffix":"e723caf6-4491-4e56-b6c4-cdab65b85c47","security.turn_off_all_security_so_that_viruses_can_take_over_this_computer":true,"services.sync.engine.addresses.available":true,"widget.gtk.overlay-scrollbars.enabled":false},"lockedPreferences":{"fission.autostart.session":true},"printingPreferences":{},"media":{"currentAudioBackend":"(remote error)","currentMaxAudioChannels":0,"currentPreferredSampleRate":44100,"audioOutputDevices":[],"audioInputDevices":[],"codecSupportInfo":""},"accessibility":{"isActive":false,"forceDisabled":0,"instantiator":""},"startupCache":{"DiskCachePath":"/tmp/tmpdfv5atxj/profile/startupCache/startupCache.8.little","IgnoreDiskCache":false,"FoundDiskCacheOnInit":false,"WroteToDiskCache":false},"libraryVersions":{"NSPR":{"minVersion":"4.35","version":"4.35"},"NSS":{"minVersion":"3.96.1","version":"3.96.1"},"NSSUTIL":{"minVersion":"3.96.1","version":"3.96.1"},"NSSSSL":{"minVersion":"3.96.1","version":"3.96.1"},"NSSSMIME":{"minVersion":"3.96.1","version":"3.96.1"}},"userJS":{"exists":true},"intl":{"localeService":{"requested":["en-US"],"available":["en-US"],"supported":["en-US"],"regionalPrefs":["en-US-posix"],"defaultLocale":"en-US"},"osPrefs":{"systemLocales":["en-US-posix"],"regionalPrefsLocales":["en-US-posix"]}},"crashes":{"submitted":[],"pending":0},"sandbox":{"hasSeccompBPF":true,"hasSeccompTSync":true,"hasPrivilegedUserNamespaces":true,"hasUserNamespaces":true,"canSandboxContent":true,"canSandboxMedia":true,"syscallLog":[],"contentSandboxLevel":4,"effectiveContentSandboxLevel":4},"remoteAgent":{"running":false,"url":""},"experimentalFeatures":[["experimental-features-cookie-samesite-none-requires-secure2","network.cookie.sameSite.noneRequiresSecure",false],["experimental-features-css-masonry2","layout.css.grid-template-masonry-value.enabled",false],["experimental-features-devtools-serviceworker-debugger-support","devtools.debugger.features.windowless-service-workers",false],["experimental-features-media-jxl","image.jxl.enabled",false],["experimental-features-ime-search","browser.urlbar.keepPanelOpenDuringImeComposition",false],["experimental-features-web-gpu2","dom.webgpu.enabled",false],["experimental-features-webrtc-global-mute-toggles","privacy.webrtc.globalMuteToggles",false]],"graphics":{"desktopEnvironment":"ubuntu:gnome","numTotalWindows":1,"numAcceleratedWindows":1,"windowLayerManagerType":"WebRender","windowLayerManagerRemote":true,"graphicsDevicePixelRatios":[2],"adapterDescription":"NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2","adapterVendorID":"0x10de","adapterDeviceID":"0x2803","adapterRAM":0,"adapterDrivers":"","driverVendor":"nvidia/unknown","driverVersion":"545.29.6.0","driverDate":"","adapterVendorID2":"0x8086","adapterDeviceID2":"0xa780","isGPU2Active":false,"targetFrameRate":60,"windowProtocol":"x11","webgl1Renderer":"NVIDIA Corporation -- NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2","webgl1Version":"4.6.0 NVIDIA 545.29.06","webgl1DriverExtensions":"GL_AMD_multi_draw_indirect GL_AMD_seamless_cubemap_per_texture GL_AMD_vertex_shader_viewport_index GL_AMD_vertex_shader_layer GL_ARB_arrays_of_arrays GL_ARB_base_instance GL_ARB_bindless_texture GL_ARB_blend_func_extended GL_ARB_buffer_storage GL_ARB_clear_buffer_object GL_ARB_clear_texture GL_ARB_clip_control GL_ARB_color_buffer_float GL_ARB_compatibility GL_ARB_compressed_texture_pixel_storage GL_ARB_conservative_depth GL_ARB_compute_shader GL_ARB_compute_variable_group_size GL_ARB_conditional_render_inverted GL_ARB_copy_buffer GL_ARB_copy_image GL_ARB_cull_distance GL_ARB_debug_output GL_ARB_depth_buffer_float GL_ARB_depth_clamp GL_ARB_depth_texture GL_ARB_derivative_control GL_ARB_direct_state_access GL_ARB_draw_buffers GL_ARB_draw_buffers_blend GL_ARB_draw_indirect GL_ARB_draw_elements_base_vertex GL_ARB_draw_instanced GL_ARB_enhanced_layouts GL_ARB_ES2_compatibility GL_ARB_ES3_compatibility GL_ARB_ES3_1_compatibility GL_ARB_ES3_2_compatibility GL_ARB_explicit_attrib_location GL_ARB_explicit_uniform_location GL_ARB_fragment_coord_conventions GL_ARB_fragment_layer_viewport GL_ARB_fragment_program GL_ARB_fragment_program_shadow GL_ARB_fragment_shader GL_ARB_fragment_shader_interlock GL_ARB_framebuffer_no_attachments GL_ARB_framebuffer_object GL_ARB_framebuffer_sRGB GL_ARB_geometry_shader4 GL_ARB_get_program_binary GL_ARB_get_texture_sub_image GL_ARB_gl_spirv GL_ARB_gpu_shader5 GL_ARB_gpu_shader_fp64 GL_ARB_gpu_shader_int64 GL_ARB_half_float_pixel GL_ARB_half_float_vertex GL_ARB_imaging GL_ARB_indirect_parameters GL_ARB_instanced_arrays GL_ARB_internalformat_query GL_ARB_internalformat_query2 GL_ARB_invalidate_subdata GL_ARB_map_buffer_alignment GL_ARB_map_buffer_range GL_ARB_multi_bind GL_ARB_multi_draw_indirect GL_ARB_multisample GL_ARB_multitexture GL_ARB_occlusion_query GL_ARB_occlusion_query2 GL_ARB_parallel_shader_compile GL_ARB_pipeline_statistics_query GL_ARB_pixel_buffer_object GL_ARB_point_parameters GL_ARB_point_sprite GL_ARB_polygon_offset_clamp GL_ARB_post_depth_coverage GL_ARB_program_interface_query GL_ARB_provoking_vertex GL_ARB_query_buffer_object GL_ARB_robust_buffer_access_behavior GL_ARB_robustness GL_ARB_sample_locations GL_ARB_sample_shading GL_ARB_sampler_objects GL_ARB_seamless_cube_map GL_ARB_seamless_cubemap_per_texture GL_ARB_separate_shader_objects GL_ARB_shader_atomic_counter_ops GL_ARB_shader_atomic_counters GL_ARB_shader_ballot GL_ARB_shader_bit_encoding GL_ARB_shader_clock GL_ARB_shader_draw_parameters GL_ARB_shader_group_vote GL_ARB_shader_image_load_store GL_ARB_shader_image_size GL_ARB_shader_objects GL_ARB_shader_precision GL_ARB_shader_storage_buffer_object GL_ARB_shader_subroutine GL_ARB_shader_texture_image_samples GL_ARB_shader_texture_lod GL_ARB_shading_language_100 GL_ARB_shader_viewport_layer_array GL_ARB_shading_language_420pack GL_ARB_shading_language_include GL_ARB_shading_language_packing GL_ARB_shadow GL_ARB_sparse_buffer GL_ARB_sparse_texture GL_ARB_sparse_texture2 GL_ARB_sparse_texture_clamp GL_ARB_spirv_extensions GL_ARB_stencil_texturing GL_ARB_sync GL_ARB_tessellation_shader GL_ARB_texture_barrier GL_ARB_texture_border_clamp GL_ARB_texture_buffer_object GL_ARB_texture_buffer_object_rgb32 GL_ARB_texture_buffer_range GL_ARB_texture_compression GL_ARB_texture_compression_bptc GL_ARB_texture_compression_rgtc GL_ARB_texture_cube_map GL_ARB_texture_cube_map_array GL_ARB_texture_env_add GL_ARB_texture_env_combine GL_ARB_texture_env_crossbar GL_ARB_texture_env_dot3 GL_ARB_texture_filter_anisotropic GL_ARB_texture_filter_minmax GL_ARB_texture_float GL_ARB_texture_gather GL_ARB_texture_mirror_clamp_to_edge GL_ARB_texture_mirrored_repeat GL_ARB_texture_multisample GL_ARB_texture_non_power_of_two GL_ARB_texture_query_levels GL_ARB_texture_query_lod GL_ARB_texture_rectangle GL_ARB_texture_rg GL_ARB_texture_rgb10_a2ui GL_ARB_texture_stencil8 GL_ARB_texture_storage GL_ARB_texture_storage_multisample GL_ARB_texture_swizzle GL_ARB_texture_view GL_ARB_timer_query GL_ARB_transform_feedback2 GL_ARB_transform_feedback3 GL_ARB_transform_feedback_instanced GL_ARB_transform_feedback_overflow_query GL_ARB_transpose_matrix GL_ARB_uniform_buffer_object GL_ARB_vertex_array_bgra GL_ARB_vertex_array_object GL_ARB_vertex_attrib_64bit GL_ARB_vertex_attrib_binding GL_ARB_vertex_buffer_object GL_ARB_vertex_program GL_ARB_vertex_shader GL_ARB_vertex_type_10f_11f_11f_rev GL_ARB_vertex_type_2_10_10_10_rev GL_ARB_viewport_array GL_ARB_window_pos GL_ATI_draw_buffers GL_ATI_texture_float GL_ATI_texture_mirror_once GL_S3_s3tc GL_EXT_texture_env_add GL_EXT_abgr GL_EXT_bgra GL_EXT_bindable_uniform GL_EXT_blend_color GL_EXT_blend_equation_separate GL_EXT_blend_func_separate GL_EXT_blend_minmax GL_EXT_blend_subtract GL_EXT_compiled_vertex_array GL_EXT_Cg_shader GL_EXT_depth_bounds_test GL_EXT_direct_state_access GL_EXT_draw_buffers2 GL_EXT_draw_instanced GL_EXT_draw_range_elements GL_EXT_EGL_image_storage GL_EXT_fog_coord GL_EXT_framebuffer_blit GL_EXT_framebuffer_multisample GL_EXTX_framebuffer_mixed_formats GL_EXT_framebuffer_multisample_blit_scaled GL_EXT_framebuffer_object GL_EXT_framebuffer_sRGB GL_EXT_geometry_shader4 GL_EXT_gpu_program_parameters GL_EXT_gpu_shader4 GL_EXT_multi_draw_arrays GL_EXT_multiview_texture_multisample GL_EXT_multiview_timer_query GL_EXT_packed_depth_stencil GL_EXT_packed_float GL_EXT_packed_pixels GL_EXT_pixel_buffer_object GL_EXT_point_parameters GL_EXT_polygon_offset_clamp GL_EXT_post_depth_coverage GL_EXT_provoking_vertex GL_EXT_raster_multisample GL_EXT_rescale_normal GL_EXT_secondary_color GL_EXT_separate_shader_objects GL_EXT_separate_specular_color GL_EXT_shader_image_load_formatted GL_EXT_shader_image_load_store GL_EXT_shader_integer_mix GL_EXT_shadow_funcs GL_EXT_sparse_texture2 GL_EXT_stencil_two_side GL_EXT_stencil_wrap GL_EXT_texture3D GL_EXT_texture_array GL_EXT_texture_buffer_object GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_latc GL_EXT_texture_compression_rgtc GL_EXT_texture_compression_s3tc GL_EXT_texture_cube_map GL_EXT_texture_edge_clamp GL_EXT_texture_env_combine GL_EXT_texture_env_dot3 GL_EXT_texture_filter_anisotropic GL_EXT_texture_filter_minmax GL_EXT_texture_integer GL_EXT_texture_lod GL_EXT_texture_lod_bias GL_EXT_texture_mirror_clamp GL_EXT_texture_object GL_EXT_texture_shadow_lod GL_EXT_texture_shared_exponent GL_EXT_texture_sRGB GL_EXT_texture_sRGB_R8 GL_EXT_texture_sRGB_decode GL_EXT_texture_storage GL_EXT_texture_swizzle GL_EXT_timer_query GL_EXT_transform_feedback2 GL_EXT_vertex_array GL_EXT_vertex_array_bgra GL_EXT_vertex_attrib_64bit GL_EXT_window_rectangles GL_EXT_import_sync_object GL_NV_robustness_video_memory_purge GL_IBM_rasterpos_clip GL_IBM_texture_mirrored_repeat GL_KHR_context_flush_control GL_KHR_debug GL_EXT_memory_object GL_EXT_memory_object_fd GL_NV_memory_object_sparse GL_KHR_parallel_shader_compile GL_KHR_no_error GL_KHR_robust_buffer_access_behavior GL_KHR_robustness GL_EXT_semaphore GL_EXT_semaphore_fd GL_NV_timeline_semaphore GL_KHR_shader_subgroup GL_KTX_buffer_region GL_NV_alpha_to_coverage_dither_control GL_NV_bindless_multi_draw_indirect GL_NV_bindless_multi_draw_indirect_count GL_NV_bindless_texture GL_NV_blend_equation_advanced GL_NV_blend_equation_advanced_coherent GL_NVX_blend_equation_advanced_multi_draw_buffers GL_NV_blend_minmax_factor GL_NV_blend_square GL_NV_clip_space_w_scaling GL_NV_command_list GL_NV_compute_program5 GL_NV_compute_shader_derivatives GL_NV_conditional_render GL_NV_conservative_raster GL_NV_conservative_raster_dilate GL_NV_conservative_raster_pre_snap GL_NV_conservative_raster_pre_snap_triangles GL_NV_conservative_raster_underestimation GL_NV_copy_depth_to_color GL_NV_copy_image GL_NV_depth_buffer_float GL_NV_depth_clamp GL_NV_draw_texture GL_NV_draw_vulkan_image GL_NV_ES1_1_compatibility GL_NV_ES3_1_compatibility GL_NV_explicit_multisample GL_NV_feature_query GL_NV_fence GL_NV_fill_rectangle GL_NV_float_buffer GL_NV_fog_distance GL_NV_fragment_coverage_to_color GL_NV_fragment_program GL_NV_fragment_program_option GL_NV_fragment_program2 GL_NV_fragment_shader_barycentric GL_NV_fragment_shader_interlock GL_NV_framebuffer_mixed_samples GL_NV_framebuffer_multisample_coverage GL_NV_geometry_shader4 GL_NV_geometry_shader_passthrough GL_NV_gpu_program4 GL_NV_internalformat_sample_query GL_NV_gpu_program4_1 GL_NV_gpu_program5 GL_NV_gpu_program5_mem_extended GL_NV_gpu_program_fp64 GL_NV_gpu_shader5 GL_NV_half_float GL_NV_light_max_exponent GL_NV_memory_attachment GL_NV_mesh_shader GL_NV_multisample_coverage GL_NV_multisample_filter_hint GL_NV_occlusion_query GL_NV_packed_depth_stencil GL_NV_parameter_buffer_object GL_NV_parameter_buffer_object2 GL_NV_path_rendering GL_NV_path_rendering_shared_edge GL_NV_point_sprite GL_NV_primitive_restart GL_NV_primitive_shading_rate GL_NV_query_resource GL_NV_query_resource_tag GL_NV_register_combiners GL_NV_register_combiners2 GL_NV_representative_fragment_test GL_NV_sample_locations GL_NV_sample_mask_override_coverage GL_NV_scissor_exclusive GL_NV_shader_atomic_counters GL_NV_shader_atomic_float GL_NV_shader_atomic_float64 GL_NV_shader_atomic_fp16_vector GL_NV_shader_atomic_int64 GL_NV_shader_buffer_load GL_NV_shader_storage_buffer_object GL_NV_shader_subgroup_partitioned GL_NV_shader_texture_footprint GL_NV_shading_rate_image GL_NV_stereo_view_rendering GL_NV_texgen_reflection GL_NV_texture_barrier GL_NV_texture_compression_vtc GL_NV_texture_dirty_tile_map GL_NV_texture_env_combine4 GL_NV_texture_multisample GL_NV_texture_rectangle GL_NV_texture_rectangle_compressed GL_NV_texture_shader GL_NV_texture_shader2 GL_NV_texture_shader3 GL_NV_transform_feedback GL_NV_transform_feedback2 GL_NV_uniform_buffer_unified_memory GL_NV_uniform_buffer_std430_layout GL_NV_vertex_attrib_integer_64bit GL_NV_vertex_buffer_unified_memory GL_NV_vertex_program GL_NV_vertex_program1_1 GL_NV_vertex_program2 GL_NV_vertex_program2_option GL_NV_vertex_program3 GL_NV_viewport_array2 GL_NV_viewport_swizzle GL_NVX_conditional_render GL_NV_gpu_multicast GL_NVX_progress_fence GL_NVX_gpu_memory_info GL_NV_shader_thread_group GL_NV_shader_thread_shuffle GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_OES_EGL_image GL_OVR_multiview GL_OVR_multiview2 GL_SGIS_generate_mipmap GL_SGIS_texture_lod GL_SGIX_depth_texture GL_SGIX_shadow GL_SUN_slice_accum ","webgl1Extensions":"ANGLE_instanced_arrays EXT_blend_minmax EXT_color_buffer_half_float EXT_float_blend EXT_frag_depth EXT_shader_texture_lod EXT_sRGB EXT_texture_compression_bptc EXT_texture_compression_rgtc EXT_texture_filter_anisotropic MOZ_debug OES_element_index_uint OES_fbo_render_mipmap OES_standard_derivatives OES_texture_float OES_texture_float_linear OES_texture_half_float OES_texture_half_float_linear OES_vertex_array_object WEBGL_color_buffer_float WEBGL_compressed_texture_etc WEBGL_compressed_texture_s3tc WEBGL_compressed_texture_s3tc_srgb WEBGL_debug_renderer_info WEBGL_debug_shaders WEBGL_depth_texture WEBGL_draw_buffers WEBGL_lose_context","webgl1WSIInfo":"EGL_VENDOR: NVIDIA\nEGL_VERSION: 1.5\nEGL_EXTENSIONS: EGL_ANDROID_native_fence_sync EGL_EXT_buffer_age EGL_EXT_client_sync EGL_EXT_create_context_robustness EGL_EXT_image_dma_buf_import EGL_EXT_image_dma_buf_import_modifiers EGL_MESA_image_dma_buf_export EGL_EXT_output_base EGL_EXT_stream_acquire_mode EGL_EXT_sync_reuse EGL_IMG_context_priority EGL_KHR_config_attribs EGL_KHR_create_context_no_error EGL_KHR_context_flush_control EGL_KHR_create_context EGL_KHR_fence_sync EGL_KHR_get_all_proc_addresses EGL_KHR_partial_update EGL_KHR_swap_buffers_with_damage EGL_KHR_no_config_context EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image EGL_KHR_image_base EGL_KHR_image_pixmap EGL_KHR_reusable_sync EGL_KHR_stream EGL_KHR_stream_attrib EGL_KHR_stream_consumer_gltexture EGL_KHR_stream_cross_process_fd EGL_KHR_stream_fifo EGL_KHR_stream_producer_eglsurface EGL_KHR_surfaceless_context EGL_KHR_wait_sync EGL_NV_nvrm_fence_sync EGL_NV_post_sub_buffer EGL_NV_quadruple_buffer EGL_NV_stream_consumer_eglimage EGL_NV_stream_cross_display EGL_NV_stream_cross_object EGL_NV_stream_cross_process EGL_NV_stream_cross_system EGL_NV_stream_dma EGL_NV_stream_flush EGL_NV_stream_metadata EGL_NV_stream_remote EGL_NV_stream_reset EGL_NV_stream_socket EGL_NV_stream_socket_inet EGL_NV_stream_socket_unix EGL_NV_stream_sync EGL_NV_stream_fifo_next EGL_NV_stream_fifo_synchronous EGL_NV_stream_consumer_gltexture_yuv EGL_NV_stream_attrib EGL_NV_stream_origin EGL_NV_system_time EGL_NV_output_drm_flip_event EGL_NV_triple_buffer EGL_NV_robustness_video_memory_purge EGL_WL_bind_wayland_display EGL_WL_wayland_eglstream\nEGL_EXTENSIONS(nullptr): EGL_EXT_platform_base EGL_EXT_device_base EGL_EXT_device_enumeration EGL_EXT_device_query EGL_KHR_client_get_all_proc_addresses EGL_EXT_client_extensions EGL_KHR_debug EGL_KHR_platform_x11 EGL_EXT_platform_x11 EGL_EXT_platform_device EGL_MESA_platform_surfaceless EGL_EXT_explicit_device EGL_KHR_platform_wayland EGL_EXT_platform_wayland EGL_KHR_platform_gbm EGL_MESA_platform_gbm EGL_EXT_platform_xcb\nIsWebglOutOfProcessEnabled: 1","webgl2Renderer":"NVIDIA Corporation -- NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2","webgl2Version":"3.2.0 NVIDIA 545.29.06","webgl2DriverExtensions":"GL_AMD_multi_draw_indirect GL_AMD_seamless_cubemap_per_texture GL_AMD_vertex_shader_viewport_index GL_AMD_vertex_shader_layer GL_ARB_arrays_of_arrays GL_ARB_base_instance GL_ARB_bindless_texture GL_ARB_blend_func_extended GL_ARB_buffer_storage GL_ARB_clear_buffer_object GL_ARB_clear_texture GL_ARB_clip_control GL_ARB_color_buffer_float GL_ARB_compressed_texture_pixel_storage GL_ARB_conservative_depth GL_ARB_compute_shader GL_ARB_compute_variable_group_size GL_ARB_conditional_render_inverted GL_ARB_copy_buffer GL_ARB_copy_image GL_ARB_cull_distance GL_ARB_debug_output GL_ARB_depth_buffer_float GL_ARB_depth_clamp GL_ARB_depth_texture GL_ARB_derivative_control GL_ARB_direct_state_access GL_ARB_draw_buffers GL_ARB_draw_buffers_blend GL_ARB_draw_indirect GL_ARB_draw_elements_base_vertex GL_ARB_draw_instanced GL_ARB_enhanced_layouts GL_ARB_ES2_compatibility GL_ARB_ES3_compatibility GL_ARB_ES3_1_compatibility GL_ARB_ES3_2_compatibility GL_ARB_explicit_attrib_location GL_ARB_explicit_uniform_location GL_ARB_fragment_coord_conventions GL_ARB_fragment_layer_viewport GL_ARB_fragment_program GL_ARB_fragment_program_shadow GL_ARB_fragment_shader GL_ARB_fragment_shader_interlock GL_ARB_framebuffer_no_attachments GL_ARB_framebuffer_object GL_ARB_framebuffer_sRGB GL_ARB_geometry_shader4 GL_ARB_get_program_binary GL_ARB_get_texture_sub_image GL_ARB_gl_spirv GL_ARB_gpu_shader5 GL_ARB_gpu_shader_fp64 GL_ARB_gpu_shader_int64 GL_ARB_half_float_pixel GL_ARB_half_float_vertex GL_ARB_imaging GL_ARB_indirect_parameters GL_ARB_instanced_arrays GL_ARB_internalformat_query GL_ARB_internalformat_query2 GL_ARB_invalidate_subdata GL_ARB_map_buffer_alignment GL_ARB_map_buffer_range GL_ARB_multi_bind GL_ARB_multi_draw_indirect GL_ARB_multisample GL_ARB_multitexture GL_ARB_occlusion_query GL_ARB_occlusion_query2 GL_ARB_parallel_shader_compile GL_ARB_pipeline_statistics_query GL_ARB_pixel_buffer_object GL_ARB_point_parameters GL_ARB_point_sprite GL_ARB_polygon_offset_clamp GL_ARB_post_depth_coverage GL_ARB_program_interface_query GL_ARB_provoking_vertex GL_ARB_query_buffer_object GL_ARB_robust_buffer_access_behavior GL_ARB_robustness GL_ARB_sample_locations GL_ARB_sample_shading GL_ARB_sampler_objects GL_ARB_seamless_cube_map GL_ARB_seamless_cubemap_per_texture GL_ARB_separate_shader_objects GL_ARB_shader_atomic_counter_ops GL_ARB_shader_atomic_counters GL_ARB_shader_ballot GL_ARB_shader_bit_encoding GL_ARB_shader_clock GL_ARB_shader_draw_parameters GL_ARB_shader_group_vote GL_ARB_shader_image_load_store GL_ARB_shader_image_size GL_ARB_shader_objects GL_ARB_shader_precision GL_ARB_shader_storage_buffer_object GL_ARB_shader_subroutine GL_ARB_shader_texture_image_samples GL_ARB_shader_texture_lod GL_ARB_shading_language_100 GL_ARB_shader_viewport_layer_array GL_ARB_shading_language_420pack GL_ARB_shading_language_include GL_ARB_shading_language_packing GL_ARB_shadow GL_ARB_sparse_buffer GL_ARB_sparse_texture GL_ARB_sparse_texture2 GL_ARB_sparse_texture_clamp GL_ARB_spirv_extensions GL_ARB_stencil_texturing GL_ARB_sync GL_ARB_tessellation_shader GL_ARB_texture_barrier GL_ARB_texture_border_clamp GL_ARB_texture_buffer_object GL_ARB_texture_buffer_object_rgb32 GL_ARB_texture_buffer_range GL_ARB_texture_compression GL_ARB_texture_compression_bptc GL_ARB_texture_compression_rgtc GL_ARB_texture_cube_map GL_ARB_texture_cube_map_array GL_ARB_texture_env_add GL_ARB_texture_env_combine GL_ARB_texture_env_crossbar GL_ARB_texture_env_dot3 GL_ARB_texture_filter_anisotropic GL_ARB_texture_filter_minmax GL_ARB_texture_float GL_ARB_texture_gather GL_ARB_texture_mirror_clamp_to_edge GL_ARB_texture_mirrored_repeat GL_ARB_texture_multisample GL_ARB_texture_non_power_of_two GL_ARB_texture_query_levels GL_ARB_texture_query_lod GL_ARB_texture_rectangle GL_ARB_texture_rg GL_ARB_texture_rgb10_a2ui GL_ARB_texture_stencil8 GL_ARB_texture_storage GL_ARB_texture_storage_multisample GL_ARB_texture_swizzle GL_ARB_texture_view GL_ARB_timer_query GL_ARB_transform_feedback2 GL_ARB_transform_feedback3 GL_ARB_transform_feedback_instanced GL_ARB_transform_feedback_overflow_query GL_ARB_transpose_matrix GL_ARB_uniform_buffer_object GL_ARB_vertex_array_bgra GL_ARB_vertex_array_object GL_ARB_vertex_attrib_64bit GL_ARB_vertex_attrib_binding GL_ARB_vertex_buffer_object GL_ARB_vertex_program GL_ARB_vertex_shader GL_ARB_vertex_type_10f_11f_11f_rev GL_ARB_vertex_type_2_10_10_10_rev GL_ARB_viewport_array GL_ARB_window_pos GL_ATI_draw_buffers GL_ATI_texture_float GL_ATI_texture_mirror_once GL_S3_s3tc GL_EXT_texture_env_add GL_EXT_abgr GL_EXT_bgra GL_EXT_bindable_uniform GL_EXT_blend_color GL_EXT_blend_equation_separate GL_EXT_blend_func_separate GL_EXT_blend_minmax GL_EXT_blend_subtract GL_EXT_compiled_vertex_array GL_EXT_Cg_shader GL_EXT_depth_bounds_test GL_EXT_direct_state_access GL_EXT_draw_buffers2 GL_EXT_draw_instanced GL_EXT_draw_range_elements GL_EXT_EGL_image_storage GL_EXT_fog_coord GL_EXT_framebuffer_blit GL_EXT_framebuffer_multisample GL_EXTX_framebuffer_mixed_formats GL_EXT_framebuffer_multisample_blit_scaled GL_EXT_framebuffer_object GL_EXT_framebuffer_sRGB GL_EXT_geometry_shader4 GL_EXT_gpu_program_parameters GL_EXT_gpu_shader4 GL_EXT_multi_draw_arrays GL_EXT_multiview_texture_multisample GL_EXT_multiview_timer_query GL_EXT_packed_depth_stencil GL_EXT_packed_float GL_EXT_packed_pixels GL_EXT_pixel_buffer_object GL_EXT_point_parameters GL_EXT_polygon_offset_clamp GL_EXT_post_depth_coverage GL_EXT_provoking_vertex GL_EXT_raster_multisample GL_EXT_rescale_normal GL_EXT_secondary_color GL_EXT_separate_shader_objects GL_EXT_separate_specular_color GL_EXT_shader_image_load_formatted GL_EXT_shader_image_load_store GL_EXT_shader_integer_mix GL_EXT_shadow_funcs GL_EXT_sparse_texture2 GL_EXT_stencil_two_side GL_EXT_stencil_wrap GL_EXT_texture3D GL_EXT_texture_array GL_EXT_texture_buffer_object GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_latc GL_EXT_texture_compression_rgtc GL_EXT_texture_compression_s3tc GL_EXT_texture_cube_map GL_EXT_texture_edge_clamp GL_EXT_texture_env_combine GL_EXT_texture_env_dot3 GL_EXT_texture_filter_anisotropic GL_EXT_texture_filter_minmax GL_EXT_texture_integer GL_EXT_texture_lod GL_EXT_texture_lod_bias GL_EXT_texture_mirror_clamp GL_EXT_texture_object GL_EXT_texture_shadow_lod GL_EXT_texture_shared_exponent GL_EXT_texture_sRGB GL_EXT_texture_sRGB_R8 GL_EXT_texture_sRGB_decode GL_EXT_texture_storage GL_EXT_texture_swizzle GL_EXT_timer_query GL_EXT_transform_feedback2 GL_EXT_vertex_array GL_EXT_vertex_array_bgra GL_EXT_vertex_attrib_64bit GL_EXT_window_rectangles GL_EXT_import_sync_object GL_NV_robustness_video_memory_purge GL_IBM_rasterpos_clip GL_IBM_texture_mirrored_repeat GL_KHR_context_flush_control GL_KHR_debug GL_EXT_memory_object GL_EXT_memory_object_fd GL_NV_memory_object_sparse GL_KHR_parallel_shader_compile GL_KHR_no_error GL_KHR_robust_buffer_access_behavior GL_KHR_robustness GL_EXT_semaphore GL_EXT_semaphore_fd GL_NV_timeline_semaphore GL_KHR_shader_subgroup GL_KTX_buffer_region GL_NV_alpha_to_coverage_dither_control GL_NV_bindless_multi_draw_indirect GL_NV_bindless_multi_draw_indirect_count GL_NV_bindless_texture GL_NV_blend_equation_advanced GL_NV_blend_equation_advanced_coherent GL_NVX_blend_equation_advanced_multi_draw_buffers GL_NV_blend_minmax_factor GL_NV_blend_square GL_NV_clip_space_w_scaling GL_NV_command_list GL_NV_compute_program5 GL_NV_compute_shader_derivatives GL_NV_conditional_render GL_NV_conservative_raster GL_NV_conservative_raster_dilate GL_NV_conservative_raster_pre_snap GL_NV_conservative_raster_pre_snap_triangles GL_NV_conservative_raster_underestimation GL_NV_copy_depth_to_color GL_NV_copy_image GL_NV_depth_buffer_float GL_NV_depth_clamp GL_NV_draw_texture GL_NV_draw_vulkan_image GL_NV_ES1_1_compatibility GL_NV_ES3_1_compatibility GL_NV_explicit_multisample GL_NV_feature_query GL_NV_fence GL_NV_fill_rectangle GL_NV_float_buffer GL_NV_fog_distance GL_NV_fragment_coverage_to_color GL_NV_fragment_program GL_NV_fragment_program_option GL_NV_fragment_program2 GL_NV_fragment_shader_barycentric GL_NV_fragment_shader_interlock GL_NV_framebuffer_mixed_samples GL_NV_framebuffer_multisample_coverage GL_NV_geometry_shader4 GL_NV_geometry_shader_passthrough GL_NV_gpu_program4 GL_NV_internalformat_sample_query GL_NV_gpu_program4_1 GL_NV_gpu_program5 GL_NV_gpu_program5_mem_extended GL_NV_gpu_program_fp64 GL_NV_gpu_shader5 GL_NV_half_float GL_NV_light_max_exponent GL_NV_memory_attachment GL_NV_mesh_shader GL_NV_multisample_coverage GL_NV_multisample_filter_hint GL_NV_occlusion_query GL_NV_packed_depth_stencil GL_NV_parameter_buffer_object GL_NV_parameter_buffer_object2 GL_NV_path_rendering GL_NV_path_rendering_shared_edge GL_NV_point_sprite GL_NV_primitive_restart GL_NV_primitive_shading_rate GL_NV_query_resource GL_NV_query_resource_tag GL_NV_register_combiners GL_NV_register_combiners2 GL_NV_representative_fragment_test GL_NV_sample_locations GL_NV_sample_mask_override_coverage GL_NV_scissor_exclusive GL_NV_shader_atomic_counters GL_NV_shader_atomic_float GL_NV_shader_atomic_float64 GL_NV_shader_atomic_fp16_vector GL_NV_shader_atomic_int64 GL_NV_shader_buffer_load GL_NV_shader_storage_buffer_object GL_NV_shader_subgroup_partitioned GL_NV_shader_texture_footprint GL_NV_shading_rate_image GL_NV_stereo_view_rendering GL_NV_texgen_reflection GL_NV_texture_barrier GL_NV_texture_compression_vtc GL_NV_texture_dirty_tile_map GL_NV_texture_env_combine4 GL_NV_texture_multisample GL_NV_texture_rectangle GL_NV_texture_rectangle_compressed GL_NV_texture_shader GL_NV_texture_shader2 GL_NV_texture_shader3 GL_NV_transform_feedback GL_NV_transform_feedback2 GL_NV_uniform_buffer_unified_memory GL_NV_uniform_buffer_std430_layout GL_NV_vertex_attrib_integer_64bit GL_NV_vertex_buffer_unified_memory GL_NV_vertex_program GL_NV_vertex_program1_1 GL_NV_vertex_program2 GL_NV_vertex_program2_option GL_NV_vertex_program3 GL_NV_viewport_array2 GL_NV_viewport_swizzle GL_NVX_conditional_render GL_NV_gpu_multicast GL_NVX_progress_fence GL_NVX_gpu_memory_info GL_NV_shader_thread_group GL_NV_shader_thread_shuffle GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_OES_EGL_image GL_OVR_multiview GL_OVR_multiview2 GL_SGIS_generate_mipmap GL_SGIS_texture_lod GL_SGIX_depth_texture GL_SGIX_shadow GL_SUN_slice_accum","webgl2Extensions":"EXT_color_buffer_float EXT_float_blend EXT_texture_compression_bptc EXT_texture_compression_rgtc EXT_texture_filter_anisotropic MOZ_debug OES_draw_buffers_indexed OES_texture_float_linear OVR_multiview2 WEBGL_compressed_texture_etc WEBGL_compressed_texture_s3tc WEBGL_compressed_texture_s3tc_srgb WEBGL_debug_renderer_info WEBGL_debug_shaders WEBGL_lose_context","webgl2WSIInfo":"EGL_VENDOR: NVIDIA\nEGL_VERSION: 1.5\nEGL_EXTENSIONS: EGL_ANDROID_native_fence_sync EGL_EXT_buffer_age EGL_EXT_client_sync EGL_EXT_create_context_robustness EGL_EXT_image_dma_buf_import EGL_EXT_image_dma_buf_import_modifiers EGL_MESA_image_dma_buf_export EGL_EXT_output_base EGL_EXT_stream_acquire_mode EGL_EXT_sync_reuse EGL_IMG_context_priority EGL_KHR_config_attribs EGL_KHR_create_context_no_error EGL_KHR_context_flush_control EGL_KHR_create_context EGL_KHR_fence_sync EGL_KHR_get_all_proc_addresses EGL_KHR_partial_update EGL_KHR_swap_buffers_with_damage EGL_KHR_no_config_context EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image EGL_KHR_image_base EGL_KHR_image_pixmap EGL_KHR_reusable_sync EGL_KHR_stream EGL_KHR_stream_attrib EGL_KHR_stream_consumer_gltexture EGL_KHR_stream_cross_process_fd EGL_KHR_stream_fifo EGL_KHR_stream_producer_eglsurface EGL_KHR_surfaceless_context EGL_KHR_wait_sync EGL_NV_nvrm_fence_sync EGL_NV_post_sub_buffer EGL_NV_quadruple_buffer EGL_NV_stream_consumer_eglimage EGL_NV_stream_cross_display EGL_NV_stream_cross_object EGL_NV_stream_cross_process EGL_NV_stream_cross_system EGL_NV_stream_dma EGL_NV_stream_flush EGL_NV_stream_metadata EGL_NV_stream_remote EGL_NV_stream_reset EGL_NV_stream_socket EGL_NV_stream_socket_inet EGL_NV_stream_socket_unix EGL_NV_stream_sync EGL_NV_stream_fifo_next EGL_NV_stream_fifo_synchronous EGL_NV_stream_consumer_gltexture_yuv EGL_NV_stream_attrib EGL_NV_stream_origin EGL_NV_system_time EGL_NV_output_drm_flip_event EGL_NV_triple_buffer EGL_NV_robustness_video_memory_purge EGL_WL_bind_wayland_display EGL_WL_wayland_eglstream\nEGL_EXTENSIONS(nullptr): EGL_EXT_platform_base EGL_EXT_device_base EGL_EXT_device_enumeration EGL_EXT_device_query EGL_KHR_client_get_all_proc_addresses EGL_EXT_client_extensions EGL_KHR_debug EGL_KHR_platform_x11 EGL_EXT_platform_x11 EGL_EXT_platform_device EGL_MESA_platform_surfaceless EGL_EXT_explicit_device EGL_KHR_platform_wayland EGL_EXT_platform_wayland EGL_KHR_platform_gbm EGL_MESA_platform_gbm EGL_EXT_platform_xcb\nIsWebglOutOfProcessEnabled: 1","info":{"AzureFallbackCanvasBackend":"skia","AzureCanvasBackend":"skia","AzureContentBackend":"skia","ApzWheelInput":1,"ApzDragInput":1,"ApzKeyboardInput":1,"ApzAutoscrollInput":1,"ApzZoomingInput":1,"CMSOutputProfile":"AAAFwGxjbXMEMAAAbW50clJHQiBYWVogB+cACAAZABEAJgA3YWNzcEFQUEwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1sY21zl+2xO8uUNeOHcyGI1OFzdgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOZGVzYwAAASwAAAA0Y3BydAAAAWAAAACGd3RwdAAAAegAAAAUY2hhZAAAAfwAAAAsclhZWgAAAigAAAAUYlhZWgAAAjwAAAAUZ1hZWgAAAlAAAAAUclRSQwAAAmQAAAAQZ1RSQwAAAmQAAAAQYlRSQwAAAmQAAAAQY2hybQAAAnQAAAAkbWV0YQAAApgAAALCZG1uZAAABVwAAAAuZG1kZAAABYwAAAA0bWx1YwAAAAAAAAABAAAADGVuVVMAAAAYAAAAHABEAEUATABMACAAUwAyADcAMgAxAFEAU21sdWMAAAAAAAAAAQAAAAxlblVTAAAAagAAABwAVABoAGkAcwAgAHAAcgBvAGYAaQBsAGUAIABpAHMAIABmAHIAZQBlACAAbwBmACAAawBuAG8AdwBuACAAYwBvAHAAeQByAGkAZwBoAHQAIAByAGUAcwB0AHIAaQBjAHQAaQBvAG4AcwAuAABYWVogAAAAAAAA9tYAAQAAAADTLXNmMzIAAAAAAAELtwAABZb///NWAAAHKQAA/df///u2///9pQAAA9oAAMD2WFlaIAAAAAAAAHHwAAA4kgAAAYNYWVogAAAAAAAAJ4oAABCOAADE5FhZWiAAAAAAAABdXAAAtuAAAAzGcGFyYQAAAAAAAAAAAAIzM2Nocm0AAAAAAAMAAAAAqEAAAFRAAABOAAAApQAAACaAAAAPQGRpY3QAAAAAAAAACgAAABAAAACwAAAAFgAAAMYAAAAqAAAA8AAAABQAAAEEAAAAGAAAARwAAAAWAAABMgAAAA4AAAFAAAAAFgAAAVYAAAAIAAABXgAAACIAAAGAAAAAEgAAAZIAAAASAAABpAAAAAYAAAGqAAAAFAAAAb4AAAAqAAAB6AAAABAAAAH4AAAAQAAAAjgAAAAWAAACTgAAAAgAAAJWAAAAIgAAAngAAABKAEMATQBGAF8AcAByAG8AZAB1AGMAdABnAG4AbwBtAGUALQBzAGUAdAB0AGkAbgBnAHMALQBkAGEAZQBtAG8AbgBFAEQASQBEAF8AbQBvAGQAZQBsAEQARQBMAEwAIABTADIANwAyADEAUQBTAEUARABJAEQAXwBzAGUAcgBpAGEAbAAyADIANgBXAE0ANAAzAEQAQQBUAEEAXwBzAG8AdQByAGMAZQBlAGQAaQBkAEUARABJAEQAXwBtAGEAbgB1AGYAYQBjAHQAdQByAGUAcgBEAGUAbABsACAASQBuAGMALgBFAEQASQBEAF8AbQBuAGYAdABEAEUATABDAE0ARgBfAGIAaQBuAGEAcgB5AGcAbgBvAG0AZQAtAHMAZQB0AHQAaQBuAGcAcwAtAGQAYQBlAG0AbwBuAEUARABJAEQAXwBtAGQANQAyADEAZQBiAGQAYgBkAGMAMAA0AGQAOABmADUAYQAzADkAZQA5ADYAOAA5AGUANgBmADUAYQAzADIAZQAyADMAQwBNAEYAXwB2AGUAcgBzAGkAbwBuADQAMgAuADEATQBBAFAAUABJAE4ARwBfAGQAZQB2AGkAYwBlAF8AaQBkAHgAcgBhAG4AZAByAC0ARABlAGwAbAAgAEkAbgBjAC4ALQBEAEUATABMACAAUwAyADcAMgAxAFEAUwAtADIAMgA2AFcATQA0ADMAAG1sdWMAAAAAAAAAAQAAAAxlblVTAAAAEgAAABwARABlAGwAbAAgAEkAbgBjAC4AAG1sdWMAAAAAAAAAAQAAAAxlblVTAAAAGAAAABwARABFAEwATAAgAFMAMgA3ADIAMQBRAFM=","DisplayCount":2,"Display0":"3840x2160@60Hz scales:1.000000|2.000000","Display1":"3840x2160@60Hz scales:1.000000|2.000000"},"featureLog":{"features":[{"name":"HW_COMPOSITING","description":"Compositing","status":"available","log":[{"type":"default","status":"available"}]},{"name":"OPENGL_COMPOSITING","description":"OpenGL Compositing","status":"available","log":[{"type":"default","status":"available"}]},{"name":"WEBRENDER","description":"WebRender","status":"force_enabled","log":[{"type":"default","status":"available"},{"type":"user","status":"force_enabled","message":"Force enabled by pref"}]},{"name":"WEBRENDER_COMPOSITOR","description":"WebRender native compositor","status":"blocked","log":[{"type":"default","status":"disabled","failureId":"FEATURE_FAILURE_DISABLED","message":"Disabled by default"},{"type":"env","status":"blocklisted","failureId":"FEATURE_FAILURE_WEBRENDER_COMPOSITOR_DISABLED","message":"Blocklisted by gfxInfo"},{"type":"runtime","status":"blocked","failureId":"FEATURE_FAILURE_DISABLE_RELEASE_OR_BETA","message":"Cannot be enabled in release or beta"}]},{"name":"WEBRENDER_PARTIAL","description":"WebRender partial present","status":"blocklisted","log":[{"type":"default","status":"available"},{"type":"env","status":"blocklisted","failureId":"FEATURE_ROLLOUT_WR_PARTIAL_PRESENT_NVIDIA_BINARY","message":"Blocklisted by gfxInfo"}]},{"name":"WEBRENDER_SHADER_CACHE","description":"WebRender shader disk cache","status":"disabled","log":[{"type":"default","status":"disabled","failureId":"FEATURE_FAILURE_DISABLED","message":"Disabled by default"}]},{"name":"WEBRENDER_OPTIMIZED_SHADERS","description":"WebRender optimized shaders","status":"available","log":[{"type":"default","status":"available"}]},{"name":"WEBRENDER_ANGLE","description":"WebRender ANGLE","status":"unavailable","log":[{"type":"default","status":"available"},{"type":"env","status":"unavailable","failureId":"FEATURE_FAILURE_OS_NOT_SUPPORTED","message":"OS not supported"}]},{"name":"WEBRENDER_DCOMP_PRESENT","description":"WebRender DirectComposition","status":"unavailable","log":[{"type":"default","status":"available"},{"type":"user","status":"disabled","failureId":"FEATURE_FAILURE_DCOMP_PREF_DISABLED","message":"User disabled via pref"},{"type":"env","status":"unavailable","failureId":"FEATURE_FAILURE_NO_GPU_PROCESS","message":"Requires GPU process"},{"type":"runtime","status":"unavailable","failureId":"FEATURE_FAILURE_DCOMP_NOT_ANGLE","message":"Requires ANGLE"}]},{"name":"WEBRENDER_SCISSORED_CACHE_CLEARS","description":"WebRender scissored cache clears","status":"available","log":[{"type":"default","status":"available"}]},{"name":"WEBGPU","description":"WebGPU","status":"blocked","log":[{"type":"default","status":"available"},{"type":"runtime","status":"blocked","failureId":"WEBGPU_DISABLE_RELEASE_OR_BETA","message":"WebGPU cannot be enabled in release or beta"}]},{"name":"X11_EGL","description":"X11 EGL","status":"available","log":[{"type":"default","status":"available"}]},{"name":"DMABUF","description":"DMABUF","status":"blocklisted","log":[{"type":"default","status":"available"},{"type":"env","status":"blocklisted","failureId":"FEATURE_FAILURE_BUG_1788573","message":"Blocklisted by gfxInfo"}]},{"name":"HARDWARE_VIDEO_DECODING","description":"Hardware video decoding","status":"unavailable","log":[{"type":"default","status":"available"},{"type":"runtime","status":"unavailable","failureId":"FEATURE_FAILURE_VIDEO_DECODING_TEST_FAILED","message":"Force disabled by gfxInfo"}]},{"name":"DMABUF_SURFACE_EXPORT","description":"WebGL DMABuf surface export","status":"available","log":[{"type":"default","status":"available"}]},{"name":"BACKDROP_FILTER","description":"Backdrop filter","status":"available","log":[{"type":"default","status":"available"}]},{"name":"CANVAS_RENDERER_THREAD","description":"canvas renderer thread","status":"blocked","log":[{"type":"default","status":"blocked","failureId":"FEATURE_FAILURE_THREAD_UNSAFE_GL","message":"Thread unsafe GL"}]},{"name":"ACCELERATED_CANVAS2D","description":"Accelerated Canvas2D","status":"available","log":[{"type":"default","status":"available"}]},{"name":"REMOTE_CANVAS","description":"Remote canvas","status":"blocked","log":[{"type":"default","status":"disabled","failureId":"FEATURE_FAILURE_DISABLED","message":"Disabled via pref"},{"type":"env","status":"unavailable-no-gpu-process","failureId":"FEATURE_REMOTE_CANVAS_NO_GPU_PROCESS","message":"Disabled without GPU process"},{"type":"runtime","status":"blocked","failureId":"FEATURE_REMOTE_CANVAS_NOT_WINDOWS","message":"Platform not supported"}]}],"fallbacks":[]},"crashGuards":[],"webgpuDefaultAdapter":{"navigator.gpu":null},"webgpuFallbackAdapter":{"navigator.gpu":null}},"addons":[{"name":"Add-ons Search Detection","type":"extension","version":"2.0.0","isActive":true,"id":"addons-search-detection@mozilla.com"},{"name":"PageLoader extension","type":"extension","version":"1.1","isActive":true,"id":"pageloader@mozilla.org"},{"name":"Talos Powers","type":"extension","version":"1.1","isActive":true,"id":"talos-powers@mozilla.org"},{"name":"System theme — auto","type":"theme","version":"1.3","isActive":true,"id":"default-theme@mozilla.org"}],"features":[{"name":"Firefox Screenshots","version":"39.0.1","id":"screenshots@mozilla.org"},{"name":"Form Autofill","version":"1.0.1","id":"formautofill@mozilla.org"},{"name":"Picture-In-Picture","version":"1.0.0","id":"pictureinpicture@mozilla.org"},{"name":"Web Compatibility Interventions","version":"121.0.0","id":"webcompat@mozilla.org"},{"name":"WebCompat Reporter","version":"2.0.0","id":"webcompat-reporter@mozilla.org"}],"processes":{"remoteTypes":{"extension":1,"socket":1,"webIsolated":1},"maxWebContentProcesses":8},"normandy":{"addonStudies":[],"prefRollouts":[],"prefStudies":[],"nimbusExperiments":[],"nimbusRollouts":[]},"legacyUserStylesheets":{"active":false,"types":[]},"places":[{"efficiencyPerc":24.4,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"sqlite_schema","count":"-"},{"efficiencyPerc":0.1,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_origins","count":1},{"efficiencyPerc":0.1,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"sqlite_autoindex_moz_origins_1","count":"-"},{"efficiencyPerc":0.3,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_places","count":1},{"efficiencyPerc":0,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_places_extra","count":0},{"efficiencyPerc":0.1,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_places_url_hashindex","count":"-"},{"efficiencyPerc":0.1,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_places_hostindex","count":"-"},{"efficiencyPerc":0,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_places_visitcount","count":"-"},{"efficiencyPerc":0,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_places_frecencyindex","count":"-"},{"efficiencyPerc":0.1,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_places_lastvisitdateindex","count":"-"},{"efficiencyPerc":0.1,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_places_guid_uniqueindex","count":"-"},{"efficiencyPerc":0,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_places_originidindex","count":"-"},{"efficiencyPerc":0,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_places_altfrecencyindex","count":"-"},{"efficiencyPerc":0.1,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_historyvisits","count":1},{"efficiencyPerc":0,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_historyvisits_extra","count":0},{"efficiencyPerc":0.1,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_historyvisits_placedateindex","count":"-"},{"efficiencyPerc":0,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_historyvisits_fromindex","count":"-"},{"efficiencyPerc":0.1,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_historyvisits_dateindex","count":"-"},{"efficiencyPerc":0,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_inputhistory","count":0},{"efficiencyPerc":0,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"sqlite_autoindex_moz_inputhistory_1","count":"-"},{"efficiencyPerc":1,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_bookmarks","count":6},{"efficiencyPerc":0,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_bookmarks_deleted","count":0},{"efficiencyPerc":0,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"sqlite_autoindex_moz_bookmarks_deleted_1","count":"-"},{"efficiencyPerc":0.2,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_bookmarks_itemindex","count":"-"},{"efficiencyPerc":0.2,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_bookmarks_parentindex","count":"-"},{"efficiencyPerc":0.3,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_bookmarks_itemlastmodifiedindex","count":"-"},{"efficiencyPerc":0.3,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_bookmarks_dateaddedindex","count":"-"},{"efficiencyPerc":0.4,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_bookmarks_guid_uniqueindex","count":"-"},{"efficiencyPerc":0,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_keywords","count":0},{"efficiencyPerc":0,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"sqlite_autoindex_moz_keywords_1","count":"-"},{"efficiencyPerc":0,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"sqlite_sequence","count":"-"},{"efficiencyPerc":0,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_keywords_placepostdata_uniqueindex","count":"-"},{"efficiencyPerc":0,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_anno_attributes","count":0},{"efficiencyPerc":0,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"sqlite_autoindex_moz_anno_attributes_1","count":"-"},{"efficiencyPerc":0,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_annos","count":0},{"efficiencyPerc":0,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_annos_placeattributeindex","count":"-"},{"efficiencyPerc":0,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_items_annos","count":0},{"efficiencyPerc":0,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_items_annos_itemattributeindex","count":"-"},{"efficiencyPerc":0,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_meta","count":0},{"efficiencyPerc":0,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_places_metadata","count":0},{"efficiencyPerc":0,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_places_metadata_placecreated_uniqueindex","count":"-"},{"efficiencyPerc":0,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_places_metadata_referrerindex","count":"-"},{"efficiencyPerc":0,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_places_metadata_search_queries","count":0},{"efficiencyPerc":0,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"sqlite_autoindex_moz_places_metadata_search_queries_1","count":"-"},{"efficiencyPerc":0,"pages":1,"sizeBytes":32768,"sizePerc":2.2,"sequentialityPerc":100,"entity":"moz_previews_tombstones","count":0}]}
+08:28:59     INFO -  TEST-INFO | 1064195: exit 0
+08:28:59     INFO -  Browser initialized.
+08:28:59     INFO -  Fission enabled: True
+08:28:59     INFO -  Running cycle 1/1 for graphite_perf_test test...
+08:28:59     INFO -  Using env: {'COLORTERM': 'truecolor',
+08:28:59     INFO -   'DISPLAY': ':1',
+08:28:59     INFO -   'HOME': '/home/shr',
+08:28:59     INFO -   'LANG': 'en_US.UTF-8',
+08:28:59     INFO -   'LC_ALL': 'C',
+08:28:59     INFO -   'LC_LANG': 'C',
+08:28:59     INFO -   'LD_LIBRARY_PATH': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/dist/bin',
+08:28:59     INFO -   'LOGNAME': 'shr',
+08:28:59     INFO -   'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:',
+08:28:59     INFO -   'MACH_MAIN_PID': '1063945',
+08:28:59     INFO -   'MAIL': '/var/mail/shr',
+08:28:59     INFO -   'MAKEFLAGS': '',
+08:28:59     INFO -   'MAKELEVEL': '1',
+08:28:59     INFO -   'MAKE_TERMERR': '/dev/pts/1',
+08:28:59     INFO -   'MAKE_TERMOUT': '/dev/pts/1',
+08:28:59     INFO -   'MFLAGS': '',
+08:28:59     INFO -   'MINIDUMP_SAVE_PATH': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozharness/build/blobber_upload_dir',
+08:28:59     INFO -   'MOZCONFIG': 'mozconfig_native_release',
+08:28:59     INFO -   'MOZ_CRASHREPORTER': '1',
+08:28:59     INFO -   'MOZ_CRASHREPORTER_NO_REPORT': '1',
+08:28:59     INFO -   'MOZ_DEVELOPER_OBJ_DIR': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release',
+08:28:59     INFO -   'MOZ_DEVELOPER_REPO_DIR': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox',
+08:28:59     INFO -   'MOZ_DISABLE_NONLOCAL_CONNECTIONS': '1',
+08:28:59     INFO -   'MOZ_UPLOAD_DIR': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozharness/build/blobber_upload_dir',
+08:28:59     INFO -   'MOZ_USE_PAGELOADER': '1',
+08:28:59     INFO -   'NO_EM_RESTART': '1',
+08:28:59     INFO -   'OLDPWD': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox',
+08:28:59     INFO -   'PATH': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin:/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/common/bin:/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/mach/bin:/mnt/seconddrive/Code/seguecg-root/spec_benchmarks/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin',
+08:28:59     INFO -   'PWD': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox',
+08:28:59     INFO -   'PYTHONPATH': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos',
+08:28:59     INFO -   'REQUIRE_GPU': '0',
+08:28:59     INFO -   'RUST_BACKTRACE': 'full',
+08:28:59     INFO -   'SHELL': '/bin/bash',
+08:28:59     INFO -   'SHLVL': '1',
+08:28:59     INFO -   'SUDO_COMMAND': '/usr/bin/env '
+08:28:59     INFO -                   'PATH=/mnt/seconddrive/Code/seguecg-root/spec_benchmarks/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin '
+08:28:59     INFO -                   'bash --init-file '
+08:28:59     INFO -                   '/mnt/seconddrive/Code/seguecg-root/init_benchmark_shell.sh',
+08:28:59     INFO -   'SUDO_GID': '0',
+08:28:59     INFO -   'SUDO_UID': '0',
+08:28:59     INFO -   'SUDO_USER': 'root',
+08:28:59     INFO -   'TERM': 'xterm-256color',
+08:28:59     INFO -   'USER': 'shr',
+08:28:59     INFO -   'VIRTUAL_ENV': 'talos-venv',
+08:28:59     INFO -   'XAUTHORITY': '/run/user/1000/gdm/Xauthority',
+08:28:59     INFO -   'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME',
+08:28:59     INFO -   '_': '/usr/bin/taskset'}
+08:29:00     INFO -  TEST-INFO | started process 1064527 (/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/dist/bin/firefox --no-remote -profile /tmp/tmpdfv5atxj/profile)
+08:29:00     INFO -  PID 1064527 | console.error: ({})
+08:29:08     INFO -  PID 1064527 | Capture_Time:Graphite,1,325,1064738|
+08:29:10     INFO -  PID 1064527 | Cycle 1(1): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:29:11     INFO -  PID 1064527 | Capture_Time:Graphite,2,262,1064738|
+08:29:12     INFO -  PID 1064527 | Cycle 1(2): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:29:13     INFO -  PID 1064527 | Capture_Time:Graphite,3,263,1064738|
+08:29:13     INFO -  PID 1064527 | Cycle 1(3): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:29:14     INFO -  PID 1064527 | Capture_Time:Graphite,4,263,1064738|
+08:29:15     INFO -  PID 1064527 | Cycle 1(4): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:29:16     INFO -  PID 1064527 | Capture_Time:Graphite,5,263,1064738|
+08:29:16     INFO -  PID 1064527 | Cycle 1(5): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:29:17     INFO -  PID 1064527 | Capture_Time:Graphite,6,263,1064738|
+08:29:18     INFO -  PID 1064527 | Cycle 1(6): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:29:19     INFO -  PID 1064527 | Capture_Time:Graphite,7,263,1064738|
+08:29:19     INFO -  PID 1064527 | Cycle 1(7): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:29:20     INFO -  PID 1064527 | Capture_Time:Graphite,8,263,1064738|
+08:29:20     INFO -  PID 1064527 | Cycle 1(8): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:29:21     INFO -  PID 1064527 | Capture_Time:Graphite,9,263,1064738|
+08:29:22     INFO -  PID 1064527 | Cycle 1(9): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:29:23     INFO -  PID 1064527 | Capture_Time:Graphite,10,265,1064738|
+08:29:23     INFO -  PID 1064527 | Cycle 1(10): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:29:24     INFO -  PID 1064527 | Capture_Time:Graphite,11,264,1064738|
+08:29:25     INFO -  PID 1064527 | Cycle 1(11): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:29:26     INFO -  PID 1064527 | Capture_Time:Graphite,12,263,1064738|
+08:29:28     INFO -  PID 1064527 | Cycle 1(12): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:29:29     INFO -  PID 1064527 | Capture_Time:Graphite,13,263,1064738|
+08:29:30     INFO -  PID 1064527 | 1707035370358	addons.xpi	ERROR	System addon update list error Error: Failed downloading XML, status: 0, channelStatus: 2152398861, errorCode: 2, reason: error
+08:29:30     INFO -  PID 1064527 | Cycle 1(13): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:29:31     INFO -  PID 1064527 | Capture_Time:Graphite,14,264,1064738|
+08:29:33     INFO -  PID 1064527 | Cycle 1(14): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:29:34     INFO -  PID 1064527 | Capture_Time:Graphite,15,263,1064738|
+08:29:35     INFO -  PID 1064527 | Cycle 1(15): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:29:36     INFO -  PID 1064527 | Capture_Time:Graphite,16,263,1064738|
+08:29:38     INFO -  PID 1064527 | Cycle 1(16): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:29:39     INFO -  PID 1064527 | Capture_Time:Graphite,17,263,1064738|
+08:29:41     INFO -  PID 1064527 | Cycle 1(17): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:29:42     INFO -  PID 1064527 | Capture_Time:Graphite,18,264,1064738|
+08:29:42     INFO -  PID 1064527 | Cycle 1(18): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:29:43     INFO -  PID 1064527 | Capture_Time:Graphite,19,263,1064738|
+08:29:43     INFO -  PID 1064527 | Cycle 1(19): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:29:44     INFO -  PID 1064527 | Capture_Time:Graphite,20,263,1064738|
+08:29:44     INFO -  PID 1064527 | Cycle 1(20): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:29:45     INFO -  PID 1064527 | Capture_Time:Graphite,21,263,1064738|
+08:29:46     INFO -  PID 1064527 | Cycle 1(21): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:29:47     INFO -  PID 1064527 | Capture_Time:Graphite,22,262,1064738|
+08:29:47     INFO -  PID 1064527 | Cycle 1(22): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:29:48     INFO -  PID 1064527 | Capture_Time:Graphite,23,262,1064738|
+08:29:49     INFO -  PID 1064527 | Cycle 1(23): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:29:50     INFO -  PID 1064527 | Capture_Time:Graphite,24,263,1064738|
+08:29:50     INFO -  PID 1064527 | Cycle 1(24): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:29:51     INFO -  PID 1064527 | Capture_Time:Graphite,25,264,1064738|
+08:29:52     INFO -  PID 1064527 | Cycle 1(25): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:29:53     INFO -  PID 1064527 | Capture_Time:Graphite,26,263,1064738|
+08:29:53     INFO -  PID 1064527 | Cycle 1(26): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:29:54     INFO -  PID 1064527 | Capture_Time:Graphite,27,263,1064738|
+08:29:55     INFO -  PID 1064527 | Cycle 1(27): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:29:56     INFO -  PID 1064527 | Capture_Time:Graphite,28,265,1064738|
+08:29:56     INFO -  PID 1064527 | Cycle 1(28): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:29:57     INFO -  PID 1064527 | Capture_Time:Graphite,29,273,1064738|
+08:29:58     INFO -  PID 1064527 | Cycle 1(29): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:29:59     INFO -  PID 1064527 | Capture_Time:Graphite,30,264,1064738|
+08:29:59     INFO -  PID 1064527 | Cycle 1(30): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:00     INFO -  PID 1064527 | Capture_Time:Graphite,31,317,1064738|
+08:30:01     INFO -  PID 1064527 | Cycle 1(31): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:02     INFO -  PID 1064527 | Capture_Time:Graphite,32,264,1064738|
+08:30:02     INFO -  PID 1064527 | Cycle 1(32): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:03     INFO -  PID 1064527 | Capture_Time:Graphite,33,264,1064738|
+08:30:03     INFO -  PID 1064527 | Cycle 1(33): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:04     INFO -  PID 1064527 | Capture_Time:Graphite,34,271,1064738|
+08:30:05     INFO -  PID 1064527 | Cycle 1(34): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:06     INFO -  PID 1064527 | Capture_Time:Graphite,35,262,1064738|
+08:30:06     INFO -  PID 1064527 | Cycle 1(35): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:07     INFO -  PID 1064527 | Capture_Time:Graphite,36,264,1064738|
+08:30:07     INFO -  PID 1064527 | Cycle 1(36): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:08     INFO -  PID 1064527 | Capture_Time:Graphite,37,262,1064738|
+08:30:09     INFO -  PID 1064527 | Cycle 1(37): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:10     INFO -  PID 1064527 | Capture_Time:Graphite,38,263,1064738|
+08:30:10     INFO -  PID 1064527 | Cycle 1(38): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:11     INFO -  PID 1064527 | Capture_Time:Graphite,39,265,1064738|
+08:30:12     INFO -  PID 1064527 | Cycle 1(39): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:13     INFO -  PID 1064527 | Capture_Time:Graphite,40,264,1064738|
+08:30:13     INFO -  PID 1064527 | Cycle 1(40): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:14     INFO -  PID 1064527 | Capture_Time:Graphite,41,264,1064738|
+08:30:14     INFO -  PID 1064527 | Cycle 1(41): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:15     INFO -  PID 1064527 | Capture_Time:Graphite,42,264,1064738|
+08:30:16     INFO -  PID 1064527 | Cycle 1(42): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:17     INFO -  PID 1064527 | Capture_Time:Graphite,43,264,1064738|
+08:30:17     INFO -  PID 1064527 | Cycle 1(43): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:18     INFO -  PID 1064527 | Capture_Time:Graphite,44,263,1064738|
+08:30:19     INFO -  PID 1064527 | Cycle 1(44): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:20     INFO -  PID 1064527 | Capture_Time:Graphite,45,263,1064738|
+08:30:20     INFO -  PID 1064527 | Cycle 1(45): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:21     INFO -  PID 1064527 | Capture_Time:Graphite,46,264,1064738|
+08:30:22     INFO -  PID 1064527 | Cycle 1(46): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:23     INFO -  PID 1064527 | Capture_Time:Graphite,47,263,1064738|
+08:30:23     INFO -  PID 1064527 | Cycle 1(47): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:24     INFO -  PID 1064527 | Capture_Time:Graphite,48,264,1064738|
+08:30:25     INFO -  PID 1064527 | Cycle 1(48): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:26     INFO -  PID 1064527 | Capture_Time:Graphite,49,264,1064738|
+08:30:28     INFO -  PID 1064527 | Cycle 1(49): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:29     INFO -  PID 1064527 | Capture_Time:Graphite,50,265,1064738|
+08:30:31     INFO -  PID 1064527 | Cycle 1(50): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:32     INFO -  PID 1064527 | Capture_Time:Graphite,51,264,1064738|
+08:30:33     INFO -  PID 1064527 | Cycle 1(51): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:34     INFO -  PID 1064527 | Capture_Time:Graphite,52,264,1064738|
+08:30:34     INFO -  PID 1064527 | Cycle 1(52): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:35     INFO -  PID 1064527 | Capture_Time:Graphite,53,263,1064738|
+08:30:36     INFO -  PID 1064527 | Cycle 1(53): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:37     INFO -  PID 1064527 | Capture_Time:Graphite,54,263,1064738|
+08:30:37     INFO -  PID 1064527 | Cycle 1(54): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:38     INFO -  PID 1064527 | Capture_Time:Graphite,55,264,1064738|
+08:30:38     INFO -  PID 1064527 | Cycle 1(55): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:39     INFO -  PID 1064527 | Capture_Time:Graphite,56,264,1064738|
+08:30:40     INFO -  PID 1064527 | Cycle 1(56): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:41     INFO -  PID 1064527 | Capture_Time:Graphite,57,264,1064738|
+08:30:41     INFO -  PID 1064527 | Cycle 1(57): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:42     INFO -  PID 1064527 | Capture_Time:Graphite,58,264,1064738|
+08:30:42     INFO -  PID 1064527 | Cycle 1(58): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:43     INFO -  PID 1064527 | Capture_Time:Graphite,59,264,1064738|
+08:30:43     INFO -  PID 1064527 | Cycle 1(59): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:44     INFO -  PID 1064527 | Capture_Time:Graphite,60,264,1064738|
+08:30:45     INFO -  PID 1064527 | Cycle 1(60): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:46     INFO -  PID 1064527 | Capture_Time:Graphite,61,263,1064738|
+08:30:46     INFO -  PID 1064527 | Cycle 1(61): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:47     INFO -  PID 1064527 | Capture_Time:Graphite,62,263,1064738|
+08:30:48     INFO -  PID 1064527 | Cycle 1(62): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:49     INFO -  PID 1064527 | Capture_Time:Graphite,63,263,1064738|
+08:30:49     INFO -  PID 1064527 | Cycle 1(63): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:50     INFO -  PID 1064527 | Capture_Time:Graphite,64,265,1064738|
+08:30:51     INFO -  PID 1064527 | Cycle 1(64): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:52     INFO -  PID 1064527 | Capture_Time:Graphite,65,263,1064738|
+08:30:52     INFO -  PID 1064527 | Cycle 1(65): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:53     INFO -  PID 1064527 | Capture_Time:Graphite,66,265,1064738|
+08:30:54     INFO -  PID 1064527 | Cycle 1(66): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:55     INFO -  PID 1064527 | Capture_Time:Graphite,67,264,1064738|
+08:30:55     INFO -  PID 1064527 | Cycle 1(67): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:56     INFO -  PID 1064527 | Capture_Time:Graphite,68,264,1064738|
+08:30:57     INFO -  PID 1064527 | Cycle 1(68): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:58     INFO -  PID 1064527 | Capture_Time:Graphite,69,263,1064738|
+08:30:58     INFO -  PID 1064527 | Cycle 1(69): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:30:59     INFO -  PID 1064527 | Capture_Time:Graphite,70,265,1064738|
+08:30:59     INFO -  PID 1064527 | Cycle 1(70): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:00     INFO -  PID 1064527 | Capture_Time:Graphite,71,265,1064738|
+08:31:01     INFO -  PID 1064527 | Cycle 1(71): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:02     INFO -  PID 1064527 | Capture_Time:Graphite,72,266,1064738|
+08:31:02     INFO -  PID 1064527 | Cycle 1(72): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:03     INFO -  PID 1064527 | Capture_Time:Graphite,73,274,1064738|
+08:31:04     INFO -  PID 1064527 | Cycle 1(73): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:05     INFO -  PID 1064527 | Capture_Time:Graphite,74,265,1064738|
+08:31:05     INFO -  PID 1064527 | Cycle 1(74): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:06     INFO -  PID 1064527 | Capture_Time:Graphite,75,264,1064738|
+08:31:06     INFO -  PID 1064527 | Cycle 1(75): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:07     INFO -  PID 1064527 | Capture_Time:Graphite,76,265,1064738|
+08:31:08     INFO -  PID 1064527 | Cycle 1(76): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:09     INFO -  PID 1064527 | Capture_Time:Graphite,77,262,1064738|
+08:31:09     INFO -  PID 1064527 | Cycle 1(77): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:10     INFO -  PID 1064527 | Capture_Time:Graphite,78,263,1064738|
+08:31:11     INFO -  PID 1064527 | Cycle 1(78): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:12     INFO -  PID 1064527 | Capture_Time:Graphite,79,265,1064738|
+08:31:12     INFO -  PID 1064527 | Cycle 1(79): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:13     INFO -  PID 1064527 | Capture_Time:Graphite,80,264,1064738|
+08:31:13     INFO -  PID 1064527 | Cycle 1(80): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:14     INFO -  PID 1064527 | Capture_Time:Graphite,81,265,1064738|
+08:31:15     INFO -  PID 1064527 | Cycle 1(81): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:16     INFO -  PID 1064527 | Capture_Time:Graphite,82,264,1064738|
+08:31:16     INFO -  PID 1064527 | Cycle 1(82): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:17     INFO -  PID 1064527 | Capture_Time:Graphite,83,265,1064738|
+08:31:18     INFO -  PID 1064527 | Cycle 1(83): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:19     INFO -  PID 1064527 | Capture_Time:Graphite,84,263,1064738|
+08:31:19     INFO -  PID 1064527 | Cycle 1(84): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:20     INFO -  PID 1064527 | Capture_Time:Graphite,85,264,1064738|
+08:31:21     INFO -  PID 1064527 | Cycle 1(85): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:22     INFO -  PID 1064527 | Capture_Time:Graphite,86,264,1064738|
+08:31:22     INFO -  PID 1064527 | Cycle 1(86): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:23     INFO -  PID 1064527 | Capture_Time:Graphite,87,265,1064738|
+08:31:24     INFO -  PID 1064527 | Cycle 1(87): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:25     INFO -  PID 1064527 | Capture_Time:Graphite,88,265,1064738|
+08:31:25     INFO -  PID 1064527 | Cycle 1(88): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:26     INFO -  PID 1064527 | Capture_Time:Graphite,89,264,1064738|
+08:31:27     INFO -  PID 1064527 | Cycle 1(89): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:28     INFO -  PID 1064527 | Capture_Time:Graphite,90,264,1064738|
+08:31:30     INFO -  PID 1064527 | Cycle 1(90): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:31     INFO -  PID 1064527 | Capture_Time:Graphite,91,265,1064738|
+08:31:32     INFO -  PID 1064527 | Cycle 1(91): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:33     INFO -  PID 1064527 | Capture_Time:Graphite,92,265,1064738|
+08:31:35     INFO -  PID 1064527 | Cycle 1(92): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:36     INFO -  PID 1064527 | Capture_Time:Graphite,93,264,1064738|
+08:31:37     INFO -  PID 1064527 | Cycle 1(93): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:38     INFO -  PID 1064527 | Capture_Time:Graphite,94,264,1064738|
+08:31:40     INFO -  PID 1064527 | Cycle 1(94): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:41     INFO -  PID 1064527 | Capture_Time:Graphite,95,263,1064738|
+08:31:42     INFO -  PID 1064527 | Cycle 1(95): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:43     INFO -  PID 1064527 | Capture_Time:Graphite,96,264,1064738|
+08:31:44     INFO -  PID 1064527 | Cycle 1(96): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:45     INFO -  PID 1064527 | Capture_Time:Graphite,97,264,1064738|
+08:31:47     INFO -  PID 1064527 | Cycle 1(97): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:48     INFO -  PID 1064527 | Capture_Time:Graphite,98,265,1064738|
+08:31:50     INFO -  PID 1064527 | Cycle 1(98): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:51     INFO -  PID 1064527 | Capture_Time:Graphite,99,263,1064738|
+08:31:53     INFO -  PID 1064527 | Cycle 1(99): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:54     INFO -  PID 1064527 | Capture_Time:Graphite,100,263,1064738|
+08:31:55     INFO -  PID 1064527 | Cycle 1(100): loaded http://127.0.0.1:33565/tests/graphite_perf_test/index.html (next: http://127.0.0.1:33565/tests/graphite_perf_test/index.html)
+08:31:55     INFO -  PID 1064527 | __start_tp_report
+08:31:55     INFO -  PID 1064527 | _x_x_mozilla_page_load
+08:31:55     INFO -  PID 1064527 | _x_x_mozilla_page_load_details
+08:31:55     INFO -  PID 1064527 | |i|pagename|runs|
+08:31:55     INFO -  PID 1064527 | |0;/index.html;3028.193450999999;1680.7928450000018;725.9354890000013;1730.7398670000002;731.6633170000005;1732.8367719999987;727.3240560000013;727.5159899999999;1732.7027249999992;730.176621999999;1726.4327280000034;2729.0224799999996;1723.9692780000005;2728.1499040000017;1724.628130000001;2729.074781999996;2722.529641000001;700.5582789999971;697.3469899999982;717.290353000004;1730.7348659999916;726.4127359999984;1727.848285;729.5032349999965;1725.9248149999985;702.341465999998;1702.06902000001;698.9568679999938;1717.4841840000008;727.2697619999963;1727.2533819999953;720.075294000002;698.8889079999935;1718.375426000006;731.6386939999938;718.9133360000051;1699.3802290000167;728.7706850000104;1727.1960350000154;730.3506169999891;726.7040339999949;1725.145378000001;728.4390090000088;1729.7721480000037;701.3539779999992;1721.460046999986;698.5335279999999;1718.4691999999923;2728.3270760000014;2724.9191060000157;1726.8668509999989;722.2947310000018;1728.2736060000025;729.8446149999945;728.1403519999876;1721.0761829999974;731.7366630000179;726.3069699999905;726.6933220000064;1718.03940899999;702.6064819999883;1720.0944359999849;718.1755990000092;1699.0335650000052;730.4724620000052;1729.8661859999993;727.8721280000027;1728.9223409999977;729.3767679999874;726.2762030000013;1727.123191999999;699.5590599999996;1715.8695499999885;704.2014049999998;722.0594459999993;1730.055835999985;699.2743709999777;1714.1908129999792;725.6634019999765;725.8742740000307;1721.7020689999918;727.7336579999828;1725.0715620000265;727.9438460000092;1729.8720400000166;721.2927009999985;1727.1212170000363;728.9669839999988;1727.2660569999716;2728.690434999997;1727.2108579999767;2726.9346370000276;1728.2505120000278;2699.953944000037;1726.9968370000133;1730.4174749999947;2700.3465960000176;2726.4237420000136;2729.1508190000022;1700.4121379999851
+08:31:55     INFO -  PID 1064527 | __end_tp_report
+08:31:55     INFO -  PID 1064527 | __start_cc_report
+08:31:55     INFO -  PID 1064527 | _x_x_mozilla_cycle_collect,1761.8016449999177
+08:31:55     INFO -  PID 1064527 | __end_cc_report
+08:31:55     INFO -  PID 1064527 | __startTimestamp174174.23764399998__endTimestamp
+08:31:55     INFO -  PID 1064527 |
+08:31:55     INFO -  PID 1064527 | ------- Summary: start -------
+08:31:55     INFO -  PID 1064527 | Number of tests: 1
+08:31:55     INFO -  PID 1064527 |
+08:31:55     INFO -  PID 1064527 | [#0] /index.html  Cycles:100  Average:1404.37  Median:2728.86  stddev:702.18 (25.7%)  stddev-sans-first:686.23
+08:31:55     INFO -  PID 1064527 | Values: 3028.2  1680.8  725.9  1730.7  731.7  1732.8  727.3  727.5  1732.7  730.2  1726.4  2729.0  1724.0  2728.1  1724.6  2729.1  2722.5  700.6  697.3  717.3  1730.7  726.4  1727.8  729.5  1725.9  702.3  1702.1  699.0  1717.5  727.3  1727.3  720.1  698.9  1718.4  731.6  718.9  1699.4  728.8  1727.2  730.4  726.7  1725.1  728.4  1729.8  701.4  1721.5  698.5  1718.5  2728.3  2724.9  1726.9  722.3  1728.3  729.8  728.1  1721.1  731.7  726.3  726.7  1718.0  702.6  1720.1  718.2  1699.0  730.5  1729.9  727.9  1728.9  729.4  726.3  1727.1  699.6  1715.9  704.2  722.1  1730.1  699.3  1714.2  725.7  725.9  1721.7  727.7  1725.1  727.9  1729.9  721.3  1727.1  729.0  1727.3  2728.7  1727.2  2726.9  1728.3  2700.0  1727.0  1730.4  2700.3  2726.4  2729.2  1700.4
+08:31:55     INFO -  PID 1064527 | -------- Summary: end --------
+08:31:55     INFO -  PID 1064527 |
+08:31:56     INFO -  TEST-INFO | 1064527: exit 0
+08:31:56     INFO -  mozcrash checking /tmp/tmpdfv5atxj/profile/minidumps for minidumps...
+08:31:56     INFO -  TEST-OK | graphite_perf_test | took 185100ms
+08:31:56     INFO -  SUITE-END | took 185s
+08:31:57     INFO -  Completed test suite (00:03:05)
+08:31:57     INFO -  PERFHERDER_DATA: {"application": {"name": "firefox", "version": "122.0"}, "framework": {"name": "talos"}, "suites": [{"name": "graphite_perf_test", "extraOptions": ["e10s", "stylo", "fission", "webrender"], "subtests": [{"name": "", "value": 1714.1908129999792, "replicates": [3028.193450999999, 1680.7928450000018, 725.9354890000013, 1730.7398670000002, 731.6633170000005, 1732.8367719999987, 727.3240560000013, 727.5159899999999, 1732.7027249999992, 730.176621999999, 1726.4327280000034, 2729.0224799999996, 1723.9692780000005, 2728.1499040000017, 1724.628130000001, 2729.074781999996, 2722.529641000001, 700.5582789999971, 697.3469899999982, 717.290353000004, 1730.7348659999916, 726.4127359999984, 1727.848285, 729.5032349999965, 1725.9248149999985, 702.341465999998, 1702.06902000001, 698.9568679999938, 1717.4841840000008, 727.2697619999963, 1727.2533819999953, 720.075294000002, 698.8889079999935, 1718.375426000006, 731.6386939999938, 718.9133360000051, 1699.3802290000167, 728.7706850000104, 1727.1960350000154, 730.3506169999891, 726.7040339999949, 1725.145378000001, 728.4390090000088, 1729.7721480000037, 701.3539779999992, 1721.460046999986, 698.5335279999999, 1718.4691999999923, 2728.3270760000014, 2724.9191060000157, 1726.8668509999989, 722.2947310000018, 1728.2736060000025, 729.8446149999945, 728.1403519999876, 1721.0761829999974, 731.7366630000179, 726.3069699999905, 726.6933220000064, 1718.03940899999, 702.6064819999883, 1720.0944359999849, 718.1755990000092, 1699.0335650000052, 730.4724620000052, 1729.8661859999993, 727.8721280000027, 1728.9223409999977, 729.3767679999874, 726.2762030000013, 1727.123191999999, 699.5590599999996, 1715.8695499999885, 704.2014049999998, 722.0594459999993, 1730.055835999985, 699.2743709999777, 1714.1908129999792, 725.6634019999765, 725.8742740000307, 1721.7020689999918, 727.7336579999828, 1725.0715620000265, 727.9438460000092, 1729.8720400000166, 721.2927009999985, 1727.1212170000363, 728.9669839999988, 1727.2660569999716, 2728.690434999997, 1727.2108579999767, 2726.9346370000276, 1728.2505120000278, 2699.953944000037, 1726.9968370000133, 1730.4174749999947, 2700.3465960000176, 2726.4237420000136, 2729.1508190000022, 1700.4121379999851], "lowerIsBetter": true, "alertThreshold": 2.0, "shouldAlert": true, "unit": "ms"}], "shouldAlert": true, "lowerIsBetter": true, "alertThreshold": 2.0}]}
+08:31:57     INFO -  Thanks for running Talos locally. Results are in ['/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozharness/build/local.json']
+08:31:57     INFO - Return code: 0
+08:31:57     INFO - Validating PERFHERDER_DATA against /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozharness/external_tools/performance-artifact-schema.json
+08:31:57     INFO - Running post-action listener: _package_coverage_data
+08:31:57     INFO - Running post-action listener: _resource_record_post_action
+08:31:57     INFO - Running post-action listener: process_java_coverage_data
+08:31:57     INFO - [mozharness: 2024-02-04 08:31:57.071534Z] Finished run-tests step (success)
+08:31:57     INFO - Running post-run listener: _resource_record_post_run
+08:31:57     INFO - Total resource usage - Wall time: 186s; CPU: 1%; Read bytes: 3072000; Write bytes: 114659328; Read time: 51; Write time: 4275
+08:31:57     INFO - TinderboxPrint: CPU usage<br/>1.0%
+08:31:57     INFO - TinderboxPrint: I/O read bytes / time<br/>3,072,000 / 51
+08:31:57     INFO - TinderboxPrint: I/O write bytes / time<br/>114,659,328 / 4,275
+08:31:57     INFO - TinderboxPrint: CPU idle<br/>5,862.6 (98.9%)
+08:31:57     INFO - TinderboxPrint: Swap in / out<br/>0 / 0
+08:31:57     INFO - run-tests - Wall time: 185s; CPU: 1%; Read bytes: 3043328; Write bytes: 114659328; Read time: 44; Write time: 4275
+08:31:57     INFO - Collecting usage
+08:31:57     INFO - Processing ping at: /home/shr/.mozbuild/glean/pending_pings/a87f791f-7dde-4c4b-bb77-f9581464e648
+08:31:57     INFO - The ping 'usage' was submitted and will be sent as soon as possible
