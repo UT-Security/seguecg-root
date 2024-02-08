@@ -10,7 +10,7 @@ CURR_TIME=$(shell date --iso=seconds)
 PARALLEL_COUNT=$(shell nproc)
 ROOT_PATH=$(shell realpath .)
 
-DIRS=seguecg-libjpeg seguecg-wasm2c rlbox rlbox_wasm2c_sandbox wasmtime seguecg-wamr seguecg-firefox
+DIRS=seguecg-libjpeg seguecg-wasm2c rlbox rlbox_wasm2c_sandbox wasmtime seguecg-wamr seguecg-firefox mte_benchmarks colorguard_benchmarks
 
 bootstrap: get_source
 	echo "Bootstrapping"
@@ -46,10 +46,15 @@ fetch_%:
 		git clone --recursive git@github.com:UT-Security/$*.git; \
 	fi
 
-# Get the rlbox repos from PLSysSec
+# Get the rlbox, colorguard-bench repos from PLSysSec
 fetch_rlbo%:
 	if [ ! -e "./rlbo$*" ]; then \
 		git clone --recursive git@github.com:PLSysSec/rlbo$*.git; \
+	fi
+
+fetch_colorguard_benchmarks:
+	if [ ! -e "./colorguard_benchmarks" ]; then \
+		git clone --recursive git@github.com:PLSysSec/colorguard_benchmarks.git; \
 	fi
 
 fetch_wasmtime:
