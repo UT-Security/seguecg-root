@@ -31,7 +31,8 @@ def generate_graph(test_names, build_testtimingsarray_map, outputFile):
     plt.rcParams['font.size'] = '9'
     fig, ax = plt.subplots(figsize=(5.8, 2.6))
     # plt.tight_layout(pad=0)
-    plt.subplots_adjust(left=0.08, right=1, top=1, bottom=0.25)
+    plt.subplots_adjust(left=0.08, right=0.99, top=0.99, bottom=0.3)
+    plt.margins(0,0)
 
     # https://colorbrewer2.org/#type=diverging&scheme=Spectral&n=5
     colors = ['#FFFFBF', '#D7191C', '#2B83BA', '#FDAE61', '#ABDDA4', ]
@@ -44,8 +45,8 @@ def generate_graph(test_names, build_testtimingsarray_map, outputFile):
 
 
     # Add some text for labels, title and custom x-axis tick labels, etc.
-    ax.set_ylabel('Normalized runtime')
-    ax.set_xticks(x + width, test_names, fontsize='small', horizontalalignment='right')
+    ax.set_ylabel('Norm. runtime')
+    ax.set_xticks(x + width, test_names, fontsize='9', horizontalalignment='right')
     plt.xticks(rotation=45, ha='right', rotation_mode='anchor')
     ax.legend(loc='upper left', ncols=1)
     ax.grid(axis="y", linestyle="dotted")
