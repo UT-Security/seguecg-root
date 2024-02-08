@@ -24,23 +24,27 @@ def generate_graph(test_names, build_testtimingsarray_map, outputFile):
     # }
 
     x = np.arange(len(test_names))  # the label locations
-    width = 0.25  # the width of the bars
+    width = 1 / (1+len(build_testtimingsarray_map.keys()))  # the width of the bars
     multiplier = 0
 
     plt.rcParams['pdf.fonttype'] = 42 # true type font
-    plt.rcParams['font.size'] = '8'
-    fig, ax = plt.subplots(figsize=(5.5, 2.6))
+    plt.rcParams['font.size'] = '9'
+    fig, ax = plt.subplots(figsize=(5.8, 2.6))
     # plt.tight_layout(pad=0)
     plt.subplots_adjust(left=0.08, right=1, top=1, bottom=0.25)
 
-    for attribute, measurement in build_testtimingsarray_map.items():
+    # https://colorbrewer2.org/#type=diverging&scheme=Spectral&n=5
+    colors = ['#FFFFBF', '#D7191C', '#2B83BA', '#FDAE61', '#ABDDA4', ]
+
+    for idx,attribute in enumerate(build_testtimingsarray_map):
+        measurement = build_testtimingsarray_map[attribute]
         offset = width * multiplier
-        rects = ax.bar(x + offset, measurement, width, label=attribute)
+        rects = ax.bar(x + offset, measurement, width, label=attribute, color=colors[idx], edgecolor="black")
         multiplier += 1
 
 
     # Add some text for labels, title and custom x-axis tick labels, etc.
-    ax.set_ylabel('Relative execution speed')
+    ax.set_ylabel('Normalized runtime')
     ax.set_xticks(x + width, test_names, fontsize='small', horizontalalignment='right')
     plt.xticks(rotation=45, ha='right', rotation_mode='anchor')
     ax.legend(loc='upper left', ncols=1)
