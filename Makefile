@@ -181,6 +181,14 @@ benchmark_wamr_segue:
 	./tsv_to_plot.py "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/polybench.txt" "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/polybench.pdf" -s "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/polybench.stats" -r "iwasm-aot:GuardPage" -r "iwasm-aot-segue:GuardPage + Segue" -b native -f "native" -f "iwasm-aot-segue-store" -f "iwasm-aot-segue-load" -g
 	./tsv_to_plot.py "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/sightglass.txt" "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/sightglass.pdf" -s "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/sightglass.stats" -r "native:Native" -r "iwasm-aot:Wamr" -r "iwasm-aot-segue:Wamr+Segue" -b Native -g
 
+benchmark_wamr_segue_coremark:
+	mkdir -p $(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)
+	cd $(ROOT_PATH)/seguecg-wamr/tests/benchmarks/coremark/ && ./run.sh | grep -E "(Run\s|\stime\s)" | tee $(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/coremark.txt
+
+poly_graph:
+	./tsv_to_plot.py "$(ROOT_PATH)/benchmarks/wamr_segue_2024-02-04T14:59:40-06:00/polybench.txt" "$(ROOT_PATH)/benchmarks/wamr_segue_2024-02-04T14:59:40-06:00/polybench.pdf" -s "$(ROOT_PATH)/benchmarks/wamr_segue_2024-02-04T14:59:40-06:00/polybench.stats" -r "iwasm-aot:GuardPage" -r "iwasm-aot-segue:GuardPage + Segue" -b native -f "native" -f "iwasm-aot-segue-store" -f "iwasm-aot-segue-load" -g
+
+
 benchmark_graphite_segue:
 	cd seguecg-firefox && ./testsRunBenchmark "../benchmarks/graphite_test_segue_$(CURR_TIME)" "graphite_perf_test" "native stock segue"
 
