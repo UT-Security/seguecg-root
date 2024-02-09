@@ -1,0 +1,5 @@
+Geomean. Native: 1.0 Wamr: 1.1 Wamr+Segue: 1.16 iwasm-aot-segue-store: 1.13 iwasm-aot-segue-load: 1.1 
+Median. Native: 1.0 Wamr: 1.02 Wamr+Segue: 1.06 iwasm-aot-segue-store: 1.03 iwasm-aot-segue-load: 1.02 
+Mean. Native: 1.0 Wamr: 1.12 Wamr+Segue: 1.2 iwasm-aot-segue-store: 1.17 iwasm-aot-segue-load: 1.13 
+Min. Native: 1.0 Wamr: 0.86 Wamr+Segue: 0.86 iwasm-aot-segue-store: 0.86 iwasm-aot-segue-load: 0.86 
+Max. Native: 1.0 Wamr: 1.77 Wamr+Segue: 1.88 iwasm-aot-segue-store: 1.88 iwasm-aot-segue-load: 1.77 
