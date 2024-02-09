@@ -35,7 +35,7 @@ def generate_graph(test_names, build_testtimingsarray_map, outputFile):
     plt.margins(0,0)
 
     # https://colorbrewer2.org/#type=diverging&scheme=Spectral&n=5
-    colors = ['#FFFFBF', '#D7191C', '#2B83BA', '#FDAE61', '#ABDDA4', ]
+    colors = ['#D7191C', '#2B83BA', '#FDAE61', '#ABDDA4', '#FFFFBF']
 
     for idx,attribute in enumerate(build_testtimingsarray_map):
         measurement = build_testtimingsarray_map[attribute]

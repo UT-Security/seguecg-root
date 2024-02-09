@@ -108,7 +108,7 @@ def make_graph(all_times, output_path, use_percent=False):
     print(vals)
 
     # https://colorbrewer2.org/#type=diverging&scheme=Spectral&n=5
-    colors = ['#FFFFBF', '#D7191C', '#2B83BA', '#FDAE61', '#ABDDA4', ]
+    colors = ['#D7191C', '#2B83BA', '#FDAE61', '#ABDDA4', '#FFFFBF']
 
     rects = []
     for idx,val in enumerate(vals):

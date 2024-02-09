@@ -240,5 +240,10 @@ benchmark_spec:
 	./spec_file_size.sh | tee spec_benchmarks/result/spec_results_size.txt
 	mv spec_benchmarks/result/ benchmarks/spec_$(CURR_TIME)
 
+spec_graph:
+	python3 spec_stats.py -i benchmarks/spec_2024-02-03T05:40:36-06:00 --filter  \
+		"benchmarks/spec_2024-02-03T05:40:36-06:00/spec_results_guard=seguecg_wasm2c_guardpages:GuardPage,seguecg_wasm2c_guardpages_fsgs:GuardPage + Segue" \
+		-n $(words $(SPEC_BUILDS)) --usePercent --baseline native_clang
+
 clean:
 	echo "Done"
