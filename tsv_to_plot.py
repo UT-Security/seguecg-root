@@ -15,7 +15,7 @@ def replace(val, replacements):
 def first_or_none(a):
     return a[0] if a else None
 
-def generate_graph(test_names, build_testtimingsarray_map, outputFile):
+def generate_graph(test_names, build_testtimingsarray_map, keyright, outputFile):
     # test_names = ['astar', 'sightglass', 'coremark']
     # build_testtimingsarray_map = {
     #     "Normal"     : [18.35, 18.43, 14.98],
@@ -48,7 +48,10 @@ def generate_graph(test_names, build_testtimingsarray_map, outputFile):
     ax.set_ylabel('Norm. runtime')
     ax.set_xticks(x + width, test_names, fontsize='9', horizontalalignment='right')
     plt.xticks(rotation=45, ha='right', rotation_mode='anchor')
-    ax.legend(loc='upper left', ncols=1)
+    if keyright:
+        ax.legend(loc='upper right', bbox_to_anchor=(0.9, 1), ncols=2)
+    else:
+        ax.legend(loc='upper left', ncols=1)
     ax.grid(axis="y", linestyle="dotted")
 
     plt.savefig(outputFile, format="pdf")
@@ -65,11 +68,12 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('inputFile', help='input csv file')
     parser.add_argument('outputFile', help='output pdf file')
-    parser.add_argument('-b', dest='baseline', help='column to be used as baseline')
-    parser.add_argument('-g', dest='add_geomean', help='specify if you want the geomean to be included', default=False, action='store_true')
-    parser.add_argument('-r', dest='replacements', default=[], action='append', type=lambda s: ( s.split(':', 1)[0], s.split(':', 1)[1] ), help='replacements of the form abc:def where name abc is replaced with def in the data. You can specify this flag multiple times for multiple replacements')
-    parser.add_argument('-f', dest='filter', default=[], action='append', help='filter data from particular builds. You can specify this flag multiple times for multiple filters')
-    parser.add_argument('-s', dest='statsfile', help='output stats file')
+    parser.add_argument('-b',  dest='baseline', help='column to be used as baseline')
+    parser.add_argument('-g',  dest='add_geomean', help='specify if you want the geomean to be included', default=False, action='store_true')
+    parser.add_argument('-r',  dest='replacements', default=[], action='append', type=lambda s: ( s.split(':', 1)[0], s.split(':', 1)[1] ), help='replacements of the form abc:def where name abc is replaced with def in the data. You can specify this flag multiple times for multiple replacements')
+    parser.add_argument('-f',  dest='filter', default=[], action='append', help='filter data from particular builds. You can specify this flag multiple times for multiple filters')
+    parser.add_argument('-s',  dest='statsfile', help='output stats file')
+    parser.add_argument('-kr', dest='keyright', help='put the key on the right', default=False, action='store_true')
 
     args = parser.parse_args()
 
@@ -133,6 +137,6 @@ def main():
     print("test_names: " + str(test_names))
     print("build_testtimingsarray_map: " + str(build_testtimingsarray_map))
 
-    generate_graph(test_names, build_testtimingsarray_map, args.outputFile)
+    generate_graph(test_names, build_testtimingsarray_map, args.keyright, args.outputFile)
 
 main()
