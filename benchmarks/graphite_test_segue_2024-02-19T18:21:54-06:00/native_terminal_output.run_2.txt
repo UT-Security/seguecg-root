@@ -1,0 +1,313 @@
+00:23:01     INFO - ConsoleLogger online at 20240220 00:23:01Z in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox
+00:23:01     INFO - Run as ./mach talos-test --activeTests graphite_perf_test
+00:23:01     INFO - Dumping config to /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozharness/logs/localconfig.json.
+00:23:01     INFO - {'append_to_log': False,
+00:23:01     INFO -  'base_work_dir': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozharness',
+00:23:01     INFO -  'binary_path': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/dist/bin/firefox',
+00:23:01     INFO -  'code_coverage': False,
+00:23:01     INFO -  'config_files': (),
+00:23:01     INFO -  'default_actions': ('populate-webroot', 'create-virtualenv', 'run-tests'),
+00:23:01     INFO -  'disable_ccov_upload': False,
+00:23:01     INFO -  'e10s': True,
+00:23:01     INFO -  'exes': {'python': '/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/common/bin/python',
+00:23:01     INFO -           'virtualenv': ('/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/common/bin/python',
+00:23:01     INFO -                          '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/third_party/python/virtualenv/virtualenv.py')},
+00:23:01     INFO -  'extra_prefs': (),
+00:23:01     INFO -  'find_links': ('https://pypi.pub.build.mozilla.org/pub/',),
+00:23:01     INFO -  'fission': True,
+00:23:01     INFO -  'gecko_profile': False,
+00:23:01     INFO -  'java_code_coverage': False,
+00:23:01     INFO -  'log_level': 'info',
+00:23:01     INFO -  'log_name': 'talos',
+00:23:01     INFO -  'log_to_console': True,
+00:23:01     INFO -  'obj_path': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release',
+00:23:01     INFO -  'opt_config_files': (),
+00:23:01     INFO -  'per_test_coverage': False,
+00:23:01     INFO -  'pip_index': False,
+00:23:01     INFO -  'pypi_url': 'http://pypi.python.org/simple',
+00:23:01     INFO -  'python3_manifest': {'win32': 'python3.manifest',
+00:23:01     INFO -                       'win64': 'python3_x64.manifest'},
+00:23:01     INFO -  'repo_path': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox',
+00:23:01     INFO -  'requires_gpu': False,
+00:23:01     INFO -  'run_local': True,
+00:23:01     INFO -  'screenshot_on_failure': False,
+00:23:01     INFO -  'skip_preflight': False,
+00:23:01     INFO -  'system_bits': '32',
+00:23:01     INFO -  'talos_extra_options': ('--develop', '--activeTests', 'graphite_perf_test'),
+00:23:01     INFO -  'talos_json': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/talos.json',
+00:23:01     INFO -  'title': 'shr-work',
+00:23:01     INFO -  'use_talos_json': False,
+00:23:01     INFO -  'verify': False,
+00:23:01     INFO -  'virtualenv_path': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv',
+00:23:01     INFO -  'volatile_config': {'actions': None, 'add_actions': None, 'no_actions': None},
+00:23:01     INFO -  'work_dir': 'build'}
+00:23:01     INFO - [mozharness: 2024-02-20 00:23:01.839860Z] Skipping clobber step.
+00:23:01     INFO - [mozharness: 2024-02-20 00:23:01.839891Z] Skipping download-and-extract step.
+00:23:01     INFO - [mozharness: 2024-02-20 00:23:01.839918Z] Running populate-webroot step.
+00:23:01     INFO - Running pre-action listener: _resource_record_pre_action
+00:23:01     INFO - Running main action method: populate_webroot
+00:23:01     INFO - {'suites': {'bcv': {'tests': ['basic_compositor_video']},
+00:23:01     INFO -             'chromez': {'tests': ['about_preferences_basic', 'tresize']},
+00:23:01     INFO -             'damp': {'extra_prefs': ['talos.damp.suite=all'],
+00:23:01     INFO -                      'pagesets_name': 'tp5n.zip',
+00:23:01     INFO -                      'tests': ['damp']},
+00:23:01     INFO -             'damp-inspector': {'extra_prefs': ['talos.damp.suite=inspector'],
+00:23:01     INFO -                                'pagesets_name': 'tp5n.zip',
+00:23:01     INFO -                                'tests': ['damp']},
+00:23:01     INFO -             'damp-other': {'extra_prefs': ['talos.damp.suite=other'],
+00:23:01     INFO -                            'pagesets_name': 'tp5n.zip',
+00:23:01     INFO -                            'tests': ['damp']},
+00:23:01     INFO -             'damp-webconsole': {'extra_prefs': ['talos.damp.suite=webconsole'],
+00:23:01     INFO -                                 'pagesets_name': 'tp5n.zip',
+00:23:01     INFO -                                 'tests': ['damp']},
+00:23:01     INFO -             'dromaeojs': {'tests': ['dromaeo_css', 'kraken']},
+00:23:01     INFO -             'g1': {'pagesets_name': 'tp5n.zip', 'tests': ['tp5o_scroll']},
+00:23:01     INFO -             'g3': {'tests': ['dromaeo_dom']},
+00:23:01     INFO -             'g4': {'tests': ['displaylist_mutate',
+00:23:01     INFO -                              'rasterflood_svg',
+00:23:01     INFO -                              'rasterflood_gradient']},
+00:23:01     INFO -             'g5': {'pagesets_name': 'tp5n.zip',
+00:23:01     INFO -                    'tests': ['ts_paint_webext', 'tp5o_webext']},
+00:23:01     INFO -             'h1': {'tests': ['ts_paint_heavy']},
+00:23:01     INFO -             'motionmark': {'benchmark_zip': 'jetstream.zip',
+00:23:01     INFO -                            'tests': ['motionmark_animometer',
+00:23:01     INFO -                                      'motionmark_htmlsuite',
+00:23:01     INFO -                                      'JetStream',
+00:23:01     INFO -                                      'ARES6']},
+00:23:01     INFO -             'other': {'tests': ['a11yr',
+00:23:01     INFO -                                 'ts_paint',
+00:23:01     INFO -                                 'twinopen',
+00:23:01     INFO -                                 'sessionrestore',
+00:23:01     INFO -                                 'sessionrestore_no_auto_restore',
+00:23:01     INFO -                                 'tabpaint',
+00:23:01     INFO -                                 'cpstartup',
+00:23:01     INFO -                                 'startup_about_home_paint',
+00:23:01     INFO -                                 'pdfpaint',
+00:23:01     INFO -                                 'cross_origin_pageload',
+00:23:01     INFO -                                 'startup_about_home_paint_cached']},
+00:23:01     INFO -             'perf-reftest': {'tests': ['perf_reftest']},
+00:23:01     INFO -             'perf-reftest-singletons': {'tests': ['perf_reftest_singletons']},
+00:23:01     INFO -             'realworld-webextensions': {'tests': ['startup_about_home_paint_realworld_webextensions'],
+00:23:01     INFO -                                         'webextensions_zip': 'webextensions.zip'},
+00:23:01     INFO -             'seguecg': {'tests': ['jpeg_perf',
+00:23:01     INFO -                                   'jpeg_black_width_perf',
+00:23:01     INFO -                                   'graphite_perf_test',
+00:23:01     INFO -                                   'graphite_perf_test_mini']},
+00:23:01     INFO -             'sessionrestore-many-windows': {'tests': ['sessionrestore_many_windows']},
+00:23:01     INFO -             'svgr': {'tests': ['tsvgx',
+00:23:01     INFO -                                'tsvgr_opacity',
+00:23:01     INFO -                                'tscrollx',
+00:23:01     INFO -                                'tsvg_static',
+00:23:01     INFO -                                'tart']},
+00:23:01     INFO -             'tabswitch': {'pagesets_name': 'tp5n.zip', 'tests': ['tabswitch']},
+00:23:01     INFO -             'tp5o': {'pagesets_name': 'tp5n.zip', 'tests': ['tp5o']},
+00:23:01     INFO -             'webgl': {'tests': ['canvas2dvideo',
+00:23:01     INFO -                                 'glterrain',
+00:23:01     INFO -                                 'glvideo',
+00:23:01     INFO -                                 'motionmark_webgl',
+00:23:01     INFO -                                 'offscreencanvas_webcodecs_main_webgl_h264',
+00:23:01     INFO -                                 'offscreencanvas_webcodecs_main_webgl_vp9',
+00:23:01     INFO -                                 'offscreencanvas_webcodecs_main_webgl_av1',
+00:23:01     INFO -                                 'offscreencanvas_webcodecs_worker_webgl_h264',
+00:23:01     INFO -                                 'offscreencanvas_webcodecs_worker_webgl_vp9',
+00:23:01     INFO -                                 'offscreencanvas_webcodecs_worker_webgl_av1',
+00:23:01     INFO -                                 'offscreencanvas_webcodecs_main_2d_h264',
+00:23:01     INFO -                                 'offscreencanvas_webcodecs_main_2d_vp9',
+00:23:01     INFO -                                 'offscreencanvas_webcodecs_main_2d_av1',
+00:23:01     INFO -                                 'offscreencanvas_webcodecs_worker_2d_h264',
+00:23:01     INFO -                                 'offscreencanvas_webcodecs_worker_2d_vp9',
+00:23:01     INFO -                                 'offscreencanvas_webcodecs_worker_2d_av1']},
+00:23:01     INFO -             'xperf': {'pagesets_name': 'tp5n.zip',
+00:23:01     INFO -                       'talos_options': ['--xperf_path',
+00:23:01     INFO -                                         '"c:/Program Files (x86)/Windows '
+00:23:01     INFO -                                         'Kits/10/Windows Performance '
+00:23:01     INFO -                                         'Toolkit/xperf.exe"'],
+00:23:01     INFO -                       'tests': ['tp5n']}}}
+00:23:01     INFO - Running post-action listener: _resource_record_post_action
+00:23:01     INFO - [mozharness: 2024-02-20 00:23:01.842252Z] Finished populate-webroot step (success)
+00:23:01     INFO - [mozharness: 2024-02-20 00:23:01.842281Z] Running create-virtualenv step.
+00:23:01     INFO - Running pre-action listener: _resource_record_pre_action
+00:23:01     INFO - Running main action method: create_virtualenv
+00:23:01     INFO - Virtualenv already exists, skipping creation
+00:23:01     INFO - Running post-action listener: _resource_record_post_action
+00:23:01     INFO - Running post-action listener: _start_resource_monitoring
+00:23:01     INFO - Starting resource monitoring.
+00:23:01     INFO - [mozharness: 2024-02-20 00:23:01.845979Z] Finished create-virtualenv step (success)
+00:23:01     INFO - [mozharness: 2024-02-20 00:23:01.847730Z] Skipping install step.
+00:23:01     INFO - [mozharness: 2024-02-20 00:23:01.847790Z] Running run-tests step.
+00:23:01     INFO - Running pre-action listener: _resource_record_pre_action
+00:23:01     INFO - Running pre-action listener: _set_gcov_prefix
+00:23:01     INFO - Running main action method: run_tests
+00:23:01     INFO - Running command: ['/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin/python', '--version']
+00:23:01     INFO - Copy/paste: /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin/python --version
+00:23:01     INFO -  Python 3.10.12
+00:23:01     INFO - Return code: 0
+00:23:01     INFO - ENV: MOZ_UPLOAD_DIR is now /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozharness/build/blobber_upload_dir
+00:23:01     INFO - ENV: MINIDUMP_SAVE_PATH is now /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozharness/build/blobber_upload_dir
+00:23:01     INFO - ENV: RUST_BACKTRACE is now full
+00:23:01     INFO - Running command: ['/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin/python', '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/talos/run_tests.py', '--executablePath', '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/dist/bin/firefox', '--title', 'shr-work', '--develop', '--activeTests', 'graphite_perf_test', '--log-tbpl-level=info'] in /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozharness/build
+00:23:01     INFO - Copy/paste: /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin/python /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/talos/run_tests.py --executablePath /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/dist/bin/firefox --title shr-work --develop --activeTests graphite_perf_test --log-tbpl-level=info
+00:23:01     INFO - Using env: {'HOME': '/home/shr',
+00:23:01     INFO -  'LANG': 'en_US.UTF-8',
+00:23:01     INFO -  'LANGUAGE': 'en',
+00:23:01     INFO -  'LC_ADDRESS': 'en_US.UTF-8',
+00:23:01     INFO -  'LC_IDENTIFICATION': 'en_US.UTF-8',
+00:23:01     INFO -  'LC_MEASUREMENT': 'en_US.UTF-8',
+00:23:01     INFO -  'LC_MONETARY': 'en_US.UTF-8',
+00:23:01     INFO -  'LC_NAME': 'en_US.UTF-8',
+00:23:01     INFO -  'LC_NUMERIC': 'en_US.UTF-8',
+00:23:01     INFO -  'LC_PAPER': 'en_US.UTF-8',
+00:23:01     INFO -  'LC_TELEPHONE': 'en_US.UTF-8',
+00:23:01     INFO -  'LC_TIME': 'en_US.UTF-8',
+00:23:01     INFO -  'LOGNAME': 'shr',
+00:23:01     INFO -  'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:',
+00:23:01     INFO -  'MACH_MAIN_PID': '3998744',
+00:23:01     INFO -  'MAIL': '/var/mail/shr',
+00:23:01     INFO -  'MAKEFLAGS': '',
+00:23:01     INFO -  'MAKELEVEL': '1',
+00:23:01     INFO -  'MAKE_TERMERR': '/dev/pts/29',
+00:23:01     INFO -  'MAKE_TERMOUT': '/dev/pts/29',
+00:23:01     INFO -  'MFLAGS': '',
+00:23:01     INFO -  'MINIDUMP_SAVE_PATH': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozharness/build/blobber_upload_dir',
+00:23:01     INFO -  'MOZCONFIG': 'mozconfig_native_release',
+00:23:01     INFO -  'MOZ_DEVELOPER_OBJ_DIR': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release',
+00:23:01     INFO -  'MOZ_DEVELOPER_REPO_DIR': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox',
+00:23:01     INFO -  'MOZ_UPLOAD_DIR': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozharness/build/blobber_upload_dir',
+00:23:01     INFO -  'OLDPWD': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox',
+00:23:01     INFO -  'PATH': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin:/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/common/bin:/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/mach/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin',
+00:23:01     INFO -  'PWD': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox',
+00:23:01     INFO -  'PYTHONPATH': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos',
+00:23:01     INFO -  'REQUIRE_GPU': '0',
+00:23:01     INFO -  'RUST_BACKTRACE': 'full',
+00:23:01     INFO -  'SHELL': '/bin/bash',
+00:23:01     INFO -  'SHLVL': '1',
+00:23:01     INFO -  'SUDO_COMMAND': '/usr/bin/env '
+00:23:01     INFO -                  'PATH=/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin '
+00:23:01     INFO -                  'bash --init-file '
+00:23:01     INFO -                  '/mnt/seconddrive/Code/seguecg-root/init_benchmark_shell.sh',
+00:23:01     INFO -  'SUDO_GID': '0',
+00:23:01     INFO -  'SUDO_UID': '0',
+00:23:01     INFO -  'SUDO_USER': 'root',
+00:23:01     INFO -  'TERM': 'xterm-256color',
+00:23:01     INFO -  'USER': 'shr',
+00:23:01     INFO -  'VIRTUAL_ENV': 'talos-venv',
+00:23:01     INFO -  '_': '/usr/bin/taskset'}
+00:23:01     INFO - Calling ['/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin/python', '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/talos/run_tests.py', '--executablePath', '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/dist/bin/firefox', '--title', 'shr-work', '--develop', '--activeTests', 'graphite_perf_test', '--log-tbpl-level=info'] with output_timeout 3600
+00:23:01     INFO -  mozversion application_buildid: 20240204020029
+00:23:01     INFO -  mozversion application_changeset: 4a223e3aab98f1c3ab862c6f08c3ffd1b3fabe8b
+00:23:01     INFO -  mozversion application_display_name: Nightly
+00:23:01     INFO -  mozversion application_id: {ec8030f7-c20a-464f-9b0e-13a3a9e97384}
+00:23:01     INFO -  mozversion application_name: Firefox
+00:23:01     INFO -  mozversion application_remotingname: firefox-default
+00:23:01     INFO -  mozversion application_vendor: Mozilla
+00:23:01     INFO -  mozversion application_version: 122.0
+00:23:01     INFO -  mozversion platform_buildid: 20240204020029
+00:23:01     INFO -  mozversion platform_changeset: 4a223e3aab98f1c3ab862c6f08c3ffd1b3fabe8b
+00:23:01     INFO -  mozversion platform_version: 122.0
+00:23:01     INFO -  starting webserver on '127.0.0.1:45155'
+00:23:01     INFO -  SUITE-START | Running 1 tests
+00:23:01     INFO -  TEST-START | graphite_perf_test
+00:23:01     INFO -  Initialising browser for graphite_perf_test test...
+00:23:01     INFO -  Cloning profile located at /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/talos/base_profile
+00:23:01     INFO -  Merging profile: /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/profiles/base
+00:23:01     INFO -  Merging profile: /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/profiles/common
+00:23:01     INFO -  Merging profile: /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/profiles/perf
+00:23:01     INFO -  Installing Add-ons:
+00:23:01     INFO -  ['/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/talos/talos-powers', '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/talos/pageloader']
+00:23:01     INFO -  Installing Webextensions:
+00:23:01     INFO -  Application command: /mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/dist/bin/firefox --no-remote http://127.0.0.1:45155/getInfo.html -profile /tmp/tmpl03z6_0s/profile
+00:23:01     INFO -  TEST-INFO | started process 3998822 (/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/dist/bin/firefox --no-remote http://127.0.0.1:45155/getInfo.html)
+00:23:01     INFO -  Error: no DISPLAY environment variable specified
+00:23:02     INFO -  TEST-INFO | 3998822: exit 1
+00:23:02     INFO -  Browser initialized.
+00:23:02     INFO -  Fission enabled: True
+00:23:02     INFO -  Running cycle 1/1 for graphite_perf_test test...
+00:23:02     INFO -  Using env: {'HOME': '/home/shr',
+00:23:02     INFO -   'LANG': 'en_US.UTF-8',
+00:23:02     INFO -   'LANGUAGE': 'en',
+00:23:02     INFO -   'LC_ADDRESS': 'en_US.UTF-8',
+00:23:02     INFO -   'LC_IDENTIFICATION': 'en_US.UTF-8',
+00:23:02     INFO -   'LC_MEASUREMENT': 'en_US.UTF-8',
+00:23:02     INFO -   'LC_MONETARY': 'en_US.UTF-8',
+00:23:02     INFO -   'LC_NAME': 'en_US.UTF-8',
+00:23:02     INFO -   'LC_NUMERIC': 'en_US.UTF-8',
+00:23:02     INFO -   'LC_PAPER': 'en_US.UTF-8',
+00:23:02     INFO -   'LC_TELEPHONE': 'en_US.UTF-8',
+00:23:02     INFO -   'LC_TIME': 'en_US.UTF-8',
+00:23:02     INFO -   'LD_LIBRARY_PATH': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/dist/bin',
+00:23:02     INFO -   'LOGNAME': 'shr',
+00:23:02     INFO -   'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:',
+00:23:02     INFO -   'MACH_MAIN_PID': '3998744',
+00:23:02     INFO -   'MAIL': '/var/mail/shr',
+00:23:02     INFO -   'MAKEFLAGS': '',
+00:23:02     INFO -   'MAKELEVEL': '1',
+00:23:02     INFO -   'MAKE_TERMERR': '/dev/pts/29',
+00:23:02     INFO -   'MAKE_TERMOUT': '/dev/pts/29',
+00:23:02     INFO -   'MFLAGS': '',
+00:23:02     INFO -   'MINIDUMP_SAVE_PATH': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozharness/build/blobber_upload_dir',
+00:23:02     INFO -   'MOZCONFIG': 'mozconfig_native_release',
+00:23:02     INFO -   'MOZ_CRASHREPORTER': '1',
+00:23:02     INFO -   'MOZ_CRASHREPORTER_NO_REPORT': '1',
+00:23:02     INFO -   'MOZ_DEVELOPER_OBJ_DIR': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release',
+00:23:02     INFO -   'MOZ_DEVELOPER_REPO_DIR': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox',
+00:23:02     INFO -   'MOZ_DISABLE_NONLOCAL_CONNECTIONS': '1',
+00:23:02     INFO -   'MOZ_UPLOAD_DIR': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/mozharness/build/blobber_upload_dir',
+00:23:02     INFO -   'MOZ_USE_PAGELOADER': '1',
+00:23:02     INFO -   'NO_EM_RESTART': '1',
+00:23:02     INFO -   'OLDPWD': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox',
+00:23:02     INFO -   'PATH': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/testing/talos-venv/bin:/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/common/bin:/home/shr/.mozbuild/srcdirs/seguecg-firefox-09396384df49/_virtualenvs/mach/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin',
+00:23:02     INFO -   'PWD': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox',
+00:23:02     INFO -   'PYTHONPATH': '/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos',
+00:23:02     INFO -   'REQUIRE_GPU': '0',
+00:23:02     INFO -   'RUST_BACKTRACE': 'full',
+00:23:02     INFO -   'SHELL': '/bin/bash',
+00:23:02     INFO -   'SHLVL': '1',
+00:23:02     INFO -   'SUDO_COMMAND': '/usr/bin/env '
+00:23:02     INFO -                   'PATH=/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin '
+00:23:02     INFO -                   'bash --init-file '
+00:23:02     INFO -                   '/mnt/seconddrive/Code/seguecg-root/init_benchmark_shell.sh',
+00:23:02     INFO -   'SUDO_GID': '0',
+00:23:02     INFO -   'SUDO_UID': '0',
+00:23:02     INFO -   'SUDO_USER': 'root',
+00:23:02     INFO -   'TERM': 'xterm-256color',
+00:23:02     INFO -   'USER': 'shr',
+00:23:02     INFO -   'VIRTUAL_ENV': 'talos-venv',
+00:23:02     INFO -   '_': '/usr/bin/taskset'}
+00:23:02     INFO -  TEST-INFO | started process 3998828 (/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/ffbuilds/firefox_native_release/dist/bin/firefox --no-remote -profile /tmp/tmpl03z6_0s/profile)
+00:23:02     INFO -  PID 3998828 | Error: no DISPLAY environment variable specified
+00:23:02     INFO -  TEST-INFO | 3998828: exit 1
+00:23:02     INFO -  mozcrash checking /tmp/tmpl03z6_0s/profile/minidumps for minidumps...
+00:23:02     INFO -  TEST-UNEXPECTED-ERROR | graphite_perf_test | Could not find report in browser output: [('tsformat', ('__start_report', '__end_report')), ('tpformat', ('__start_tp_report', '__end_tp_report'))]
+00:23:02    ERROR -  Traceback (most recent call last):
+00:23:02     INFO -    File "/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/talos/run_tests.py", line 370, in run_tests
+00:23:02     INFO -      mytest.runTest(browser_config, test, utility_path=utility_path)
+00:23:02     INFO -    File "/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/talos/ttest.py", line 61, in runTest
+00:23:02     INFO -      return self._runTest(
+00:23:02     INFO -    File "/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/talos/ttest.py", line 261, in _runTest
+00:23:02     INFO -      test_results.add(
+00:23:02     INFO -    File "/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/talos/results.py", line 92, in add
+00:23:02     INFO -      browserLog = BrowserLogResults(
+00:23:02     INFO -    File "/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/talos/results.py", line 349, in __init__
+00:23:02     INFO -      self.parse()
+00:23:02     INFO -    File "/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/talos/results.py", line 375, in parse
+00:23:02     INFO -      self.error(
+00:23:02     INFO -    File "/mnt/seconddrive/Code/seguecg-root/seguecg-firefox/testing/talos/talos/results.py", line 360, in error
+00:23:02     INFO -      raise utils.TalosError(message)
+00:23:02     INFO -  talos.utils.TalosError: Could not find report in browser output: [('tsformat', ('__start_report', '__end_report')), ('tpformat', ('__start_tp_report', '__end_tp_report'))]
+00:23:02     INFO -  TEST-INFO took 310ms
+00:23:02     INFO -  SUITE-END | took 0s
+00:23:02     INFO - Return code: 2
+00:23:02  WARNING - setting return code to 2
+00:23:02     INFO - Running post-action listener: _package_coverage_data
+00:23:02     INFO - Running post-action listener: _resource_record_post_action
+00:23:02     INFO - Running post-action listener: process_java_coverage_data
+00:23:02     INFO - [mozharness: 2024-02-20 00:23:02.498035Z] Finished run-tests step (success)
+00:23:02     INFO - Running post-run listener: _resource_record_post_run
+00:23:02     INFO - Total resource usage - Wall time: 1s; CPU: 1%; Read bytes: 0; Write bytes: 262144; Read time: 0; Write time: 77
+00:23:02     INFO - TinderboxPrint: CPU usage<br/>1.4%
+00:23:02     INFO - TinderboxPrint: I/O read bytes / time<br/>0 / 0
+00:23:02     INFO - TinderboxPrint: I/O write bytes / time<br/>262,144 / 77
+00:23:02     INFO - TinderboxPrint: CPU idle<br/>18.9 (98.5%)
+00:23:02     INFO - TinderboxPrint: Swap in / out<br/>0 / 0
+00:23:02     INFO - run-tests - Wall time: 1s; CPU: 1%; Read bytes: 0; Write bytes: 262144; Read time: 0; Write time: 77
+Failed to run test benchmark for /mnt/seconddrive/Code/seguecg-root/benchmarks/graphite_test_segue_2024-02-19T18:21:54-06:00/native. Retrying...
