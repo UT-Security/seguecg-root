@@ -1,0 +1,18 @@
+Run coremark with native ..
+Total time (secs): 7.963000
+Run coremark with iwasm aot mode ..
+Total time (secs): 9.198000
+Run coremark with iwasm aot-segue mode ..
+Total time (secs): 10.668000
+Run coremark with iwasm aot-segue store mode ..
+Total time (secs): 9.700000
+Run coremark with iwasm aot-segue load mode ..
+Total time (secs): 11.056000
+Run coremark with wasm2c ..
+Total time (secs): 9.844000
+Run coremark with wasm2c-segue ..
+Total time (secs): 10.435000
+Run coremark with wasm2c-segue store mode ..
+Total time (secs): 9.677000
+Run coremark with wasm2c-segue load mode..
+Total time (secs): 10.951000
