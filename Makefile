@@ -211,6 +211,8 @@ benchmark_graphite_segue:
 
 #### Keep Spec stuff separate so we can easily release other artifacts
 SPEC_BUILDS=native_clang wasm_seguecg_wasm2c_guardpages wasm_seguecg_wasm2c_boundschecks wasm_seguecg_wasm2c_guardpages_fsgs wasm_seguecg_wasm2c_boundschecks_fsgs
+SPEC17_BUILDS=lfi-gcc lfi-gcc-baseline native-gcc
+SPEC17_BENCHES=gcc_r mcf_r x264_r omnetpp_r xalancbmk_r leela_r deepsjeng_r xz_r parest_r namd_r lbm_r povray_r imagick_r nab_r
 
 spec_benchmarks:
 	git clone --recursive git@github.com:PLSysSec/hfi_spec.git $@
@@ -223,11 +225,25 @@ clean_spec:
 		runspec --config=$$spec_build.cfg --action=clobber --define cores=1 --iterations=1 --noreportable --size=ref wasmint 2&>1 > /dev/null; \
 	done
 
+clean_spec17:
+	cd spec17_benchmarks && source shrc && \
+	echo "Cleaning dirs..." && \
+	for spec_build in $(SPEC17_BUILDS); do \
+		runcpu --config=$$spec_build --action=clobber $(SPEC17_BENCHES) 2&>1 > /dev/null; \
+	done
+
 build_spec: spec_benchmarks build_wasm2c_release clean_spec
 	cd spec_benchmarks && source shrc &&  cd config && \
 	for spec_build in $(SPEC_BUILDS); do \
 		echo "Building $$spec_build"; \
 		runspec --config=$$spec_build.cfg --action=build --define cores=1 --iterations=1 --noreportable --size=ref wasmint | grep "Build "; \
+	done
+
+build_spec17: spec17_benchmarks clean_spec17
+	cd spec_benchmarks && source shrc && \
+	for spec_build in $(SPEC_BUILDS); do \
+		echo "Building $$spec_build"; \
+		runcpu --config=$$spec_build --action=build --size=ref $(SPEC17_BENCHES) | grep "Build "; \
 	done
 
 benchmark_spec:
@@ -251,6 +267,13 @@ spec_graph:
 	python3 spec_stats.py -i benchmarks/spec_2024-02-03T05:40:36-06:00 --filter  \
 		"benchmarks/spec_2024-02-03T05:40:36-06:00/spec_results_guard=seguecg_wasm2c_guardpages:GuardPage,seguecg_wasm2c_guardpages_fsgs:GuardPage + Segue" \
 		-n $(words $(SPEC_BUILDS)) --usePercent --baseline native_clang
+
+benchmark_spec17:
+	cd spec17_benchmarks && source shrc && \
+	for spec_build in $(SPEC17_BUILDS); do \
+		runcpu --config=$$spec_build --action=run --size=ref $(SPEC17_BENCHES);
+	done
+	mv spec17_benchmarks/result benchmarks/spec_$(CURR_TIME)
 
 spec17_graph:
 	python spec_stats.py -i benchmarks/spec17_lfi_7950x --spec2017 --filter \
