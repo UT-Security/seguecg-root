@@ -1,0 +1,1 @@
+Command: ['spec_stats.py', '-i', 'benchmarks/spec17_lfi_7950x', '--spec2017', '--filter', 'benchmarks/spec17_lfi_7950x/spec_results=lfi-gcc-baseline-m64:Baseline,lfi-gcc-m64:Segue', '-n', '3', '--baseline', 'gcc-m64', '--usePercent']

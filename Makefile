@@ -252,5 +252,10 @@ spec_graph:
 		"benchmarks/spec_2024-02-03T05:40:36-06:00/spec_results_guard=seguecg_wasm2c_guardpages:GuardPage,seguecg_wasm2c_guardpages_fsgs:GuardPage + Segue" \
 		-n $(words $(SPEC_BUILDS)) --usePercent --baseline native_clang
 
+spec17_graph:
+	python spec_stats.py -i benchmarks/spec17_lfi_7950x --spec2017 --filter \
+		"benchmarks/spec17_lfi_7950x/spec17_results=lfi-gcc-baseline-m64:Baseline,lfi-gcc-m64:Segue" \
+		-n 3 --usePercent --baseline gcc-m64
+
 clean:
 	echo "Done"

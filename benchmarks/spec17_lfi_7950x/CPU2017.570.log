@@ -1,0 +1,1432 @@
+runcpu v6247 started at 2024-06-13 11:11:04 on "zyedidia-office"
+runcpu is: /home/zyedidia/cpu2017/bin/harness/runcpu
+runcpu: runcpu --action=run --size=ref gcc_r mcf_r x264_r omnetpp_r xalancbmk_r leela_r deepsjeng_r xz_r parest_r namd_r lbm_r povray_r imagick_r nab_r --config=lfi-gcc
+toolset: linux-x86_64
+suite: CPU2017 0.0.0
+
+Locating benchmarks...found 47 benchmarks in 53 benchsets.
+Reading config file '/home/zyedidia/cpu2017/config/lfi-gcc.cfg'
+
+2 configurations selected:
+
+ Action    Run Mode   Workload     Report Type      Benchmarks
+--------   --------   --------   ----------------   ---------------------------
+validate   rate       refrate    SPECrate2017_int   502.gcc_r, 505.mcf_r,      
+                                                    520.omnetpp_r,             
+                                                    523.xalancbmk_r,           
+                                                    525.x264_r,                
+                                                    531.deepsjeng_r,           
+                                                    541.leela_r, 557.xz_r      
+validate   rate       refrate    SPECrate2017_fp    508.namd_r, 510.parest_r,  
+                                                    511.povray_r, 519.lbm_r,   
+                                                    538.imagick_r, 544.nab_r   
+-------------------------------------------------------------------------------
+
+Setting up environment for running 502.gcc_r, 505.mcf_r, 520.omnetpp_r, 523.xalancbmk_r, 525.x264_r, 531.deepsjeng_r, 541.leela_r, 557.xz_r...
+Starting runcpu for 502.gcc_r, 505.mcf_r, 520.omnetpp_r, 523.xalancbmk_r, 525.x264_r, 531.deepsjeng_r, 541.leela_r, 557.xz_r...
+Running "specperl /home/zyedidia/cpu2017/bin/sysinfo" to gather system information.
+sysinfo: r6365 of 2019-08-21 (295195f888a3d7edb1e6e46a485a0011)
+sysinfo: Getting system information for Linux...
+sysinfo: ...getting CPU info
+sysinfo: ...getting info from numactl
+sysinfo: ...getting memory info
+sysinfo: ...getting OS info
+sysinfo: ...getting CPU vulnerability status from the kernel
+sysinfo: ...getting disk info
+sysinfo: ...trying to get info from /sys/devices/virtual/dmi/id
+sysinfo: ...trying to get info from dmidecode
+Read 160 info lines from the sysinfo program.
+Retrieving flags file (/home/zyedidia/cpu2017/config/flags/gcc.xml)...
+Verbosity = 5
+Action    = validate
+Tune      = base
+Label     = lfi-gcc-m64
+Size      = refrate
+benchmarks= 502.gcc_r,505.mcf_r,520.omnetpp_r,523.xalancbmk_r,525.x264_r,531.deepsjeng_r,541.leela_r,557.xz_r
+outputs   = txt,html,cfg,pdf,csv
+username  = zyedidia
+Environment settings:
+LD_LIBRARY_PATH = "%{gcc_dir}/lib64/:%{gcc_dir}/lib/:/lib64"
+
+Benchmarks selected: 502.gcc_r, 505.mcf_r, 520.omnetpp_r, 523.xalancbmk_r, 525.x264_r, 531.deepsjeng_r, 541.leela_r, 557.xz_r
+Compiling Binaries
+------------------------------------------------------------------------
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99    -c -o options.o -DSPEC -DNDEBUG -I. -I./include -I./spec_qsort -DSPEC_502 -DSPEC_AUTO_SUPPRESS_OPENMP -DIN_GCC -DHAVE_CONFIG_H  -O3 -fomit-frame-pointer -flto        -fwrapv    -fno-strict-aliasing -fgnu89-inline   -DSPEC_LP64  <source>"
+C: CC="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+C: COBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-I. -I./include -I./spec_qsort -DSPEC_502 -DSPEC_AUTO_SUPPRESS_OPENMP -DIN_GCC -DHAVE_CONFIG_H"
+P: BENCH_CFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: COPTIMIZE=""
+P: PORTABILITY="-fwrapv"
+P: CPORTABILITY=""
+O: EXTRA_CFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_COPTIMIZE="-fno-strict-aliasing -fgnu89-inline"
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99         -O3 -fomit-frame-pointer -flto     -fwrapv    -fno-strict-aliasing -fgnu89-inline <objects>   -lm         -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+P: PORTABILITY="-fwrapv"
+O: EXTRA_COPTIMIZE="-fno-strict-aliasing -fgnu89-inline"
+C: MATH_LIBS="-lm"
+C: LDOUT="-o options"
+ CC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++,fortran --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+  Up to date 502.gcc_r base lfi-gcc-m64
+------------------------------------------------------------------------
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99    -c -o options.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -O3 -fomit-frame-pointer -flto            -fno-strict-aliasing -fgnu89-inline   -DSPEC_LP64  <source>"
+C: CC="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+C: COBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS=""
+P: BENCH_CFLAGS="-Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP"
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: COPTIMIZE=""
+P: PORTABILITY=""
+P: CPORTABILITY=""
+O: EXTRA_CFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_COPTIMIZE="-fno-strict-aliasing -fgnu89-inline"
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99         -O3 -fomit-frame-pointer -flto         -fno-strict-aliasing -fgnu89-inline <objects>   -lm         -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: EXTRA_COPTIMIZE="-fno-strict-aliasing -fgnu89-inline"
+C: MATH_LIBS="-lm"
+C: LDOUT="-o options"
+ CC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++,fortran --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+  Up to date 505.mcf_r base lfi-gcc-m64
+------------------------------------------------------------------------
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03  -c -o options.o -DSPEC -DNDEBUG -Isimulator/platdep -Isimulator -Imodel -DWITH_NETBUILDER -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto    -D_LARGEFILE64_SOURCE     -DSPEC_LP64  <source>"
+C: CXXC="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+C: CXXOBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-Isimulator/platdep -Isimulator -Imodel -DWITH_NETBUILDER -DSPEC_AUTO_SUPPRESS_OPENMP"
+P: BENCH_CXXFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: CXXOPTIMIZE=""
+P: PORTABILITY="-D_LARGEFILE64_SOURCE"
+P: CXXPORTABILITY=""
+O: EXTRA_CXXFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_CXXOPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CXXPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03       -O3 -fomit-frame-pointer -flto     -D_LARGEFILE64_SOURCE     <objects>            -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+P: PORTABILITY="-D_LARGEFILE64_SOURCE"
+C: LDOUT="-o options"
+ CXXC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-g++
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++,fortran --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+  Up to date 520.omnetpp_r base lfi-gcc-m64
+------------------------------------------------------------------------
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03  -c -o options.o -DSPEC -DNDEBUG  -DAPP_NO_THREADS -DXALAN_INMEM_MSG_LOADER -I. -Ixercesc -Ixercesc/dom -Ixercesc/dom/impl -Ixercesc/sax -Ixercesc/util/MsgLoaders/InMemory -Ixercesc/util/Transcoders/Iconv -Ixalanc/include -DPROJ_XMLPARSER -DPROJ_XMLUTIL -DPROJ_PARSERS -DPROJ_SAX4C -DPROJ_SAX2 -DPROJ_DOM -DPROJ_VALIDATORS -DXML_USE_INMEM_MESSAGELOADER -DSPEC_AUTO_SUPPRESS_OPENMP -O3 -fomit-frame-pointer -flto    -DSPEC_LINUX     -DSPEC_LP64  <source>"
+C: CXXC="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+C: CXXOBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS=""
+P: BENCH_CXXFLAGS="-DAPP_NO_THREADS -DXALAN_INMEM_MSG_LOADER -I. -Ixercesc -Ixercesc/dom -Ixercesc/dom/impl -Ixercesc/sax -Ixercesc/util/MsgLoaders/InMemory -Ixercesc/util/Transcoders/Iconv -Ixalanc/include -DPROJ_XMLPARSER -DPROJ_XMLUTIL -DPROJ_PARSERS -DPROJ_SAX4C -DPROJ_SAX2 -DPROJ_DOM -DPROJ_VALIDATORS -DXML_USE_INMEM_MESSAGELOADER -DSPEC_AUTO_SUPPRESS_OPENMP"
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: CXXOPTIMIZE=""
+P: PORTABILITY="-DSPEC_LINUX"
+P: CXXPORTABILITY=""
+O: EXTRA_CXXFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_CXXOPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CXXPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03       -O3 -fomit-frame-pointer -flto     -DSPEC_LINUX     <objects>            -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+P: PORTABILITY="-DSPEC_LINUX"
+C: LDOUT="-o options"
+ CXXC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-g++
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++,fortran --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+  Up to date 523.xalancbmk_r base lfi-gcc-m64
+------------------------------------------------------------------------
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99    -c -o options.o -DSPEC -DNDEBUG -Ildecod_src/inc -Ix264_src -Ix264_src/extras -Ix264_src/common -DSPEC_AUTO_SUPPRESS_OPENMP -DSPEC_AUTO_BYTEORDER=0x12345678  -O3 -fomit-frame-pointer -flto        -fcommon    -fno-strict-aliasing -fgnu89-inline   -DSPEC_LP64  <source>"
+C: CC="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+C: COBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-Ildecod_src/inc -Ix264_src -Ix264_src/extras -Ix264_src/common -DSPEC_AUTO_SUPPRESS_OPENMP -DSPEC_AUTO_BYTEORDER=0x12345678"
+P: BENCH_CFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: COPTIMIZE=""
+P: PORTABILITY="-fcommon"
+P: CPORTABILITY=""
+O: EXTRA_CFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_COPTIMIZE="-fno-strict-aliasing -fgnu89-inline"
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99         -O3 -fomit-frame-pointer -flto     -fcommon    -fno-strict-aliasing -fgnu89-inline <objects>   -lm         -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+P: PORTABILITY="-fcommon"
+O: EXTRA_COPTIMIZE="-fno-strict-aliasing -fgnu89-inline"
+C: MATH_LIBS="-lm"
+C: LDOUT="-o options"
+ CC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++,fortran --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99    -c -o options.o -DSPEC -DNDEBUG -Ildecod_src/inc -Ix264_src -Ix264_src/extras -Ix264_src/common -DSPEC_AUTO_SUPPRESS_OPENMP -DSPEC_AUTO_BYTEORDER=0x12345678  -O3 -fomit-frame-pointer -flto        -fcommon    -fno-strict-aliasing -fgnu89-inline   -DSPEC_LP64  <source>"
+C: CC="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+C: COBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-Ildecod_src/inc -Ix264_src -Ix264_src/extras -Ix264_src/common -DSPEC_AUTO_SUPPRESS_OPENMP -DSPEC_AUTO_BYTEORDER=0x12345678"
+P: BENCH_CFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: COPTIMIZE=""
+P: PORTABILITY="-fcommon"
+P: CPORTABILITY=""
+O: EXTRA_CFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_COPTIMIZE="-fno-strict-aliasing -fgnu89-inline"
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99         -O3 -fomit-frame-pointer -flto     -fcommon    -fno-strict-aliasing -fgnu89-inline <objects>   -lm         -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+P: PORTABILITY="-fcommon"
+O: EXTRA_COPTIMIZE="-fno-strict-aliasing -fgnu89-inline"
+C: MATH_LIBS="-lm"
+C: LDOUT="-o options"
+ CC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++,fortran --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99    -c -o options.o -DSPEC -DNDEBUG -Ildecod_src/inc -Ix264_src -Ix264_src/extras -Ix264_src/common -DSPEC_AUTO_SUPPRESS_OPENMP -DSPEC_AUTO_BYTEORDER=0x12345678  -O3 -fomit-frame-pointer -flto        -fcommon    -fno-strict-aliasing -fgnu89-inline   -DSPEC_LP64  <source>"
+C: CC="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+C: COBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-Ildecod_src/inc -Ix264_src -Ix264_src/extras -Ix264_src/common -DSPEC_AUTO_SUPPRESS_OPENMP -DSPEC_AUTO_BYTEORDER=0x12345678"
+P: BENCH_CFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: COPTIMIZE=""
+P: PORTABILITY="-fcommon"
+P: CPORTABILITY=""
+O: EXTRA_CFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_COPTIMIZE="-fno-strict-aliasing -fgnu89-inline"
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99         -O3 -fomit-frame-pointer -flto     -fcommon    -fno-strict-aliasing -fgnu89-inline <objects>   -lm         -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+P: PORTABILITY="-fcommon"
+O: EXTRA_COPTIMIZE="-fno-strict-aliasing -fgnu89-inline"
+C: MATH_LIBS="-lm"
+C: LDOUT="-o options"
+ CC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++,fortran --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+  Up to date 525.x264_r base lfi-gcc-m64
+------------------------------------------------------------------------
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03  -c -o options.o -DSPEC -DNDEBUG -DSMALL_MEMORY -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto         -DSPEC_LP64  <source>"
+C: CXXC="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+C: CXXOBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-DSMALL_MEMORY -DSPEC_AUTO_SUPPRESS_OPENMP"
+P: BENCH_CXXFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: CXXOPTIMIZE=""
+P: PORTABILITY=""
+P: CXXPORTABILITY=""
+O: EXTRA_CXXFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_CXXOPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CXXPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03       -O3 -fomit-frame-pointer -flto          <objects>            -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+C: LDOUT="-o options"
+ CXXC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-g++
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++,fortran --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+  Up to date 531.deepsjeng_r base lfi-gcc-m64
+------------------------------------------------------------------------
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03  -c -o options.o -DSPEC -DNDEBUG -I. -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto         -DSPEC_LP64  <source>"
+C: CXXC="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+C: CXXOBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-I. -DSPEC_AUTO_SUPPRESS_OPENMP"
+P: BENCH_CXXFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: CXXOPTIMIZE=""
+P: PORTABILITY=""
+P: CXXPORTABILITY=""
+O: EXTRA_CXXFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_CXXOPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CXXPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03       -O3 -fomit-frame-pointer -flto          <objects>            -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+C: LDOUT="-o options"
+ CXXC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-g++
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++,fortran --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+  Up to date 541.leela_r base lfi-gcc-m64
+------------------------------------------------------------------------
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99    -c -o options.o -DSPEC -DNDEBUG -DSPEC_AUTO_BYTEORDER=0x12345678 -DHAVE_CONFIG_H=1 -DSPEC_MEM_IO -DSPEC_XZ -DSPEC_AUTO_SUPPRESS_OPENMP -I. -Ispec_mem_io -Isha-2 -Icommon -Iliblzma/api -Iliblzma/lzma -Iliblzma/common -Iliblzma/check -Iliblzma/simple -Iliblzma/delta -Iliblzma/lz -Iliblzma/rangecoder  -O3 -fomit-frame-pointer -flto            -fno-strict-aliasing -fgnu89-inline   -DSPEC_LP64  <source>"
+C: CC="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+C: COBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-DSPEC_AUTO_BYTEORDER=0x12345678 -DHAVE_CONFIG_H=1 -DSPEC_MEM_IO -DSPEC_XZ -DSPEC_AUTO_SUPPRESS_OPENMP -I. -Ispec_mem_io -Isha-2 -Icommon -Iliblzma/api -Iliblzma/lzma -Iliblzma/common -Iliblzma/check -Iliblzma/simple -Iliblzma/delta -Iliblzma/lz -Iliblzma/rangecoder"
+P: BENCH_CFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: COPTIMIZE=""
+P: PORTABILITY=""
+P: CPORTABILITY=""
+O: EXTRA_CFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_COPTIMIZE="-fno-strict-aliasing -fgnu89-inline"
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99         -O3 -fomit-frame-pointer -flto         -fno-strict-aliasing -fgnu89-inline <objects>            -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: EXTRA_COPTIMIZE="-fno-strict-aliasing -fgnu89-inline"
+C: LDOUT="-o options"
+ CC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++,fortran --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+  Up to date 557.xz_r base lfi-gcc-m64
+
+
+Setting Up Run Directories
+  Setting up 502.gcc_r refrate (ref) base lfi-gcc-m64 (1 copy): run_base_refrate_lfi-gcc-m64.0004
+  Setting up 505.mcf_r refrate (ref) base lfi-gcc-m64 (1 copy): run_base_refrate_lfi-gcc-m64.0004
+  Setting up 520.omnetpp_r refrate (ref) base lfi-gcc-m64 (1 copy): run_base_refrate_lfi-gcc-m64.0004
+  Setting up 523.xalancbmk_r refrate (ref) base lfi-gcc-m64 (1 copy): run_base_refrate_lfi-gcc-m64.0002
+  Setting up 525.x264_r refrate (ref) base lfi-gcc-m64 (1 copy): OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+Issuing command '/home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/525.x264_r/run/run_base_refrate_lfi-gcc-m64.0004 -f inputgen.cmd -e inputgen.err -o inputgen.stdout'
+Start command: 2024-06-13 11:11:15 (1718302275.675)
+specinvoke running: /home/zyedidia/cpu2017/bin/specinvoke.orig -d /home/zyedidia/cpu2017/benchspec/CPU/525.x264_r/run/run_base_refrate_lfi-gcc-m64.0004 -e inputgen.err -o inputgen.stdout -f inputgen.cmd
+Stop command: 2024-06-13 11:11:30 (1718302290.82382)
+Elapsed time for command: 00:00:15 (15.1488211154938)
+Input generation total elapsed time = 15 seconds
+Input generation elapsed time (0:1) = 14.992916 seconds
+run_base_refrate_lfi-gcc-m64.0004
+  Setting up 531.deepsjeng_r refrate (ref) base lfi-gcc-m64 (1 copy): run_base_refrate_lfi-gcc-m64.0004
+  Setting up 541.leela_r refrate (ref) base lfi-gcc-m64 (1 copy): run_base_refrate_lfi-gcc-m64.0004
+  Setting up 557.xz_r refrate (ref) base lfi-gcc-m64 (1 copy): run_base_refrate_lfi-gcc-m64.0004
+-----------------------------------
+Running Benchmarks
+-----------------------------------
+  Running 502.gcc_r refrate (ref) base lfi-gcc-m64 (1 copy) [2024-06-13 11:11:36]
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+Commands to run (specinvoke command file):
+    -r
+    -N C
+    -C /home/zyedidia/cpu2017/benchspec/CPU/502.gcc_r/run/run_base_refrate_lfi-gcc-m64.0004
+    -o gcc-pp.opts-O3_-finline-limit_0_-fif-conversion_-fif-conversion2.out -e gcc-pp.opts-O3_-finline-limit_0_-fif-conversion_-fif-conversion2.err ../run_base_refrate_lfi-gcc-m64.0004/cpugcc_r_base.lfi-gcc-m64 gcc-pp.c -O3 -finline-limit=0 -fif-conversion -fif-conversion2 -o gcc-pp.opts-O3_-finline-limit_0_-fif-conversion_-fif-conversion2.s > gcc-pp.opts-O3_-finline-limit_0_-fif-conversion_-fif-conversion2.out 2>> gcc-pp.opts-O3_-finline-limit_0_-fif-conversion_-fif-conversion2.err (timed)
+    -o gcc-pp.opts-O2_-finline-limit_36000_-fpic.out -e gcc-pp.opts-O2_-finline-limit_36000_-fpic.err ../run_base_refrate_lfi-gcc-m64.0004/cpugcc_r_base.lfi-gcc-m64 gcc-pp.c -O2 -finline-limit=36000 -fpic -o gcc-pp.opts-O2_-finline-limit_36000_-fpic.s > gcc-pp.opts-O2_-finline-limit_36000_-fpic.out 2>> gcc-pp.opts-O2_-finline-limit_36000_-fpic.err (timed)
+    -o gcc-smaller.opts-O3_-fipa-pta.out -e gcc-smaller.opts-O3_-fipa-pta.err ../run_base_refrate_lfi-gcc-m64.0004/cpugcc_r_base.lfi-gcc-m64 gcc-smaller.c -O3 -fipa-pta -o gcc-smaller.opts-O3_-fipa-pta.s > gcc-smaller.opts-O3_-fipa-pta.out 2>> gcc-smaller.opts-O3_-fipa-pta.err (timed)
+    -o ref32.opts-O5.out -e ref32.opts-O5.err ../run_base_refrate_lfi-gcc-m64.0004/cpugcc_r_base.lfi-gcc-m64 ref32.c -O5 -o ref32.opts-O5.s > ref32.opts-O5.out 2>> ref32.opts-O5.err (timed)
+    -o ref32.opts-O3_-fselective-scheduling_-fselective-scheduling2.out -e ref32.opts-O3_-fselective-scheduling_-fselective-scheduling2.err ../run_base_refrate_lfi-gcc-m64.0004/cpugcc_r_base.lfi-gcc-m64 ref32.c -O3 -fselective-scheduling -fselective-scheduling2 -o ref32.opts-O3_-fselective-scheduling_-fselective-scheduling2.s > ref32.opts-O3_-fselective-scheduling_-fselective-scheduling2.out 2>> ref32.opts-O3_-fselective-scheduling_-fselective-scheduling2.err (timed)
+Specinvoke: /home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/502.gcc_r/run/run_base_refrate_lfi-gcc-m64.0004 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+Issuing command '/home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/502.gcc_r/run/run_base_refrate_lfi-gcc-m64.0004 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout'
+Start command: 2024-06-13 11:11:36 (1718302296.47828)
+specinvoke running: /home/zyedidia/cpu2017/bin/specinvoke.orig -d /home/zyedidia/cpu2017/benchspec/CPU/502.gcc_r/run/run_base_refrate_lfi-gcc-m64.0004 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+Stop command: 2024-06-13 11:16:41 (1718302601.20532)
+Elapsed time for command: 00:05:04 (304.727039813995)
+Workload elapsed time (copy 0 workload 1) = 45.083743 seconds
+Workload elapsed time (copy 0 workload 2) = 50.64211 seconds
+Workload elapsed time (copy 0 workload 3) = 49.671745 seconds
+Workload elapsed time (copy 0 workload 4) = 45.035348 seconds
+Workload elapsed time (copy 0 workload 5) = 114.138245 seconds
+Copy 0 of 502.gcc_r (base refrate) run 1 finished at 2024-06-13 11:16:41.  Total elapsed time: 304.571191
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+comparing 'gcc-pp.opts-O2_-finline-limit_36000_-fpic.s' with floatcompare=1, nansupport=no
+comparing 'gcc-pp.opts-O3_-finline-limit_0_-fif-conversion_-fif-conversion2.s' with floatcompare=1, nansupport=no
+comparing 'gcc-smaller.opts-O3_-fipa-pta.s' with floatcompare=1, nansupport=no
+comparing 'ref32.opts-O3_-fselective-scheduling_-fselective-scheduling2.s' with floatcompare=1, nansupport=no
+comparing 'ref32.opts-O5.s' with floatcompare=1, nansupport=no
+Specinvoke: /home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/502.gcc_r/run/run_base_refrate_lfi-gcc-m64.0004 -f compare.cmd -E -e compare.err -o compare.stdout
+Issuing command '/home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/502.gcc_r/run/run_base_refrate_lfi-gcc-m64.0004 -f compare.cmd -E -e compare.err -o compare.stdout'
+Start command: 2024-06-13 11:16:41 (1718302601.23353)
+specinvoke running: /home/zyedidia/cpu2017/bin/specinvoke.orig -d /home/zyedidia/cpu2017/benchspec/CPU/502.gcc_r/run/run_base_refrate_lfi-gcc-m64.0004 -E -e compare.err -o compare.stdout -f compare.cmd
+Stop command: 2024-06-13 11:16:53 (1718302613.50955)
+Elapsed time for command: 00:00:12 (12.2760260105133)
+Benchmark Times:
+  Run Start:    2024-06-13 11:11:36 (1718302296)
+  Rate Start:   2024-06-13 11:11:36 (1718302296.4813)
+  Rate End:     2024-06-13 11:16:41 (1718302601.05257)
+  Run Stop:     2024-06-13 11:16:41 (1718302601)
+  Run Elapsed:  00:05:05 (305)
+  Run Reported: 00:05:04 (304 571276903 304.571277)
+ Success 502.gcc_r base refrate ratio=4.65, runtime=304.571277, copies=1, threads=1, power=0.00W, temp=0.00 degC, humidity=0.00%
+-----------------------------------
+  Running 505.mcf_r refrate (ref) base lfi-gcc-m64 (1 copy) [2024-06-13 11:16:53]
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+Commands to run (specinvoke command file):
+    -r
+    -N C
+    -C /home/zyedidia/cpu2017/benchspec/CPU/505.mcf_r/run/run_base_refrate_lfi-gcc-m64.0004
+    -o inp.out -e inp.err ../run_base_refrate_lfi-gcc-m64.0004/mcf_r_base.lfi-gcc-m64 inp.in  > inp.out 2>> inp.err (timed)
+Specinvoke: /home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/505.mcf_r/run/run_base_refrate_lfi-gcc-m64.0004 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+Issuing command '/home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/505.mcf_r/run/run_base_refrate_lfi-gcc-m64.0004 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout'
+Start command: 2024-06-13 11:16:53 (1718302613.54434)
+specinvoke running: /home/zyedidia/cpu2017/bin/specinvoke.orig -d /home/zyedidia/cpu2017/benchspec/CPU/505.mcf_r/run/run_base_refrate_lfi-gcc-m64.0004 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+Stop command: 2024-06-13 11:21:09 (1718302869.05684)
+Elapsed time for command: 00:04:15 (255.512496948242)
+Workload elapsed time (copy 0 workload 1) = 255.356632 seconds
+Copy 0 of 505.mcf_r (base refrate) run 1 finished at 2024-06-13 11:21:08.  Total elapsed time: 255.356632
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+comparing 'inp.out' with 
+comparing 'mcf.out' with 
+Specinvoke: /home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/505.mcf_r/run/run_base_refrate_lfi-gcc-m64.0004 -f compare.cmd -E -e compare.err -o compare.stdout
+Issuing command '/home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/505.mcf_r/run/run_base_refrate_lfi-gcc-m64.0004 -f compare.cmd -E -e compare.err -o compare.stdout'
+Start command: 2024-06-13 11:21:09 (1718302869.08287)
+specinvoke running: /home/zyedidia/cpu2017/bin/specinvoke.orig -d /home/zyedidia/cpu2017/benchspec/CPU/505.mcf_r/run/run_base_refrate_lfi-gcc-m64.0004 -E -e compare.err -o compare.stdout -f compare.cmd
+Stop command: 2024-06-13 11:21:09 (1718302869.42408)
+Elapsed time for command: 00:00:00 (0.341205835342407)
+Benchmark Times:
+  Run Start:    2024-06-13 11:16:53 (1718302613)
+  Rate Start:   2024-06-13 11:16:53 (1718302613.54734)
+  Rate End:     2024-06-13 11:21:08 (1718302868.90397)
+  Run Stop:     2024-06-13 11:21:09 (1718302869)
+  Run Elapsed:  00:04:16 (256)
+  Run Reported: 00:04:15 (255 356631994 255.356632)
+ Success 505.mcf_r base refrate ratio=6.33, runtime=255.356632, copies=1, threads=1, power=0.00W, temp=0.00 degC, humidity=0.00%
+-----------------------------------
+  Running 520.omnetpp_r refrate (ref) base lfi-gcc-m64 (1 copy) [2024-06-13 11:21:09]
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+Commands to run (specinvoke command file):
+    -r
+    -N C
+    -C /home/zyedidia/cpu2017/benchspec/CPU/520.omnetpp_r/run/run_base_refrate_lfi-gcc-m64.0004
+    -o omnetpp.General-0.out -e omnetpp.General-0.err ../run_base_refrate_lfi-gcc-m64.0004/omnetpp_r_base.lfi-gcc-m64 -c General -r 0 > omnetpp.General-0.out 2>> omnetpp.General-0.err (timed)
+Specinvoke: /home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/520.omnetpp_r/run/run_base_refrate_lfi-gcc-m64.0004 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+Issuing command '/home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/520.omnetpp_r/run/run_base_refrate_lfi-gcc-m64.0004 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout'
+Start command: 2024-06-13 11:21:09 (1718302869.50261)
+specinvoke running: /home/zyedidia/cpu2017/bin/specinvoke.orig -d /home/zyedidia/cpu2017/benchspec/CPU/520.omnetpp_r/run/run_base_refrate_lfi-gcc-m64.0004 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+Stop command: 2024-06-13 11:28:06 (1718303286.71895)
+Elapsed time for command: 00:06:57 (417.21633887291)
+Workload elapsed time (copy 0 workload 1) = 417.060788 seconds
+Copy 0 of 520.omnetpp_r (base refrate) run 1 finished at 2024-06-13 11:28:06.  Total elapsed time: 417.060788
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+comparing 'General-0.sca' with abstol=1e-06, reltol=1e-05
+Specinvoke: /home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/520.omnetpp_r/run/run_base_refrate_lfi-gcc-m64.0004 -f compare.cmd -E -e compare.err -o compare.stdout
+Issuing command '/home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/520.omnetpp_r/run/run_base_refrate_lfi-gcc-m64.0004 -f compare.cmd -E -e compare.err -o compare.stdout'
+Start command: 2024-06-13 11:28:06 (1718303286.74472)
+specinvoke running: /home/zyedidia/cpu2017/bin/specinvoke.orig -d /home/zyedidia/cpu2017/benchspec/CPU/520.omnetpp_r/run/run_base_refrate_lfi-gcc-m64.0004 -E -e compare.err -o compare.stdout -f compare.cmd
+Stop command: 2024-06-13 11:28:09 (1718303289.72368)
+Elapsed time for command: 00:00:02 (2.97895693778992)
+Benchmark Times:
+  Run Start:    2024-06-13 11:21:09 (1718302869)
+  Rate Start:   2024-06-13 11:21:09 (1718302869.50567)
+  Rate End:     2024-06-13 11:28:06 (1718303286.56645)
+  Run Stop:     2024-06-13 11:28:06 (1718303286)
+  Run Elapsed:  00:06:57 (417)
+  Run Reported: 00:06:57 (417 60787916 417.060788)
+ Success 520.omnetpp_r base refrate ratio=3.15, runtime=417.060788, copies=1, threads=1, power=0.00W, temp=0.00 degC, humidity=0.00%
+-----------------------------------
+  Running 523.xalancbmk_r refrate (ref) base lfi-gcc-m64 (1 copy) [2024-06-13 11:28:09]
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+Commands to run (specinvoke command file):
+    -r
+    -N C
+    -C /home/zyedidia/cpu2017/benchspec/CPU/523.xalancbmk_r/run/run_base_refrate_lfi-gcc-m64.0002
+    -o ref-t5.out -e ref-t5.err ../run_base_refrate_lfi-gcc-m64.0002/cpuxalan_r_base.lfi-gcc-m64 -v t5.xml xalanc.xsl > ref-t5.out 2>> ref-t5.err (timed)
+Specinvoke: /home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/523.xalancbmk_r/run/run_base_refrate_lfi-gcc-m64.0002 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+Issuing command '/home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/523.xalancbmk_r/run/run_base_refrate_lfi-gcc-m64.0002 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout'
+Start command: 2024-06-13 11:28:09 (1718303289.83374)
+specinvoke running: /home/zyedidia/cpu2017/bin/specinvoke.orig -d /home/zyedidia/cpu2017/benchspec/CPU/523.xalancbmk_r/run/run_base_refrate_lfi-gcc-m64.0002 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+Stop command: 2024-06-13 11:31:22 (1718303482.4876)
+Elapsed time for command: 00:03:12 (192.653861045837)
+Workload elapsed time (copy 0 workload 1) = 192.49826 seconds
+Copy 0 of 523.xalancbmk_r (base refrate) run 1 finished at 2024-06-13 11:31:22.  Total elapsed time: 192.49826
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+comparing 'ref-t5.out' with 
+Specinvoke: /home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/523.xalancbmk_r/run/run_base_refrate_lfi-gcc-m64.0002 -f compare.cmd -E -e compare.err -o compare.stdout
+Issuing command '/home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/523.xalancbmk_r/run/run_base_refrate_lfi-gcc-m64.0002 -f compare.cmd -E -e compare.err -o compare.stdout'
+Start command: 2024-06-13 11:31:22 (1718303482.51314)
+specinvoke running: /home/zyedidia/cpu2017/bin/specinvoke.orig -d /home/zyedidia/cpu2017/benchspec/CPU/523.xalancbmk_r/run/run_base_refrate_lfi-gcc-m64.0002 -E -e compare.err -o compare.stdout -f compare.cmd
+Stop command: 2024-06-13 11:31:22 (1718303482.78458)
+Elapsed time for command: 00:00:00 (0.271440982818604)
+Benchmark Times:
+  Run Start:    2024-06-13 11:28:09 (1718303289)
+  Rate Start:   2024-06-13 11:28:09 (1718303289.83679)
+  Rate End:     2024-06-13 11:31:22 (1718303482.33505)
+  Run Stop:     2024-06-13 11:31:22 (1718303482)
+  Run Elapsed:  00:03:13 (193)
+  Run Reported: 00:03:12 (192 498260021 192.49826)
+ Success 523.xalancbmk_r base refrate ratio=5.49, runtime=192.498260, copies=1, threads=1, power=0.00W, temp=0.00 degC, humidity=0.00%
+-----------------------------------
+  Running 525.x264_r refrate (ref) base lfi-gcc-m64 (1 copy) [2024-06-13 11:31:22]
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+Commands to run (specinvoke command file):
+    -r
+    -N C
+    -C /home/zyedidia/cpu2017/benchspec/CPU/525.x264_r/run/run_base_refrate_lfi-gcc-m64.0004
+    -o run_000-1000_x264_r_base.lfi-gcc-m64_x264_pass1.out -e run_000-1000_x264_r_base.lfi-gcc-m64_x264_pass1.err ../run_base_refrate_lfi-gcc-m64.0004/x264_r_base.lfi-gcc-m64 --pass 1 --stats x264_stats.log --bitrate 1000 --frames 1000 -o BuckBunny_New.264 BuckBunny.yuv 1280x720 > run_000-1000_x264_r_base.lfi-gcc-m64_x264_pass1.out 2>> run_000-1000_x264_r_base.lfi-gcc-m64_x264_pass1.err (timed)
+    -o run_000-1000_x264_r_base.lfi-gcc-m64_x264_pass2.out -e run_000-1000_x264_r_base.lfi-gcc-m64_x264_pass2.err ../run_base_refrate_lfi-gcc-m64.0004/x264_r_base.lfi-gcc-m64 --pass 2 --stats x264_stats.log --bitrate 1000 --dumpyuv 200 --frames 1000 -o BuckBunny_New.264 BuckBunny.yuv 1280x720 > run_000-1000_x264_r_base.lfi-gcc-m64_x264_pass2.out 2>> run_000-1000_x264_r_base.lfi-gcc-m64_x264_pass2.err (timed)
+    -o run_0500-1250_x264_r_base.lfi-gcc-m64_x264.out -e run_0500-1250_x264_r_base.lfi-gcc-m64_x264.err ../run_base_refrate_lfi-gcc-m64.0004/x264_r_base.lfi-gcc-m64 --seek 500 --dumpyuv 200 --frames 1250 -o BuckBunny_New.264 BuckBunny.yuv 1280x720 > run_0500-1250_x264_r_base.lfi-gcc-m64_x264.out 2>> run_0500-1250_x264_r_base.lfi-gcc-m64_x264.err (timed)
+Specinvoke: /home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/525.x264_r/run/run_base_refrate_lfi-gcc-m64.0004 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+Issuing command '/home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/525.x264_r/run/run_base_refrate_lfi-gcc-m64.0004 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout'
+Start command: 2024-06-13 11:31:22 (1718303482.83773)
+specinvoke running: /home/zyedidia/cpu2017/bin/specinvoke.orig -d /home/zyedidia/cpu2017/benchspec/CPU/525.x264_r/run/run_base_refrate_lfi-gcc-m64.0004 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+Stop command: 2024-06-13 11:34:53 (1718303693.69249)
+Elapsed time for command: 00:03:30 (210.854754209518)
+Workload elapsed time (copy 0 workload 1) = 29.332486 seconds
+Workload elapsed time (copy 0 workload 2) = 88.593766 seconds
+Workload elapsed time (copy 0 workload 3) = 92.772546 seconds
+Copy 0 of 525.x264_r (base refrate) run 1 finished at 2024-06-13 11:34:53.  Total elapsed time: 210.698798
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+comparing 'imagevalidate_frame_1100.out' with reltol=0.085
+comparing 'imagevalidate_frame_1249.out' with reltol=0.085
+comparing 'imagevalidate_frame_200.out' with reltol=0.085
+comparing 'imagevalidate_frame_400.out' with reltol=0.085
+comparing 'imagevalidate_frame_600.out' with reltol=0.085
+comparing 'imagevalidate_frame_700.out' with reltol=0.085
+comparing 'imagevalidate_frame_800.out' with reltol=0.085
+comparing 'imagevalidate_frame_900.out' with reltol=0.085
+comparing 'imagevalidate_frame_999.out' with reltol=0.085
+Specinvoke: /home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/525.x264_r/run/run_base_refrate_lfi-gcc-m64.0004 -f compare.cmd -E -e compare.err -o compare.stdout
+Issuing command '/home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/525.x264_r/run/run_base_refrate_lfi-gcc-m64.0004 -f compare.cmd -E -e compare.err -o compare.stdout'
+Start command: 2024-06-13 11:34:53 (1718303693.72455)
+specinvoke running: /home/zyedidia/cpu2017/bin/specinvoke.orig -d /home/zyedidia/cpu2017/benchspec/CPU/525.x264_r/run/run_base_refrate_lfi-gcc-m64.0004 -E -e compare.err -o compare.stdout -f compare.cmd
+Stop command: 2024-06-13 11:34:54 (1718303694.95608)
+Elapsed time for command: 00:00:01 (1.23153519630432)
+Benchmark Times:
+  Run Start:    2024-06-13 11:31:22 (1718303482)
+  Rate Start:   2024-06-13 11:31:22 (1718303482.84077)
+  Rate End:     2024-06-13 11:34:53 (1718303693.5396)
+  Run Stop:     2024-06-13 11:34:53 (1718303693)
+  Run Elapsed:  00:03:31 (211)
+  Run Reported: 00:03:30 (210 698830842 210.698831)
+ Success 525.x264_r base refrate ratio=8.31, runtime=210.698831, copies=1, threads=1, power=0.00W, temp=0.00 degC, humidity=0.00%
+-----------------------------------
+  Running 531.deepsjeng_r refrate (ref) base lfi-gcc-m64 (1 copy) [2024-06-13 11:34:54]
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+Commands to run (specinvoke command file):
+    -r
+    -N C
+    -C /home/zyedidia/cpu2017/benchspec/CPU/531.deepsjeng_r/run/run_base_refrate_lfi-gcc-m64.0004
+    -o ref.out -e ref.err ../run_base_refrate_lfi-gcc-m64.0004/deepsjeng_r_base.lfi-gcc-m64 ref.txt > ref.out 2>> ref.err (timed)
+Specinvoke: /home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/531.deepsjeng_r/run/run_base_refrate_lfi-gcc-m64.0004 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+Issuing command '/home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/531.deepsjeng_r/run/run_base_refrate_lfi-gcc-m64.0004 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout'
+Start command: 2024-06-13 11:34:54 (1718303694.99151)
+specinvoke running: /home/zyedidia/cpu2017/bin/specinvoke.orig -d /home/zyedidia/cpu2017/benchspec/CPU/531.deepsjeng_r/run/run_base_refrate_lfi-gcc-m64.0004 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+Stop command: 2024-06-13 11:39:39 (1718303979.63417)
+Elapsed time for command: 00:04:44 (284.642653942108)
+Workload elapsed time (copy 0 workload 1) = 284.486933 seconds
+Copy 0 of 531.deepsjeng_r (base refrate) run 1 finished at 2024-06-13 11:39:39.  Total elapsed time: 284.486933
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+comparing 'ref.out' with obiwan=1
+Specinvoke: /home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/531.deepsjeng_r/run/run_base_refrate_lfi-gcc-m64.0004 -f compare.cmd -E -e compare.err -o compare.stdout
+Issuing command '/home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/531.deepsjeng_r/run/run_base_refrate_lfi-gcc-m64.0004 -f compare.cmd -E -e compare.err -o compare.stdout'
+Start command: 2024-06-13 11:39:39 (1718303979.65972)
+specinvoke running: /home/zyedidia/cpu2017/bin/specinvoke.orig -d /home/zyedidia/cpu2017/benchspec/CPU/531.deepsjeng_r/run/run_base_refrate_lfi-gcc-m64.0004 -E -e compare.err -o compare.stdout -f compare.cmd
+Stop command: 2024-06-13 11:39:39 (1718303979.91579)
+Elapsed time for command: 00:00:00 (0.256067991256714)
+Benchmark Times:
+  Run Start:    2024-06-13 11:34:54 (1718303694)
+  Rate Start:   2024-06-13 11:34:54 (1718303694.9945)
+  Rate End:     2024-06-13 11:39:39 (1718303979.48144)
+  Run Stop:     2024-06-13 11:39:39 (1718303979)
+  Run Elapsed:  00:04:45 (285)
+  Run Reported: 00:04:44 (284 486932992 284.486933)
+ Success 531.deepsjeng_r base refrate ratio=4.03, runtime=284.486933, copies=1, threads=1, power=0.00W, temp=0.00 degC, humidity=0.00%
+-----------------------------------
+  Running 541.leela_r refrate (ref) base lfi-gcc-m64 (1 copy) [2024-06-13 11:39:39]
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+Commands to run (specinvoke command file):
+    -r
+    -N C
+    -C /home/zyedidia/cpu2017/benchspec/CPU/541.leela_r/run/run_base_refrate_lfi-gcc-m64.0004
+    -o ref.out -e ref.err ../run_base_refrate_lfi-gcc-m64.0004/leela_r_base.lfi-gcc-m64 ref.sgf > ref.out 2>> ref.err (timed)
+Specinvoke: /home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/541.leela_r/run/run_base_refrate_lfi-gcc-m64.0004 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+Issuing command '/home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/541.leela_r/run/run_base_refrate_lfi-gcc-m64.0004 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout'
+Start command: 2024-06-13 11:39:39 (1718303979.96839)
+specinvoke running: /home/zyedidia/cpu2017/bin/specinvoke.orig -d /home/zyedidia/cpu2017/benchspec/CPU/541.leela_r/run/run_base_refrate_lfi-gcc-m64.0004 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+Stop command: 2024-06-13 11:47:29 (1718304449.49231)
+Elapsed time for command: 00:07:49 (469.523924827576)
+Workload elapsed time (copy 0 workload 1) = 469.368021 seconds
+Copy 0 of 541.leela_r (base refrate) run 1 finished at 2024-06-13 11:47:29.  Total elapsed time: 469.368021
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+comparing 'ref.out' with 
+Specinvoke: /home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/541.leela_r/run/run_base_refrate_lfi-gcc-m64.0004 -f compare.cmd -E -e compare.err -o compare.stdout
+Issuing command '/home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/541.leela_r/run/run_base_refrate_lfi-gcc-m64.0004 -f compare.cmd -E -e compare.err -o compare.stdout'
+Start command: 2024-06-13 11:47:29 (1718304449.51801)
+specinvoke running: /home/zyedidia/cpu2017/bin/specinvoke.orig -d /home/zyedidia/cpu2017/benchspec/CPU/541.leela_r/run/run_base_refrate_lfi-gcc-m64.0004 -E -e compare.err -o compare.stdout -f compare.cmd
+Stop command: 2024-06-13 11:47:29 (1718304449.7667)
+Elapsed time for command: 00:00:00 (0.248687982559204)
+Benchmark Times:
+  Run Start:    2024-06-13 11:39:39 (1718303979)
+  Rate Start:   2024-06-13 11:39:39 (1718303979.97142)
+  Rate End:     2024-06-13 11:47:29 (1718304449.33944)
+  Run Stop:     2024-06-13 11:47:29 (1718304449)
+  Run Elapsed:  00:07:50 (470)
+  Run Reported: 00:07:49 (469 368021011 469.368021)
+ Success 541.leela_r base refrate ratio=3.53, runtime=469.368021, copies=1, threads=1, power=0.00W, temp=0.00 degC, humidity=0.00%
+-----------------------------------
+  Running 557.xz_r refrate (ref) base lfi-gcc-m64 (1 copy) [2024-06-13 11:47:29]
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+Commands to run (specinvoke command file):
+    -r
+    -N C
+    -C /home/zyedidia/cpu2017/benchspec/CPU/557.xz_r/run/run_base_refrate_lfi-gcc-m64.0004
+    -o cld.tar-160-6.out -e cld.tar-160-6.err ../run_base_refrate_lfi-gcc-m64.0004/xz_r_base.lfi-gcc-m64 cld.tar.xz 160 19cf30ae51eddcbefda78dd06014b4b96281456e078ca7c13e1c0c9e6aaea8dff3efb4ad6b0456697718cede6bd5454852652806a657bb56e07d61128434b474 59796407 61004416 6 > cld.tar-160-6.out 2>> cld.tar-160-6.err (timed)
+    -o cpu2006docs.tar-250-6e.out -e cpu2006docs.tar-250-6e.err ../run_base_refrate_lfi-gcc-m64.0004/xz_r_base.lfi-gcc-m64 cpu2006docs.tar.xz 250 055ce243071129412e9dd0b3b69a21654033a9b723d874b2015c774fac1553d9713be561ca86f74e4f16f22e664fc17a79f30caa5ad2c04fbc447549c2810fae 23047774 23513385 6e > cpu2006docs.tar-250-6e.out 2>> cpu2006docs.tar-250-6e.err (timed)
+    -o input.combined-250-7.out -e input.combined-250-7.err ../run_base_refrate_lfi-gcc-m64.0004/xz_r_base.lfi-gcc-m64 input.combined.xz 250 a841f68f38572a49d86226b7ff5baeb31bd19dc637a922a972b2e6d1257a890f6a544ecab967c313e370478c74f760eb229d4eef8a8d2836d233d3e9dd1430bf 40401484 41217675 7 > input.combined-250-7.out 2>> input.combined-250-7.err (timed)
+Specinvoke: /home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/557.xz_r/run/run_base_refrate_lfi-gcc-m64.0004 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+Issuing command '/home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/557.xz_r/run/run_base_refrate_lfi-gcc-m64.0004 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout'
+Start command: 2024-06-13 11:47:29 (1718304449.80446)
+specinvoke running: /home/zyedidia/cpu2017/bin/specinvoke.orig -d /home/zyedidia/cpu2017/benchspec/CPU/557.xz_r/run/run_base_refrate_lfi-gcc-m64.0004 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+Stop command: 2024-06-13 11:53:27 (1718304807.83386)
+Elapsed time for command: 00:05:58 (358.029403209686)
+Workload elapsed time (copy 0 workload 1) = 108.614232 seconds
+Workload elapsed time (copy 0 workload 2) = 145.153771 seconds
+Workload elapsed time (copy 0 workload 3) = 104.105814 seconds
+Copy 0 of 557.xz_r (base refrate) run 1 finished at 2024-06-13 11:53:27.  Total elapsed time: 357.873817
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+comparing 'cld.tar-160-6.out' with 
+comparing 'cpu2006docs.tar-250-6e.out' with 
+comparing 'input.combined-250-7.out' with 
+Specinvoke: /home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/557.xz_r/run/run_base_refrate_lfi-gcc-m64.0004 -f compare.cmd -E -e compare.err -o compare.stdout
+Issuing command '/home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/557.xz_r/run/run_base_refrate_lfi-gcc-m64.0004 -f compare.cmd -E -e compare.err -o compare.stdout'
+Start command: 2024-06-13 11:53:27 (1718304807.86071)
+specinvoke running: /home/zyedidia/cpu2017/bin/specinvoke.orig -d /home/zyedidia/cpu2017/benchspec/CPU/557.xz_r/run/run_base_refrate_lfi-gcc-m64.0004 -E -e compare.err -o compare.stdout -f compare.cmd
+Stop command: 2024-06-13 11:53:28 (1718304808.29303)
+Elapsed time for command: 00:00:00 (0.432317972183228)
+Benchmark Times:
+  Run Start:    2024-06-13 11:47:29 (1718304449)
+  Rate Start:   2024-06-13 11:47:29 (1718304449.80747)
+  Rate End:     2024-06-13 11:53:27 (1718304807.68133)
+  Run Stop:     2024-06-13 11:53:27 (1718304807)
+  Run Elapsed:  00:05:58 (358)
+  Run Reported: 00:05:57 (357 873855113 357.873855)
+ Success 557.xz_r base refrate ratio=3.02, runtime=357.873855, copies=1, threads=1, power=0.00W, temp=0.00 degC, humidity=0.00%
+Success: 1x502.gcc_r 1x505.mcf_r 1x520.omnetpp_r 1x523.xalancbmk_r 1x525.x264_r 1x531.deepsjeng_r 1x541.leela_r 1x557.xz_r
+Producing Raw Reports
+ label: lfi-gcc-m64
+  workload: refrate (ref)
+   benchset: intspeed
+   benchset: intrate
+   metric: SPECrate2017_int_base
+    format: raw -> /home/zyedidia/cpu2017/result/CPU2017.570.intrate.refrate.rsf
+Parsing flags for 502.gcc_r base: done
+Parsing flags for 505.mcf_r base: done
+Parsing flags for 520.omnetpp_r base: done
+Parsing flags for 523.xalancbmk_r base: done
+Parsing flags for 525.x264_r base: done
+Parsing flags for 531.deepsjeng_r base: done
+Parsing flags for 541.leela_r base: done
+Parsing flags for 557.xz_r base: done
+Doing flag reduction: done
+    format: flags -> /home/zyedidia/cpu2017/result/CPU2017.570.intrate.refrate.flags.html
+    format: cfg -> /home/zyedidia/cpu2017/result/CPU2017.570.intrate.refrate.cfg
+    format: CSV -> /home/zyedidia/cpu2017/result/CPU2017.570.intrate.refrate.csv
+    format: PDF -> /home/zyedidia/cpu2017/result/CPU2017.570.intrate.refrate.pdf
+    format: HTML -> /home/zyedidia/cpu2017/result/CPU2017.570.intrate.refrate.html
+    format: Text -> /home/zyedidia/cpu2017/result/CPU2017.570.intrate.refrate.txt
+   benchset: fpspeed
+   benchset: fprate
+runcpu finished at 2024-06-13 11:53:32; 2547 total seconds elapsed
+Info: file_tail(1018799): file '/home/zyedidia/cpu2017/tmp/CPU2017.570/templogs/preenv.intrate.570.0.debug' was removed and will no longer be followed.  No action is required.
+-------------------------------------------------------------------------------
+
+Setting up environment for running 508.namd_r, 510.parest_r, 511.povray_r, 519.lbm_r, 538.imagick_r, 544.nab_r...
+Starting runcpu for 508.namd_r, 510.parest_r, 511.povray_r, 519.lbm_r, 538.imagick_r, 544.nab_r...
+Running "specperl /home/zyedidia/cpu2017/bin/sysinfo" to gather system information.
+sysinfo: r6365 of 2019-08-21 (295195f888a3d7edb1e6e46a485a0011)
+sysinfo: Getting system information for Linux...
+sysinfo: ...getting CPU info
+sysinfo: ...getting info from numactl
+sysinfo: ...getting memory info
+sysinfo: ...getting OS info
+sysinfo: ...getting CPU vulnerability status from the kernel
+sysinfo: ...getting disk info
+sysinfo: ...trying to get info from /sys/devices/virtual/dmi/id
+sysinfo: ...trying to get info from dmidecode
+Read 160 info lines from the sysinfo program.
+Retrieving flags file (/home/zyedidia/cpu2017/config/flags/gcc.xml)...
+Verbosity = 5
+Action    = validate
+Tune      = base
+Label     = lfi-gcc-m64
+Size      = refrate
+benchmarks= 508.namd_r,510.parest_r,511.povray_r,519.lbm_r,538.imagick_r,544.nab_r
+outputs   = txt,html,cfg,pdf,csv
+username  = zyedidia
+Environment settings:
+LD_LIBRARY_PATH = "%{gcc_dir}/lib64/:%{gcc_dir}/lib/:/lib64"
+
+Benchmarks selected: 508.namd_r, 510.parest_r, 511.povray_r, 519.lbm_r, 538.imagick_r, 544.nab_r
+Compiling Binaries
+------------------------------------------------------------------------
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03  -c -o options.o -DSPEC -DNDEBUG  -DNAMD_DISABLE_SSE -DSPEC_AUTO_SUPPRESS_OPENMP -O3 -fomit-frame-pointer -flto         -DSPEC_LP64  <source>"
+C: CXXC="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+C: CXXOBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS=""
+P: BENCH_CXXFLAGS="-DNAMD_DISABLE_SSE -DSPEC_AUTO_SUPPRESS_OPENMP"
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: CXXOPTIMIZE=""
+P: PORTABILITY=""
+P: CXXPORTABILITY=""
+O: EXTRA_CXXFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_CXXOPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CXXPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03       -O3 -fomit-frame-pointer -flto          <objects>            -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+C: LDOUT="-o options"
+ CXXC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-g++
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++,fortran --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+  Up to date 508.namd_r base lfi-gcc-m64
+------------------------------------------------------------------------
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03  -c -o options.o -DSPEC -DNDEBUG -Iinclude -I. -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto         -DSPEC_LP64  <source>"
+C: CXXC="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+C: CXXOBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-Iinclude -I. -DSPEC_AUTO_SUPPRESS_OPENMP"
+P: BENCH_CXXFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: CXXOPTIMIZE=""
+P: PORTABILITY=""
+P: CXXPORTABILITY=""
+O: EXTRA_CXXFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_CXXOPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CXXPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03       -O3 -fomit-frame-pointer -flto          <objects>            -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+C: LDOUT="-o options"
+ CXXC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-g++
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++,fortran --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+  Up to date 510.parest_r base lfi-gcc-m64
+------------------------------------------------------------------------
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03  -c -o options.o -DSPEC -DNDEBUG -Ifrontend -Ibase -I. -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto         -DSPEC_LP64  <source>"
+C: CXXC="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+C: CXXOBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-Ifrontend -Ibase -I. -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP"
+P: BENCH_CXXFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: CXXOPTIMIZE=""
+P: PORTABILITY=""
+P: CXXPORTABILITY=""
+O: EXTRA_CXXFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_CXXOPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CXXPORTABILITY=""
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99    -c -o options.o -DSPEC -DNDEBUG -Ifrontend -Ibase -I. -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto               -DSPEC_LP64  <source>"
+C: CC="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+C: COBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-Ifrontend -Ibase -I. -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP"
+P: BENCH_CFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: COPTIMIZE=""
+P: PORTABILITY=""
+P: CPORTABILITY=""
+O: EXTRA_CFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_COPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03       -O3 -fomit-frame-pointer -flto          <objects>            -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+C: LDOUT="-o options"
+ CXXC_VERSION_OPTION:
+ CC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-g++
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++,fortran --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++,fortran --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03  -c -o options.o -DSPEC -DNDEBUG -Ifrontend -Ibase -I. -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto         -DSPEC_LP64  <source>"
+C: CXXC="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+C: CXXOBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-Ifrontend -Ibase -I. -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP"
+P: BENCH_CXXFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: CXXOPTIMIZE=""
+P: PORTABILITY=""
+P: CXXPORTABILITY=""
+O: EXTRA_CXXFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_CXXOPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CXXPORTABILITY=""
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99    -c -o options.o -DSPEC -DNDEBUG -Ifrontend -Ibase -I. -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto               -DSPEC_LP64  <source>"
+C: CC="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+C: COBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-Ifrontend -Ibase -I. -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP"
+P: BENCH_CFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: COPTIMIZE=""
+P: PORTABILITY=""
+P: CPORTABILITY=""
+O: EXTRA_CFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_COPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03       -O3 -fomit-frame-pointer -flto          <objects>            -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+C: LDOUT="-o options"
+ CXXC_VERSION_OPTION:
+ CC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-g++
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++,fortran --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++,fortran --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+  Up to date 511.povray_r base lfi-gcc-m64
+------------------------------------------------------------------------
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99    -c -o options.o -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto               -DSPEC_LP64  <source>"
+C: CC="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+C: COBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-DSPEC_AUTO_SUPPRESS_OPENMP"
+P: BENCH_CFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: COPTIMIZE=""
+P: PORTABILITY=""
+P: CPORTABILITY=""
+O: EXTRA_CFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_COPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99         -O3 -fomit-frame-pointer -flto          <objects>   -lm         -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+C: MATH_LIBS="-lm"
+C: LDOUT="-o options"
+ CC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++,fortran --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+  Up to date 519.lbm_r base lfi-gcc-m64
+------------------------------------------------------------------------
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99    -c -o options.o -DSPEC -DNDEBUG -I. -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto               -DSPEC_LP64  <source>"
+C: CC="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+C: COBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-I. -DSPEC_AUTO_SUPPRESS_OPENMP"
+P: BENCH_CFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: COPTIMIZE=""
+P: PORTABILITY=""
+P: CPORTABILITY=""
+O: EXTRA_CFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_COPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99         -O3 -fomit-frame-pointer -flto          <objects>   -lm         -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+C: MATH_LIBS="-lm"
+C: LDOUT="-o options"
+ CC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++,fortran --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99    -c -o options.o -DSPEC -DNDEBUG -I. -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto               -DSPEC_LP64  <source>"
+C: CC="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+C: COBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-I. -DSPEC_AUTO_SUPPRESS_OPENMP"
+P: BENCH_CFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: COPTIMIZE=""
+P: PORTABILITY=""
+P: CPORTABILITY=""
+O: EXTRA_CFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_COPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99         -O3 -fomit-frame-pointer -flto          <objects>   -lm         -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+C: MATH_LIBS="-lm"
+C: LDOUT="-o options"
+ CC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++,fortran --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+  Up to date 538.imagick_r base lfi-gcc-m64
+------------------------------------------------------------------------
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99    -c -o options.o -DSPEC -DNDEBUG -Ispecrand -Iregex-alpha -DNDEBUG -DNOPERFLIB -DNOREDUCE -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto               -DSPEC_LP64  <source>"
+C: CC="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+C: COBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-Ispecrand -Iregex-alpha -DNDEBUG -DNOPERFLIB -DNOREDUCE -DSPEC_AUTO_SUPPRESS_OPENMP"
+P: BENCH_CFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: COPTIMIZE=""
+P: PORTABILITY=""
+P: CPORTABILITY=""
+O: EXTRA_CFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_COPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99         -O3 -fomit-frame-pointer -flto          <objects>   -lm         -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+C: MATH_LIBS="-lm"
+C: LDOUT="-o options"
+ CC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++,fortran --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+  Up to date 544.nab_r base lfi-gcc-m64
+
+
+Setting Up Run Directories
+  Setting up 508.namd_r refrate (ref) base lfi-gcc-m64 (1 copy): run_base_refrate_lfi-gcc-m64.0000
+  Setting up 510.parest_r refrate (ref) base lfi-gcc-m64 (1 copy): run_base_refrate_lfi-gcc-m64.0000
+  Setting up 511.povray_r refrate (ref) base lfi-gcc-m64 (1 copy): run_base_refrate_lfi-gcc-m64.0000
+  Setting up 519.lbm_r refrate (ref) base lfi-gcc-m64 (1 copy): run_base_refrate_lfi-gcc-m64.0000
+  Setting up 538.imagick_r refrate (ref) base lfi-gcc-m64 (1 copy): run_base_refrate_lfi-gcc-m64.0000
+  Setting up 544.nab_r refrate (ref) base lfi-gcc-m64 (1 copy): run_base_refrate_lfi-gcc-m64.0000
+-----------------------------------
+Running Benchmarks
+-----------------------------------
+  Running 508.namd_r refrate (ref) base lfi-gcc-m64 (1 copy) [2024-06-13 11:53:36]
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+Commands to run (specinvoke command file):
+    -r
+    -N C
+    -C /home/zyedidia/cpu2017/benchspec/CPU/508.namd_r/run/run_base_refrate_lfi-gcc-m64.0000
+    -o namd.out -e namd.err ../run_base_refrate_lfi-gcc-m64.0000/namd_r_base.lfi-gcc-m64 --input apoa1.input --output apoa1.ref.output --iterations 65 > namd.out 2>> namd.err (timed)
+Specinvoke: /home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/508.namd_r/run/run_base_refrate_lfi-gcc-m64.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+Issuing command '/home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/508.namd_r/run/run_base_refrate_lfi-gcc-m64.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout'
+Start command: 2024-06-13 11:53:36 (1718304816.93556)
+specinvoke running: /home/zyedidia/cpu2017/bin/specinvoke.orig -d /home/zyedidia/cpu2017/benchspec/CPU/508.namd_r/run/run_base_refrate_lfi-gcc-m64.0000 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+Stop command: 2024-06-13 11:57:33 (1718305053.21218)
+Elapsed time for command: 00:03:56 (236.276627063751)
+Workload elapsed time (copy 0 workload 1) = 236.121095 seconds
+Copy 0 of 508.namd_r (base refrate) run 1 finished at 2024-06-13 11:57:33.  Total elapsed time: 236.121095
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+comparing 'apoa1.ref.output' with abstol=5e-05
+Specinvoke: /home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/508.namd_r/run/run_base_refrate_lfi-gcc-m64.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+Issuing command '/home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/508.namd_r/run/run_base_refrate_lfi-gcc-m64.0000 -f compare.cmd -E -e compare.err -o compare.stdout'
+Start command: 2024-06-13 11:57:33 (1718305053.238)
+specinvoke running: /home/zyedidia/cpu2017/bin/specinvoke.orig -d /home/zyedidia/cpu2017/benchspec/CPU/508.namd_r/run/run_base_refrate_lfi-gcc-m64.0000 -E -e compare.err -o compare.stdout -f compare.cmd
+Stop command: 2024-06-13 11:57:33 (1718305053.52954)
+Elapsed time for command: 00:00:00 (0.291547060012817)
+Benchmark Times:
+  Run Start:    2024-06-13 11:53:36 (1718304816)
+  Rate Start:   2024-06-13 11:53:36 (1718304816.93855)
+  Rate End:     2024-06-13 11:57:33 (1718305053.05965)
+  Run Stop:     2024-06-13 11:57:33 (1718305053)
+  Run Elapsed:  00:03:57 (237)
+  Run Reported: 00:03:56 (236 121094942 236.121095)
+ Success 508.namd_r base refrate ratio=4.02, runtime=236.121095, copies=1, threads=1, power=0.00W, temp=0.00 degC, humidity=0.00%
+-----------------------------------
+  Running 510.parest_r refrate (ref) base lfi-gcc-m64 (1 copy) [2024-06-13 11:57:33]
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+Commands to run (specinvoke command file):
+    -r
+    -N C
+    -C /home/zyedidia/cpu2017/benchspec/CPU/510.parest_r/run/run_base_refrate_lfi-gcc-m64.0000
+    -o ref.out -e ref.err ../run_base_refrate_lfi-gcc-m64.0000/parest_r_base.lfi-gcc-m64 ref.prm > ref.out 2>> ref.err (timed)
+Specinvoke: /home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/510.parest_r/run/run_base_refrate_lfi-gcc-m64.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+Issuing command '/home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/510.parest_r/run/run_base_refrate_lfi-gcc-m64.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout'
+Start command: 2024-06-13 11:57:33 (1718305053.60861)
+specinvoke running: /home/zyedidia/cpu2017/bin/specinvoke.orig -d /home/zyedidia/cpu2017/benchspec/CPU/510.parest_r/run/run_base_refrate_lfi-gcc-m64.0000 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+Stop command: 2024-06-13 12:04:52 (1718305492.48102)
+Elapsed time for command: 00:07:18 (438.872416973114)
+Workload elapsed time (copy 0 workload 1) = 438.716466 seconds
+Copy 0 of 510.parest_r (base refrate) run 1 finished at 2024-06-13 12:04:52.  Total elapsed time: 438.716466
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+comparing '001-m00.vtk' with abstol=0.001, floatcompare=1
+comparing '002-m00.vtk' with abstol=0.001, floatcompare=1
+comparing '003-m00.vtk' with abstol=0.001, floatcompare=1
+comparing '004-m00.vtk' with abstol=0.001, floatcompare=1
+comparing '005-m00.vtk' with abstol=0.001, floatcompare=1
+comparing '006-m00.vtk' with abstol=0.001, floatcompare=1
+comparing '007-m00.vtk' with abstol=0.001, floatcompare=1
+comparing 'log' with abstol=0.001, floatcompare=1
+comparing 'me.prm' with abstol=0.001, floatcompare=1
+comparing 'statistics' with abstol=0.004, floatcompare=1
+Specinvoke: /home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/510.parest_r/run/run_base_refrate_lfi-gcc-m64.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+Issuing command '/home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/510.parest_r/run/run_base_refrate_lfi-gcc-m64.0000 -f compare.cmd -E -e compare.err -o compare.stdout'
+Start command: 2024-06-13 12:04:52 (1718305492.5108)
+specinvoke running: /home/zyedidia/cpu2017/bin/specinvoke.orig -d /home/zyedidia/cpu2017/benchspec/CPU/510.parest_r/run/run_base_refrate_lfi-gcc-m64.0000 -E -e compare.err -o compare.stdout -f compare.cmd
+Stop command: 2024-06-13 12:04:53 (1718305493.63913)
+Elapsed time for command: 00:00:01 (1.12833189964294)
+Benchmark Times:
+  Run Start:    2024-06-13 11:57:33 (1718305053)
+  Rate Start:   2024-06-13 11:57:33 (1718305053.61178)
+  Rate End:     2024-06-13 12:04:52 (1718305492.32824)
+  Run Stop:     2024-06-13 12:04:52 (1718305492)
+  Run Elapsed:  00:07:19 (439)
+  Run Reported: 00:07:18 (438 716465950 438.716466)
+ Success 510.parest_r base refrate ratio=5.96, runtime=438.716466, copies=1, threads=1, power=0.00W, temp=0.00 degC, humidity=0.00%
+-----------------------------------
+  Running 511.povray_r refrate (ref) base lfi-gcc-m64 (1 copy) [2024-06-13 12:04:53]
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+Commands to run (specinvoke command file):
+    -r
+    -N C
+    -C /home/zyedidia/cpu2017/benchspec/CPU/511.povray_r/run/run_base_refrate_lfi-gcc-m64.0000
+    -o SPEC-benchmark-ref.stdout -e SPEC-benchmark-ref.stderr ../run_base_refrate_lfi-gcc-m64.0000/povray_r_base.lfi-gcc-m64 SPEC-benchmark-ref.ini > SPEC-benchmark-ref.stdout 2>> SPEC-benchmark-ref.stderr (timed)
+Specinvoke: /home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/511.povray_r/run/run_base_refrate_lfi-gcc-m64.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+Issuing command '/home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/511.povray_r/run/run_base_refrate_lfi-gcc-m64.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout'
+Start command: 2024-06-13 12:04:53 (1718305493.69426)
+specinvoke running: /home/zyedidia/cpu2017/bin/specinvoke.orig -d /home/zyedidia/cpu2017/benchspec/CPU/511.povray_r/run/run_base_refrate_lfi-gcc-m64.0000 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+Stop command: 2024-06-13 12:11:02 (1718305862.86546)
+Elapsed time for command: 00:06:09 (369.171206951141)
+Workload elapsed time (copy 0 workload 1) = 369.015644 seconds
+Copy 0 of 511.povray_r (base refrate) run 1 finished at 2024-06-13 12:11:02.  Total elapsed time: 369.015644
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+comparing 'imagevalidate_SPEC-benchmark.tga.out' with reltol=0.06
+Specinvoke: /home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/511.povray_r/run/run_base_refrate_lfi-gcc-m64.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+Issuing command '/home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/511.povray_r/run/run_base_refrate_lfi-gcc-m64.0000 -f compare.cmd -E -e compare.err -o compare.stdout'
+Start command: 2024-06-13 12:11:02 (1718305862.89254)
+specinvoke running: /home/zyedidia/cpu2017/bin/specinvoke.orig -d /home/zyedidia/cpu2017/benchspec/CPU/511.povray_r/run/run_base_refrate_lfi-gcc-m64.0000 -E -e compare.err -o compare.stdout -f compare.cmd
+Stop command: 2024-06-13 12:11:04 (1718305864.01458)
+Elapsed time for command: 00:00:01 (1.12203907966614)
+Benchmark Times:
+  Run Start:    2024-06-13 12:04:53 (1718305493)
+  Rate Start:   2024-06-13 12:04:53 (1718305493.69721)
+  Rate End:     2024-06-13 12:11:02 (1718305862.71286)
+  Run Stop:     2024-06-13 12:11:02 (1718305862)
+  Run Elapsed:  00:06:09 (369)
+  Run Reported: 00:06:09 (369 15644073 369.015644)
+ Success 511.povray_r base refrate ratio=6.33, runtime=369.015644, copies=1, threads=1, power=0.00W, temp=0.00 degC, humidity=0.00%
+-----------------------------------
+  Running 519.lbm_r refrate (ref) base lfi-gcc-m64 (1 copy) [2024-06-13 12:11:04]
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+Commands to run (specinvoke command file):
+    -r
+    -N C
+    -C /home/zyedidia/cpu2017/benchspec/CPU/519.lbm_r/run/run_base_refrate_lfi-gcc-m64.0000
+    -o lbm.out -e lbm.err ../run_base_refrate_lfi-gcc-m64.0000/lbm_r_base.lfi-gcc-m64 3000 reference.dat 0 0 100_100_130_ldc.of > lbm.out 2>> lbm.err (timed)
+Specinvoke: /home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/519.lbm_r/run/run_base_refrate_lfi-gcc-m64.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+Issuing command '/home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/519.lbm_r/run/run_base_refrate_lfi-gcc-m64.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout'
+Start command: 2024-06-13 12:11:04 (1718305864.04851)
+specinvoke running: /home/zyedidia/cpu2017/bin/specinvoke.orig -d /home/zyedidia/cpu2017/benchspec/CPU/519.lbm_r/run/run_base_refrate_lfi-gcc-m64.0000 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+Stop command: 2024-06-13 12:14:57 (1718306097.06227)
+Elapsed time for command: 00:03:53 (233.013758897781)
+Workload elapsed time (copy 0 workload 1) = 232.858224 seconds
+Copy 0 of 519.lbm_r (base refrate) run 1 finished at 2024-06-13 12:14:56.  Total elapsed time: 232.858224
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+comparing 'lbm.out' with abstol=1e-07
+Specinvoke: /home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/519.lbm_r/run/run_base_refrate_lfi-gcc-m64.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+Issuing command '/home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/519.lbm_r/run/run_base_refrate_lfi-gcc-m64.0000 -f compare.cmd -E -e compare.err -o compare.stdout'
+Start command: 2024-06-13 12:14:57 (1718306097.08781)
+specinvoke running: /home/zyedidia/cpu2017/bin/specinvoke.orig -d /home/zyedidia/cpu2017/benchspec/CPU/519.lbm_r/run/run_base_refrate_lfi-gcc-m64.0000 -E -e compare.err -o compare.stdout -f compare.cmd
+Stop command: 2024-06-13 12:14:57 (1718306097.33854)
+Elapsed time for command: 00:00:00 (0.250730037689209)
+Benchmark Times:
+  Run Start:    2024-06-13 12:11:04 (1718305864)
+  Rate Start:   2024-06-13 12:11:04 (1718305864.05146)
+  Rate End:     2024-06-13 12:14:56 (1718306096.90968)
+  Run Stop:     2024-06-13 12:14:57 (1718306097)
+  Run Elapsed:  00:03:53 (233)
+  Run Reported: 00:03:52 (232 858223915 232.858224)
+ Success 519.lbm_r base refrate ratio=4.53, runtime=232.858224, copies=1, threads=1, power=0.00W, temp=0.00 degC, humidity=0.00%
+-----------------------------------
+  Running 538.imagick_r refrate (ref) base lfi-gcc-m64 (1 copy) [2024-06-13 12:14:57]
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+Commands to run (specinvoke command file):
+    -r
+    -N C
+    -C /home/zyedidia/cpu2017/benchspec/CPU/538.imagick_r/run/run_base_refrate_lfi-gcc-m64.0000
+    -o refrate_convert.out -e refrate_convert.err ../run_base_refrate_lfi-gcc-m64.0000/imagick_r_base.lfi-gcc-m64 -limit disk 0 refrate_input.tga -edge 41 -resample 181% -emboss 31 -colorspace YUV -mean-shift 19x19+15% -resize 30% refrate_output.tga > refrate_convert.out 2>> refrate_convert.err (timed)
+Specinvoke: /home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/538.imagick_r/run/run_base_refrate_lfi-gcc-m64.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+Issuing command '/home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/538.imagick_r/run/run_base_refrate_lfi-gcc-m64.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout'
+Start command: 2024-06-13 12:14:57 (1718306097.39508)
+specinvoke running: /home/zyedidia/cpu2017/bin/specinvoke.orig -d /home/zyedidia/cpu2017/benchspec/CPU/538.imagick_r/run/run_base_refrate_lfi-gcc-m64.0000 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+Stop command: 2024-06-13 12:22:24 (1718306544.28179)
+Elapsed time for command: 00:07:26 (446.886718034744)
+Workload elapsed time (copy 0 workload 1) = 446.730849 seconds
+Copy 0 of 538.imagick_r (base refrate) run 1 finished at 2024-06-13 12:22:24.  Total elapsed time: 446.730849
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+comparing 'refrate_validate.out' with reltol=0.01
+Specinvoke: /home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/538.imagick_r/run/run_base_refrate_lfi-gcc-m64.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+Issuing command '/home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/538.imagick_r/run/run_base_refrate_lfi-gcc-m64.0000 -f compare.cmd -E -e compare.err -o compare.stdout'
+Start command: 2024-06-13 12:22:24 (1718306544.30821)
+specinvoke running: /home/zyedidia/cpu2017/bin/specinvoke.orig -d /home/zyedidia/cpu2017/benchspec/CPU/538.imagick_r/run/run_base_refrate_lfi-gcc-m64.0000 -E -e compare.err -o compare.stdout -f compare.cmd
+Stop command: 2024-06-13 12:22:24 (1718306544.61297)
+Elapsed time for command: 00:00:00 (0.304765939712524)
+Benchmark Times:
+  Run Start:    2024-06-13 12:14:57 (1718306097)
+  Rate Start:   2024-06-13 12:14:57 (1718306097.39807)
+  Rate End:     2024-06-13 12:22:24 (1718306544.12892)
+  Run Stop:     2024-06-13 12:22:24 (1718306544)
+  Run Elapsed:  00:07:27 (447)
+  Run Reported: 00:07:26 (446 730848789 446.730849)
+ Success 538.imagick_r base refrate ratio=5.57, runtime=446.730849, copies=1, threads=1, power=0.00W, temp=0.00 degC, humidity=0.00%
+-----------------------------------
+  Running 544.nab_r refrate (ref) base lfi-gcc-m64 (1 copy) [2024-06-13 12:22:24]
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+Commands to run (specinvoke command file):
+    -r
+    -N C
+    -C /home/zyedidia/cpu2017/benchspec/CPU/544.nab_r/run/run_base_refrate_lfi-gcc-m64.0000
+    -o 1am0.out -e 1am0.err ../run_base_refrate_lfi-gcc-m64.0000/nab_r_base.lfi-gcc-m64 1am0 1122214447 122 > 1am0.out 2>> 1am0.err (timed)
+Specinvoke: /home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/544.nab_r/run/run_base_refrate_lfi-gcc-m64.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+Issuing command '/home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/544.nab_r/run/run_base_refrate_lfi-gcc-m64.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout'
+Start command: 2024-06-13 12:22:24 (1718306544.6484)
+specinvoke running: /home/zyedidia/cpu2017/bin/specinvoke.orig -d /home/zyedidia/cpu2017/benchspec/CPU/544.nab_r/run/run_base_refrate_lfi-gcc-m64.0000 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+Stop command: 2024-06-13 12:27:14 (1718306834.15595)
+Elapsed time for command: 00:04:49 (289.507550954819)
+Workload elapsed time (copy 0 workload 1) = 289.351974 seconds
+Copy 0 of 544.nab_r (base refrate) run 1 finished at 2024-06-13 12:27:14.  Total elapsed time: 289.351974
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+comparing '1am0.out' with reltol=0.01, skipreltol=2
+Specinvoke: /home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/544.nab_r/run/run_base_refrate_lfi-gcc-m64.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+Issuing command '/home/zyedidia/cpu2017/bin/specinvoke -d /home/zyedidia/cpu2017/benchspec/CPU/544.nab_r/run/run_base_refrate_lfi-gcc-m64.0000 -f compare.cmd -E -e compare.err -o compare.stdout'
+Start command: 2024-06-13 12:27:14 (1718306834.18174)
+specinvoke running: /home/zyedidia/cpu2017/bin/specinvoke.orig -d /home/zyedidia/cpu2017/benchspec/CPU/544.nab_r/run/run_base_refrate_lfi-gcc-m64.0000 -E -e compare.err -o compare.stdout -f compare.cmd
+Stop command: 2024-06-13 12:27:14 (1718306834.43043)
+Elapsed time for command: 00:00:00 (0.248693943023682)
+Benchmark Times:
+  Run Start:    2024-06-13 12:22:24 (1718306544)
+  Rate Start:   2024-06-13 12:22:24 (1718306544.65138)
+  Rate End:     2024-06-13 12:27:14 (1718306834.00336)
+  Run Stop:     2024-06-13 12:27:14 (1718306834)
+  Run Elapsed:  00:04:50 (290)
+  Run Reported: 00:04:49 (289 351973772 289.351974)
+ Success 544.nab_r base refrate ratio=5.82, runtime=289.351974, copies=1, threads=1, power=0.00W, temp=0.00 degC, humidity=0.00%
+Success: 1x508.namd_r 1x510.parest_r 1x511.povray_r 1x519.lbm_r 1x538.imagick_r 1x544.nab_r
+Producing Raw Reports
+ label: lfi-gcc-m64
+  workload: refrate (ref)
+   benchset: intspeed
+   benchset: intrate
+   benchset: fpspeed
+   benchset: fprate
+   metric: SPECrate2017_fp_base
+    format: raw -> /home/zyedidia/cpu2017/result/CPU2017.570.fprate.refrate.rsf
+Parsing flags for 508.namd_r base: done
+Parsing flags for 510.parest_r base: done
+Parsing flags for 511.povray_r base: done
+Parsing flags for 519.lbm_r base: done
+Parsing flags for 538.imagick_r base: done
+Parsing flags for 544.nab_r base: done
+Doing flag reduction: done
+    format: flags -> /home/zyedidia/cpu2017/result/CPU2017.570.fprate.refrate.flags.html
+    format: cfg -> /home/zyedidia/cpu2017/result/CPU2017.570.fprate.refrate.cfg
+    format: CSV -> /home/zyedidia/cpu2017/result/CPU2017.570.fprate.refrate.csv
+    format: PDF -> /home/zyedidia/cpu2017/result/CPU2017.570.fprate.refrate.pdf
+    format: HTML -> /home/zyedidia/cpu2017/result/CPU2017.570.fprate.refrate.html
+    format: Text -> /home/zyedidia/cpu2017/result/CPU2017.570.fprate.refrate.txt
+runcpu finished at 2024-06-13 12:27:19; 2026 total seconds elapsed
+Info: file_tail(1022906): file '/home/zyedidia/cpu2017/tmp/CPU2017.570/templogs/preenv.fprate.570.1.debug' was removed and will no longer be followed.  No action is required.
+The log for this run is in /home/zyedidia/cpu2017/result/CPU2017.570.log
+
+runcpu finished at 2024-06-13 12:27:19; 4575 total seconds elapsed

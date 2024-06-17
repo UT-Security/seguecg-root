@@ -184,18 +184,14 @@ def get_merged_summary(result_path, n):
 
 
 def get_merged_summary_spec2017(result_path, n):
-    intspeed_input_path = f"{result_path}/CPU2017.{str(n).zfill(3)}.intspeed.refspeed.rsf"
-    fpspeed_input_path = f"{result_path}/CPU2017.{str(n).zfill(3)}.fpspeed.refspeed.rsf"
+    intrate_input_path = f"{result_path}/CPU2017.{str(n).zfill(3)}.intrate.refrate.rsf"
     fprate_input_path = f"{result_path}/CPU2017.{str(n).zfill(3)}.fprate.refrate.rsf"
-    name1,intspeed_times = summarise(intspeed_input_path, spec2017=True)
-    name2,fpspeed_times = summarise(fpspeed_input_path, spec2017=True)
-    name3,fprate_times = summarise(fprate_input_path, spec2017=True)
+    name1,intrate_times = summarise(intrate_input_path, spec2017=True)
+    name2,fprate_times = summarise(fprate_input_path, spec2017=True)
     times = {}
-    times.update(intspeed_times)
-    times.update(fpspeed_times)
+    times.update(intrate_times)
     times.update(fprate_times)
     assert(name1 == name2)
-    assert(name2 == name3)
     return name1,times
 
 def normalize_times(times, baseline):
