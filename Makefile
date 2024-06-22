@@ -134,16 +134,16 @@ helper_restore_hyperthreading:
 	sudo bash -c "echo on > /sys/devices/system/cpu/smt/control"
 
 helper_disable_freqscaling:
-	sudo cpufreq-set -c 1 -g performance
-	sudo cpufreq-set -c 1 --min 2200MHz --max 2200MHz
+	sudo cpufreq-set -c 2 -g performance
+	sudo cpufreq-set -c 2 --min 2200MHz --max 2200MHz
 
 helper_restore_freqscaling:
 	POLICYINFO=($$(cpufreq-info -c 0 -p)) && \
-	sudo cpufreq-set -c 1 -g $${POLICYINFO[2]} && \
-	sudo cpufreq-set -c 1 --min $${POLICYINFO[0]}MHz --max $${POLICYINFO[1]}MHz
+	sudo cpufreq-set -c 2 -g $${POLICYINFO[2]} && \
+	sudo cpufreq-set -c 2 --min $${POLICYINFO[0]}MHz --max $${POLICYINFO[1]}MHz
 
 helper_shielding_on:
-	sudo cset shield -c 1 -k on
+	sudo cset shield -c 2 -k on
 
 helper_shielding_off:
 	sudo cset shield --reset || echo "Done"
@@ -252,5 +252,32 @@ spec_graph:
 		"benchmarks/spec_2024-02-03T05:40:36-06:00/spec_results_guard=seguecg_wasm2c_guardpages:GuardPage,seguecg_wasm2c_guardpages_fsgs:GuardPage + Segue" \
 		-n $(words $(SPEC_BUILDS)) --usePercent --baseline native_clang
 
+build_lfisegue_spec:
+	cd segue-lfi/spec2017 && \
+		export SPEC_NOCHECK=1 && \
+		source shrc && \
+		./build.sh
+
+benchmark_lfisegue_spec:
+	# export PATH=$(ROOT_PATH)/segue-lfi/lfi-bench/bin:$(PATH) &&
+	mv segue-lfi/spec2017/result/ benchmarks/old_lfispec_$(CURR_TIME)
+	cd segue-lfi/spec2017 && \
+		export SPEC_NOCHECK=1 && \
+		source shrc && \
+		taskset -c 2 ./bench.sh
+	mv segue-lfi/spec2017/result/ benchmarks/lfispec_$(CURR_TIME)
+	# overheads comparing run 001 (LFI) to run 003 (native)
+	# overheads comparing run 002 (LFI-baseline) to run 003 (native)
+	cd benchmarks/lfispec_$(CURR_TIME) && \
+	$(ROOT_PATH)/segue-lfi/lfi-bench/bin/spec-data ./CPU2017.001.intrate.refrate.csv ./CPU2017.001.fprate.refrate.csv ./CPU2017.005.intrate.refrate.csv ./CPU2017.005.fprate.refrate.csv | tee ./lfisegue_overheads.txt && \
+	$(ROOT_PATH)/segue-lfi/lfi-bench/bin/spec-data ./CPU2017.002.intrate.refrate.csv ./CPU2017.002.fprate.refrate.csv ./CPU2017.005.intrate.refrate.csv ./CPU2017.005.fprate.refrate.csv | tee ./lfi_overheads.txt && \
+	$(ROOT_PATH)/segue-lfi/lfi-bench/bin/spec-data ./CPU2017.003.intrate.refrate.csv ./CPU2017.003.fprate.refrate.csv ./CPU2017.005.intrate.refrate.csv ./CPU2017.005.fprate.refrate.csv | tee ./lfisegue_overheads_32.txt && \
+	$(ROOT_PATH)/segue-lfi/lfi-bench/bin/spec-data ./CPU2017.004.intrate.refrate.csv ./CPU2017.004.fprate.refrate.csv ./CPU2017.005.intrate.refrate.csv ./CPU2017.005.fprate.refrate.csv | tee ./lfi_overheads_32.txt
+	python spec_stats.py -i "benchmarks/lfispec_$(CURR_TIME)" --spec2017 --filter \
+		"result/spec17_results_16=lfi-gcc-baseline-m64:Baseline,lfi-gcc-m64:Segue" \
+		-n 5 --usePercent --baseline gcc-m64
+	python spec_stats.py -i "benchmarks/lfispec_$(CURR_TIME)" --spec2017 --filter \
+		"result/spec17_results_32=lfi-gcc-baseline-32-m64:Baseline,lfi-gcc-32-m64:Segue" \
+		-n 5 --usePercent --baseline gcc-m64
 clean:
 	echo "Done"
