@@ -1,0 +1,3 @@
+without MPK:	16373 memory slots	95.9 TiB reserved
+with MPK:	125964 memory slots	49.2 TiB reserved
+		14.998x more slots per reserved memory
