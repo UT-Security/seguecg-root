@@ -8,7 +8,7 @@ function set-title() {
   PS1=${ORIG}${TITLE}
 }
 
-(taskset -c 1 echo "testing benchmark shell..." > /dev/null 2>&1 && echo "benchmark shell running!") || (echo "Not running in benchmark shell. Soemthing went wrong!" && sudo cset shield --reset && exit 1)
+(taskset -c 2 echo "testing benchmark shell..." > /dev/null 2>&1 && echo "benchmark shell running!") || (echo "Not running in benchmark shell. Soemthing went wrong!" && sudo cset shield --reset && exit 1)
 taskset -pc $$
 set-title "Benchmark shell"
 echo $$ > ./benchmark_shell.pid
