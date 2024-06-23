@@ -185,18 +185,34 @@ def get_merged_summary(result_path, n):
 
 def get_merged_summary_spec2017(result_path, n):
     intspeed_input_path = f"{result_path}/CPU2017.{str(n).zfill(3)}.intspeed.refspeed.rsf"
+    intrate_input_path = f"{result_path}/CPU2017.{str(n).zfill(3)}.intrate.refrate.rsf"
     fpspeed_input_path = f"{result_path}/CPU2017.{str(n).zfill(3)}.fpspeed.refspeed.rsf"
     fprate_input_path = f"{result_path}/CPU2017.{str(n).zfill(3)}.fprate.refrate.rsf"
-    name1,intspeed_times = summarise(intspeed_input_path, spec2017=True)
-    name2,fpspeed_times = summarise(fpspeed_input_path, spec2017=True)
-    name3,fprate_times = summarise(fprate_input_path, spec2017=True)
+
+    names = []
     times = {}
-    times.update(intspeed_times)
-    times.update(fpspeed_times)
-    times.update(fprate_times)
-    assert(name1 == name2)
-    assert(name2 == name3)
-    return name1,times
+    if os.path.isfile(intspeed_input_path):
+        name1,intspeed_times = summarise(intspeed_input_path, spec2017=True)
+        names.append(name1)
+        times.update(intspeed_times)
+    if os.path.isfile(intrate_input_path):
+        name2,intrate_times = summarise(intrate_input_path, spec2017=True)
+        names.append(name2)
+        times.update(intrate_times)
+    if os.path.isfile(fpspeed_input_path):
+        name3,fpspeed_times = summarise(fpspeed_input_path, spec2017=True)
+        names.append(name3)
+        times.update(fpspeed_times)
+    if os.path.isfile(fprate_input_path):
+        name4,fprate_times = summarise(fprate_input_path, spec2017=True)
+        names.append(name4)
+        times.update(fprate_times)
+
+    assert(len(names) > 0)
+    for name in names:
+        assert(name == names[0])
+
+    return names[0],times
 
 def normalize_times(times, baseline):
     normalized_times = defaultdict(dict)
