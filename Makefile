@@ -236,21 +236,24 @@ benchmark_spec:
 		runspec --config=$$spec_build.cfg --action=run --define cores=1 --iterations=1 --noreportable --size=ref wasmint; \
 	done
 	python3 spec_stats.py -i spec_benchmarks/result --filter  \
-		"spec_benchmarks/result/spec_results=seguecg_wasm2c_guardpages:GuardPage,seguecg_wasm2c_guardpages_fsgs:GuardPage + Segue,seguecg_wasm2c_boundschecks:BoundCheck,seguecg_wasm2c_boundschecks_fsgs:BoundCheck + Segue" \
+		"spec_benchmarks/result/spec_results=seguecg_wasm2c_guardpages:GuardPage,seguecg_wasm2c_guardpages_fsgs:Wasm2c,seguecg_wasm2c_boundschecks:BoundCheck,seguecg_wasm2c_boundschecks_fsgs:BoundCheck + Segue" \
 		-n $(words $(SPEC_BUILDS)) --usePercent --baseline native_clang
 	python3 spec_stats.py -i spec_benchmarks/result --filter  \
-		"spec_benchmarks/result/spec_results_guard=seguecg_wasm2c_guardpages:GuardPage,seguecg_wasm2c_guardpages_fsgs:GuardPage + Segue" \
+		"spec_benchmarks/result/spec_results_guard=seguecg_wasm2c_guardpages:GuardPage,seguecg_wasm2c_guardpages_fsgs:Wasm2c" \
 		-n $(words $(SPEC_BUILDS)) --usePercent --baseline native_clang
 	python3 spec_stats.py -i spec_benchmarks/result --filter  \
-		"spec_benchmarks/result/spec_results_bounds=seguecg_wasm2c_boundschecks:BoundCheck,seguecg_wasm2c_boundschecks_fsgs:BoundCheck + Segue" \
+		"spec_benchmarks/result/spec_results_bounds=seguecg_wasm2c_boundschecks:BoundCheck,seguecg_wasm2c_boundschecks_fsgs:Wasm2c with Segue" \
 		-n $(words $(SPEC_BUILDS)) --usePercent --baseline native_clang
 	./spec_file_size.sh | tee spec_benchmarks/result/spec_results_size.txt
 	mv spec_benchmarks/result/ benchmarks/spec_$(CURR_TIME)
 
 spec_graph:
 	python3 spec_stats.py -i benchmarks/spec_2024-02-03T05:40:36-06:00 --filter  \
-		"benchmarks/spec_2024-02-03T05:40:36-06:00/spec_results_guard=seguecg_wasm2c_guardpages:Stock Wasm2c,seguecg_wasm2c_guardpages_fsgs:Wasm2c + Segue" \
-		-n $(words $(SPEC_BUILDS)) --usePercent --baseline native_clang
+		"benchmarks/spec_2024-02-03T05:40:36-06:00/spec_results_guard=seguecg_wasm2c_guardpages:Wasm2c,seguecg_wasm2c_guardpages_fsgs:Wasm2c with Segue" \
+		-n 5 --usePercent --baseline native_clang
+	python spec_stats.py -i "benchmarks/lfispec_2024-06-23T02:27:08-05:00" --spec2017 --filter \
+		"benchmarks/lfispec_2024-06-23T02:27:08-05:00/spec17_results_32=lfi-gcc-baseline-32-m64:Stock LFI,lfi-gcc-32-m64:LFI with Segue" \
+		-n 5 --usePercent --baseline gcc-m64
 
 build_lfisegue_spec:
 	cd segue-lfi/spec2017 && \
@@ -276,10 +279,10 @@ benchmark_lfisegue_spec:
 	$(ROOT_PATH)/segue-lfi/lfi-bench/bin/spec-data ./CPU2017.003.intrate.refrate.csv ./CPU2017.003.fprate.refrate.csv ./CPU2017.005.intrate.refrate.csv ./CPU2017.005.fprate.refrate.csv | tee ./lfisegue_overheads_32.txt && \
 	$(ROOT_PATH)/segue-lfi/lfi-bench/bin/spec-data ./CPU2017.004.intrate.refrate.csv ./CPU2017.004.fprate.refrate.csv ./CPU2017.005.intrate.refrate.csv ./CPU2017.005.fprate.refrate.csv | tee ./lfi_overheads_32.txt
 	python spec_stats.py -i "benchmarks/lfispec_$(CURR_TIME)" --spec2017 --filter \
-		"benchmarks/lfispec_2024-06-23T02:27:08-05:00/spec17_results_16=lfi-gcc-baseline-m64:Stock LFI,lfi-gcc-m64:LFI with Segue" \
+		"benchmarks/lfispec_2024-06-23T02:27:08-05:00/spec17_results_16=lfi-gcc-baseline-m64:LFI,lfi-gcc-m64:LFI with Segue" \
 		-n 5 --usePercent --baseline gcc-m64
 	python spec_stats.py -i "benchmarks/lfispec_$(CURR_TIME)" --spec2017 --filter \
-		"benchmarks/lfispec_2024-06-23T02:27:08-05:00/spec17_results_32=lfi-gcc-baseline-32-m64:Stock LFI,lfi-gcc-32-m64:LFI with Segue" \
+		"benchmarks/lfispec_2024-06-23T02:27:08-05:00/spec17_results_32=lfi-gcc-baseline-32-m64:LFI,lfi-gcc-32-m64:LFI with Segue" \
 		-n 5 --usePercent --baseline gcc-m64
 
 clean:
