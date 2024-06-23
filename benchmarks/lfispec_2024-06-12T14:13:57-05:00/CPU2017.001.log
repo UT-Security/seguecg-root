@@ -1,0 +1,2411 @@
+runcpu v6247 started at 2024-06-11 23:37:16 on "shr-work"
+runcpu is: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/harness/runcpu
+runcpu: runcpu --action=run --size=ref gcc_r mcf_r x264_r omnetpp_r xalancbmk_r leela_r deepsjeng_r xz_r parest_r namd_r lbm_r povray_r imagick_r nab_r --config=lfi-gcc
+toolset: linux-x86_64
+suite: CPU2017 0.0.0
+
+Locating benchmarks...found 47 benchmarks in 53 benchsets.
+Reading config file '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/config/lfi-gcc.cfg'
+
+2 configurations selected:
+
+ Action    Run Mode   Workload     Report Type      Benchmarks
+--------   --------   --------   ----------------   ---------------------------
+validate   rate       refrate    SPECrate2017_int   502.gcc_r, 505.mcf_r,      
+                                                    520.omnetpp_r,             
+                                                    523.xalancbmk_r,           
+                                                    525.x264_r,                
+                                                    531.deepsjeng_r,           
+                                                    541.leela_r, 557.xz_r      
+validate   rate       refrate    SPECrate2017_fp    508.namd_r, 510.parest_r,  
+                                                    511.povray_r, 519.lbm_r,   
+                                                    538.imagick_r, 544.nab_r   
+-------------------------------------------------------------------------------
+
+Setting up environment for running 502.gcc_r, 505.mcf_r, 520.omnetpp_r, 523.xalancbmk_r, 525.x264_r, 531.deepsjeng_r, 541.leela_r, 557.xz_r...
+Starting runcpu for 502.gcc_r, 505.mcf_r, 520.omnetpp_r, 523.xalancbmk_r, 525.x264_r, 531.deepsjeng_r, 541.leela_r, 557.xz_r...
+Running "specperl /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/sysinfo" to gather system information.
+sysinfo: r6365 of 2019-08-21 (295195f888a3d7edb1e6e46a485a0011)
+sysinfo: Getting system information for Linux...
+sysinfo: ...getting CPU info
+sysinfo: ...getting info from numactl
+sysinfo: ...getting memory info
+sysinfo: ...getting OS info
+sysinfo: ...getting CPU vulnerability status from the kernel
+sysinfo: ...getting disk info
+sysinfo: ...trying to get info from /sys/devices/virtual/dmi/id
+sysinfo: ...trying to get info from dmidecode
+Retrieving flags file (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/config/flags/gcc.xml)...
+Verbosity = 5
+Action    = validate
+Tune      = base
+Label     = lfi-gcc-m64
+Size      = refrate
+benchmarks= 502.gcc_r,505.mcf_r,520.omnetpp_r,523.xalancbmk_r,525.x264_r,531.deepsjeng_r,541.leela_r,557.xz_r
+outputs   = txt,html,cfg,pdf,csv
+username  = shr
+Environment settings:
+LD_LIBRARY_PATH = "%{gcc_dir}/lib64/:%{gcc_dir}/lib/:/lib64"
+
+Benchmarks selected: 502.gcc_r, 505.mcf_r, 520.omnetpp_r, 523.xalancbmk_r, 525.x264_r, 531.deepsjeng_r, 541.leela_r, 557.xz_r
+Compiling Binaries
+------------------------------------------------------------------------
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99    -c -o options.o -DSPEC -DNDEBUG -I. -I./include -I./spec_qsort -DSPEC_502 -DSPEC_AUTO_SUPPRESS_OPENMP -DIN_GCC -DHAVE_CONFIG_H  -O3 -fomit-frame-pointer -flto        -fwrapv    -fno-strict-aliasing -fgnu89-inline   -DSPEC_LP64  <source>"
+C: CC="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+C: COBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-I. -I./include -I./spec_qsort -DSPEC_502 -DSPEC_AUTO_SUPPRESS_OPENMP -DIN_GCC -DHAVE_CONFIG_H"
+P: BENCH_CFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: COPTIMIZE=""
+P: PORTABILITY="-fwrapv"
+P: CPORTABILITY=""
+O: EXTRA_CFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_COPTIMIZE="-fno-strict-aliasing -fgnu89-inline"
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99         -O3 -fomit-frame-pointer -flto     -fwrapv    -fno-strict-aliasing -fgnu89-inline <objects>   -lm         -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+P: PORTABILITY="-fwrapv"
+O: EXTRA_COPTIMIZE="-fno-strict-aliasing -fgnu89-inline"
+C: MATH_LIBS="-lm"
+C: LDOUT="-o options"
+ CC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++ --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+  Up to date 502.gcc_r base lfi-gcc-m64
+------------------------------------------------------------------------
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99    -c -o options.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -O3 -fomit-frame-pointer -flto            -fno-strict-aliasing -fgnu89-inline   -DSPEC_LP64  <source>"
+C: CC="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+C: COBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS=""
+P: BENCH_CFLAGS="-Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP"
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: COPTIMIZE=""
+P: PORTABILITY=""
+P: CPORTABILITY=""
+O: EXTRA_CFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_COPTIMIZE="-fno-strict-aliasing -fgnu89-inline"
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99         -O3 -fomit-frame-pointer -flto         -fno-strict-aliasing -fgnu89-inline <objects>   -lm         -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: EXTRA_COPTIMIZE="-fno-strict-aliasing -fgnu89-inline"
+C: MATH_LIBS="-lm"
+C: LDOUT="-o options"
+ CC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++ --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+  Up to date 505.mcf_r base lfi-gcc-m64
+------------------------------------------------------------------------
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03  -c -o options.o -DSPEC -DNDEBUG -Isimulator/platdep -Isimulator -Imodel -DWITH_NETBUILDER -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto    -D_LARGEFILE64_SOURCE     -DSPEC_LP64  <source>"
+C: CXXC="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+C: CXXOBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-Isimulator/platdep -Isimulator -Imodel -DWITH_NETBUILDER -DSPEC_AUTO_SUPPRESS_OPENMP"
+P: BENCH_CXXFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: CXXOPTIMIZE=""
+P: PORTABILITY="-D_LARGEFILE64_SOURCE"
+P: CXXPORTABILITY=""
+O: EXTRA_CXXFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_CXXOPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CXXPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03       -O3 -fomit-frame-pointer -flto     -D_LARGEFILE64_SOURCE     <objects>            -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+P: PORTABILITY="-D_LARGEFILE64_SOURCE"
+C: LDOUT="-o options"
+ CXXC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-g++
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++ --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+  Up to date 520.omnetpp_r base lfi-gcc-m64
+------------------------------------------------------------------------
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03  -c -o options.o -DSPEC -DNDEBUG  -DAPP_NO_THREADS -DXALAN_INMEM_MSG_LOADER -I. -Ixercesc -Ixercesc/dom -Ixercesc/dom/impl -Ixercesc/sax -Ixercesc/util/MsgLoaders/InMemory -Ixercesc/util/Transcoders/Iconv -Ixalanc/include -DPROJ_XMLPARSER -DPROJ_XMLUTIL -DPROJ_PARSERS -DPROJ_SAX4C -DPROJ_SAX2 -DPROJ_DOM -DPROJ_VALIDATORS -DXML_USE_INMEM_MESSAGELOADER -DSPEC_AUTO_SUPPRESS_OPENMP -O3 -fomit-frame-pointer -flto    -DSPEC_LINUX     -DSPEC_LP64  <source>"
+C: CXXC="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+C: CXXOBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS=""
+P: BENCH_CXXFLAGS="-DAPP_NO_THREADS -DXALAN_INMEM_MSG_LOADER -I. -Ixercesc -Ixercesc/dom -Ixercesc/dom/impl -Ixercesc/sax -Ixercesc/util/MsgLoaders/InMemory -Ixercesc/util/Transcoders/Iconv -Ixalanc/include -DPROJ_XMLPARSER -DPROJ_XMLUTIL -DPROJ_PARSERS -DPROJ_SAX4C -DPROJ_SAX2 -DPROJ_DOM -DPROJ_VALIDATORS -DXML_USE_INMEM_MESSAGELOADER -DSPEC_AUTO_SUPPRESS_OPENMP"
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: CXXOPTIMIZE=""
+P: PORTABILITY="-DSPEC_LINUX"
+P: CXXPORTABILITY=""
+O: EXTRA_CXXFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_CXXOPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CXXPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03       -O3 -fomit-frame-pointer -flto     -DSPEC_LINUX     <objects>            -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+P: PORTABILITY="-DSPEC_LINUX"
+C: LDOUT="-o options"
+ CXXC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-g++
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++ --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+  Up to date 523.xalancbmk_r base lfi-gcc-m64
+------------------------------------------------------------------------
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99    -c -o options.o -DSPEC -DNDEBUG -Ildecod_src/inc -Ix264_src -Ix264_src/extras -Ix264_src/common -DSPEC_AUTO_SUPPRESS_OPENMP -DSPEC_AUTO_BYTEORDER=0x12345678  -O3 -fomit-frame-pointer -flto        -fcommon    -fno-strict-aliasing -fgnu89-inline   -DSPEC_LP64  <source>"
+C: CC="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+C: COBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-Ildecod_src/inc -Ix264_src -Ix264_src/extras -Ix264_src/common -DSPEC_AUTO_SUPPRESS_OPENMP -DSPEC_AUTO_BYTEORDER=0x12345678"
+P: BENCH_CFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: COPTIMIZE=""
+P: PORTABILITY="-fcommon"
+P: CPORTABILITY=""
+O: EXTRA_CFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_COPTIMIZE="-fno-strict-aliasing -fgnu89-inline"
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99         -O3 -fomit-frame-pointer -flto     -fcommon    -fno-strict-aliasing -fgnu89-inline <objects>   -lm         -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+P: PORTABILITY="-fcommon"
+O: EXTRA_COPTIMIZE="-fno-strict-aliasing -fgnu89-inline"
+C: MATH_LIBS="-lm"
+C: LDOUT="-o options"
+ CC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++ --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99    -c -o options.o -DSPEC -DNDEBUG -Ildecod_src/inc -Ix264_src -Ix264_src/extras -Ix264_src/common -DSPEC_AUTO_SUPPRESS_OPENMP -DSPEC_AUTO_BYTEORDER=0x12345678  -O3 -fomit-frame-pointer -flto        -fcommon    -fno-strict-aliasing -fgnu89-inline   -DSPEC_LP64  <source>"
+C: CC="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+C: COBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-Ildecod_src/inc -Ix264_src -Ix264_src/extras -Ix264_src/common -DSPEC_AUTO_SUPPRESS_OPENMP -DSPEC_AUTO_BYTEORDER=0x12345678"
+P: BENCH_CFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: COPTIMIZE=""
+P: PORTABILITY="-fcommon"
+P: CPORTABILITY=""
+O: EXTRA_CFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_COPTIMIZE="-fno-strict-aliasing -fgnu89-inline"
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99         -O3 -fomit-frame-pointer -flto     -fcommon    -fno-strict-aliasing -fgnu89-inline <objects>   -lm         -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+P: PORTABILITY="-fcommon"
+O: EXTRA_COPTIMIZE="-fno-strict-aliasing -fgnu89-inline"
+C: MATH_LIBS="-lm"
+C: LDOUT="-o options"
+ CC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++ --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99    -c -o options.o -DSPEC -DNDEBUG -Ildecod_src/inc -Ix264_src -Ix264_src/extras -Ix264_src/common -DSPEC_AUTO_SUPPRESS_OPENMP -DSPEC_AUTO_BYTEORDER=0x12345678  -O3 -fomit-frame-pointer -flto        -fcommon    -fno-strict-aliasing -fgnu89-inline   -DSPEC_LP64  <source>"
+C: CC="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+C: COBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-Ildecod_src/inc -Ix264_src -Ix264_src/extras -Ix264_src/common -DSPEC_AUTO_SUPPRESS_OPENMP -DSPEC_AUTO_BYTEORDER=0x12345678"
+P: BENCH_CFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: COPTIMIZE=""
+P: PORTABILITY="-fcommon"
+P: CPORTABILITY=""
+O: EXTRA_CFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_COPTIMIZE="-fno-strict-aliasing -fgnu89-inline"
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99         -O3 -fomit-frame-pointer -flto     -fcommon    -fno-strict-aliasing -fgnu89-inline <objects>   -lm         -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+P: PORTABILITY="-fcommon"
+O: EXTRA_COPTIMIZE="-fno-strict-aliasing -fgnu89-inline"
+C: MATH_LIBS="-lm"
+C: LDOUT="-o options"
+ CC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++ --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+  Up to date 525.x264_r base lfi-gcc-m64
+------------------------------------------------------------------------
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03  -c -o options.o -DSPEC -DNDEBUG -DSMALL_MEMORY -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto         -DSPEC_LP64  <source>"
+C: CXXC="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+C: CXXOBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-DSMALL_MEMORY -DSPEC_AUTO_SUPPRESS_OPENMP"
+P: BENCH_CXXFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: CXXOPTIMIZE=""
+P: PORTABILITY=""
+P: CXXPORTABILITY=""
+O: EXTRA_CXXFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_CXXOPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CXXPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03       -O3 -fomit-frame-pointer -flto          <objects>            -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+C: LDOUT="-o options"
+ CXXC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-g++
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++ --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+  Up to date 531.deepsjeng_r base lfi-gcc-m64
+------------------------------------------------------------------------
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03  -c -o options.o -DSPEC -DNDEBUG -I. -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto         -DSPEC_LP64  <source>"
+C: CXXC="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+C: CXXOBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-I. -DSPEC_AUTO_SUPPRESS_OPENMP"
+P: BENCH_CXXFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: CXXOPTIMIZE=""
+P: PORTABILITY=""
+P: CXXPORTABILITY=""
+O: EXTRA_CXXFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_CXXOPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CXXPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03       -O3 -fomit-frame-pointer -flto          <objects>            -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+C: LDOUT="-o options"
+ CXXC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-g++
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++ --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+  Up to date 541.leela_r base lfi-gcc-m64
+------------------------------------------------------------------------
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99    -c -o options.o -DSPEC -DNDEBUG -DSPEC_AUTO_BYTEORDER=0x12345678 -DHAVE_CONFIG_H=1 -DSPEC_MEM_IO -DSPEC_XZ -DSPEC_AUTO_SUPPRESS_OPENMP -I. -Ispec_mem_io -Isha-2 -Icommon -Iliblzma/api -Iliblzma/lzma -Iliblzma/common -Iliblzma/check -Iliblzma/simple -Iliblzma/delta -Iliblzma/lz -Iliblzma/rangecoder  -O3 -fomit-frame-pointer -flto            -fno-strict-aliasing -fgnu89-inline   -DSPEC_LP64  <source>"
+C: CC="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+C: COBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-DSPEC_AUTO_BYTEORDER=0x12345678 -DHAVE_CONFIG_H=1 -DSPEC_MEM_IO -DSPEC_XZ -DSPEC_AUTO_SUPPRESS_OPENMP -I. -Ispec_mem_io -Isha-2 -Icommon -Iliblzma/api -Iliblzma/lzma -Iliblzma/common -Iliblzma/check -Iliblzma/simple -Iliblzma/delta -Iliblzma/lz -Iliblzma/rangecoder"
+P: BENCH_CFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: COPTIMIZE=""
+P: PORTABILITY=""
+P: CPORTABILITY=""
+O: EXTRA_CFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_COPTIMIZE="-fno-strict-aliasing -fgnu89-inline"
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99         -O3 -fomit-frame-pointer -flto         -fno-strict-aliasing -fgnu89-inline <objects>            -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: EXTRA_COPTIMIZE="-fno-strict-aliasing -fgnu89-inline"
+C: LDOUT="-o options"
+ CC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++ --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+  Up to date 557.xz_r base lfi-gcc-m64
+
+
+Setting Up Run Directories
+  Setting up 502.gcc_r refrate (ref) base lfi-gcc-m64 (1 copy): run_base_refrate_lfi-gcc-m64.0000
+  Setting up 505.mcf_r refrate (ref) base lfi-gcc-m64 (1 copy): run_base_refrate_lfi-gcc-m64.0000
+  Setting up 520.omnetpp_r refrate (ref) base lfi-gcc-m64 (1 copy): run_base_refrate_lfi-gcc-m64.0000
+  Setting up 523.xalancbmk_r refrate (ref) base lfi-gcc-m64 (1 copy): run_base_refrate_lfi-gcc-m64.0000
+  Setting up 525.x264_r refrate (ref) base lfi-gcc-m64 (1 copy): OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+Issuing command '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/525.x264_r/run/run_base_refrate_lfi-gcc-m64.0000 -f inputgen.cmd -e inputgen.err -o inputgen.stdout'
+Start command: 2024-06-11 23:37:28 (1718167048.65442)
+specinvoke running: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke.orig -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/525.x264_r/run/run_base_refrate_lfi-gcc-m64.0000 -e inputgen.err -o inputgen.stdout -f inputgen.cmd
+Stop command: 2024-06-11 23:37:28 (1718167048.81045)
+Elapsed time for command: 00:00:00 (0.156033992767334)
+Input generation total elapsed time = 0 seconds
+525.x264_r input generation: non-zero return code (exit code=127, signal=0)
+
+****************************************
+Contents of inputgen.out
+****************************************
+specinvoke r4356
+ Invoked as: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke.orig -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/525.x264_r/run/run_base_refrate_lfi-gcc-m64.0000 -e inputgen.err -o inputgen.stdout -f inputgen.cmd
+timer ticks over every 1000 ns
+ Environment in effect for these runs:
+ # 1: VSCODE_GIT_ASKPASS_EXTRA_ARGS=
+ # 2: LIBVIRT_DEFAULT_URI=qemu:///system
+ # 3: SHLVL=3
+ # 4: TERM=xterm-256color
+ # 5: SHELL=/bin/bash
+ # 6: SPEC_NOCHECK=1
+ # 7: XDG_RUNTIME_DIR=/run/user/1000
+ # 8: OLDPWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi
+ # 9: VSCODE_GIT_ASKPASS_MAIN=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/extensions/git/dist/askpass-main.js
+ #10: SSL_CERT_FILE=/usr/lib/ssl/certs/ca-certificates.crt
+ #11: LESSOPEN=| /usr/bin/lesspipe %s
+ #12: HOME=/home/shr
+ #13: MOTD_SHOWN=pam
+ #14: SPECDB_PWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #15: XDG_SESSION_ID=1365
+ #16: WASMTIME_HOME=/home/shr/.wasmtime
+ #17: GIT_ASKPASS=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/extensions/git/dist/askpass.sh
+ #18: LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.
+webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+ #19: PAPERSIZE=letter
+ #20: LOADER=lfi-run --no-verify
+ #21: XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+ #22: LC_ALL=C
+ #23: VSCODE_GIT_ASKPASS_NODE=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/node
+ #24: LANGUAGE=en
+ #25: PWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #26: LC_NUMERIC=en_US.UTF-8
+ #27: LESSCLOSE=/usr/bin/lesspipe %s %s
+ #28: LC_MONETARY=en_US.UTF-8
+ #29: LC_NAME=en_US.UTF-8
+ #30: LC_LANG=C
+ #31: USER=shr
+ #32: XDG_SESSION_TYPE=tty
+ #33: VSCODE_GIT_IPC_HANDLE=/run/user/1000/vscode-git-5ff261b927.sock
+ #34: LOGNAME=shr
+ #35: _=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/runcpu
+ #36: LC_ADDRESS=en_US.UTF-8
+ #37: MAKEFLAGS=-j32
+ #38: LC_TELEPHONE=en_US.UTF-8
+ #39: LC_PAPER=en_US.UTF-8
+ #40: VSCODE_IPC_HOOK_CLI=/run/user/1000/vscode-ipc-04139434-3f96-459c-a66a-b1f54618ae6f.sock
+ #41: LANG=en_US.UTF-8
+ #42: DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+ #43: LD_LIBRARY_PATH=/usr/lib64/:/usr/lib/:/lib64
+ #44: SPEC=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #45: LC_MEASUREMENT=en_US.UTF-8
+ #46: TERM_PROGRAM=vscode
+ #47: SSL_CERT_DIR=/usr/lib/ssl/certs
+ #48: XDG_SESSION_CLASS=user
+ #49: BROWSER=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/bin/helpers/browser.sh
+ #50: SPECPERLLIB=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/lib:/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin
+ #51: LIBC_FATAL_STDERR_=1
+ #52: PATH=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/bin/remote-cli:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+ #53: SSH_CONNECTION=172.28.23.232 59740 172.28.8.253 2262
+ #54: COLORTERM=truecolor
+ #55: TERM_PROGRAM_VERSION=1.89.1
+ #56: SSH_CLIENT=172.28.23.232 59740 2262
+ #57: LC_TIME=en_US.UTF-8
+ #58: LC_IDENTIFICATION=en_US.UTF-8
+ #59: OMP_NUM_THREADS=1
+ #60: OMP_THREAD_LIMIT=1
+running commands in inputgen.cmd 1 times
+runs started at		1718167048, 657420000, Tue Jun 11 23:37:28 2024
+run 1 started at	1718167048, 657429000, Tue Jun 11 23:37:28 2024
+child started: 0,	1718167048, 657432000, pid=4018210, 'lfi-run --no-verify ../run_base_refrate_lfi-gcc-m64.0000/ldecod_r_base.lfi-gcc-m64 -i BuckBunny.264 -o BuckBunny.yuv > inputgen_ldecod_r_base.lfi-gcc-m64_x264.out 2>> inputgen_ldecod_r_base.lfi-gcc-m64_x264.err'
+child finished: 0,	1718167048, 657873000, sec=0, nsec=441000, pid=4018210, rc=32512
+run 1 finished at:	1718167048, 657879000, Tue Jun 11 23:37:28 2024
+run 1 elapsed time:	         0, 000450000, 0.000450000
+runs finished at	1718167048, 657883000, Tue Jun 11 23:37:28 2024
+runs elapsed time:	         0, 000463000, 0.000463000
+error: a total of 1 children finished with errors
+specinvoke exit: rc=0
+
+****************************************
+****************************************
+Contents of inputgen_ldecod_r_base.lfi-gcc-m64_x264.err
+****************************************
+/bin/sh: 1: lfi-run: not found
+
+****************************************
+Input generation elapsed time (0:1) = 0.000441 seconds
+ERROR: Copying input files to first run directory at /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/525.x264_r/run/run_base_refrate_lfi-gcc-m64.0000 FAILED
+ at /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/harness/runcpu line 1207.
+*** Error during benchmark setup for 525.x264_r
+  Setting up 531.deepsjeng_r refrate (ref) base lfi-gcc-m64 (1 copy): run_base_refrate_lfi-gcc-m64.0000
+  Setting up 541.leela_r refrate (ref) base lfi-gcc-m64 (1 copy): run_base_refrate_lfi-gcc-m64.0000
+  Setting up 557.xz_r refrate (ref) base lfi-gcc-m64 (1 copy): run_base_refrate_lfi-gcc-m64.0000
+Setup errors: 525.x264_r(base)
+
+-----------------------------------
+Running Benchmarks
+-----------------------------------
+  Running 502.gcc_r refrate (ref) base lfi-gcc-m64 (1 copy) [2024-06-11 23:37:29]
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+Commands to run (specinvoke command file):
+    -r
+    -N C
+    -C /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/502.gcc_r/run/run_base_refrate_lfi-gcc-m64.0000
+    -o gcc-pp.opts-O3_-finline-limit_0_-fif-conversion_-fif-conversion2.out -e gcc-pp.opts-O3_-finline-limit_0_-fif-conversion_-fif-conversion2.err ../run_base_refrate_lfi-gcc-m64.0000/cpugcc_r_base.lfi-gcc-m64 gcc-pp.c -O3 -finline-limit=0 -fif-conversion -fif-conversion2 -o gcc-pp.opts-O3_-finline-limit_0_-fif-conversion_-fif-conversion2.s > gcc-pp.opts-O3_-finline-limit_0_-fif-conversion_-fif-conversion2.out 2>> gcc-pp.opts-O3_-finline-limit_0_-fif-conversion_-fif-conversion2.err (timed)
+    -o gcc-pp.opts-O2_-finline-limit_36000_-fpic.out -e gcc-pp.opts-O2_-finline-limit_36000_-fpic.err ../run_base_refrate_lfi-gcc-m64.0000/cpugcc_r_base.lfi-gcc-m64 gcc-pp.c -O2 -finline-limit=36000 -fpic -o gcc-pp.opts-O2_-finline-limit_36000_-fpic.s > gcc-pp.opts-O2_-finline-limit_36000_-fpic.out 2>> gcc-pp.opts-O2_-finline-limit_36000_-fpic.err (timed)
+    -o gcc-smaller.opts-O3_-fipa-pta.out -e gcc-smaller.opts-O3_-fipa-pta.err ../run_base_refrate_lfi-gcc-m64.0000/cpugcc_r_base.lfi-gcc-m64 gcc-smaller.c -O3 -fipa-pta -o gcc-smaller.opts-O3_-fipa-pta.s > gcc-smaller.opts-O3_-fipa-pta.out 2>> gcc-smaller.opts-O3_-fipa-pta.err (timed)
+    -o ref32.opts-O5.out -e ref32.opts-O5.err ../run_base_refrate_lfi-gcc-m64.0000/cpugcc_r_base.lfi-gcc-m64 ref32.c -O5 -o ref32.opts-O5.s > ref32.opts-O5.out 2>> ref32.opts-O5.err (timed)
+    -o ref32.opts-O3_-fselective-scheduling_-fselective-scheduling2.out -e ref32.opts-O3_-fselective-scheduling_-fselective-scheduling2.err ../run_base_refrate_lfi-gcc-m64.0000/cpugcc_r_base.lfi-gcc-m64 ref32.c -O3 -fselective-scheduling -fselective-scheduling2 -o ref32.opts-O3_-fselective-scheduling_-fselective-scheduling2.s > ref32.opts-O3_-fselective-scheduling_-fselective-scheduling2.out 2>> ref32.opts-O3_-fselective-scheduling_-fselective-scheduling2.err (timed)
+Specinvoke: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/502.gcc_r/run/run_base_refrate_lfi-gcc-m64.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+Issuing command '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/502.gcc_r/run/run_base_refrate_lfi-gcc-m64.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout'
+Start command: 2024-06-11 23:37:29 (1718167049.42403)
+specinvoke running: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke.orig -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/502.gcc_r/run/run_base_refrate_lfi-gcc-m64.0000 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+Stop command: 2024-06-11 23:37:29 (1718167049.58269)
+Elapsed time for command: 00:00:00 (0.158660888671875)
+502.gcc_r: copy 0 non-zero return code (exit code=127, signal=0)
+
+****************************************
+Contents of gcc-pp.opts-O3_-finline-limit_0_-fif-conversion_-fif-conversion2.err
+****************************************
+/bin/sh: 1: lfi-run: not found
+
+****************************************
+****************************************
+Contents of speccmds.out
+****************************************
+specinvoke r4356
+ Invoked as: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke.orig -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/502.gcc_r/run/run_base_refrate_lfi-gcc-m64.0000 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+timer ticks over every 1000 ns
+ Environment in effect for these runs:
+ # 1: VSCODE_GIT_ASKPASS_MAIN=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/extensions/git/dist/askpass-main.js
+ # 2: SSL_CERT_FILE=/usr/lib/ssl/certs/ca-certificates.crt
+ # 3: XDG_RUNTIME_DIR=/run/user/1000
+ # 4: OLDPWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi
+ # 5: SHLVL=3
+ # 6: LIBVIRT_DEFAULT_URI=qemu:///system
+ # 7: VSCODE_GIT_ASKPASS_EXTRA_ARGS=
+ # 8: SPEC_NOCHECK=1
+ # 9: SHELL=/bin/bash
+ #10: TERM=xterm-256color
+ #11: SPECDB_PWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #12: XDG_SESSION_ID=1365
+ #13: LOADER=lfi-run --no-verify
+ #14: PAPERSIZE=letter
+ #15: LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.
+webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+ #16: WASMTIME_HOME=/home/shr/.wasmtime
+ #17: GIT_ASKPASS=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/extensions/git/dist/askpass.sh
+ #18: MOTD_SHOWN=pam
+ #19: LESSOPEN=| /usr/bin/lesspipe %s
+ #20: HOME=/home/shr
+ #21: LC_NUMERIC=en_US.UTF-8
+ #22: LC_MONETARY=en_US.UTF-8
+ #23: LESSCLOSE=/usr/bin/lesspipe %s %s
+ #24: XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+ #25: LC_ALL=C
+ #26: LANGUAGE=en
+ #27: PWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #28: VSCODE_GIT_ASKPASS_NODE=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/node
+ #29: VSCODE_GIT_IPC_HANDLE=/run/user/1000/vscode-git-5ff261b927.sock
+ #30: LOGNAME=shr
+ #31: XDG_SESSION_TYPE=tty
+ #32: LC_ADDRESS=en_US.UTF-8
+ #33: MAKEFLAGS=-j32
+ #34: _=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/runcpu
+ #35: LC_NAME=en_US.UTF-8
+ #36: USER=shr
+ #37: LC_LANG=C
+ #38: VSCODE_IPC_HOOK_CLI=/run/user/1000/vscode-ipc-04139434-3f96-459c-a66a-b1f54618ae6f.sock
+ #39: LC_TELEPHONE=en_US.UTF-8
+ #40: LC_PAPER=en_US.UTF-8
+ #41: TERM_PROGRAM=vscode
+ #42: LC_MEASUREMENT=en_US.UTF-8
+ #43: SPEC=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #44: SSL_CERT_DIR=/usr/lib/ssl/certs
+ #45: DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+ #46: LANG=en_US.UTF-8
+ #47: LD_LIBRARY_PATH=/usr/lib64/:/usr/lib/:/lib64
+ #48: LIBC_FATAL_STDERR_=1
+ #49: SPECPERLLIB=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/lib:/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin
+ #50: PATH=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/bin/remote-cli:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+ #51: SSH_CONNECTION=172.28.23.232 59740 172.28.8.253 2262
+ #52: XDG_SESSION_CLASS=user
+ #53: BROWSER=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/bin/helpers/browser.sh
+ #54: SSH_CLIENT=172.28.23.232 59740 2262
+ #55: TERM_PROGRAM_VERSION=1.89.1
+ #56: LC_IDENTIFICATION=en_US.UTF-8
+ #57: LC_TIME=en_US.UTF-8
+ #58: COLORTERM=truecolor
+ #59: OMP_NUM_THREADS=1
+ #60: OMP_THREAD_LIMIT=1
+running commands in speccmds.cmd 1 times
+runs started at		1718167049, 429743000, Tue Jun 11 23:37:29 2024
+run 1 started at	1718167049, 429762000, Tue Jun 11 23:37:29 2024
+child started: 0,	1718167049, 429768000, pid=4018238, 'lfi-run --no-verify ../run_base_refrate_lfi-gcc-m64.0000/cpugcc_r_base.lfi-gcc-m64 gcc-pp.c -O3 -finline-limit=0 -fif-conversion -fif-conversion2 -o gcc-pp.opts-O3_-finline-limit_0_-fif-conversion_-fif-conversion2.s > gcc-pp.opts-O3_-finline-limit_0_-fif-conversion_-fif-conversion2.out 2>> gcc-pp.opts-O3_-finline-limit_0_-fif-conversion_-fif-conversion2.err'
+child finished: 0,	1718167049, 430592000, sec=0, nsec=824000, pid=4018238, rc=32512
+run 1 finished at:	1718167049, 430604000, Tue Jun 11 23:37:29 2024
+run 1 elapsed time:	         0, 000842000, 0.000842000
+runs finished at	1718167049, 430613000, Tue Jun 11 23:37:29 2024
+runs elapsed time:	         0, 000870000, 0.000870000
+error: a total of 1 children finished with errors
+specinvoke exit: rc=0
+
+****************************************
+Workload elapsed time (copy 0 workload 1) = 0.000824 seconds
+Copy 0 of 502.gcc_r (base refrate) run 1 finished at 2024-06-11 23:37:29.  Total elapsed time: 0.000824
+Benchmark Times:
+  Run Start:    2024-06-11 23:37:29 (1718167049)
+  Rate Start:   2024-06-11 23:37:29 (1718167049.42977)
+  Rate End:     2024-06-11 23:37:29 (1718167049.43059)
+  Run Stop:     2024-06-11 23:37:29 (1718167049)
+  Run Elapsed:  00:00:00 (0)
+  Run Reported: 00:00:00 (0 823974 0.000824)
+ Error 502.gcc_r base refrate ratio=1718446.60, runtime=0.000824, copies=1, threads=1, power=0.00W, temp=0.00 degC, humidity=0.00%, errorcode=RE
+-----------------------------------
+  Running 505.mcf_r refrate (ref) base lfi-gcc-m64 (1 copy) [2024-06-11 23:37:29]
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+Commands to run (specinvoke command file):
+    -r
+    -N C
+    -C /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/505.mcf_r/run/run_base_refrate_lfi-gcc-m64.0000
+    -o inp.out -e inp.err ../run_base_refrate_lfi-gcc-m64.0000/mcf_r_base.lfi-gcc-m64 inp.in  > inp.out 2>> inp.err (timed)
+Specinvoke: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/505.mcf_r/run/run_base_refrate_lfi-gcc-m64.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+Issuing command '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/505.mcf_r/run/run_base_refrate_lfi-gcc-m64.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout'
+Start command: 2024-06-11 23:37:29 (1718167049.63825)
+specinvoke running: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke.orig -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/505.mcf_r/run/run_base_refrate_lfi-gcc-m64.0000 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+Stop command: 2024-06-11 23:37:29 (1718167049.79687)
+Elapsed time for command: 00:00:00 (0.158614158630371)
+505.mcf_r: copy 0 non-zero return code (exit code=127, signal=0)
+
+****************************************
+Contents of inp.err
+****************************************
+/bin/sh: 1: lfi-run: not found
+
+****************************************
+****************************************
+Contents of speccmds.out
+****************************************
+specinvoke r4356
+ Invoked as: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke.orig -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/505.mcf_r/run/run_base_refrate_lfi-gcc-m64.0000 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+timer ticks over every 1000 ns
+ Environment in effect for these runs:
+ # 1: MOTD_SHOWN=pam
+ # 2: LESSOPEN=| /usr/bin/lesspipe %s
+ # 3: HOME=/home/shr
+ # 4: LOADER=lfi-run --no-verify
+ # 5: PAPERSIZE=letter
+ # 6: GIT_ASKPASS=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/extensions/git/dist/askpass.sh
+ # 7: WASMTIME_HOME=/home/shr/.wasmtime
+ # 8: LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.
+webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+ # 9: XDG_SESSION_ID=1365
+ #10: SPECDB_PWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #11: SPEC_NOCHECK=1
+ #12: SHELL=/bin/bash
+ #13: TERM=xterm-256color
+ #14: SHLVL=3
+ #15: VSCODE_GIT_ASKPASS_EXTRA_ARGS=
+ #16: LIBVIRT_DEFAULT_URI=qemu:///system
+ #17: SSL_CERT_FILE=/usr/lib/ssl/certs/ca-certificates.crt
+ #18: VSCODE_GIT_ASKPASS_MAIN=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/extensions/git/dist/askpass-main.js
+ #19: OLDPWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi
+ #20: XDG_RUNTIME_DIR=/run/user/1000
+ #21: USER=shr
+ #22: LC_LANG=C
+ #23: LC_NAME=en_US.UTF-8
+ #24: MAKEFLAGS=-j32
+ #25: LC_ADDRESS=en_US.UTF-8
+ #26: _=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/runcpu
+ #27: VSCODE_GIT_IPC_HANDLE=/run/user/1000/vscode-git-5ff261b927.sock
+ #28: LOGNAME=shr
+ #29: XDG_SESSION_TYPE=tty
+ #30: LANGUAGE=en
+ #31: PWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #32: VSCODE_GIT_ASKPASS_NODE=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/node
+ #33: XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+ #34: LC_ALL=C
+ #35: LESSCLOSE=/usr/bin/lesspipe %s %s
+ #36: LC_MONETARY=en_US.UTF-8
+ #37: LC_NUMERIC=en_US.UTF-8
+ #38: LD_LIBRARY_PATH=/usr/lib64/:/usr/lib/:/lib64
+ #39: DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+ #40: LANG=en_US.UTF-8
+ #41: SSL_CERT_DIR=/usr/lib/ssl/certs
+ #42: LC_MEASUREMENT=en_US.UTF-8
+ #43: TERM_PROGRAM=vscode
+ #44: SPEC=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #45: LC_PAPER=en_US.UTF-8
+ #46: LC_TELEPHONE=en_US.UTF-8
+ #47: VSCODE_IPC_HOOK_CLI=/run/user/1000/vscode-ipc-04139434-3f96-459c-a66a-b1f54618ae6f.sock
+ #48: COLORTERM=truecolor
+ #49: LC_IDENTIFICATION=en_US.UTF-8
+ #50: LC_TIME=en_US.UTF-8
+ #51: SSH_CLIENT=172.28.23.232 59740 2262
+ #52: TERM_PROGRAM_VERSION=1.89.1
+ #53: BROWSER=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/bin/helpers/browser.sh
+ #54: XDG_SESSION_CLASS=user
+ #55: SSH_CONNECTION=172.28.23.232 59740 172.28.8.253 2262
+ #56: PATH=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/bin/remote-cli:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+ #57: LIBC_FATAL_STDERR_=1
+ #58: SPECPERLLIB=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/lib:/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin
+ #59: OMP_NUM_THREADS=1
+ #60: OMP_THREAD_LIMIT=1
+running commands in speccmds.cmd 1 times
+runs started at		1718167049, 643854000, Tue Jun 11 23:37:29 2024
+run 1 started at	1718167049, 643872000, Tue Jun 11 23:37:29 2024
+child started: 0,	1718167049, 643878000, pid=4018262, 'lfi-run --no-verify ../run_base_refrate_lfi-gcc-m64.0000/mcf_r_base.lfi-gcc-m64 inp.in  > inp.out 2>> inp.err'
+child finished: 0,	1718167049, 644684000, sec=0, nsec=806000, pid=4018262, rc=32512
+run 1 finished at:	1718167049, 644696000, Tue Jun 11 23:37:29 2024
+run 1 elapsed time:	         0, 000824000, 0.000824000
+runs finished at	1718167049, 644704000, Tue Jun 11 23:37:29 2024
+runs elapsed time:	         0, 000850000, 0.000850000
+error: a total of 1 children finished with errors
+specinvoke exit: rc=0
+
+****************************************
+Workload elapsed time (copy 0 workload 1) = 0.000806 seconds
+Copy 0 of 505.mcf_r (base refrate) run 1 finished at 2024-06-11 23:37:29.  Total elapsed time: 0.000806
+Benchmark Times:
+  Run Start:    2024-06-11 23:37:29 (1718167049)
+  Rate Start:   2024-06-11 23:37:29 (1718167049.64388)
+  Rate End:     2024-06-11 23:37:29 (1718167049.64468)
+  Run Stop:     2024-06-11 23:37:29 (1718167049)
+  Run Elapsed:  00:00:00 (0)
+  Run Reported: 00:00:00 (0 806093 0.000806)
+ Error 505.mcf_r base refrate ratio=2004962.78, runtime=0.000806, copies=1, threads=1, power=0.00W, temp=0.00 degC, humidity=0.00%, errorcode=RE
+-----------------------------------
+  Running 520.omnetpp_r refrate (ref) base lfi-gcc-m64 (1 copy) [2024-06-11 23:37:29]
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+Commands to run (specinvoke command file):
+    -r
+    -N C
+    -C /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/520.omnetpp_r/run/run_base_refrate_lfi-gcc-m64.0000
+    -o omnetpp.General-0.out -e omnetpp.General-0.err ../run_base_refrate_lfi-gcc-m64.0000/omnetpp_r_base.lfi-gcc-m64 -c General -r 0 > omnetpp.General-0.out 2>> omnetpp.General-0.err (timed)
+Specinvoke: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/520.omnetpp_r/run/run_base_refrate_lfi-gcc-m64.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+Issuing command '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/520.omnetpp_r/run/run_base_refrate_lfi-gcc-m64.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout'
+Start command: 2024-06-11 23:37:29 (1718167049.91197)
+specinvoke running: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke.orig -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/520.omnetpp_r/run/run_base_refrate_lfi-gcc-m64.0000 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+Stop command: 2024-06-11 23:37:30 (1718167050.07121)
+Elapsed time for command: 00:00:00 (0.159241914749146)
+520.omnetpp_r: copy 0 non-zero return code (exit code=127, signal=0)
+
+****************************************
+Contents of omnetpp.General-0.err
+****************************************
+/bin/sh: 1: lfi-run: not found
+
+****************************************
+****************************************
+Contents of speccmds.out
+****************************************
+specinvoke r4356
+ Invoked as: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke.orig -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/520.omnetpp_r/run/run_base_refrate_lfi-gcc-m64.0000 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+timer ticks over every 1000 ns
+ Environment in effect for these runs:
+ # 1: COLORTERM=truecolor
+ # 2: SSH_CLIENT=172.28.23.232 59740 2262
+ # 3: TERM_PROGRAM_VERSION=1.89.1
+ # 4: LC_IDENTIFICATION=en_US.UTF-8
+ # 5: LC_TIME=en_US.UTF-8
+ # 6: XDG_SESSION_CLASS=user
+ # 7: BROWSER=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/bin/helpers/browser.sh
+ # 8: SPECPERLLIB=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/lib:/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin
+ # 9: LIBC_FATAL_STDERR_=1
+ #10: PATH=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/bin/remote-cli:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+ #11: SSH_CONNECTION=172.28.23.232 59740 172.28.8.253 2262
+ #12: DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+ #13: LANG=en_US.UTF-8
+ #14: LD_LIBRARY_PATH=/usr/lib64/:/usr/lib/:/lib64
+ #15: TERM_PROGRAM=vscode
+ #16: LC_MEASUREMENT=en_US.UTF-8
+ #17: SPEC=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #18: SSL_CERT_DIR=/usr/lib/ssl/certs
+ #19: LC_TELEPHONE=en_US.UTF-8
+ #20: LC_PAPER=en_US.UTF-8
+ #21: VSCODE_IPC_HOOK_CLI=/run/user/1000/vscode-ipc-04139434-3f96-459c-a66a-b1f54618ae6f.sock
+ #22: LC_NAME=en_US.UTF-8
+ #23: USER=shr
+ #24: LC_LANG=C
+ #25: VSCODE_GIT_IPC_HANDLE=/run/user/1000/vscode-git-5ff261b927.sock
+ #26: LOGNAME=shr
+ #27: XDG_SESSION_TYPE=tty
+ #28: _=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/runcpu
+ #29: LC_ADDRESS=en_US.UTF-8
+ #30: MAKEFLAGS=-j32
+ #31: LC_ALL=C
+ #32: XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+ #33: LANGUAGE=en
+ #34: PWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #35: VSCODE_GIT_ASKPASS_NODE=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/node
+ #36: LC_NUMERIC=en_US.UTF-8
+ #37: LESSCLOSE=/usr/bin/lesspipe %s %s
+ #38: LC_MONETARY=en_US.UTF-8
+ #39: MOTD_SHOWN=pam
+ #40: HOME=/home/shr
+ #41: LESSOPEN=| /usr/bin/lesspipe %s
+ #42: SPECDB_PWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #43: XDG_SESSION_ID=1365
+ #44: PAPERSIZE=letter
+ #45: LOADER=lfi-run --no-verify
+ #46: LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.
+webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+ #47: GIT_ASKPASS=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/extensions/git/dist/askpass.sh
+ #48: WASMTIME_HOME=/home/shr/.wasmtime
+ #49: SHLVL=3
+ #50: LIBVIRT_DEFAULT_URI=qemu:///system
+ #51: VSCODE_GIT_ASKPASS_EXTRA_ARGS=
+ #52: SPEC_NOCHECK=1
+ #53: SHELL=/bin/bash
+ #54: TERM=xterm-256color
+ #55: SSL_CERT_FILE=/usr/lib/ssl/certs/ca-certificates.crt
+ #56: VSCODE_GIT_ASKPASS_MAIN=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/extensions/git/dist/askpass-main.js
+ #57: OLDPWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi
+ #58: XDG_RUNTIME_DIR=/run/user/1000
+ #59: OMP_NUM_THREADS=1
+ #60: OMP_THREAD_LIMIT=1
+running commands in speccmds.cmd 1 times
+runs started at		1718167049, 917617000, Tue Jun 11 23:37:29 2024
+run 1 started at	1718167049, 917635000, Tue Jun 11 23:37:29 2024
+child started: 0,	1718167049, 917641000, pid=4018286, 'lfi-run --no-verify ../run_base_refrate_lfi-gcc-m64.0000/omnetpp_r_base.lfi-gcc-m64 -c General -r 0 > omnetpp.General-0.out 2>> omnetpp.General-0.err'
+child finished: 0,	1718167049, 918565000, sec=0, nsec=924000, pid=4018286, rc=32512
+run 1 finished at:	1718167049, 918580000, Tue Jun 11 23:37:29 2024
+run 1 elapsed time:	         0, 000945000, 0.000945000
+runs finished at	1718167049, 918590000, Tue Jun 11 23:37:29 2024
+runs elapsed time:	         0, 000973000, 0.000973000
+error: a total of 1 children finished with errors
+specinvoke exit: rc=0
+
+****************************************
+Workload elapsed time (copy 0 workload 1) = 0.000924 seconds
+Copy 0 of 520.omnetpp_r (base refrate) run 1 finished at 2024-06-11 23:37:29.  Total elapsed time: 0.000924
+Benchmark Times:
+  Run Start:    2024-06-11 23:37:29 (1718167049)
+  Rate Start:   2024-06-11 23:37:29 (1718167049.91764)
+  Rate End:     2024-06-11 23:37:29 (1718167049.91857)
+  Run Stop:     2024-06-11 23:37:30 (1718167050)
+  Run Elapsed:  00:00:01 (1)
+  Run Reported: 00:00:00 (0 924110 0.000924)
+ Error 520.omnetpp_r base refrate ratio=1419913.42, runtime=0.000924, copies=1, threads=1, power=0.00W, temp=0.00 degC, humidity=0.00%, errorcode=RE
+-----------------------------------
+  Running 523.xalancbmk_r refrate (ref) base lfi-gcc-m64 (1 copy) [2024-06-11 23:37:30]
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+Commands to run (specinvoke command file):
+    -r
+    -N C
+    -C /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/523.xalancbmk_r/run/run_base_refrate_lfi-gcc-m64.0000
+    -o ref-t5.out -e ref-t5.err ../run_base_refrate_lfi-gcc-m64.0000/cpuxalan_r_base.lfi-gcc-m64 -v t5.xml xalanc.xsl > ref-t5.out 2>> ref-t5.err (timed)
+Specinvoke: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/523.xalancbmk_r/run/run_base_refrate_lfi-gcc-m64.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+Issuing command '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/523.xalancbmk_r/run/run_base_refrate_lfi-gcc-m64.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout'
+Start command: 2024-06-11 23:37:30 (1718167050.23484)
+specinvoke running: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke.orig -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/523.xalancbmk_r/run/run_base_refrate_lfi-gcc-m64.0000 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+Stop command: 2024-06-11 23:37:30 (1718167050.39374)
+Elapsed time for command: 00:00:00 (0.158906936645508)
+523.xalancbmk_r: copy 0 non-zero return code (exit code=127, signal=0)
+
+****************************************
+Contents of ref-t5.err
+****************************************
+/bin/sh: 1: lfi-run: not found
+
+****************************************
+****************************************
+Contents of speccmds.out
+****************************************
+specinvoke r4356
+ Invoked as: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke.orig -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/523.xalancbmk_r/run/run_base_refrate_lfi-gcc-m64.0000 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+timer ticks over every 1000 ns
+ Environment in effect for these runs:
+ # 1: LC_ALL=C
+ # 2: XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+ # 3: LANGUAGE=en
+ # 4: PWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ # 5: VSCODE_GIT_ASKPASS_NODE=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/node
+ # 6: LC_NUMERIC=en_US.UTF-8
+ # 7: LC_MONETARY=en_US.UTF-8
+ # 8: LESSCLOSE=/usr/bin/lesspipe %s %s
+ # 9: LC_NAME=en_US.UTF-8
+ #10: LC_LANG=C
+ #11: USER=shr
+ #12: VSCODE_GIT_IPC_HANDLE=/run/user/1000/vscode-git-5ff261b927.sock
+ #13: LOGNAME=shr
+ #14: XDG_SESSION_TYPE=tty
+ #15: LC_ADDRESS=en_US.UTF-8
+ #16: _=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/runcpu
+ #17: MAKEFLAGS=-j32
+ #18: SHLVL=3
+ #19: VSCODE_GIT_ASKPASS_EXTRA_ARGS=
+ #20: LIBVIRT_DEFAULT_URI=qemu:///system
+ #21: SPEC_NOCHECK=1
+ #22: SHELL=/bin/bash
+ #23: TERM=xterm-256color
+ #24: SSL_CERT_FILE=/usr/lib/ssl/certs/ca-certificates.crt
+ #25: VSCODE_GIT_ASKPASS_MAIN=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/extensions/git/dist/askpass-main.js
+ #26: XDG_RUNTIME_DIR=/run/user/1000
+ #27: OLDPWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi
+ #28: MOTD_SHOWN=pam
+ #29: LESSOPEN=| /usr/bin/lesspipe %s
+ #30: HOME=/home/shr
+ #31: SPECDB_PWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #32: XDG_SESSION_ID=1365
+ #33: PAPERSIZE=letter
+ #34: LOADER=lfi-run --no-verify
+ #35: GIT_ASKPASS=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/extensions/git/dist/askpass.sh
+ #36: LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.
+webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+ #37: WASMTIME_HOME=/home/shr/.wasmtime
+ #38: XDG_SESSION_CLASS=user
+ #39: BROWSER=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/bin/helpers/browser.sh
+ #40: LIBC_FATAL_STDERR_=1
+ #41: SPECPERLLIB=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/lib:/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin
+ #42: SSH_CONNECTION=172.28.23.232 59740 172.28.8.253 2262
+ #43: PATH=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/bin/remote-cli:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+ #44: COLORTERM=truecolor
+ #45: SSH_CLIENT=172.28.23.232 59740 2262
+ #46: TERM_PROGRAM_VERSION=1.89.1
+ #47: LC_IDENTIFICATION=en_US.UTF-8
+ #48: LC_TIME=en_US.UTF-8
+ #49: LC_TELEPHONE=en_US.UTF-8
+ #50: LC_PAPER=en_US.UTF-8
+ #51: VSCODE_IPC_HOOK_CLI=/run/user/1000/vscode-ipc-04139434-3f96-459c-a66a-b1f54618ae6f.sock
+ #52: DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+ #53: LANG=en_US.UTF-8
+ #54: LD_LIBRARY_PATH=/usr/lib64/:/usr/lib/:/lib64
+ #55: TERM_PROGRAM=vscode
+ #56: LC_MEASUREMENT=en_US.UTF-8
+ #57: SPEC=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #58: SSL_CERT_DIR=/usr/lib/ssl/certs
+ #59: OMP_NUM_THREADS=1
+ #60: OMP_THREAD_LIMIT=1
+running commands in speccmds.cmd 1 times
+runs started at		1718167050, 240551000, Tue Jun 11 23:37:30 2024
+run 1 started at	1718167050, 240570000, Tue Jun 11 23:37:30 2024
+child started: 0,	1718167050, 240576000, pid=4018326, 'lfi-run --no-verify ../run_base_refrate_lfi-gcc-m64.0000/cpuxalan_r_base.lfi-gcc-m64 -v t5.xml xalanc.xsl > ref-t5.out 2>> ref-t5.err'
+child finished: 0,	1718167050, 241398000, sec=0, nsec=822000, pid=4018326, rc=32512
+run 1 finished at:	1718167050, 241409000, Tue Jun 11 23:37:30 2024
+run 1 elapsed time:	         0, 000839000, 0.000839000
+runs finished at	1718167050, 241419000, Tue Jun 11 23:37:30 2024
+runs elapsed time:	         0, 000868000, 0.000868000
+error: a total of 1 children finished with errors
+specinvoke exit: rc=0
+
+****************************************
+Workload elapsed time (copy 0 workload 1) = 0.000822 seconds
+Copy 0 of 523.xalancbmk_r (base refrate) run 1 finished at 2024-06-11 23:37:30.  Total elapsed time: 0.000822
+Benchmark Times:
+  Run Start:    2024-06-11 23:37:30 (1718167050)
+  Rate Start:   2024-06-11 23:37:30 (1718167050.24058)
+  Rate End:     2024-06-11 23:37:30 (1718167050.2414)
+  Run Stop:     2024-06-11 23:37:30 (1718167050)
+  Run Elapsed:  00:00:00 (0)
+  Run Reported: 00:00:00 (0 822067 0.000822)
+ Error 523.xalancbmk_r base refrate ratio=1284671.53, runtime=0.000822, copies=1, threads=1, power=0.00W, temp=0.00 degC, humidity=0.00%, errorcode=RE
+-----------------------------------
+  Running 531.deepsjeng_r refrate (ref) base lfi-gcc-m64 (1 copy) [2024-06-11 23:37:30]
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+Commands to run (specinvoke command file):
+    -r
+    -N C
+    -C /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/531.deepsjeng_r/run/run_base_refrate_lfi-gcc-m64.0000
+    -o ref.out -e ref.err ../run_base_refrate_lfi-gcc-m64.0000/deepsjeng_r_base.lfi-gcc-m64 ref.txt > ref.out 2>> ref.err (timed)
+Specinvoke: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/531.deepsjeng_r/run/run_base_refrate_lfi-gcc-m64.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+Issuing command '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/531.deepsjeng_r/run/run_base_refrate_lfi-gcc-m64.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout'
+Start command: 2024-06-11 23:37:30 (1718167050.44974)
+specinvoke running: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke.orig -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/531.deepsjeng_r/run/run_base_refrate_lfi-gcc-m64.0000 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+Stop command: 2024-06-11 23:37:30 (1718167050.60834)
+Elapsed time for command: 00:00:00 (0.158595085144043)
+531.deepsjeng_r: copy 0 non-zero return code (exit code=127, signal=0)
+
+****************************************
+Contents of ref.err
+****************************************
+/bin/sh: 1: lfi-run: not found
+
+****************************************
+****************************************
+Contents of speccmds.out
+****************************************
+specinvoke r4356
+ Invoked as: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke.orig -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/531.deepsjeng_r/run/run_base_refrate_lfi-gcc-m64.0000 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+timer ticks over every 1000 ns
+ Environment in effect for these runs:
+ # 1: SSH_CONNECTION=172.28.23.232 59740 172.28.8.253 2262
+ # 2: PATH=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/bin/remote-cli:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+ # 3: SPECPERLLIB=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/lib:/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin
+ # 4: LIBC_FATAL_STDERR_=1
+ # 5: BROWSER=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/bin/helpers/browser.sh
+ # 6: XDG_SESSION_CLASS=user
+ # 7: LC_TIME=en_US.UTF-8
+ # 8: LC_IDENTIFICATION=en_US.UTF-8
+ # 9: TERM_PROGRAM_VERSION=1.89.1
+ #10: SSH_CLIENT=172.28.23.232 59740 2262
+ #11: COLORTERM=truecolor
+ #12: VSCODE_IPC_HOOK_CLI=/run/user/1000/vscode-ipc-04139434-3f96-459c-a66a-b1f54618ae6f.sock
+ #13: LC_PAPER=en_US.UTF-8
+ #14: LC_TELEPHONE=en_US.UTF-8
+ #15: SSL_CERT_DIR=/usr/lib/ssl/certs
+ #16: SPEC=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #17: TERM_PROGRAM=vscode
+ #18: LC_MEASUREMENT=en_US.UTF-8
+ #19: LD_LIBRARY_PATH=/usr/lib64/:/usr/lib/:/lib64
+ #20: LANG=en_US.UTF-8
+ #21: DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+ #22: LESSCLOSE=/usr/bin/lesspipe %s %s
+ #23: LC_MONETARY=en_US.UTF-8
+ #24: LC_NUMERIC=en_US.UTF-8
+ #25: VSCODE_GIT_ASKPASS_NODE=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/node
+ #26: LANGUAGE=en
+ #27: PWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #28: LC_ALL=C
+ #29: XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+ #30: LC_ADDRESS=en_US.UTF-8
+ #31: _=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/runcpu
+ #32: MAKEFLAGS=-j32
+ #33: VSCODE_GIT_IPC_HANDLE=/run/user/1000/vscode-git-5ff261b927.sock
+ #34: XDG_SESSION_TYPE=tty
+ #35: LOGNAME=shr
+ #36: USER=shr
+ #37: LC_LANG=C
+ #38: LC_NAME=en_US.UTF-8
+ #39: XDG_RUNTIME_DIR=/run/user/1000
+ #40: OLDPWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi
+ #41: SSL_CERT_FILE=/usr/lib/ssl/certs/ca-certificates.crt
+ #42: VSCODE_GIT_ASKPASS_MAIN=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/extensions/git/dist/askpass-main.js
+ #43: SHELL=/bin/bash
+ #44: TERM=xterm-256color
+ #45: SPEC_NOCHECK=1
+ #46: LIBVIRT_DEFAULT_URI=qemu:///system
+ #47: VSCODE_GIT_ASKPASS_EXTRA_ARGS=
+ #48: SHLVL=3
+ #49: LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.
+webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+ #50: WASMTIME_HOME=/home/shr/.wasmtime
+ #51: GIT_ASKPASS=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/extensions/git/dist/askpass.sh
+ #52: LOADER=lfi-run --no-verify
+ #53: PAPERSIZE=letter
+ #54: SPECDB_PWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #55: XDG_SESSION_ID=1365
+ #56: HOME=/home/shr
+ #57: LESSOPEN=| /usr/bin/lesspipe %s
+ #58: MOTD_SHOWN=pam
+ #59: OMP_NUM_THREADS=1
+ #60: OMP_THREAD_LIMIT=1
+running commands in speccmds.cmd 1 times
+runs started at		1718167050, 455419000, Tue Jun 11 23:37:30 2024
+run 1 started at	1718167050, 455437000, Tue Jun 11 23:37:30 2024
+child started: 0,	1718167050, 455443000, pid=4018350, 'lfi-run --no-verify ../run_base_refrate_lfi-gcc-m64.0000/deepsjeng_r_base.lfi-gcc-m64 ref.txt > ref.out 2>> ref.err'
+child finished: 0,	1718167050, 456247000, sec=0, nsec=804000, pid=4018350, rc=32512
+run 1 finished at:	1718167050, 456257000, Tue Jun 11 23:37:30 2024
+run 1 elapsed time:	         0, 000820000, 0.000820000
+runs finished at	1718167050, 456266000, Tue Jun 11 23:37:30 2024
+runs elapsed time:	         0, 000847000, 0.000847000
+error: a total of 1 children finished with errors
+specinvoke exit: rc=0
+
+****************************************
+Workload elapsed time (copy 0 workload 1) = 0.000804 seconds
+Copy 0 of 531.deepsjeng_r (base refrate) run 1 finished at 2024-06-11 23:37:30.  Total elapsed time: 0.000804
+Benchmark Times:
+  Run Start:    2024-06-11 23:37:30 (1718167050)
+  Rate Start:   2024-06-11 23:37:30 (1718167050.45544)
+  Rate End:     2024-06-11 23:37:30 (1718167050.45625)
+  Run Stop:     2024-06-11 23:37:30 (1718167050)
+  Run Elapsed:  00:00:00 (0)
+  Run Reported: 00:00:00 (0 804185 0.000804)
+ Error 531.deepsjeng_r base refrate ratio=1425373.13, runtime=0.000804, copies=1, threads=1, power=0.00W, temp=0.00 degC, humidity=0.00%, errorcode=RE
+-----------------------------------
+  Running 541.leela_r refrate (ref) base lfi-gcc-m64 (1 copy) [2024-06-11 23:37:30]
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+Commands to run (specinvoke command file):
+    -r
+    -N C
+    -C /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/541.leela_r/run/run_base_refrate_lfi-gcc-m64.0000
+    -o ref.out -e ref.err ../run_base_refrate_lfi-gcc-m64.0000/leela_r_base.lfi-gcc-m64 ref.sgf > ref.out 2>> ref.err (timed)
+Specinvoke: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/541.leela_r/run/run_base_refrate_lfi-gcc-m64.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+Issuing command '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/541.leela_r/run/run_base_refrate_lfi-gcc-m64.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout'
+Start command: 2024-06-11 23:37:30 (1718167050.68703)
+specinvoke running: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke.orig -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/541.leela_r/run/run_base_refrate_lfi-gcc-m64.0000 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+Stop command: 2024-06-11 23:37:30 (1718167050.84605)
+Elapsed time for command: 00:00:00 (0.15902304649353)
+541.leela_r: copy 0 non-zero return code (exit code=127, signal=0)
+
+****************************************
+Contents of ref.err
+****************************************
+/bin/sh: 1: lfi-run: not found
+
+****************************************
+****************************************
+Contents of speccmds.out
+****************************************
+specinvoke r4356
+ Invoked as: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke.orig -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/541.leela_r/run/run_base_refrate_lfi-gcc-m64.0000 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+timer ticks over every 1000 ns
+ Environment in effect for these runs:
+ # 1: LESSOPEN=| /usr/bin/lesspipe %s
+ # 2: HOME=/home/shr
+ # 3: MOTD_SHOWN=pam
+ # 4: LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.
+webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+ # 5: WASMTIME_HOME=/home/shr/.wasmtime
+ # 6: GIT_ASKPASS=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/extensions/git/dist/askpass.sh
+ # 7: LOADER=lfi-run --no-verify
+ # 8: PAPERSIZE=letter
+ # 9: XDG_SESSION_ID=1365
+ #10: SPECDB_PWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #11: TERM=xterm-256color
+ #12: SHELL=/bin/bash
+ #13: SPEC_NOCHECK=1
+ #14: VSCODE_GIT_ASKPASS_EXTRA_ARGS=
+ #15: LIBVIRT_DEFAULT_URI=qemu:///system
+ #16: SHLVL=3
+ #17: XDG_RUNTIME_DIR=/run/user/1000
+ #18: OLDPWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi
+ #19: SSL_CERT_FILE=/usr/lib/ssl/certs/ca-certificates.crt
+ #20: VSCODE_GIT_ASKPASS_MAIN=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/extensions/git/dist/askpass-main.js
+ #21: LC_LANG=C
+ #22: USER=shr
+ #23: LC_NAME=en_US.UTF-8
+ #24: _=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/runcpu
+ #25: LC_ADDRESS=en_US.UTF-8
+ #26: MAKEFLAGS=-j32
+ #27: LOGNAME=shr
+ #28: XDG_SESSION_TYPE=tty
+ #29: VSCODE_GIT_IPC_HANDLE=/run/user/1000/vscode-git-5ff261b927.sock
+ #30: VSCODE_GIT_ASKPASS_NODE=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/node
+ #31: LANGUAGE=en
+ #32: PWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #33: LC_ALL=C
+ #34: XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+ #35: LC_MONETARY=en_US.UTF-8
+ #36: LESSCLOSE=/usr/bin/lesspipe %s %s
+ #37: LC_NUMERIC=en_US.UTF-8
+ #38: LD_LIBRARY_PATH=/usr/lib64/:/usr/lib/:/lib64
+ #39: LANG=en_US.UTF-8
+ #40: DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+ #41: SSL_CERT_DIR=/usr/lib/ssl/certs
+ #42: SPEC=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #43: LC_MEASUREMENT=en_US.UTF-8
+ #44: TERM_PROGRAM=vscode
+ #45: LC_PAPER=en_US.UTF-8
+ #46: LC_TELEPHONE=en_US.UTF-8
+ #47: VSCODE_IPC_HOOK_CLI=/run/user/1000/vscode-ipc-04139434-3f96-459c-a66a-b1f54618ae6f.sock
+ #48: COLORTERM=truecolor
+ #49: LC_TIME=en_US.UTF-8
+ #50: LC_IDENTIFICATION=en_US.UTF-8
+ #51: TERM_PROGRAM_VERSION=1.89.1
+ #52: SSH_CLIENT=172.28.23.232 59740 2262
+ #53: BROWSER=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/bin/helpers/browser.sh
+ #54: XDG_SESSION_CLASS=user
+ #55: PATH=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/bin/remote-cli:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+ #56: SSH_CONNECTION=172.28.23.232 59740 172.28.8.253 2262
+ #57: LIBC_FATAL_STDERR_=1
+ #58: SPECPERLLIB=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/lib:/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin
+ #59: OMP_NUM_THREADS=1
+ #60: OMP_THREAD_LIMIT=1
+running commands in speccmds.cmd 1 times
+runs started at		1718167050, 692806000, Tue Jun 11 23:37:30 2024
+run 1 started at	1718167050, 692824000, Tue Jun 11 23:37:30 2024
+child started: 0,	1718167050, 692829000, pid=4018374, 'lfi-run --no-verify ../run_base_refrate_lfi-gcc-m64.0000/leela_r_base.lfi-gcc-m64 ref.sgf > ref.out 2>> ref.err'
+child finished: 0,	1718167050, 693648000, sec=0, nsec=819000, pid=4018374, rc=32512
+run 1 finished at:	1718167050, 693662000, Tue Jun 11 23:37:30 2024
+run 1 elapsed time:	         0, 000838000, 0.000838000
+runs finished at	1718167050, 693671000, Tue Jun 11 23:37:30 2024
+runs elapsed time:	         0, 000865000, 0.000865000
+error: a total of 1 children finished with errors
+specinvoke exit: rc=0
+
+****************************************
+Workload elapsed time (copy 0 workload 1) = 0.000819 seconds
+Copy 0 of 541.leela_r (base refrate) run 1 finished at 2024-06-11 23:37:30.  Total elapsed time: 0.000819
+Benchmark Times:
+  Run Start:    2024-06-11 23:37:30 (1718167050)
+  Rate Start:   2024-06-11 23:37:30 (1718167050.69283)
+  Rate End:     2024-06-11 23:37:30 (1718167050.69365)
+  Run Stop:     2024-06-11 23:37:30 (1718167050)
+  Run Elapsed:  00:00:00 (0)
+  Run Reported: 00:00:00 (0 819206 0.000819)
+ Error 541.leela_r base refrate ratio=2021978.02, runtime=0.000819, copies=1, threads=1, power=0.00W, temp=0.00 degC, humidity=0.00%, errorcode=RE
+-----------------------------------
+  Running 557.xz_r refrate (ref) base lfi-gcc-m64 (1 copy) [2024-06-11 23:37:30]
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+Commands to run (specinvoke command file):
+    -r
+    -N C
+    -C /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/557.xz_r/run/run_base_refrate_lfi-gcc-m64.0000
+    -o cld.tar-160-6.out -e cld.tar-160-6.err ../run_base_refrate_lfi-gcc-m64.0000/xz_r_base.lfi-gcc-m64 cld.tar.xz 160 19cf30ae51eddcbefda78dd06014b4b96281456e078ca7c13e1c0c9e6aaea8dff3efb4ad6b0456697718cede6bd5454852652806a657bb56e07d61128434b474 59796407 61004416 6 > cld.tar-160-6.out 2>> cld.tar-160-6.err (timed)
+    -o cpu2006docs.tar-250-6e.out -e cpu2006docs.tar-250-6e.err ../run_base_refrate_lfi-gcc-m64.0000/xz_r_base.lfi-gcc-m64 cpu2006docs.tar.xz 250 055ce243071129412e9dd0b3b69a21654033a9b723d874b2015c774fac1553d9713be561ca86f74e4f16f22e664fc17a79f30caa5ad2c04fbc447549c2810fae 23047774 23513385 6e > cpu2006docs.tar-250-6e.out 2>> cpu2006docs.tar-250-6e.err (timed)
+    -o input.combined-250-7.out -e input.combined-250-7.err ../run_base_refrate_lfi-gcc-m64.0000/xz_r_base.lfi-gcc-m64 input.combined.xz 250 a841f68f38572a49d86226b7ff5baeb31bd19dc637a922a972b2e6d1257a890f6a544ecab967c313e370478c74f760eb229d4eef8a8d2836d233d3e9dd1430bf 40401484 41217675 7 > input.combined-250-7.out 2>> input.combined-250-7.err (timed)
+Specinvoke: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/557.xz_r/run/run_base_refrate_lfi-gcc-m64.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+Issuing command '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/557.xz_r/run/run_base_refrate_lfi-gcc-m64.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout'
+Start command: 2024-06-11 23:37:30 (1718167050.90528)
+specinvoke running: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke.orig -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/557.xz_r/run/run_base_refrate_lfi-gcc-m64.0000 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+Stop command: 2024-06-11 23:37:31 (1718167051.06438)
+Elapsed time for command: 00:00:00 (0.159104108810425)
+557.xz_r: copy 0 non-zero return code (exit code=127, signal=0)
+
+****************************************
+Contents of cld.tar-160-6.err
+****************************************
+/bin/sh: 1: lfi-run: not found
+
+****************************************
+****************************************
+Contents of speccmds.out
+****************************************
+specinvoke r4356
+ Invoked as: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke.orig -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/557.xz_r/run/run_base_refrate_lfi-gcc-m64.0000 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+timer ticks over every 1000 ns
+ Environment in effect for these runs:
+ # 1: SSL_CERT_DIR=/usr/lib/ssl/certs
+ # 2: TERM_PROGRAM=vscode
+ # 3: LC_MEASUREMENT=en_US.UTF-8
+ # 4: SPEC=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ # 5: LD_LIBRARY_PATH=/usr/lib64/:/usr/lib/:/lib64
+ # 6: DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+ # 7: LANG=en_US.UTF-8
+ # 8: VSCODE_IPC_HOOK_CLI=/run/user/1000/vscode-ipc-04139434-3f96-459c-a66a-b1f54618ae6f.sock
+ # 9: LC_PAPER=en_US.UTF-8
+ #10: LC_TELEPHONE=en_US.UTF-8
+ #11: LC_IDENTIFICATION=en_US.UTF-8
+ #12: LC_TIME=en_US.UTF-8
+ #13: SSH_CLIENT=172.28.23.232 59740 2262
+ #14: TERM_PROGRAM_VERSION=1.89.1
+ #15: COLORTERM=truecolor
+ #16: PATH=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/bin/remote-cli:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+ #17: SSH_CONNECTION=172.28.23.232 59740 172.28.8.253 2262
+ #18: SPECPERLLIB=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/lib:/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin
+ #19: LIBC_FATAL_STDERR_=1
+ #20: BROWSER=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/bin/helpers/browser.sh
+ #21: XDG_SESSION_CLASS=user
+ #22: LOADER=lfi-run --no-verify
+ #23: PAPERSIZE=letter
+ #24: LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.
+webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+ #25: GIT_ASKPASS=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/extensions/git/dist/askpass.sh
+ #26: WASMTIME_HOME=/home/shr/.wasmtime
+ #27: SPECDB_PWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #28: XDG_SESSION_ID=1365
+ #29: MOTD_SHOWN=pam
+ #30: LESSOPEN=| /usr/bin/lesspipe %s
+ #31: HOME=/home/shr
+ #32: SSL_CERT_FILE=/usr/lib/ssl/certs/ca-certificates.crt
+ #33: VSCODE_GIT_ASKPASS_MAIN=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/extensions/git/dist/askpass-main.js
+ #34: OLDPWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi
+ #35: XDG_RUNTIME_DIR=/run/user/1000
+ #36: SPEC_NOCHECK=1
+ #37: TERM=xterm-256color
+ #38: SHELL=/bin/bash
+ #39: SHLVL=3
+ #40: LIBVIRT_DEFAULT_URI=qemu:///system
+ #41: VSCODE_GIT_ASKPASS_EXTRA_ARGS=
+ #42: LC_ADDRESS=en_US.UTF-8
+ #43: MAKEFLAGS=-j32
+ #44: _=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/runcpu
+ #45: VSCODE_GIT_IPC_HANDLE=/run/user/1000/vscode-git-5ff261b927.sock
+ #46: LOGNAME=shr
+ #47: XDG_SESSION_TYPE=tty
+ #48: LC_LANG=C
+ #49: USER=shr
+ #50: LC_NAME=en_US.UTF-8
+ #51: LESSCLOSE=/usr/bin/lesspipe %s %s
+ #52: LC_MONETARY=en_US.UTF-8
+ #53: LC_NUMERIC=en_US.UTF-8
+ #54: LANGUAGE=en
+ #55: PWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #56: VSCODE_GIT_ASKPASS_NODE=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/node
+ #57: XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+ #58: LC_ALL=C
+ #59: OMP_NUM_THREADS=1
+ #60: OMP_THREAD_LIMIT=1
+running commands in speccmds.cmd 1 times
+runs started at		1718167050, 910972000, Tue Jun 11 23:37:30 2024
+run 1 started at	1718167050, 910990000, Tue Jun 11 23:37:30 2024
+child started: 0,	1718167050, 910996000, pid=4018398, 'lfi-run --no-verify ../run_base_refrate_lfi-gcc-m64.0000/xz_r_base.lfi-gcc-m64 cld.tar.xz 160 19cf30ae51eddcbefda78dd06014b4b96281456e078ca7c13e1c0c9e6aaea8dff3efb4ad6b0456697718cede6bd5454852652806a657bb56e07d61128434b474 59796407 61004416 6 > cld.tar-160-6.out 2>> cld.tar-160-6.err'
+child finished: 0,	1718167050, 911818000, sec=0, nsec=822000, pid=4018398, rc=32512
+run 1 finished at:	1718167050, 911828000, Tue Jun 11 23:37:30 2024
+run 1 elapsed time:	         0, 000838000, 0.000838000
+runs finished at	1718167050, 911837000, Tue Jun 11 23:37:30 2024
+runs elapsed time:	         0, 000865000, 0.000865000
+error: a total of 1 children finished with errors
+specinvoke exit: rc=0
+
+****************************************
+Workload elapsed time (copy 0 workload 1) = 0.000822 seconds
+Copy 0 of 557.xz_r (base refrate) run 1 finished at 2024-06-11 23:37:30.  Total elapsed time: 0.000822
+Benchmark Times:
+  Run Start:    2024-06-11 23:37:30 (1718167050)
+  Rate Start:   2024-06-11 23:37:30 (1718167050.911)
+  Rate End:     2024-06-11 23:37:30 (1718167050.91182)
+  Run Stop:     2024-06-11 23:37:31 (1718167051)
+  Run Elapsed:  00:00:01 (1)
+  Run Reported: 00:00:00 (0 822067 0.000822)
+ Error 557.xz_r base refrate ratio=1313868.61, runtime=0.000822, copies=1, threads=1, power=0.00W, temp=0.00 degC, humidity=0.00%, errorcode=RE
+Error: 1x502.gcc_r 1x505.mcf_r 1x520.omnetpp_r 1x523.xalancbmk_r 1x525.x264_r 1x531.deepsjeng_r 1x541.leela_r 1x557.xz_r
+Producing Raw Reports
+ label: lfi-gcc-m64
+  workload: refrate (ref)
+   benchset: intspeed
+   benchset: intrate
+   metric: SPECrate2017_int_base
+    format: raw -> /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/result/CPU2017.001.intrate.refrate.rsf
+Parsing flags for 502.gcc_r base: done
+Parsing flags for 505.mcf_r base: done
+Parsing flags for 520.omnetpp_r base: done
+Parsing flags for 523.xalancbmk_r base: done
+Parsing flags for 531.deepsjeng_r base: done
+Parsing flags for 541.leela_r base: done
+Parsing flags for 557.xz_r base: done
+Doing flag reduction: done
+    format: flags -> /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/result/CPU2017.001.intrate.refrate.flags.html
+    format: cfg -> /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/result/CPU2017.001.intrate.refrate.cfg
+    format: CSV -> /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/result/CPU2017.001.intrate.refrate.csv
+    format: PDF -> /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/result/CPU2017.001.intrate.refrate.pdf
+    format: HTML -> /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/result/CPU2017.001.intrate.refrate.html, /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/result/invalid.gif
+    format: Text -> /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/result/CPU2017.001.intrate.refrate.txt
+   benchset: fpspeed
+   benchset: fprate
+runcpu finished at 2024-06-11 23:37:35; 18 total seconds elapsed
+-------------------------------------------------------------------------------
+
+Setting up environment for running 508.namd_r, 510.parest_r, 511.povray_r, 519.lbm_r, 538.imagick_r, 544.nab_r...
+Starting runcpu for 508.namd_r, 510.parest_r, 511.povray_r, 519.lbm_r, 538.imagick_r, 544.nab_r...
+Running "specperl /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/sysinfo" to gather system information.
+sysinfo: r6365 of 2019-08-21 (295195f888a3d7edb1e6e46a485a0011)
+sysinfo: Getting system information for Linux...
+sysinfo: ...getting CPU info
+sysinfo: ...getting info from numactl
+sysinfo: ...getting memory info
+sysinfo: ...getting OS info
+sysinfo: ...getting CPU vulnerability status from the kernel
+sysinfo: ...getting disk info
+sysinfo: ...trying to get info from /sys/devices/virtual/dmi/id
+sysinfo: ...trying to get info from dmidecode
+Retrieving flags file (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/config/flags/gcc.xml)...
+Verbosity = 5
+Action    = validate
+Tune      = base
+Label     = lfi-gcc-m64
+Size      = refrate
+benchmarks= 508.namd_r,510.parest_r,511.povray_r,519.lbm_r,538.imagick_r,544.nab_r
+outputs   = txt,html,cfg,pdf,csv
+username  = shr
+Environment settings:
+LD_LIBRARY_PATH = "%{gcc_dir}/lib64/:%{gcc_dir}/lib/:/lib64"
+
+Benchmarks selected: 508.namd_r, 510.parest_r, 511.povray_r, 519.lbm_r, 538.imagick_r, 544.nab_r
+Compiling Binaries
+------------------------------------------------------------------------
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03  -c -o options.o -DSPEC -DNDEBUG  -DNAMD_DISABLE_SSE -DSPEC_AUTO_SUPPRESS_OPENMP -O3 -fomit-frame-pointer -flto         -DSPEC_LP64  <source>"
+C: CXXC="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+C: CXXOBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS=""
+P: BENCH_CXXFLAGS="-DNAMD_DISABLE_SSE -DSPEC_AUTO_SUPPRESS_OPENMP"
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: CXXOPTIMIZE=""
+P: PORTABILITY=""
+P: CXXPORTABILITY=""
+O: EXTRA_CXXFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_CXXOPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CXXPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03       -O3 -fomit-frame-pointer -flto          <objects>            -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+C: LDOUT="-o options"
+ CXXC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-g++
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++ --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+  Up to date 508.namd_r base lfi-gcc-m64
+------------------------------------------------------------------------
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03  -c -o options.o -DSPEC -DNDEBUG -Iinclude -I. -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto         -DSPEC_LP64  <source>"
+C: CXXC="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+C: CXXOBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-Iinclude -I. -DSPEC_AUTO_SUPPRESS_OPENMP"
+P: BENCH_CXXFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: CXXOPTIMIZE=""
+P: PORTABILITY=""
+P: CXXPORTABILITY=""
+O: EXTRA_CXXFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_CXXOPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CXXPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03       -O3 -fomit-frame-pointer -flto          <objects>            -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+C: LDOUT="-o options"
+ CXXC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-g++
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++ --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+  Up to date 510.parest_r base lfi-gcc-m64
+------------------------------------------------------------------------
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03  -c -o options.o -DSPEC -DNDEBUG -Ifrontend -Ibase -I. -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto         -DSPEC_LP64  <source>"
+C: CXXC="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+C: CXXOBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-Ifrontend -Ibase -I. -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP"
+P: BENCH_CXXFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: CXXOPTIMIZE=""
+P: PORTABILITY=""
+P: CXXPORTABILITY=""
+O: EXTRA_CXXFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_CXXOPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CXXPORTABILITY=""
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99    -c -o options.o -DSPEC -DNDEBUG -Ifrontend -Ibase -I. -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto               -DSPEC_LP64  <source>"
+C: CC="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+C: COBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-Ifrontend -Ibase -I. -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP"
+P: BENCH_CFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: COPTIMIZE=""
+P: PORTABILITY=""
+P: CPORTABILITY=""
+O: EXTRA_CFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_COPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03       -O3 -fomit-frame-pointer -flto          <objects>            -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+C: LDOUT="-o options"
+ CXXC_VERSION_OPTION:
+ CC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-g++
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++ --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++ --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03  -c -o options.o -DSPEC -DNDEBUG -Ifrontend -Ibase -I. -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto         -DSPEC_LP64  <source>"
+C: CXXC="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+C: CXXOBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-Ifrontend -Ibase -I. -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP"
+P: BENCH_CXXFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: CXXOPTIMIZE=""
+P: PORTABILITY=""
+P: CXXPORTABILITY=""
+O: EXTRA_CXXFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_CXXOPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CXXPORTABILITY=""
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99    -c -o options.o -DSPEC -DNDEBUG -Ifrontend -Ibase -I. -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto               -DSPEC_LP64  <source>"
+C: CC="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+C: COBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-Ifrontend -Ibase -I. -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP"
+P: BENCH_CFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: COPTIMIZE=""
+P: PORTABILITY=""
+P: CPORTABILITY=""
+O: EXTRA_CFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_COPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03       -O3 -fomit-frame-pointer -flto          <objects>            -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-g++ -std=c++03 "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+C: LDOUT="-o options"
+ CXXC_VERSION_OPTION:
+ CC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-g++
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++ --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++ --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+  Up to date 511.povray_r base lfi-gcc-m64
+------------------------------------------------------------------------
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99    -c -o options.o -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto               -DSPEC_LP64  <source>"
+C: CC="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+C: COBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-DSPEC_AUTO_SUPPRESS_OPENMP"
+P: BENCH_CFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: COPTIMIZE=""
+P: PORTABILITY=""
+P: CPORTABILITY=""
+O: EXTRA_CFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_COPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99         -O3 -fomit-frame-pointer -flto          <objects>   -lm         -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+C: MATH_LIBS="-lm"
+C: LDOUT="-o options"
+ CC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++ --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+  Up to date 519.lbm_r base lfi-gcc-m64
+------------------------------------------------------------------------
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99    -c -o options.o -DSPEC -DNDEBUG -I. -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto               -DSPEC_LP64  <source>"
+C: CC="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+C: COBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-I. -DSPEC_AUTO_SUPPRESS_OPENMP"
+P: BENCH_CFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: COPTIMIZE=""
+P: PORTABILITY=""
+P: CPORTABILITY=""
+O: EXTRA_CFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_COPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99         -O3 -fomit-frame-pointer -flto          <objects>   -lm         -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+C: MATH_LIBS="-lm"
+C: LDOUT="-o options"
+ CC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++ --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99    -c -o options.o -DSPEC -DNDEBUG -I. -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto               -DSPEC_LP64  <source>"
+C: CC="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+C: COBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-I. -DSPEC_AUTO_SUPPRESS_OPENMP"
+P: BENCH_CFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: COPTIMIZE=""
+P: PORTABILITY=""
+P: CPORTABILITY=""
+O: EXTRA_CFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_COPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99         -O3 -fomit-frame-pointer -flto          <objects>   -lm         -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+C: MATH_LIBS="-lm"
+C: LDOUT="-o options"
+ CC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++ --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+  Up to date 538.imagick_r base lfi-gcc-m64
+------------------------------------------------------------------------
+COMP: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99    -c -o options.o -DSPEC -DNDEBUG -Ispecrand -Iregex-alpha -DNDEBUG -DNOPERFLIB -DNOREDUCE -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto               -DSPEC_LP64  <source>"
+C: CC="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+C: COBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS="-Ispecrand -Iregex-alpha -DNDEBUG -DNOPERFLIB -DNOREDUCE -DSPEC_AUTO_SUPPRESS_OPENMP"
+P: BENCH_CFLAGS=""
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+O: COPTIMIZE=""
+P: PORTABILITY=""
+P: CPORTABILITY=""
+O: EXTRA_CFLAGS=""
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_COPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CPORTABILITY=""
+LINK: "/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99         -O3 -fomit-frame-pointer -flto          <objects>   -lm         -o options  "
+C: LD="/opt/lfi-amd64/bin/x86_64-linux-musl-gcc     -std=c99   "
+O: OPTIMIZE="-O3 -fomit-frame-pointer -flto"
+C: MATH_LIBS="-lm"
+C: LDOUT="-o options"
+ CC_VERSION_OPTION:
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs --disable-bootstrap --disable-libssp --disable-multilib --disable-shared --enable-languages=c,c++ --enable-lto --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64 --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+  Up to date 544.nab_r base lfi-gcc-m64
+
+
+Setting Up Run Directories
+  Setting up 508.namd_r refrate (ref) base lfi-gcc-m64 (1 copy): run_base_refrate_lfi-gcc-m64.0001
+  Setting up 510.parest_r refrate (ref) base lfi-gcc-m64 (1 copy): run_base_refrate_lfi-gcc-m64.0001
+  Setting up 511.povray_r refrate (ref) base lfi-gcc-m64 (1 copy): run_base_refrate_lfi-gcc-m64.0001
+  Setting up 519.lbm_r refrate (ref) base lfi-gcc-m64 (1 copy): run_base_refrate_lfi-gcc-m64.0001
+  Setting up 538.imagick_r refrate (ref) base lfi-gcc-m64 (1 copy): run_base_refrate_lfi-gcc-m64.0001
+  Setting up 544.nab_r refrate (ref) base lfi-gcc-m64 (1 copy): run_base_refrate_lfi-gcc-m64.0001
+-----------------------------------
+Running Benchmarks
+-----------------------------------
+  Running 508.namd_r refrate (ref) base lfi-gcc-m64 (1 copy) [2024-06-11 23:37:40]
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+Commands to run (specinvoke command file):
+    -r
+    -N C
+    -C /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/508.namd_r/run/run_base_refrate_lfi-gcc-m64.0001
+    -o namd.out -e namd.err ../run_base_refrate_lfi-gcc-m64.0001/namd_r_base.lfi-gcc-m64 --input apoa1.input --output apoa1.ref.output --iterations 65 > namd.out 2>> namd.err (timed)
+Specinvoke: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/508.namd_r/run/run_base_refrate_lfi-gcc-m64.0001 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+Issuing command '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/508.namd_r/run/run_base_refrate_lfi-gcc-m64.0001 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout'
+Start command: 2024-06-11 23:37:40 (1718167060.10623)
+specinvoke running: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke.orig -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/508.namd_r/run/run_base_refrate_lfi-gcc-m64.0001 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+Stop command: 2024-06-11 23:37:40 (1718167060.26123)
+Elapsed time for command: 00:00:00 (0.154992818832397)
+508.namd_r: copy 0 non-zero return code (exit code=127, signal=0)
+
+****************************************
+Contents of namd.err
+****************************************
+/bin/sh: 1: lfi-run: not found
+
+****************************************
+****************************************
+Contents of speccmds.out
+****************************************
+specinvoke r4356
+ Invoked as: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke.orig -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/508.namd_r/run/run_base_refrate_lfi-gcc-m64.0001 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+timer ticks over every 1000 ns
+ Environment in effect for these runs:
+ # 1: SHLVL=3
+ # 2: COLORTERM=truecolor
+ # 3: BROWSER=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/bin/helpers/browser.sh
+ # 4: SSH_CLIENT=172.28.23.232 59740 2262
+ # 5: VSCODE_GIT_IPC_HANDLE=/run/user/1000/vscode-git-5ff261b927.sock
+ # 6: SSL_CERT_FILE=/usr/lib/ssl/certs/ca-certificates.crt
+ # 7: TERM=xterm-256color
+ # 8: LD_LIBRARY_PATH=/usr/lib64/:/usr/lib/:/lib64
+ # 9: _=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/runcpu
+ #10: LOADER=lfi-run --no-verify
+ #11: XDG_SESSION_TYPE=tty
+ #12: OLDPWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi
+ #13: USER=shr
+ #14: LC_NUMERIC=en_US.UTF-8
+ #15: LC_ALL=C
+ #16: PAPERSIZE=letter
+ #17: LC_LANG=C
+ #18: SHELL=/bin/bash
+ #19: LC_TELEPHONE=en_US.UTF-8
+ #20: XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+ #21: SPEC=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #22: SPECDB_PWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #23: LC_PAPER=en_US.UTF-8
+ #24: LESSOPEN=| /usr/bin/lesspipe %s
+ #25: LANG=en_US.UTF-8
+ #26: GIT_ASKPASS=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/extensions/git/dist/askpass.sh
+ #27: LC_MEASUREMENT=en_US.UTF-8
+ #28: LIBVIRT_DEFAULT_URI=qemu:///system
+ #29: XDG_SESSION_ID=1365
+ #30: SPECPERLLIB=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/lib:/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin
+ #31: SSL_CERT_DIR=/usr/lib/ssl/certs
+ #32: LOGNAME=shr
+ #33: LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.
+webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+ #34: SPEC_NOCHECK=1
+ #35: WASMTIME_HOME=/home/shr/.wasmtime
+ #36: VSCODE_GIT_ASKPASS_EXTRA_ARGS=
+ #37: LC_TIME=en_US.UTF-8
+ #38: LC_ADDRESS=en_US.UTF-8
+ #39: HOME=/home/shr
+ #40: VSCODE_GIT_ASKPASS_NODE=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/node
+ #41: TERM_PROGRAM_VERSION=1.89.1
+ #42: LC_NAME=en_US.UTF-8
+ #43: VSCODE_IPC_HOOK_CLI=/run/user/1000/vscode-ipc-04139434-3f96-459c-a66a-b1f54618ae6f.sock
+ #44: LIBC_FATAL_STDERR_=1
+ #45: PATH=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/bin/remote-cli:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+ #46: LC_IDENTIFICATION=en_US.UTF-8
+ #47: VSCODE_GIT_ASKPASS_MAIN=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/extensions/git/dist/askpass-main.js
+ #48: TERM_PROGRAM=vscode
+ #49: LC_MONETARY=en_US.UTF-8
+ #50: PWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #51: LESSCLOSE=/usr/bin/lesspipe %s %s
+ #52: XDG_SESSION_CLASS=user
+ #53: MOTD_SHOWN=pam
+ #54: MAKEFLAGS=-j32
+ #55: LANGUAGE=en
+ #56: SSH_CONNECTION=172.28.23.232 59740 172.28.8.253 2262
+ #57: DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+ #58: XDG_RUNTIME_DIR=/run/user/1000
+ #59: OMP_NUM_THREADS=1
+ #60: OMP_THREAD_LIMIT=1
+running commands in speccmds.cmd 1 times
+runs started at		1718167060, 109199000, Tue Jun 11 23:37:40 2024
+run 1 started at	1718167060, 109207000, Tue Jun 11 23:37:40 2024
+child started: 0,	1718167060, 109209000, pid=4018778, 'lfi-run --no-verify ../run_base_refrate_lfi-gcc-m64.0001/namd_r_base.lfi-gcc-m64 --input apoa1.input --output apoa1.ref.output --iterations 65 > namd.out 2>> namd.err'
+child finished: 0,	1718167060, 109574000, sec=0, nsec=365000, pid=4018778, rc=32512
+run 1 finished at:	1718167060, 109578000, Tue Jun 11 23:37:40 2024
+run 1 elapsed time:	         0, 000371000, 0.000371000
+runs finished at	1718167060, 109582000, Tue Jun 11 23:37:40 2024
+runs elapsed time:	         0, 000383000, 0.000383000
+error: a total of 1 children finished with errors
+specinvoke exit: rc=0
+
+****************************************
+Workload elapsed time (copy 0 workload 1) = 0.000365 seconds
+Copy 0 of 508.namd_r (base refrate) run 1 finished at 2024-06-11 23:37:40.  Total elapsed time: 0.000365
+Benchmark Times:
+  Run Start:    2024-06-11 23:37:40 (1718167060)
+  Rate Start:   2024-06-11 23:37:40 (1718167060.10921)
+  Rate End:     2024-06-11 23:37:40 (1718167060.10957)
+  Run Stop:     2024-06-11 23:37:40 (1718167060)
+  Run Elapsed:  00:00:00 (0)
+  Run Reported: 00:00:00 (0 365018 0.000365)
+ Error 508.namd_r base refrate ratio=2602739.73, runtime=0.000365, copies=1, threads=1, power=0.00W, temp=0.00 degC, humidity=0.00%, errorcode=RE
+-----------------------------------
+  Running 510.parest_r refrate (ref) base lfi-gcc-m64 (1 copy) [2024-06-11 23:37:40]
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+Commands to run (specinvoke command file):
+    -r
+    -N C
+    -C /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/510.parest_r/run/run_base_refrate_lfi-gcc-m64.0001
+    -o ref.out -e ref.err ../run_base_refrate_lfi-gcc-m64.0001/parest_r_base.lfi-gcc-m64 ref.prm > ref.out 2>> ref.err (timed)
+Specinvoke: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/510.parest_r/run/run_base_refrate_lfi-gcc-m64.0001 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+Issuing command '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/510.parest_r/run/run_base_refrate_lfi-gcc-m64.0001 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout'
+Start command: 2024-06-11 23:37:40 (1718167060.31257)
+specinvoke running: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke.orig -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/510.parest_r/run/run_base_refrate_lfi-gcc-m64.0001 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+Stop command: 2024-06-11 23:37:40 (1718167060.46718)
+Elapsed time for command: 00:00:00 (0.154605865478516)
+510.parest_r: copy 0 non-zero return code (exit code=127, signal=0)
+
+****************************************
+Contents of ref.err
+****************************************
+/bin/sh: 1: lfi-run: not found
+
+****************************************
+****************************************
+Contents of speccmds.out
+****************************************
+specinvoke r4356
+ Invoked as: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke.orig -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/510.parest_r/run/run_base_refrate_lfi-gcc-m64.0001 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+timer ticks over every 1000 ns
+ Environment in effect for these runs:
+ # 1: SSL_CERT_FILE=/usr/lib/ssl/certs/ca-certificates.crt
+ # 2: TERM=xterm-256color
+ # 3: LD_LIBRARY_PATH=/usr/lib64/:/usr/lib/:/lib64
+ # 4: _=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/runcpu
+ # 5: XDG_SESSION_TYPE=tty
+ # 6: LOADER=lfi-run --no-verify
+ # 7: USER=shr
+ # 8: OLDPWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi
+ # 9: LC_NUMERIC=en_US.UTF-8
+ #10: LC_ALL=C
+ #11: SHLVL=3
+ #12: COLORTERM=truecolor
+ #13: SSH_CLIENT=172.28.23.232 59740 2262
+ #14: BROWSER=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/bin/helpers/browser.sh
+ #15: VSCODE_GIT_IPC_HANDLE=/run/user/1000/vscode-git-5ff261b927.sock
+ #16: XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+ #17: SPEC=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #18: SPECDB_PWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #19: LC_PAPER=en_US.UTF-8
+ #20: LESSOPEN=| /usr/bin/lesspipe %s
+ #21: GIT_ASKPASS=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/extensions/git/dist/askpass.sh
+ #22: LANG=en_US.UTF-8
+ #23: PAPERSIZE=letter
+ #24: LC_LANG=C
+ #25: SHELL=/bin/bash
+ #26: LC_TELEPHONE=en_US.UTF-8
+ #27: LC_TIME=en_US.UTF-8
+ #28: HOME=/home/shr
+ #29: LC_ADDRESS=en_US.UTF-8
+ #30: WASMTIME_HOME=/home/shr/.wasmtime
+ #31: VSCODE_GIT_ASKPASS_EXTRA_ARGS=
+ #32: SPEC_NOCHECK=1
+ #33: VSCODE_GIT_ASKPASS_NODE=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/node
+ #34: TERM_PROGRAM_VERSION=1.89.1
+ #35: LC_NAME=en_US.UTF-8
+ #36: LC_MEASUREMENT=en_US.UTF-8
+ #37: SPECPERLLIB=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/lib:/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin
+ #38: LIBVIRT_DEFAULT_URI=qemu:///system
+ #39: XDG_SESSION_ID=1365
+ #40: LOGNAME=shr
+ #41: SSL_CERT_DIR=/usr/lib/ssl/certs
+ #42: LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.
+webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+ #43: MAKEFLAGS=-j32
+ #44: MOTD_SHOWN=pam
+ #45: LANGUAGE=en
+ #46: SSH_CONNECTION=172.28.23.232 59740 172.28.8.253 2262
+ #47: DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+ #48: XDG_RUNTIME_DIR=/run/user/1000
+ #49: VSCODE_IPC_HOOK_CLI=/run/user/1000/vscode-ipc-04139434-3f96-459c-a66a-b1f54618ae6f.sock
+ #50: PATH=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/bin/remote-cli:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+ #51: LC_IDENTIFICATION=en_US.UTF-8
+ #52: LIBC_FATAL_STDERR_=1
+ #53: VSCODE_GIT_ASKPASS_MAIN=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/extensions/git/dist/askpass-main.js
+ #54: LC_MONETARY=en_US.UTF-8
+ #55: TERM_PROGRAM=vscode
+ #56: PWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #57: LESSCLOSE=/usr/bin/lesspipe %s %s
+ #58: XDG_SESSION_CLASS=user
+ #59: OMP_NUM_THREADS=1
+ #60: OMP_THREAD_LIMIT=1
+running commands in speccmds.cmd 1 times
+runs started at		1718167060, 315047000, Tue Jun 11 23:37:40 2024
+run 1 started at	1718167060, 315054000, Tue Jun 11 23:37:40 2024
+child started: 0,	1718167060, 315057000, pid=4018803, 'lfi-run --no-verify ../run_base_refrate_lfi-gcc-m64.0001/parest_r_base.lfi-gcc-m64 ref.prm > ref.out 2>> ref.err'
+child finished: 0,	1718167060, 315423000, sec=0, nsec=366000, pid=4018803, rc=32512
+run 1 finished at:	1718167060, 315428000, Tue Jun 11 23:37:40 2024
+run 1 elapsed time:	         0, 000374000, 0.000374000
+runs finished at	1718167060, 315432000, Tue Jun 11 23:37:40 2024
+runs elapsed time:	         0, 000385000, 0.000385000
+error: a total of 1 children finished with errors
+specinvoke exit: rc=0
+
+****************************************
+Workload elapsed time (copy 0 workload 1) = 0.000366 seconds
+Copy 0 of 510.parest_r (base refrate) run 1 finished at 2024-06-11 23:37:40.  Total elapsed time: 0.000366
+Benchmark Times:
+  Run Start:    2024-06-11 23:37:40 (1718167060)
+  Rate Start:   2024-06-11 23:37:40 (1718167060.31506)
+  Rate End:     2024-06-11 23:37:40 (1718167060.31542)
+  Run Stop:     2024-06-11 23:37:40 (1718167060)
+  Run Elapsed:  00:00:00 (0)
+  Run Reported: 00:00:00 (0 365972 0.000366)
+ Error 510.parest_r base refrate ratio=7147540.98, runtime=0.000366, copies=1, threads=1, power=0.00W, temp=0.00 degC, humidity=0.00%, errorcode=RE
+-----------------------------------
+  Running 511.povray_r refrate (ref) base lfi-gcc-m64 (1 copy) [2024-06-11 23:37:40]
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+Commands to run (specinvoke command file):
+    -r
+    -N C
+    -C /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/511.povray_r/run/run_base_refrate_lfi-gcc-m64.0001
+    -o SPEC-benchmark-ref.stdout -e SPEC-benchmark-ref.stderr ../run_base_refrate_lfi-gcc-m64.0001/povray_r_base.lfi-gcc-m64 SPEC-benchmark-ref.ini > SPEC-benchmark-ref.stdout 2>> SPEC-benchmark-ref.stderr (timed)
+Specinvoke: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/511.povray_r/run/run_base_refrate_lfi-gcc-m64.0001 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+Issuing command '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/511.povray_r/run/run_base_refrate_lfi-gcc-m64.0001 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout'
+Start command: 2024-06-11 23:37:40 (1718167060.50761)
+specinvoke running: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke.orig -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/511.povray_r/run/run_base_refrate_lfi-gcc-m64.0001 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+Stop command: 2024-06-11 23:37:40 (1718167060.66224)
+Elapsed time for command: 00:00:00 (0.154628992080688)
+511.povray_r: copy 0 non-zero return code (exit code=127, signal=0)
+
+****************************************
+Contents of speccmds.out
+****************************************
+specinvoke r4356
+ Invoked as: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke.orig -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/511.povray_r/run/run_base_refrate_lfi-gcc-m64.0001 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+timer ticks over every 1000 ns
+ Environment in effect for these runs:
+ # 1: TERM_PROGRAM_VERSION=1.89.1
+ # 2: LC_NAME=en_US.UTF-8
+ # 3: LC_ADDRESS=en_US.UTF-8
+ # 4: VSCODE_GIT_ASKPASS_EXTRA_ARGS=
+ # 5: WASMTIME_HOME=/home/shr/.wasmtime
+ # 6: LC_TIME=en_US.UTF-8
+ # 7: HOME=/home/shr
+ # 8: SPEC_NOCHECK=1
+ # 9: VSCODE_GIT_ASKPASS_NODE=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/node
+ #10: SSL_CERT_DIR=/usr/lib/ssl/certs
+ #11: LOGNAME=shr
+ #12: LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.
+webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+ #13: LC_MEASUREMENT=en_US.UTF-8
+ #14: LIBVIRT_DEFAULT_URI=qemu:///system
+ #15: SPECPERLLIB=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/lib:/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin
+ #16: XDG_SESSION_ID=1365
+ #17: SSH_CONNECTION=172.28.23.232 59740 172.28.8.253 2262
+ #18: DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+ #19: XDG_RUNTIME_DIR=/run/user/1000
+ #20: MAKEFLAGS=-j32
+ #21: MOTD_SHOWN=pam
+ #22: LANGUAGE=en
+ #23: VSCODE_GIT_ASKPASS_MAIN=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/extensions/git/dist/askpass-main.js
+ #24: LC_MONETARY=en_US.UTF-8
+ #25: TERM_PROGRAM=vscode
+ #26: PWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #27: LESSCLOSE=/usr/bin/lesspipe %s %s
+ #28: XDG_SESSION_CLASS=user
+ #29: VSCODE_IPC_HOOK_CLI=/run/user/1000/vscode-ipc-04139434-3f96-459c-a66a-b1f54618ae6f.sock
+ #30: LC_IDENTIFICATION=en_US.UTF-8
+ #31: LIBC_FATAL_STDERR_=1
+ #32: PATH=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/bin/remote-cli:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+ #33: LOADER=lfi-run --no-verify
+ #34: XDG_SESSION_TYPE=tty
+ #35: OLDPWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi
+ #36: USER=shr
+ #37: LC_ALL=C
+ #38: LC_NUMERIC=en_US.UTF-8
+ #39: SSL_CERT_FILE=/usr/lib/ssl/certs/ca-certificates.crt
+ #40: LD_LIBRARY_PATH=/usr/lib64/:/usr/lib/:/lib64
+ #41: TERM=xterm-256color
+ #42: _=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/runcpu
+ #43: VSCODE_GIT_IPC_HANDLE=/run/user/1000/vscode-git-5ff261b927.sock
+ #44: SHLVL=3
+ #45: COLORTERM=truecolor
+ #46: BROWSER=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/bin/helpers/browser.sh
+ #47: SSH_CLIENT=172.28.23.232 59740 2262
+ #48: LC_PAPER=en_US.UTF-8
+ #49: LESSOPEN=| /usr/bin/lesspipe %s
+ #50: LANG=en_US.UTF-8
+ #51: GIT_ASKPASS=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/extensions/git/dist/askpass.sh
+ #52: SPECDB_PWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #53: XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+ #54: SPEC=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #55: LC_LANG=C
+ #56: SHELL=/bin/bash
+ #57: LC_TELEPHONE=en_US.UTF-8
+ #58: PAPERSIZE=letter
+ #59: OMP_NUM_THREADS=1
+ #60: OMP_THREAD_LIMIT=1
+running commands in speccmds.cmd 1 times
+runs started at		1718167060, 510141000, Tue Jun 11 23:37:40 2024
+run 1 started at	1718167060, 510149000, Tue Jun 11 23:37:40 2024
+child started: 0,	1718167060, 510151000, pid=4018827, 'lfi-run --no-verify ../run_base_refrate_lfi-gcc-m64.0001/povray_r_base.lfi-gcc-m64 SPEC-benchmark-ref.ini > SPEC-benchmark-ref.stdout 2>> SPEC-benchmark-ref.stderr'
+child finished: 0,	1718167060, 510520000, sec=0, nsec=369000, pid=4018827, rc=32512
+run 1 finished at:	1718167060, 510524000, Tue Jun 11 23:37:40 2024
+run 1 elapsed time:	         0, 000375000, 0.000375000
+runs finished at	1718167060, 510528000, Tue Jun 11 23:37:40 2024
+runs elapsed time:	         0, 000387000, 0.000387000
+error: a total of 1 children finished with errors
+specinvoke exit: rc=0
+
+****************************************
+Workload elapsed time (copy 0 workload 1) = 0.000369 seconds
+Copy 0 of 511.povray_r (base refrate) run 1 finished at 2024-06-11 23:37:40.  Total elapsed time: 0.000369
+Benchmark Times:
+  Run Start:    2024-06-11 23:37:40 (1718167060)
+  Rate Start:   2024-06-11 23:37:40 (1718167060.51015)
+  Rate End:     2024-06-11 23:37:40 (1718167060.51052)
+  Run Stop:     2024-06-11 23:37:40 (1718167060)
+  Run Elapsed:  00:00:00 (0)
+  Run Reported: 00:00:00 (0 369071 0.000369)
+ Error 511.povray_r base refrate ratio=6327913.28, runtime=0.000369, copies=1, threads=1, power=0.00W, temp=0.00 degC, humidity=0.00%, errorcode=RE
+-----------------------------------
+  Running 519.lbm_r refrate (ref) base lfi-gcc-m64 (1 copy) [2024-06-11 23:37:40]
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+Commands to run (specinvoke command file):
+    -r
+    -N C
+    -C /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/run/run_base_refrate_lfi-gcc-m64.0001
+    -o lbm.out -e lbm.err ../run_base_refrate_lfi-gcc-m64.0001/lbm_r_base.lfi-gcc-m64 3000 reference.dat 0 0 100_100_130_ldc.of > lbm.out 2>> lbm.err (timed)
+Specinvoke: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/run/run_base_refrate_lfi-gcc-m64.0001 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+Issuing command '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/run/run_base_refrate_lfi-gcc-m64.0001 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout'
+Start command: 2024-06-11 23:37:40 (1718167060.68762)
+specinvoke running: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke.orig -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/run/run_base_refrate_lfi-gcc-m64.0001 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+Stop command: 2024-06-11 23:37:40 (1718167060.8422)
+Elapsed time for command: 00:00:00 (0.154584884643555)
+519.lbm_r: copy 0 non-zero return code (exit code=127, signal=0)
+
+****************************************
+Contents of lbm.err
+****************************************
+/bin/sh: 1: lfi-run: not found
+
+****************************************
+****************************************
+Contents of speccmds.out
+****************************************
+specinvoke r4356
+ Invoked as: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke.orig -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/run/run_base_refrate_lfi-gcc-m64.0001 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+timer ticks over every 1000 ns
+ Environment in effect for these runs:
+ # 1: LESSOPEN=| /usr/bin/lesspipe %s
+ # 2: GIT_ASKPASS=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/extensions/git/dist/askpass.sh
+ # 3: LANG=en_US.UTF-8
+ # 4: LC_PAPER=en_US.UTF-8
+ # 5: SPECDB_PWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ # 6: SPEC=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ # 7: XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+ # 8: LC_TELEPHONE=en_US.UTF-8
+ # 9: SHELL=/bin/bash
+ #10: LC_LANG=C
+ #11: PAPERSIZE=letter
+ #12: LC_NUMERIC=en_US.UTF-8
+ #13: LC_ALL=C
+ #14: XDG_SESSION_TYPE=tty
+ #15: LOADER=lfi-run --no-verify
+ #16: USER=shr
+ #17: OLDPWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi
+ #18: LD_LIBRARY_PATH=/usr/lib64/:/usr/lib/:/lib64
+ #19: TERM=xterm-256color
+ #20: _=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/runcpu
+ #21: SSL_CERT_FILE=/usr/lib/ssl/certs/ca-certificates.crt
+ #22: VSCODE_GIT_IPC_HANDLE=/run/user/1000/vscode-git-5ff261b927.sock
+ #23: BROWSER=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/bin/helpers/browser.sh
+ #24: SSH_CLIENT=172.28.23.232 59740 2262
+ #25: SHLVL=3
+ #26: COLORTERM=truecolor
+ #27: DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+ #28: XDG_RUNTIME_DIR=/run/user/1000
+ #29: SSH_CONNECTION=172.28.23.232 59740 172.28.8.253 2262
+ #30: LANGUAGE=en
+ #31: MOTD_SHOWN=pam
+ #32: MAKEFLAGS=-j32
+ #33: LESSCLOSE=/usr/bin/lesspipe %s %s
+ #34: PWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #35: XDG_SESSION_CLASS=user
+ #36: VSCODE_GIT_ASKPASS_MAIN=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/extensions/git/dist/askpass-main.js
+ #37: LC_MONETARY=en_US.UTF-8
+ #38: TERM_PROGRAM=vscode
+ #39: PATH=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/bin/remote-cli:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+ #40: LC_IDENTIFICATION=en_US.UTF-8
+ #41: LIBC_FATAL_STDERR_=1
+ #42: VSCODE_IPC_HOOK_CLI=/run/user/1000/vscode-ipc-04139434-3f96-459c-a66a-b1f54618ae6f.sock
+ #43: LC_NAME=en_US.UTF-8
+ #44: TERM_PROGRAM_VERSION=1.89.1
+ #45: SPEC_NOCHECK=1
+ #46: LC_TIME=en_US.UTF-8
+ #47: HOME=/home/shr
+ #48: VSCODE_GIT_ASKPASS_EXTRA_ARGS=
+ #49: LC_ADDRESS=en_US.UTF-8
+ #50: WASMTIME_HOME=/home/shr/.wasmtime
+ #51: VSCODE_GIT_ASKPASS_NODE=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/node
+ #52: LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.
+webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+ #53: LOGNAME=shr
+ #54: SSL_CERT_DIR=/usr/lib/ssl/certs
+ #55: XDG_SESSION_ID=1365
+ #56: SPECPERLLIB=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/lib:/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin
+ #57: LIBVIRT_DEFAULT_URI=qemu:///system
+ #58: LC_MEASUREMENT=en_US.UTF-8
+ #59: OMP_NUM_THREADS=1
+ #60: OMP_THREAD_LIMIT=1
+running commands in speccmds.cmd 1 times
+runs started at		1718167060, 690072000, Tue Jun 11 23:37:40 2024
+run 1 started at	1718167060, 690080000, Tue Jun 11 23:37:40 2024
+child started: 0,	1718167060, 690082000, pid=4018851, 'lfi-run --no-verify ../run_base_refrate_lfi-gcc-m64.0001/lbm_r_base.lfi-gcc-m64 3000 reference.dat 0 0 100_100_130_ldc.of > lbm.out 2>> lbm.err'
+child finished: 0,	1718167060, 690444000, sec=0, nsec=362000, pid=4018851, rc=32512
+run 1 finished at:	1718167060, 690449000, Tue Jun 11 23:37:40 2024
+run 1 elapsed time:	         0, 000369000, 0.000369000
+runs finished at	1718167060, 690452000, Tue Jun 11 23:37:40 2024
+runs elapsed time:	         0, 000380000, 0.000380000
+error: a total of 1 children finished with errors
+specinvoke exit: rc=0
+
+****************************************
+Workload elapsed time (copy 0 workload 1) = 0.000362 seconds
+Copy 0 of 519.lbm_r (base refrate) run 1 finished at 2024-06-11 23:37:40.  Total elapsed time: 0.000362
+Benchmark Times:
+  Run Start:    2024-06-11 23:37:40 (1718167060)
+  Rate Start:   2024-06-11 23:37:40 (1718167060.69008)
+  Rate End:     2024-06-11 23:37:40 (1718167060.69044)
+  Run Stop:     2024-06-11 23:37:40 (1718167060)
+  Run Elapsed:  00:00:00 (0)
+  Run Reported: 00:00:00 (0 361919 0.000362)
+ Error 519.lbm_r base refrate ratio=2911602.21, runtime=0.000362, copies=1, threads=1, power=0.00W, temp=0.00 degC, humidity=0.00%, errorcode=RE
+-----------------------------------
+  Running 538.imagick_r refrate (ref) base lfi-gcc-m64 (1 copy) [2024-06-11 23:37:40]
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+Commands to run (specinvoke command file):
+    -r
+    -N C
+    -C /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/run/run_base_refrate_lfi-gcc-m64.0001
+    -o refrate_convert.out -e refrate_convert.err ../run_base_refrate_lfi-gcc-m64.0001/imagick_r_base.lfi-gcc-m64 -limit disk 0 refrate_input.tga -edge 41 -resample 181% -emboss 31 -colorspace YUV -mean-shift 19x19+15% -resize 30% refrate_output.tga > refrate_convert.out 2>> refrate_convert.err (timed)
+Specinvoke: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/run/run_base_refrate_lfi-gcc-m64.0001 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+Issuing command '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/run/run_base_refrate_lfi-gcc-m64.0001 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout'
+Start command: 2024-06-11 23:37:40 (1718167060.88087)
+specinvoke running: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke.orig -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/run/run_base_refrate_lfi-gcc-m64.0001 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+Stop command: 2024-06-11 23:37:41 (1718167061.03542)
+Elapsed time for command: 00:00:00 (0.154554843902588)
+538.imagick_r: copy 0 non-zero return code (exit code=127, signal=0)
+
+****************************************
+Contents of refrate_convert.err
+****************************************
+/bin/sh: 1: lfi-run: not found
+
+****************************************
+****************************************
+Contents of speccmds.out
+****************************************
+specinvoke r4356
+ Invoked as: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke.orig -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/run/run_base_refrate_lfi-gcc-m64.0001 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+timer ticks over every 1000 ns
+ Environment in effect for these runs:
+ # 1: LC_NAME=en_US.UTF-8
+ # 2: TERM_PROGRAM_VERSION=1.89.1
+ # 3: LC_ADDRESS=en_US.UTF-8
+ # 4: HOME=/home/shr
+ # 5: VSCODE_GIT_ASKPASS_EXTRA_ARGS=
+ # 6: SPEC_NOCHECK=1
+ # 7: LC_TIME=en_US.UTF-8
+ # 8: WASMTIME_HOME=/home/shr/.wasmtime
+ # 9: VSCODE_GIT_ASKPASS_NODE=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/node
+ #10: LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.
+webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+ #11: SSL_CERT_DIR=/usr/lib/ssl/certs
+ #12: LOGNAME=shr
+ #13: XDG_SESSION_ID=1365
+ #14: LIBVIRT_DEFAULT_URI=qemu:///system
+ #15: SPECPERLLIB=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/lib:/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin
+ #16: LC_MEASUREMENT=en_US.UTF-8
+ #17: DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+ #18: XDG_RUNTIME_DIR=/run/user/1000
+ #19: SSH_CONNECTION=172.28.23.232 59740 172.28.8.253 2262
+ #20: LANGUAGE=en
+ #21: MOTD_SHOWN=pam
+ #22: MAKEFLAGS=-j32
+ #23: LESSCLOSE=/usr/bin/lesspipe %s %s
+ #24: PWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #25: XDG_SESSION_CLASS=user
+ #26: LC_MONETARY=en_US.UTF-8
+ #27: TERM_PROGRAM=vscode
+ #28: VSCODE_GIT_ASKPASS_MAIN=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/extensions/git/dist/askpass-main.js
+ #29: LIBC_FATAL_STDERR_=1
+ #30: LC_IDENTIFICATION=en_US.UTF-8
+ #31: PATH=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/bin/remote-cli:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+ #32: VSCODE_IPC_HOOK_CLI=/run/user/1000/vscode-ipc-04139434-3f96-459c-a66a-b1f54618ae6f.sock
+ #33: LC_ALL=C
+ #34: LC_NUMERIC=en_US.UTF-8
+ #35: LOADER=lfi-run --no-verify
+ #36: XDG_SESSION_TYPE=tty
+ #37: OLDPWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi
+ #38: USER=shr
+ #39: TERM=xterm-256color
+ #40: LD_LIBRARY_PATH=/usr/lib64/:/usr/lib/:/lib64
+ #41: _=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/runcpu
+ #42: SSL_CERT_FILE=/usr/lib/ssl/certs/ca-certificates.crt
+ #43: VSCODE_GIT_IPC_HANDLE=/run/user/1000/vscode-git-5ff261b927.sock
+ #44: BROWSER=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/bin/helpers/browser.sh
+ #45: SSH_CLIENT=172.28.23.232 59740 2262
+ #46: SHLVL=3
+ #47: COLORTERM=truecolor
+ #48: LESSOPEN=| /usr/bin/lesspipe %s
+ #49: GIT_ASKPASS=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/extensions/git/dist/askpass.sh
+ #50: LANG=en_US.UTF-8
+ #51: LC_PAPER=en_US.UTF-8
+ #52: XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+ #53: SPECDB_PWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #54: SPEC=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #55: LC_TELEPHONE=en_US.UTF-8
+ #56: LC_LANG=C
+ #57: SHELL=/bin/bash
+ #58: PAPERSIZE=letter
+ #59: OMP_NUM_THREADS=1
+ #60: OMP_THREAD_LIMIT=1
+running commands in speccmds.cmd 1 times
+runs started at		1718167060, 883388000, Tue Jun 11 23:37:40 2024
+run 1 started at	1718167060, 883397000, Tue Jun 11 23:37:40 2024
+child started: 0,	1718167060, 883399000, pid=4018875, 'lfi-run --no-verify ../run_base_refrate_lfi-gcc-m64.0001/imagick_r_base.lfi-gcc-m64 -limit disk 0 refrate_input.tga -edge 41 -resample 181% -emboss 31 -colorspace YUV -mean-shift 19x19+15% -resize 30% refrate_output.tga > refrate_convert.out 2>> refrate_convert.err'
+child finished: 0,	1718167060, 883792000, sec=0, nsec=393000, pid=4018875, rc=32512
+run 1 finished at:	1718167060, 883797000, Tue Jun 11 23:37:40 2024
+run 1 elapsed time:	         0, 000400000, 0.000400000
+runs finished at	1718167060, 883800000, Tue Jun 11 23:37:40 2024
+runs elapsed time:	         0, 000412000, 0.000412000
+error: a total of 1 children finished with errors
+specinvoke exit: rc=0
+
+****************************************
+Workload elapsed time (copy 0 workload 1) = 0.000393 seconds
+Copy 0 of 538.imagick_r (base refrate) run 1 finished at 2024-06-11 23:37:40.  Total elapsed time: 0.000393
+Benchmark Times:
+  Run Start:    2024-06-11 23:37:40 (1718167060)
+  Rate Start:   2024-06-11 23:37:40 (1718167060.8834)
+  Rate End:     2024-06-11 23:37:40 (1718167060.88379)
+  Run Stop:     2024-06-11 23:37:41 (1718167061)
+  Run Elapsed:  00:00:01 (1)
+  Run Reported: 00:00:00 (0 392913 0.000393)
+ Error 538.imagick_r base refrate ratio=6328244.27, runtime=0.000393, copies=1, threads=1, power=0.00W, temp=0.00 degC, humidity=0.00%, errorcode=RE
+-----------------------------------
+  Running 544.nab_r refrate (ref) base lfi-gcc-m64 (1 copy) [2024-06-11 23:37:41]
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+Commands to run (specinvoke command file):
+    -r
+    -N C
+    -C /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/run/run_base_refrate_lfi-gcc-m64.0001
+    -o 1am0.out -e 1am0.err ../run_base_refrate_lfi-gcc-m64.0001/nab_r_base.lfi-gcc-m64 1am0 1122214447 122 > 1am0.out 2>> 1am0.err (timed)
+Specinvoke: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/run/run_base_refrate_lfi-gcc-m64.0001 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+Issuing command '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/run/run_base_refrate_lfi-gcc-m64.0001 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout'
+Start command: 2024-06-11 23:37:41 (1718167061.062)
+specinvoke running: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke.orig -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/run/run_base_refrate_lfi-gcc-m64.0001 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+Stop command: 2024-06-11 23:37:41 (1718167061.21662)
+Elapsed time for command: 00:00:00 (0.154620170593262)
+544.nab_r: copy 0 non-zero return code (exit code=127, signal=0)
+
+****************************************
+Contents of 1am0.err
+****************************************
+/bin/sh: 1: lfi-run: not found
+
+****************************************
+****************************************
+Contents of speccmds.out
+****************************************
+specinvoke r4356
+ Invoked as: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/specinvoke.orig -d /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/run/run_base_refrate_lfi-gcc-m64.0001 -q -e speccmds.err -o speccmds.stdout -f speccmds.cmd
+timer ticks over every 1000 ns
+ Environment in effect for these runs:
+ # 1: XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+ # 2: SPEC=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ # 3: SPECDB_PWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ # 4: LC_PAPER=en_US.UTF-8
+ # 5: LESSOPEN=| /usr/bin/lesspipe %s
+ # 6: LANG=en_US.UTF-8
+ # 7: GIT_ASKPASS=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/extensions/git/dist/askpass.sh
+ # 8: PAPERSIZE=letter
+ # 9: LC_LANG=C
+ #10: SHELL=/bin/bash
+ #11: LC_TELEPHONE=en_US.UTF-8
+ #12: SSL_CERT_FILE=/usr/lib/ssl/certs/ca-certificates.crt
+ #13: TERM=xterm-256color
+ #14: LD_LIBRARY_PATH=/usr/lib64/:/usr/lib/:/lib64
+ #15: _=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/runcpu
+ #16: XDG_SESSION_TYPE=tty
+ #17: LOADER=lfi-run --no-verify
+ #18: OLDPWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi
+ #19: USER=shr
+ #20: LC_ALL=C
+ #21: LC_NUMERIC=en_US.UTF-8
+ #22: SHLVL=3
+ #23: COLORTERM=truecolor
+ #24: SSH_CLIENT=172.28.23.232 59740 2262
+ #25: BROWSER=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/bin/helpers/browser.sh
+ #26: VSCODE_GIT_IPC_HANDLE=/run/user/1000/vscode-git-5ff261b927.sock
+ #27: MAKEFLAGS=-j32
+ #28: MOTD_SHOWN=pam
+ #29: LANGUAGE=en
+ #30: SSH_CONNECTION=172.28.23.232 59740 172.28.8.253 2262
+ #31: DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+ #32: XDG_RUNTIME_DIR=/run/user/1000
+ #33: VSCODE_IPC_HOOK_CLI=/run/user/1000/vscode-ipc-04139434-3f96-459c-a66a-b1f54618ae6f.sock
+ #34: LIBC_FATAL_STDERR_=1
+ #35: LC_IDENTIFICATION=en_US.UTF-8
+ #36: PATH=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/bin/remote-cli:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/home/shr/.local/bin:/home/shr/.wasmtime/bin:/home/shr/Android/Sdk/platform-tools:/home/shr/.cargo/bin:/home/shr/.mozbuild/git-cinnabar:/opt/mdbook:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+ #37: TERM_PROGRAM=vscode
+ #38: VSCODE_GIT_ASKPASS_MAIN=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/extensions/git/dist/askpass-main.js
+ #39: LC_MONETARY=en_US.UTF-8
+ #40: LESSCLOSE=/usr/bin/lesspipe %s %s
+ #41: PWD=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+ #42: XDG_SESSION_CLASS=user
+ #43: VSCODE_GIT_ASKPASS_EXTRA_ARGS=
+ #44: LC_TIME=en_US.UTF-8
+ #45: WASMTIME_HOME=/home/shr/.wasmtime
+ #46: SPEC_NOCHECK=1
+ #47: HOME=/home/shr
+ #48: LC_ADDRESS=en_US.UTF-8
+ #49: VSCODE_GIT_ASKPASS_NODE=/home/shr/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/node
+ #50: TERM_PROGRAM_VERSION=1.89.1
+ #51: LC_NAME=en_US.UTF-8
+ #52: LC_MEASUREMENT=en_US.UTF-8
+ #53: LIBVIRT_DEFAULT_URI=qemu:///system
+ #54: XDG_SESSION_ID=1365
+ #55: SPECPERLLIB=/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/lib:/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin
+ #56: SSL_CERT_DIR=/usr/lib/ssl/certs
+ #57: LOGNAME=shr
+ #58: LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.
+webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+ #59: OMP_NUM_THREADS=1
+ #60: OMP_THREAD_LIMIT=1
+running commands in speccmds.cmd 1 times
+runs started at		1718167061, 064561000, Tue Jun 11 23:37:41 2024
+run 1 started at	1718167061, 064569000, Tue Jun 11 23:37:41 2024
+child started: 0,	1718167061, 064571000, pid=4018912, 'lfi-run --no-verify ../run_base_refrate_lfi-gcc-m64.0001/nab_r_base.lfi-gcc-m64 1am0 1122214447 122 > 1am0.out 2>> 1am0.err'
+child finished: 0,	1718167061, 064933000, sec=0, nsec=362000, pid=4018912, rc=32512
+run 1 finished at:	1718167061, 064938000, Tue Jun 11 23:37:41 2024
+run 1 elapsed time:	         0, 000369000, 0.000369000
+runs finished at	1718167061, 064942000, Tue Jun 11 23:37:41 2024
+runs elapsed time:	         0, 000381000, 0.000381000
+error: a total of 1 children finished with errors
+specinvoke exit: rc=0
+
+****************************************
+Workload elapsed time (copy 0 workload 1) = 0.000362 seconds
+Copy 0 of 544.nab_r (base refrate) run 1 finished at 2024-06-11 23:37:41.  Total elapsed time: 0.000362
+Benchmark Times:
+  Run Start:    2024-06-11 23:37:41 (1718167061)
+  Rate Start:   2024-06-11 23:37:41 (1718167061.06457)
+  Rate End:     2024-06-11 23:37:41 (1718167061.06493)
+  Run Stop:     2024-06-11 23:37:41 (1718167061)
+  Run Elapsed:  00:00:00 (0)
+  Run Reported: 00:00:00 (0 362157 0.000362)
+ Error 544.nab_r base refrate ratio=4649171.27, runtime=0.000362, copies=1, threads=1, power=0.00W, temp=0.00 degC, humidity=0.00%, errorcode=RE
+Error: 1x508.namd_r 1x510.parest_r 1x511.povray_r 1x519.lbm_r 1x538.imagick_r 1x544.nab_r
+Producing Raw Reports
+ label: lfi-gcc-m64
+  workload: refrate (ref)
+   benchset: intspeed
+   benchset: intrate
+   benchset: fpspeed
+   benchset: fprate
+   metric: SPECrate2017_fp_base
+    format: raw -> /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/result/CPU2017.001.fprate.refrate.rsf
+Parsing flags for 508.namd_r base: done
+Parsing flags for 510.parest_r base: done
+Parsing flags for 511.povray_r base: done
+Parsing flags for 519.lbm_r base: done
+Parsing flags for 538.imagick_r base: done
+Parsing flags for 544.nab_r base: done
+Doing flag reduction: done
+    format: flags -> /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/result/CPU2017.001.fprate.refrate.flags.html
+    format: cfg -> /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/result/CPU2017.001.fprate.refrate.cfg
+    format: CSV -> /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/result/CPU2017.001.fprate.refrate.csv
+    format: PDF -> /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/result/CPU2017.001.fprate.refrate.pdf
+    format: HTML -> /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/result/CPU2017.001.fprate.refrate.html
+    format: Text -> /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/result/CPU2017.001.fprate.refrate.txt
+runcpu finished at 2024-06-11 23:37:44; 8 total seconds elapsed
+The log for this run is in /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/result/CPU2017.001.log
+
+runcpu finished at 2024-06-11 23:37:45; 28 total seconds elapsed

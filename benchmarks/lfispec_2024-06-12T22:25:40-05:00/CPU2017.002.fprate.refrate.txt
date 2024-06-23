@@ -1,0 +1,1148 @@
+##################################################################################################################################
+#   INVALID RUN -- INVALID RUN -- INVALID RUN -- INVALID RUN -- INVALID RUN                                                      #
+#                                                                                                                                #
+# 'reportable' flag not set during run                                                                                           #
+# 527.cam4_r (base) did not have enough runs!                                                                                    #
+# 503.bwaves_r (base) did not have enough runs!                                                                                  #
+# 519.lbm_r (base) did not have enough runs!                                                                                     #
+# 521.wrf_r (base) did not have enough runs!                                                                                     #
+# 544.nab_r (base) did not have enough runs!                                                                                     #
+# 508.namd_r (base) did not have enough runs!                                                                                    #
+# 526.blender_r (base) did not have enough runs!                                                                                 #
+# 554.roms_r (base) did not have enough runs!                                                                                    #
+# 538.imagick_r (base) did not have enough runs!                                                                                 #
+# 507.cactuBSSN_r (base) did not have enough runs!                                                                               #
+# 510.parest_r (base) did not have enough runs!                                                                                  #
+# 511.povray_r (base) did not have enough runs!                                                                                  #
+# 549.fotonik3d_r (base) did not have enough runs!                                                                               #
+# Unknown flags were used! See                                                                                                   #
+#      https://www.spec.org/cpu2017/Docs/runcpu.html#flagsurl                                                                    #
+# for information about how to get rid of this error.                                                                            #
+#                                                                                                                                #
+#   INVALID RUN -- INVALID RUN -- INVALID RUN -- INVALID RUN -- INVALID RUN                                                      #
+##################################################################################################################################
+                                             SPEC CPU(R)2017 Floating Point Rate Result
+                                                          My Corporation 
+
+                            CPU2017 License: nnn (Your SPEC license number)          Test date: Jun-2024
+                            Test sponsor: My Corporation                 Hardware availability:         
+                            Tested by:    My Corporation                 Software availability:         
+
+                       Estimated                       Estimated
+                 Base     Base        Base        Peak     Peak        Peak
+Benchmarks       Copies  Run Time     Rate        Copies  Run Time     Rate 
+--------------- -------  ---------  ---------    -------  ---------  ---------
+503.bwaves_r                                  NR
+507.cactuBSSN_r                               NR
+508.namd_r            1        312       3.05  *
+510.parest_r          1        608       4.31  *
+511.povray_r          1        457       5.11  *
+519.lbm_r             1        227       4.65  *
+521.wrf_r                                     NR
+526.blender_r                                 NR
+527.cam4_r                                    NR
+538.imagick_r         1        536       4.64  *
+544.nab_r             1        344       4.89  *
+549.fotonik3d_r                               NR
+554.roms_r                                    NR
+=================================================================================
+503.bwaves_r                                  NR
+507.cactuBSSN_r                               NR
+508.namd_r            1        312       3.05  *
+510.parest_r          1        608       4.31  *
+511.povray_r          1        457       5.11  *
+519.lbm_r             1        227       4.65  *
+521.wrf_r                                     NR
+526.blender_r                                 NR
+527.cam4_r                                    NR
+538.imagick_r         1        536       4.64  *
+544.nab_r             1        344       4.89  *
+549.fotonik3d_r                               NR
+554.roms_r                                    NR
+ Est. SPECrate(R)2017_fp_base            4.38
+ Est. SPECrate(R)2017_fp_peak                                          Not Run
+
+
+                                                              HARDWARE
+                                                              --------
+            CPU Name: 13th Gen Intel Core i9-13900KS
+             Max MHz:  
+             Nominal:  
+             Enabled:  cores, 1 chip,  threads/core
+           Orderable:  
+            Cache L1:  
+                  L2:  
+                  L3:  
+               Other:  
+              Memory: 125.561 GB fixme: If using DDR4, the format is:
+                      'N GB (N x N GB nRxn PC4-nnnnX-X)'
+             Storage: 3.6 TB  add more disk info here
+               Other:  
+
+
+                                                              SOFTWARE
+                                                              --------
+                  OS: Ubuntu 22.04.4 LTS
+                      6.8.0-76060800daily20240311-generic
+            Compiler: C/C++/Fortran: Version 7.2.1 of GCC, the
+                      GNU Compiler Collection
+            Parallel: No
+            Firmware:  
+         File System: ext4
+        System State: Run level 5 (add definition here)
+       Base Pointers: 64-bit
+       Peak Pointers: Not Applicable
+               Other:  
+    Power Management: --
+
+
+                                                    Environment Variables Notes
+                                                    ---------------------------
+    Environment variables set by runcpu before the start of the run:
+    LD_LIBRARY_PATH = "/usr/lib64/:/usr/lib/:/lib64"
+    
+
+                                                           Platform Notes
+                                                           --------------
+    
+     Sysinfo program /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/sysinfo
+     Rev: r6365 of 2019-08-21 295195f888a3d7edb1e6e46a485a0011
+     running on shr-work Thu Jun 13 01:12:25 2024
+    
+     SUT (System Under Test) info as seen by some common utilities.
+     For more information on this section, see
+        https://www.spec.org/cpu2017/Docs/config.html#sysinfo
+    
+     From /proc/cpuinfo
+        model name : 13th Gen Intel(R) Core(TM) i9-13900KS
+           1  "physical id"s (chips)
+           24 "processors"
+        cores, siblings (Caution: counting these is hw and system dependent. The following
+        excerpts from /proc/cpuinfo might not be reliable.  Use with caution.)
+           cpu cores : 24
+           siblings  : 24
+           physical 0: cores 0 4 8 12 16 20 24 28 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46
+           47
+    
+     From lscpu:
+          Architecture:                       x86_64
+          CPU op-mode(s):                     32-bit, 64-bit
+          Address sizes:                      46 bits physical, 48 bits virtual
+          Byte Order:                         Little Endian
+          CPU(s):                             32
+          On-line CPU(s) list:                0,2,4,6,8,10,12,14,16-31
+          Off-line CPU(s) list:               1,3,5,7,9,11,13,15
+          Vendor ID:                          GenuineIntel
+          Model name:                         13th Gen Intel(R) Core(TM) i9-13900KS
+          CPU family:                         6
+          Model:                              183
+          Thread(s) per core:                 1
+          Core(s) per socket:                 24
+          Socket(s):                          1
+          Stepping:                           1
+          CPU max MHz:                        6000.0000
+          CPU min MHz:                        0.0000
+          BogoMIPS:                           6374.40
+          Flags:                              fpu vme de pse tsc msr pae mce cx8 apic sep mtrr
+          pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx
+          pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology
+          nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx
+          smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm sse4_1 sse4_2 x2apic movbe popcnt
+          tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault
+          ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase
+          tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb intel_pt
+          sha_ni xsaveopt xsavec xgetbv1 xsaves split_lock_detect user_shstk avx_vnni dtherm
+          ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp hwp_pkg_req hfi vnmi umip pku
+          ospke waitpkg gfni vaes vpclmulqdq tme rdpid movdiri movdir64b fsrm md_clear
+          serialize pconfig arch_lbr ibt flush_l1d arch_capabilities
+          Virtualization:                     VT-x
+          L1d cache:                          896 KiB (24 instances)
+          L1i cache:                          1.3 MiB (24 instances)
+          L2 cache:                           32 MiB (12 instances)
+          L3 cache:                           36 MiB (1 instance)
+          NUMA node(s):                       1
+          NUMA node0 CPU(s):                  0,2,4,6,8,10,12,14,16-31
+          Vulnerability Gather data sampling: Not affected
+          Vulnerability Itlb multihit:        Not affected
+          Vulnerability L1tf:                 Not affected
+          Vulnerability Mds:                  Not affected
+          Vulnerability Meltdown:             Not affected
+          Vulnerability Mmio stale data:      Not affected
+          Vulnerability Retbleed:             Not affected
+          Vulnerability Spec rstack overflow: Not affected
+          Vulnerability Spec store bypass:    Mitigation; Speculative Store Bypass disabled
+          via prctl
+          Vulnerability Spectre v1:           Mitigation; usercopy/swapgs barriers and __user
+          pointer sanitization
+          Vulnerability Spectre v2:           Mitigation; Enhanced / Automatic IBRS, IBPB
+          conditional, RSB filling, PBRSB-eIBRS SW sequence
+          Vulnerability Srbds:                Not affected
+          Vulnerability Tsx async abort:      Not affected
+    
+     /proc/cpuinfo cache data
+        cache size : 36864 KB
+    
+     From numactl --hardware  WARNING: a numactl 'node' might or might not correspond to a
+     physical chip.
+    
+     From /proc/meminfo
+        MemTotal:       131660532 kB
+        HugePages_Total:       0
+        Hugepagesize:       2048 kB
+    
+     /usr/bin/lsb_release -d
+        Ubuntu 22.04.4 LTS
+    
+     From /etc/*release* /etc/*version*
+        debian_version: bookworm/sid
+        os-release:
+           PRETTY_NAME="Ubuntu 22.04.4 LTS"
+           NAME="Ubuntu"
+           VERSION_ID="22.04"
+           VERSION="22.04.4 LTS (Jammy Jellyfish)"
+           VERSION_CODENAME=jammy
+           ID=ubuntu
+           ID_LIKE=debian
+           HOME_URL="https://www.ubuntu.com/"
+    
+     uname -a:
+        Linux shr-work 6.8.0-76060800daily20240311-generic
+        #202403110203~1713206908~22.04~3a62479~dev-Ubuntu SMP PREEMPT_DY x86_64 x86_64 x86_64
+        GNU/Linux
+    
+     Kernel self-reported vulnerability status:
+    
+     gather_data_sampling:                     Not affected
+     itlb_multihit:                            Not affected
+     CVE-2018-3620 (L1 Terminal Fault):        Not affected
+     Microarchitectural Data Sampling:         Not affected
+     CVE-2017-5754 (Meltdown):                 Not affected
+     mmio_stale_data:                          Not affected
+     retbleed:                                 Not affected
+     spec_rstack_overflow:                     Not affected
+     CVE-2018-3639 (Speculative Store Bypass): Mitigation: Speculative Store Bypass disabled
+                                               via prctl
+     CVE-2017-5753 (Spectre variant 1):        Mitigation: usercopy/swapgs barriers and __user
+                                               pointer sanitization
+     CVE-2017-5715 (Spectre variant 2):        Mitigation: Enhanced / Automatic IBRS, IBPB:
+                                               conditional, RSB filling, PBRSB-eIBRS: SW
+                                               sequence
+     srbds:                                    Not affected
+     tsx_async_abort:                          Not affected
+    
+     run-level 5 May 12 16:41
+    
+     SPEC is set to: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+        Filesystem     Type  Size  Used Avail Use% Mounted on
+        /dev/nvme0n1p1 ext4  3.6T  697G  2.8T  21% /mnt/seconddrive
+    
+     From /sys/devices/virtual/dmi/id
+         BIOS:    System76 FH Z5 01/25/2024
+         Vendor:  System76
+         Product: Thelio Mira
+         Product Family: Z790 MB
+    
+     Cannot run dmidecode; consider saying (as root)
+        chmod +s /usr/sbin/dmidecode
+    
+     (End of data from sysinfo program)
+
+                                                       Compiler Version Notes
+                                                       ----------------------
+    ==============================================================================
+    C      | 519.lbm_r(base pass 0)
+    ------------------------------------------------------------------------------
+    Using built-in specs.
+    COLLECT_GCC=/opt/lfi-amd64-baseline/bin/internal-x86_64-linux-musl-gcc
+    COLLECT_LTO_WRAPPER=/opt/lfi-amd64-baseline/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+    Target: x86_64-linux-musl
+    Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+      --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+      --enable-languages=c,c++ --enable-lto
+      --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-baseline
+      --with-pkgversion=LFI
+    Thread model: posix
+    Supported LTO compression algorithms: zlib zstd
+    gcc version 13.2.0 (LFI) 
+    specmake[1]: Leaving directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 538.imagick_r(base pass 0)
+    ------------------------------------------------------------------------------
+    Using built-in specs.
+    COLLECT_GCC=/opt/lfi-amd64-baseline/bin/internal-x86_64-linux-musl-gcc
+    COLLECT_LTO_WRAPPER=/opt/lfi-amd64-baseline/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+    Target: x86_64-linux-musl
+    Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+      --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+      --enable-languages=c,c++ --enable-lto
+      --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-baseline
+      --with-pkgversion=LFI
+    Thread model: posix
+    Supported LTO compression algorithms: zlib zstd
+    gcc version 13.2.0 (LFI) 
+    specmake[1]: Leaving directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 544.nab_r(base pass 0)
+    ------------------------------------------------------------------------------
+    Using built-in specs.
+    COLLECT_GCC=/opt/lfi-amd64-baseline/bin/internal-x86_64-linux-musl-gcc
+    COLLECT_LTO_WRAPPER=/opt/lfi-amd64-baseline/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+    Target: x86_64-linux-musl
+    Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+      --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+      --enable-languages=c,c++ --enable-lto
+      --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-baseline
+      --with-pkgversion=LFI
+    Thread model: posix
+    Supported LTO compression algorithms: zlib zstd
+    gcc version 13.2.0 (LFI) 
+    specmake[1]: Leaving directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 519.lbm_r(base pass )
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 538.imagick_r(base pass )
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 544.nab_r(base pass )
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 519.lbm_r(base pass 0)
+    ------------------------------------------------------------------------------
+    Using built-in specs.
+    COLLECT_GCC=/opt/lfi-amd64-baseline/bin/internal-x86_64-linux-musl-gcc
+    COLLECT_LTO_WRAPPER=/opt/lfi-amd64-baseline/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+    Target: x86_64-linux-musl
+    Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+      --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+      --enable-languages=c,c++ --enable-lto
+      --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-baseline
+      --with-pkgversion=LFI
+    Thread model: posix
+    Supported LTO compression algorithms: zlib zstd
+    gcc version 13.2.0 (LFI) 
+    specmake[1]: Leaving directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 538.imagick_r(base pass 0)
+    ------------------------------------------------------------------------------
+    Using built-in specs.
+    COLLECT_GCC=/opt/lfi-amd64-baseline/bin/internal-x86_64-linux-musl-gcc
+    COLLECT_LTO_WRAPPER=/opt/lfi-amd64-baseline/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+    Target: x86_64-linux-musl
+    Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+      --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+      --enable-languages=c,c++ --enable-lto
+      --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-baseline
+      --with-pkgversion=LFI
+    Thread model: posix
+    Supported LTO compression algorithms: zlib zstd
+    gcc version 13.2.0 (LFI) 
+    specmake[1]: Leaving directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 544.nab_r(base pass 0)
+    ------------------------------------------------------------------------------
+    Using built-in specs.
+    COLLECT_GCC=/opt/lfi-amd64-baseline/bin/internal-x86_64-linux-musl-gcc
+    COLLECT_LTO_WRAPPER=/opt/lfi-amd64-baseline/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+    Target: x86_64-linux-musl
+    Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+      --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+      --enable-languages=c,c++ --enable-lto
+      --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-baseline
+      --with-pkgversion=LFI
+    Thread model: posix
+    Supported LTO compression algorithms: zlib zstd
+    gcc version 13.2.0 (LFI) 
+    specmake[1]: Leaving directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 519.lbm_r(base pass )
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 538.imagick_r(base pass )
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 544.nab_r(base pass )
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 519.lbm_r(base pass 0)
+    ------------------------------------------------------------------------------
+    Using built-in specs.
+    COLLECT_GCC=/opt/lfi-amd64-baseline/bin/internal-x86_64-linux-musl-gcc
+    COLLECT_LTO_WRAPPER=/opt/lfi-amd64-baseline/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+    Target: x86_64-linux-musl
+    Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+      --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+      --enable-languages=c,c++ --enable-lto
+      --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-baseline
+      --with-pkgversion=LFI
+    Thread model: posix
+    Supported LTO compression algorithms: zlib zstd
+    gcc version 13.2.0 (LFI) 
+    specmake[1]: Leaving directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 538.imagick_r(base pass 0)
+    ------------------------------------------------------------------------------
+    Using built-in specs.
+    COLLECT_GCC=/opt/lfi-amd64-baseline/bin/internal-x86_64-linux-musl-gcc
+    COLLECT_LTO_WRAPPER=/opt/lfi-amd64-baseline/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+    Target: x86_64-linux-musl
+    Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+      --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+      --enable-languages=c,c++ --enable-lto
+      --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-baseline
+      --with-pkgversion=LFI
+    Thread model: posix
+    Supported LTO compression algorithms: zlib zstd
+    gcc version 13.2.0 (LFI) 
+    specmake[1]: Leaving directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 544.nab_r(base pass 0)
+    ------------------------------------------------------------------------------
+    Using built-in specs.
+    COLLECT_GCC=/opt/lfi-amd64-baseline/bin/internal-x86_64-linux-musl-gcc
+    COLLECT_LTO_WRAPPER=/opt/lfi-amd64-baseline/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+    Target: x86_64-linux-musl
+    Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+      --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+      --enable-languages=c,c++ --enable-lto
+      --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-baseline
+      --with-pkgversion=LFI
+    Thread model: posix
+    Supported LTO compression algorithms: zlib zstd
+    gcc version 13.2.0 (LFI) 
+    specmake[1]: Leaving directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 519.lbm_r(base pass )
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 538.imagick_r(base pass )
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 544.nab_r(base pass )
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 519.lbm_r(base pass 0)
+    ------------------------------------------------------------------------------
+    Using built-in specs.
+    COLLECT_GCC=/opt/lfi-amd64-baseline/bin/internal-x86_64-linux-musl-gcc
+    COLLECT_LTO_WRAPPER=/opt/lfi-amd64-baseline/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+    Target: x86_64-linux-musl
+    Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+      --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+      --enable-languages=c,c++ --enable-lto
+      --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-baseline
+      --with-pkgversion=LFI
+    Thread model: posix
+    Supported LTO compression algorithms: zlib zstd
+    gcc version 13.2.0 (LFI) 
+    specmake[1]: Leaving directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 538.imagick_r(base pass 0)
+    ------------------------------------------------------------------------------
+    Using built-in specs.
+    COLLECT_GCC=/opt/lfi-amd64-baseline/bin/internal-x86_64-linux-musl-gcc
+    COLLECT_LTO_WRAPPER=/opt/lfi-amd64-baseline/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+    Target: x86_64-linux-musl
+    Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+      --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+      --enable-languages=c,c++ --enable-lto
+      --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-baseline
+      --with-pkgversion=LFI
+    Thread model: posix
+    Supported LTO compression algorithms: zlib zstd
+    gcc version 13.2.0 (LFI) 
+    specmake[1]: Leaving directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 544.nab_r(base pass 0)
+    ------------------------------------------------------------------------------
+    Using built-in specs.
+    COLLECT_GCC=/opt/lfi-amd64-baseline/bin/internal-x86_64-linux-musl-gcc
+    COLLECT_LTO_WRAPPER=/opt/lfi-amd64-baseline/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+    Target: x86_64-linux-musl
+    Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+      --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+      --enable-languages=c,c++ --enable-lto
+      --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-baseline
+      --with-pkgversion=LFI
+    Thread model: posix
+    Supported LTO compression algorithms: zlib zstd
+    gcc version 13.2.0 (LFI) 
+    specmake[1]: Leaving directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 519.lbm_r(base pass )
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 538.imagick_r(base pass )
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 544.nab_r(base pass )
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 519.lbm_r(base pass 0)
+    ------------------------------------------------------------------------------
+    Using built-in specs.
+    COLLECT_GCC=/opt/lfi-amd64-baseline/bin/internal-x86_64-linux-musl-gcc
+    COLLECT_LTO_WRAPPER=/opt/lfi-amd64-baseline/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+    Target: x86_64-linux-musl
+    Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+      --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+      --enable-languages=c,c++ --enable-lto
+      --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-baseline
+      --with-pkgversion=LFI
+    Thread model: posix
+    Supported LTO compression algorithms: zlib zstd
+    gcc version 13.2.0 (LFI) 
+    specmake[1]: Leaving directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 538.imagick_r(base pass 0)
+    ------------------------------------------------------------------------------
+    Using built-in specs.
+    COLLECT_GCC=/opt/lfi-amd64-baseline/bin/internal-x86_64-linux-musl-gcc
+    COLLECT_LTO_WRAPPER=/opt/lfi-amd64-baseline/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+    Target: x86_64-linux-musl
+    Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+      --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+      --enable-languages=c,c++ --enable-lto
+      --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-baseline
+      --with-pkgversion=LFI
+    Thread model: posix
+    Supported LTO compression algorithms: zlib zstd
+    gcc version 13.2.0 (LFI) 
+    specmake[1]: Leaving directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 544.nab_r(base pass 0)
+    ------------------------------------------------------------------------------
+    Using built-in specs.
+    COLLECT_GCC=/opt/lfi-amd64-baseline/bin/internal-x86_64-linux-musl-gcc
+    COLLECT_LTO_WRAPPER=/opt/lfi-amd64-baseline/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+    Target: x86_64-linux-musl
+    Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+      --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+      --enable-languages=c,c++ --enable-lto
+      --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-baseline
+      --with-pkgversion=LFI
+    Thread model: posix
+    Supported LTO compression algorithms: zlib zstd
+    gcc version 13.2.0 (LFI) 
+    specmake[1]: Leaving directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 519.lbm_r(base pass )
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 538.imagick_r(base pass )
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 544.nab_r(base pass )
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 519.lbm_r(base pass 0)
+    ------------------------------------------------------------------------------
+    Using built-in specs.
+    COLLECT_GCC=/opt/lfi-amd64-baseline/bin/internal-x86_64-linux-musl-gcc
+    COLLECT_LTO_WRAPPER=/opt/lfi-amd64-baseline/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+    Target: x86_64-linux-musl
+    Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+      --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+      --enable-languages=c,c++ --enable-lto
+      --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-baseline
+      --with-pkgversion=LFI
+    Thread model: posix
+    Supported LTO compression algorithms: zlib zstd
+    gcc version 13.2.0 (LFI) 
+    specmake[1]: Leaving directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 538.imagick_r(base pass 0)
+    ------------------------------------------------------------------------------
+    Using built-in specs.
+    COLLECT_GCC=/opt/lfi-amd64-baseline/bin/internal-x86_64-linux-musl-gcc
+    COLLECT_LTO_WRAPPER=/opt/lfi-amd64-baseline/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+    Target: x86_64-linux-musl
+    Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+      --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+      --enable-languages=c,c++ --enable-lto
+      --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-baseline
+      --with-pkgversion=LFI
+    Thread model: posix
+    Supported LTO compression algorithms: zlib zstd
+    gcc version 13.2.0 (LFI) 
+    specmake[1]: Leaving directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 544.nab_r(base pass 0)
+    ------------------------------------------------------------------------------
+    Using built-in specs.
+    COLLECT_GCC=/opt/lfi-amd64-baseline/bin/internal-x86_64-linux-musl-gcc
+    COLLECT_LTO_WRAPPER=/opt/lfi-amd64-baseline/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+    Target: x86_64-linux-musl
+    Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+      --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+      --enable-languages=c,c++ --enable-lto
+      --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-baseline
+      --with-pkgversion=LFI
+    Thread model: posix
+    Supported LTO compression algorithms: zlib zstd
+    gcc version 13.2.0 (LFI) 
+    specmake[1]: Leaving directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 519.lbm_r(base pass )
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 538.imagick_r(base pass )
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C      | 544.nab_r(base pass )
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C++    | 508.namd_r(base pass 0)
+    ------------------------------------------------------------------------------
+    Using built-in specs.
+    COLLECT_GCC=/opt/lfi-amd64-baseline/bin/internal-x86_64-linux-musl-g++
+    COLLECT_LTO_WRAPPER=/opt/lfi-amd64-baseline/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+    Target: x86_64-linux-musl
+    Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+      --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+      --enable-languages=c,c++ --enable-lto
+      --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-baseline
+      --with-pkgversion=LFI
+    Thread model: posix
+    Supported LTO compression algorithms: zlib zstd
+    gcc version 13.2.0 (LFI) 
+    specmake[1]: Leaving directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/508.namd_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C++    | 510.parest_r(base pass 0)
+    ------------------------------------------------------------------------------
+    Using built-in specs.
+    COLLECT_GCC=/opt/lfi-amd64-baseline/bin/internal-x86_64-linux-musl-g++
+    COLLECT_LTO_WRAPPER=/opt/lfi-amd64-baseline/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+    Target: x86_64-linux-musl
+    Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+      --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+      --enable-languages=c,c++ --enable-lto
+      --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-baseline
+      --with-pkgversion=LFI
+    Thread model: posix
+    Supported LTO compression algorithms: zlib zstd
+    gcc version 13.2.0 (LFI) 
+    specmake[1]: Leaving directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/510.parest_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C++    | 508.namd_r(base pass )
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/508.namd_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C++    | 510.parest_r(base pass )
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/510.parest_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C++    | 511.povray_r(base)
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/511.povray_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C++    | 508.namd_r(base pass 0)
+    ------------------------------------------------------------------------------
+    Using built-in specs.
+    COLLECT_GCC=/opt/lfi-amd64-baseline/bin/internal-x86_64-linux-musl-g++
+    COLLECT_LTO_WRAPPER=/opt/lfi-amd64-baseline/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+    Target: x86_64-linux-musl
+    Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+      --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+      --enable-languages=c,c++ --enable-lto
+      --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-baseline
+      --with-pkgversion=LFI
+    Thread model: posix
+    Supported LTO compression algorithms: zlib zstd
+    gcc version 13.2.0 (LFI) 
+    specmake[1]: Leaving directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/508.namd_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C++    | 510.parest_r(base pass 0)
+    ------------------------------------------------------------------------------
+    Using built-in specs.
+    COLLECT_GCC=/opt/lfi-amd64-baseline/bin/internal-x86_64-linux-musl-g++
+    COLLECT_LTO_WRAPPER=/opt/lfi-amd64-baseline/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+    Target: x86_64-linux-musl
+    Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+      --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+      --enable-languages=c,c++ --enable-lto
+      --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-baseline
+      --with-pkgversion=LFI
+    Thread model: posix
+    Supported LTO compression algorithms: zlib zstd
+    gcc version 13.2.0 (LFI) 
+    specmake[1]: Leaving directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/510.parest_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C++    | 508.namd_r(base pass )
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/508.namd_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C++    | 510.parest_r(base pass )
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/510.parest_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C++    | 511.povray_r(base)
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/511.povray_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C++    | 508.namd_r(base pass 0)
+    ------------------------------------------------------------------------------
+    Using built-in specs.
+    COLLECT_GCC=/opt/lfi-amd64-baseline/bin/internal-x86_64-linux-musl-g++
+    COLLECT_LTO_WRAPPER=/opt/lfi-amd64-baseline/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+    Target: x86_64-linux-musl
+    Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+      --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+      --enable-languages=c,c++ --enable-lto
+      --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-baseline
+      --with-pkgversion=LFI
+    Thread model: posix
+    Supported LTO compression algorithms: zlib zstd
+    gcc version 13.2.0 (LFI) 
+    specmake[1]: Leaving directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/508.namd_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C++    | 510.parest_r(base pass 0)
+    ------------------------------------------------------------------------------
+    Using built-in specs.
+    COLLECT_GCC=/opt/lfi-amd64-baseline/bin/internal-x86_64-linux-musl-g++
+    COLLECT_LTO_WRAPPER=/opt/lfi-amd64-baseline/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+    Target: x86_64-linux-musl
+    Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+      --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+      --enable-languages=c,c++ --enable-lto
+      --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-baseline
+      --with-pkgversion=LFI
+    Thread model: posix
+    Supported LTO compression algorithms: zlib zstd
+    gcc version 13.2.0 (LFI) 
+    specmake[1]: Leaving directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/510.parest_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C++    | 508.namd_r(base pass )
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/508.namd_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C++    | 510.parest_r(base pass )
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/510.parest_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C++    | 511.povray_r(base)
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/511.povray_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C++    | 508.namd_r(base pass 0)
+    ------------------------------------------------------------------------------
+    Using built-in specs.
+    COLLECT_GCC=/opt/lfi-amd64-baseline/bin/internal-x86_64-linux-musl-g++
+    COLLECT_LTO_WRAPPER=/opt/lfi-amd64-baseline/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+    Target: x86_64-linux-musl
+    Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+      --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+      --enable-languages=c,c++ --enable-lto
+      --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-baseline
+      --with-pkgversion=LFI
+    Thread model: posix
+    Supported LTO compression algorithms: zlib zstd
+    gcc version 13.2.0 (LFI) 
+    specmake[1]: Leaving directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/508.namd_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C++    | 510.parest_r(base pass 0)
+    ------------------------------------------------------------------------------
+    Using built-in specs.
+    COLLECT_GCC=/opt/lfi-amd64-baseline/bin/internal-x86_64-linux-musl-g++
+    COLLECT_LTO_WRAPPER=/opt/lfi-amd64-baseline/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+    Target: x86_64-linux-musl
+    Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+      --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+      --enable-languages=c,c++ --enable-lto
+      --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-baseline
+      --with-pkgversion=LFI
+    Thread model: posix
+    Supported LTO compression algorithms: zlib zstd
+    gcc version 13.2.0 (LFI) 
+    specmake[1]: Leaving directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/510.parest_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C++    | 508.namd_r(base pass )
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/508.namd_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C++    | 510.parest_r(base pass )
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/510.parest_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C++    | 511.povray_r(base)
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/511.povray_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C++    | 508.namd_r(base pass 0)
+    ------------------------------------------------------------------------------
+    Using built-in specs.
+    COLLECT_GCC=/opt/lfi-amd64-baseline/bin/internal-x86_64-linux-musl-g++
+    COLLECT_LTO_WRAPPER=/opt/lfi-amd64-baseline/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+    Target: x86_64-linux-musl
+    Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+      --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+      --enable-languages=c,c++ --enable-lto
+      --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-baseline
+      --with-pkgversion=LFI
+    Thread model: posix
+    Supported LTO compression algorithms: zlib zstd
+    gcc version 13.2.0 (LFI) 
+    specmake[1]: Leaving directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/508.namd_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C++    | 510.parest_r(base pass 0)
+    ------------------------------------------------------------------------------
+    Using built-in specs.
+    COLLECT_GCC=/opt/lfi-amd64-baseline/bin/internal-x86_64-linux-musl-g++
+    COLLECT_LTO_WRAPPER=/opt/lfi-amd64-baseline/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+    Target: x86_64-linux-musl
+    Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+      --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+      --enable-languages=c,c++ --enable-lto
+      --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-baseline
+      --with-pkgversion=LFI
+    Thread model: posix
+    Supported LTO compression algorithms: zlib zstd
+    gcc version 13.2.0 (LFI) 
+    specmake[1]: Leaving directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/510.parest_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C++    | 508.namd_r(base pass )
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/508.namd_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C++    | 510.parest_r(base pass )
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/510.parest_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C++    | 511.povray_r(base)
+    ------------------------------------------------------------------------------
+    specmake[1]: Entering directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/511.povray_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+    
+    ==============================================================================
+    C++, C | 511.povray_r(base)
+    ------------------------------------------------------------------------------
+    Using built-in specs.
+    COLLECT_GCC=/opt/lfi-amd64-baseline/bin/internal-x86_64-linux-musl-g++
+    COLLECT_LTO_WRAPPER=/opt/lfi-amd64-baseline/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+    Target: x86_64-linux-musl
+    Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+      --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+      --enable-languages=c,c++ --enable-lto
+      --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-baseline
+      --with-pkgversion=LFI
+    Thread model: posix
+    Supported LTO compression algorithms: zlib zstd
+    gcc version 13.2.0 (LFI) 
+    Using built-in specs.
+    COLLECT_GCC=/opt/lfi-amd64-baseline/bin/internal-x86_64-linux-musl-gcc
+    COLLECT_LTO_WRAPPER=/opt/lfi-amd64-baseline/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+    Target: x86_64-linux-musl
+    Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+      --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+      --enable-languages=c,c++ --enable-lto
+      --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-baseline
+      --with-pkgversion=LFI
+    Thread model: posix
+    Supported LTO compression algorithms: zlib zstd
+    gcc version 13.2.0 (LFI) 
+    specmake[1]: Leaving directory
+      '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/511.povray_r/build/build_base_lfi-gcc-baseline-m64.0000'
+    ------------------------------------------------------------------------------
+
+                                                         Base Unknown Flags
+                                                         ------------------
+    508.namd_r: "/opt/lfi-amd64-baseline/bin/x86_64-linux-musl-" (in CXX)
+                "/opt/lfi-amd64-baseline/bin/x86_64-linux-musl-" (in LD) "-fomit-frame-pointer" (in OPTIMIZE)
+
+  510.parest_r: "/opt/lfi-amd64-baseline/bin/x86_64-linux-musl-" (in CXX)
+                "/opt/lfi-amd64-baseline/bin/x86_64-linux-musl-" (in LD) "-fomit-frame-pointer" (in OPTIMIZE)
+
+  511.povray_r: "/opt/lfi-amd64-baseline/bin/x86_64-linux-musl-" (in CXX)
+                "/opt/lfi-amd64-baseline/bin/x86_64-linux-musl-" (in CC) "/opt/lfi-amd64-baseline/bin/x86_64-linux-musl-" (in LD)
+                "-fomit-frame-pointer" (in OPTIMIZE)
+
+     519.lbm_r: "/opt/lfi-amd64-baseline/bin/x86_64-linux-musl-" (in CC) "/opt/lfi-amd64-baseline/bin/x86_64-linux-musl-" (in LD)
+                "-fomit-frame-pointer" (in OPTIMIZE)
+
+ 538.imagick_r: "/opt/lfi-amd64-baseline/bin/x86_64-linux-musl-" (in CC) "/opt/lfi-amd64-baseline/bin/x86_64-linux-musl-" (in LD)
+                "-fomit-frame-pointer" (in OPTIMIZE)
+
+     544.nab_r: "/opt/lfi-amd64-baseline/bin/x86_64-linux-musl-" (in CC) "/opt/lfi-amd64-baseline/bin/x86_64-linux-musl-" (in LD)
+                "-fomit-frame-pointer" (in OPTIMIZE)
+
+
+                                                      Base Runtime Environment
+                                                      ------------------------
+Benchmarks using both C and C++:
+
+  511.povray_r: No flags used
+
+
+                                                      Base Compiler Invocation
+                                                      ------------------------
+C benchmarks: 
+     gcc
+
+C++ benchmarks: 
+     g++
+
+Benchmarks using both C and C++:
+
+  511.povray_r: g++ gcc
+
+
+                                                       Base Portability Flags
+                                                       ----------------------
+    508.namd_r: -DSPEC_LP64
+  510.parest_r: -DSPEC_LP64
+  511.povray_r: -DSPEC_LP64
+     519.lbm_r: -DSPEC_LP64
+ 538.imagick_r: -DSPEC_LP64
+     544.nab_r: -DSPEC_LP64
+
+
+                                                      Base Optimization Flags
+                                                      -----------------------
+C benchmarks: 
+     -std=c99 -O3 -flto
+
+C++ benchmarks: 
+     -std=c++03 -O3 -flto
+
+Benchmarks using both C and C++:
+
+  511.povray_r: -std=c++03 -std=c99 -O3 -flto
+
+
+                                                          Base Other Flags
+                                                          ----------------
+Benchmarks using both C and C++:
+
+  511.povray_r: No flags used
+
+
+  SPEC CPU and SPECrate are registered trademarks of the Standard Performance Evaluation Corporation.  All other brand and
+    product names appearing in this result are trademarks or registered trademarks of their respective holders.
+##################################################################################################################################
+#   INVALID RUN -- INVALID RUN -- INVALID RUN -- INVALID RUN -- INVALID RUN                                                      #
+#                                                                                                                                #
+# 'reportable' flag not set during run                                                                                           #
+# 527.cam4_r (base) did not have enough runs!                                                                                    #
+# 503.bwaves_r (base) did not have enough runs!                                                                                  #
+# 519.lbm_r (base) did not have enough runs!                                                                                     #
+# 521.wrf_r (base) did not have enough runs!                                                                                     #
+# 544.nab_r (base) did not have enough runs!                                                                                     #
+# 508.namd_r (base) did not have enough runs!                                                                                    #
+# 526.blender_r (base) did not have enough runs!                                                                                 #
+# 554.roms_r (base) did not have enough runs!                                                                                    #
+# 538.imagick_r (base) did not have enough runs!                                                                                 #
+# 507.cactuBSSN_r (base) did not have enough runs!                                                                               #
+# 510.parest_r (base) did not have enough runs!                                                                                  #
+# 511.povray_r (base) did not have enough runs!                                                                                  #
+# 549.fotonik3d_r (base) did not have enough runs!                                                                               #
+# Unknown flags were used! See                                                                                                   #
+#      https://www.spec.org/cpu2017/Docs/runcpu.html#flagsurl                                                                    #
+# for information about how to get rid of this error.                                                                            #
+#                                                                                                                                #
+#   INVALID RUN -- INVALID RUN -- INVALID RUN -- INVALID RUN -- INVALID RUN                                                      #
+##################################################################################################################################
+------------------------------------------------------------------------------------------------------------------------------------
+For questions about this result, please contact the tester.
+For other inquiries, please contact info@spec.org.
+Copyright 2017-2024 Standard Performance Evaluation Corporation
+Tested with SPEC CPU(R)2017 v0.0.0 on 2024-06-13 01:12:24-0500.
+Report generated on 2024-06-13 02:01:18 by CPU2017 text formatter v6255.

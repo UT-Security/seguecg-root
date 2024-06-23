@@ -1,0 +1,626 @@
+runcpu v6247 started at 2024-06-11 23:37:45 on "shr-work"
+runcpu is: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/harness/runcpu
+runcpu: runcpu --action=run --size=ref gcc_r mcf_r x264_r omnetpp_r xalancbmk_r leela_r deepsjeng_r xz_r parest_r namd_r lbm_r povray_r imagick_r nab_r --config=lfi-gcc-baseline
+toolset: linux-x86_64
+suite: CPU2017 0.0.0
+
+Locating benchmarks...found 47 benchmarks in 53 benchsets.
+Reading config file '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/config/lfi-gcc-baseline.cfg'
+
+2 configurations selected:
+
+ Action    Run Mode   Workload     Report Type      Benchmarks
+--------   --------   --------   ----------------   ---------------------------
+validate   rate       refrate    SPECrate2017_int   502.gcc_r, 505.mcf_r,      
+                                                    520.omnetpp_r,             
+                                                    523.xalancbmk_r,           
+                                                    525.x264_r,                
+                                                    531.deepsjeng_r,           
+                                                    541.leela_r, 557.xz_r      
+validate   rate       refrate    SPECrate2017_fp    508.namd_r, 510.parest_r,  
+                                                    511.povray_r, 519.lbm_r,   
+                                                    538.imagick_r, 544.nab_r   
+-------------------------------------------------------------------------------
+
+Setting up environment for running 502.gcc_r, 505.mcf_r, 520.omnetpp_r, 523.xalancbmk_r, 525.x264_r, 531.deepsjeng_r, 541.leela_r, 557.xz_r...
+Starting runcpu for 502.gcc_r, 505.mcf_r, 520.omnetpp_r, 523.xalancbmk_r, 525.x264_r, 531.deepsjeng_r, 541.leela_r, 557.xz_r...
+Running "specperl /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/sysinfo" to gather system information.
+sysinfo: r6365 of 2019-08-21 (295195f888a3d7edb1e6e46a485a0011)
+sysinfo: Getting system information for Linux...
+sysinfo: ...getting CPU info
+sysinfo: ...getting info from numactl
+sysinfo: ...getting memory info
+sysinfo: ...getting OS info
+sysinfo: ...getting CPU vulnerability status from the kernel
+sysinfo: ...getting disk info
+sysinfo: ...trying to get info from /sys/devices/virtual/dmi/id
+sysinfo: ...trying to get info from dmidecode
+Retrieving flags file (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/config/flags/gcc.xml)...
+Verbosity = 5
+Action    = validate
+Tune      = base
+Label     = lfi-gcc-baseline-m64
+Size      = refrate
+benchmarks= 502.gcc_r,505.mcf_r,520.omnetpp_r,523.xalancbmk_r,525.x264_r,531.deepsjeng_r,541.leela_r,557.xz_r
+outputs   = txt,html,cfg,pdf,csv
+username  = shr
+Environment settings:
+LD_LIBRARY_PATH = "%{gcc_dir}/lib64/:%{gcc_dir}/lib/:/lib64"
+
+Benchmarks selected: 502.gcc_r, 505.mcf_r, 520.omnetpp_r, 523.xalancbmk_r, 525.x264_r, 531.deepsjeng_r, 541.leela_r, 557.xz_r
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/502.gcc_r/exe/cpugcc_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/505.mcf_r/exe/mcf_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/520.omnetpp_r/exe/omnetpp_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/523.xalancbmk_r/exe/cpuxalan_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/525.x264_r/exe/imagevalidate_525_base.lfi-gcc-baseline-m64,/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/525.x264_r/exe/ldecod_r_base.lfi-gcc-baseline-m64,/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/525.x264_r/exe/x264_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/531.deepsjeng_r/exe/deepsjeng_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/541.leela_r/exe/leela_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/557.xz_r/exe/xz_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/502.gcc_r/exe/cpugcc_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/505.mcf_r/exe/mcf_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/520.omnetpp_r/exe/omnetpp_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/523.xalancbmk_r/exe/cpuxalan_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/525.x264_r/exe/imagevalidate_525_base.lfi-gcc-baseline-m64,/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/525.x264_r/exe/ldecod_r_base.lfi-gcc-baseline-m64,/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/525.x264_r/exe/x264_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/531.deepsjeng_r/exe/deepsjeng_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/541.leela_r/exe/leela_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/557.xz_r/exe/xz_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+Compiling Binaries
+------------------------------------------------------------------------
+When checking options for /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/502.gcc_r/exe/cpugcc_r_base.lfi-gcc-baseline-m64, no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/502.gcc_r/exe/cpugcc_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+  Building 502.gcc_r base lfi-gcc-baseline-m64: (build_base_lfi-gcc-baseline-m64.0000) [2024-06-11 23:37:46]
+  Compile for '502.gcc_r' started at: 2024-06-11 23:37:46 (1718167066)
+Issuing make.clean command 'specmake --output-sync --jobs=1 clean'
+Start make.clean command: 2024-06-11 23:37:46 (1718167066.89656)
+rm -rf *.o  200.opts-O3_-finline-limit_50000.s scilab.opts-O3_-finline-limit_50000.s train01.opts-O3_-finline-limit_50000.s
+find . \( -name \*.o -o -name '*.fppized.f*' -o -name '*.i' -o -name '*.mod' \) -print | xargs rm -rf
+rm -rf cpugcc_r
+rm -rf cpugcc_r.exe
+rm -rf core
+Stop make.clean command: 2024-06-11 23:37:47 (1718167067.07129)
+Elapsed time for make.clean command: 00:00:00 (0.174727916717529)
+Issuing make command 'specmake --output-sync --jobs=1 build'
+Start make command: 2024-06-11 23:37:47 (1718167067.07235)
+/opt/lfi-amd64-baseline-old/bin/x86_64-linux-musl-gcc     -std=c99    -c -o main.o -DSPEC -DNDEBUG -I. -I./include -I./spec_qsort -DSPEC_502 -DSPEC_AUTO_SUPPRESS_OPENMP -DIN_GCC -DHAVE_CONFIG_H  -O3 -fomit-frame-pointer -flto        -fwrapv    -fno-strict-aliasing -fgnu89-inline   -DSPEC_LP64  main.c
+specmake: /opt/lfi-amd64-baseline-old/bin/x86_64-linux-musl-gcc: Command not found
+specmake: *** [/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/Makefile.defaults:347: main.o] Error 127
+Stop make command: 2024-06-11 23:37:47 (1718167067.24085)
+Elapsed time for make command: 00:00:00 (0.168499946594238)
+Error with make 'specmake --output-sync --jobs=1 build':
+  ----------------------------------------------------------------------------
+  Please review this file:
+    "/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/502.gcc_r/build/build_base_lfi-gcc-baseline-m64.0000/make.out"
+  ----------------------------------------------------------------------------
+  Command returned exit code 2
+  Error with make!
+  Compile for '502.gcc_r' ended at: 2024-06-11 23:37:47 (1718167067)
+  Elapsed compile for '502.gcc_r': 00:00:01 (1)
+*** Error building 502.gcc_r base
+------------------------------------------------------------------------
+When checking options for /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/505.mcf_r/exe/mcf_r_base.lfi-gcc-baseline-m64, no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/505.mcf_r/exe/mcf_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+  Building 505.mcf_r base lfi-gcc-baseline-m64: (build_base_lfi-gcc-baseline-m64.0000) [2024-06-11 23:37:47]
+  Compile for '505.mcf_r' started at: 2024-06-11 23:37:47 (1718167067)
+Issuing make.clean command 'specmake --output-sync --jobs=1 clean'
+Start make.clean command: 2024-06-11 23:37:47 (1718167067.27484)
+rm -rf *.o  inp.out mcf.out
+find . \( -name \*.o -o -name '*.fppized.f*' -o -name '*.i' -o -name '*.mod' \) -print | xargs rm -rf
+rm -rf mcf_r
+rm -rf mcf_r.exe
+rm -rf core
+Stop make.clean command: 2024-06-11 23:37:47 (1718167067.44058)
+Elapsed time for make.clean command: 00:00:00 (0.16574501991272)
+Issuing make command 'specmake --output-sync --jobs=1 build'
+Start make command: 2024-06-11 23:37:47 (1718167067.44173)
+/opt/lfi-amd64-baseline-old/bin/x86_64-linux-musl-gcc     -std=c99    -c -o mcf.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -O3 -fomit-frame-pointer -flto            -fno-strict-aliasing -fgnu89-inline   -DSPEC_LP64  mcf.c
+specmake: /opt/lfi-amd64-baseline-old/bin/x86_64-linux-musl-gcc: Command not found
+specmake: *** [/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/Makefile.defaults:347: mcf.o] Error 127
+Stop make command: 2024-06-11 23:37:47 (1718167067.60221)
+Elapsed time for make command: 00:00:00 (0.160485029220581)
+Error with make 'specmake --output-sync --jobs=1 build':
+  ----------------------------------------------------------------------------
+  Please review this file:
+    "/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/505.mcf_r/build/build_base_lfi-gcc-baseline-m64.0000/make.out"
+  ----------------------------------------------------------------------------
+  Command returned exit code 2
+  Error with make!
+  Compile for '505.mcf_r' ended at: 2024-06-11 23:37:47 (1718167067)
+  Elapsed compile for '505.mcf_r': 00:00:00 (0)
+*** Error building 505.mcf_r base
+------------------------------------------------------------------------
+When checking options for /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/520.omnetpp_r/exe/omnetpp_r_base.lfi-gcc-baseline-m64, no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/520.omnetpp_r/exe/omnetpp_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+  Building 520.omnetpp_r base lfi-gcc-baseline-m64: (build_base_lfi-gcc-baseline-m64.0000) [2024-06-11 23:37:47]
+  Compile for '520.omnetpp_r' started at: 2024-06-11 23:37:47 (1718167067)
+Issuing make.clean command 'specmake --output-sync --jobs=1 clean'
+Start make.clean command: 2024-06-11 23:37:47 (1718167067.66115)
+rm -rf *.o  General-0.sca
+find . \( -name \*.o -o -name '*.fppized.f*' -o -name '*.i' -o -name '*.mod' \) -print | xargs rm -rf
+rm -rf omnetpp_r
+rm -rf omnetpp_r.exe
+rm -rf core
+Stop make.clean command: 2024-06-11 23:37:47 (1718167067.82744)
+Elapsed time for make.clean command: 00:00:00 (0.166283130645752)
+Issuing make command 'specmake --output-sync --jobs=1 build'
+Start make command: 2024-06-11 23:37:47 (1718167067.8285)
+/opt/lfi-amd64-baseline-old/bin/x86_64-linux-musl-g++ -std=c++03  -c -o simulator/fileoutscalarmgr.o -DSPEC -DNDEBUG -Isimulator/platdep -Isimulator -Imodel -DWITH_NETBUILDER -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto    -D_LARGEFILE64_SOURCE     -DSPEC_LP64  simulator/fileoutscalarmgr.cc
+specmake: /opt/lfi-amd64-baseline-old/bin/x86_64-linux-musl-g++: Command not found
+specmake: *** [/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/Makefile.defaults:356: simulator/fileoutscalarmgr.o] Error 127
+Stop make command: 2024-06-11 23:37:47 (1718167067.98825)
+Elapsed time for make command: 00:00:00 (0.159756183624268)
+Error with make 'specmake --output-sync --jobs=1 build':
+  ----------------------------------------------------------------------------
+  Please review this file:
+    "/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/520.omnetpp_r/build/build_base_lfi-gcc-baseline-m64.0000/make.out"
+  ----------------------------------------------------------------------------
+  Command returned exit code 2
+  Error with make!
+  Compile for '520.omnetpp_r' ended at: 2024-06-11 23:37:47 (1718167067)
+  Elapsed compile for '520.omnetpp_r': 00:00:00 (0)
+*** Error building 520.omnetpp_r base
+------------------------------------------------------------------------
+When checking options for /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/523.xalancbmk_r/exe/cpuxalan_r_base.lfi-gcc-baseline-m64, no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/523.xalancbmk_r/exe/cpuxalan_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+  Building 523.xalancbmk_r base lfi-gcc-baseline-m64: (build_base_lfi-gcc-baseline-m64.0000) [2024-06-11 23:37:47]
+  Compile for '523.xalancbmk_r' started at: 2024-06-11 23:37:48 (1718167068)
+Issuing make.clean command 'specmake --output-sync --jobs=1 clean'
+Start make.clean command: 2024-06-11 23:37:48 (1718167068.15859)
+rm -rf *.o  train-allbooks.out
+find . \( -name \*.o -o -name '*.fppized.f*' -o -name '*.i' -o -name '*.mod' \) -print | xargs rm -rf
+rm -rf cpuxalan_r
+rm -rf cpuxalan_r.exe
+rm -rf core
+Stop make.clean command: 2024-06-11 23:37:48 (1718167068.32925)
+Elapsed time for make.clean command: 00:00:00 (0.170665979385376)
+Issuing make command 'specmake --output-sync --jobs=1 build'
+Start make command: 2024-06-11 23:37:48 (1718167068.33034)
+/opt/lfi-amd64-baseline-old/bin/x86_64-linux-musl-g++ -std=c++03  -c -o AIXPlatformUtils.o -DSPEC -DNDEBUG  -DAPP_NO_THREADS -DXALAN_INMEM_MSG_LOADER -I. -Ixercesc -Ixercesc/dom -Ixercesc/dom/impl -Ixercesc/sax -Ixercesc/util/MsgLoaders/InMemory -Ixercesc/util/Transcoders/Iconv -Ixalanc/include -DPROJ_XMLPARSER -DPROJ_XMLUTIL -DPROJ_PARSERS -DPROJ_SAX4C -DPROJ_SAX2 -DPROJ_DOM -DPROJ_VALIDATORS -DXML_USE_INMEM_MESSAGELOADER -DSPEC_AUTO_SUPPRESS_OPENMP -O3 -fomit-frame-pointer -flto    -DSPEC_LINUX     -DSPEC_LP64  AIXPlatformUtils.cpp
+specmake: /opt/lfi-amd64-baseline-old/bin/x86_64-linux-musl-g++: Command not found
+specmake: *** [/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/Makefile.defaults:366: AIXPlatformUtils.o] Error 127
+Stop make command: 2024-06-11 23:37:48 (1718167068.49268)
+Elapsed time for make command: 00:00:00 (0.162338018417358)
+Error with make 'specmake --output-sync --jobs=1 build':
+  ----------------------------------------------------------------------------
+  Please review this file:
+    "/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/523.xalancbmk_r/build/build_base_lfi-gcc-baseline-m64.0000/make.out"
+  ----------------------------------------------------------------------------
+  Command returned exit code 2
+  Error with make!
+  Compile for '523.xalancbmk_r' ended at: 2024-06-11 23:37:48 (1718167068)
+  Elapsed compile for '523.xalancbmk_r': 00:00:00 (0)
+*** Error building 523.xalancbmk_r base
+------------------------------------------------------------------------
+When checking options for /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/525.x264_r/exe/imagevalidate_525_base.lfi-gcc-baseline-m64,/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/525.x264_r/exe/ldecod_r_base.lfi-gcc-baseline-m64,/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/525.x264_r/exe/x264_r_base.lfi-gcc-baseline-m64, no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/525.x264_r/exe/imagevalidate_525_base.lfi-gcc-baseline-m64,/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/525.x264_r/exe/ldecod_r_base.lfi-gcc-baseline-m64,/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/525.x264_r/exe/x264_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+  Building 525.x264_r base lfi-gcc-baseline-m64: (build_base_lfi-gcc-baseline-m64.0000) [2024-06-11 23:37:48]
+  Compile for '525.x264_r' started at: 2024-06-11 23:37:48 (1718167068)
+Issuing make.clean.imagevalidate_525 command 'specmake --output-sync --jobs=1 clean TARGET=imagevalidate_525'
+Start make.clean.imagevalidate_525 command: 2024-06-11 23:37:48 (1718167068.56838)
+Stop make.clean.imagevalidate_525 command: 2024-06-11 23:37:48 (1718167068.73375)
+Elapsed time for make.clean.imagevalidate_525 command: 00:00:00 (0.165369987487793)
+Issuing make.clean.ldecod_r command 'specmake --output-sync --jobs=1 clean TARGET=ldecod_r'
+Start make.clean.ldecod_r command: 2024-06-11 23:37:48 (1718167068.73484)
+rm -rf *.o  imagevalidate_frame_100.out imagevalidate_frame_141.out imagevalidate_frame_50.out
+Info: file_tail(4019187): file 'make.clean.ldecod_r.out' was removed and will no longer be followed.  No action is required.
+Stop make.clean.ldecod_r command: 2024-06-11 23:37:48 (1718167068.89957)
+Elapsed time for make.clean.ldecod_r command: 00:00:00 (0.164722919464111)
+Issuing make.clean.x264_r command 'specmake --output-sync --jobs=1 clean TARGET=x264_r'
+Start make.clean.x264_r command: 2024-06-11 23:37:48 (1718167068.90076)
+rm -rf *.o  imagevalidate_frame_100.out imagevalidate_frame_141.out imagevalidate_frame_50.out
+Info: file_tail(4019199): file 'make.clean.x264_r.out' was removed and will no longer be followed.  No action is required.
+Stop make.clean.x264_r command: 2024-06-11 23:37:49 (1718167069.0664)
+Elapsed time for make.clean.x264_r command: 00:00:00 (0.165646076202393)
+Issuing make.imagevalidate_525 command 'specmake --output-sync --jobs=1 build TARGET=imagevalidate_525'
+Start make.imagevalidate_525 command: 2024-06-11 23:37:49 (1718167069.06787)
+/opt/lfi-amd64-baseline-old/bin/x86_64-linux-musl-gcc     -std=c99    -c -o image_validator/ImageValidator.o -DSPEC -DNDEBUG -Ildecod_src/inc -Ix264_src -Ix264_src/extras -Ix264_src/common -DSPEC_AUTO_SUPPRESS_OPENMP -DSPEC_AUTO_BYTEORDER=0x12345678  -O3 -fomit-frame-pointer -flto        -fcommon    -fno-strict-aliasing -fgnu89-inline   -DSPEC_LP64  image_validator/ImageValidator.c
+specmake: /opt/lfi-amd64-baseline-old/bin/x86_64-linux-musl-gcc: Command not found
+specmake: *** [/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/Makefile.defaults:347: image_validator/ImageValidator.o] Error 127
+Stop make.imagevalidate_525 command: 2024-06-11 23:37:49 (1718167069.22473)
+Elapsed time for make.imagevalidate_525 command: 00:00:00 (0.156862020492554)
+Error with make.imagevalidate_525 'specmake --output-sync --jobs=1 build TARGET=imagevalidate_525':
+  ----------------------------------------------------------------------------
+  Please review this file:
+    "/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/525.x264_r/build/build_base_lfi-gcc-baseline-m64.0000/make.imagevalidate_525.out"
+  ----------------------------------------------------------------------------
+  Command returned exit code 2
+  Error with make!
+  Compile for '525.x264_r' ended at: 2024-06-11 23:37:49 (1718167069)
+  Elapsed compile for '525.x264_r': 00:00:01 (1)
+*** Error building 525.x264_r base
+------------------------------------------------------------------------
+When checking options for /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/531.deepsjeng_r/exe/deepsjeng_r_base.lfi-gcc-baseline-m64, no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/531.deepsjeng_r/exe/deepsjeng_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+  Building 531.deepsjeng_r base lfi-gcc-baseline-m64: (build_base_lfi-gcc-baseline-m64.0000) [2024-06-11 23:37:49]
+  Compile for '531.deepsjeng_r' started at: 2024-06-11 23:37:49 (1718167069)
+Issuing make.clean command 'specmake --output-sync --jobs=1 clean'
+Start make.clean command: 2024-06-11 23:37:49 (1718167069.24035)
+rm -rf *.o  train.out
+find . \( -name \*.o -o -name '*.fppized.f*' -o -name '*.i' -o -name '*.mod' \) -print | xargs rm -rf
+rm -rf deepsjeng_r
+rm -rf deepsjeng_r.exe
+rm -rf core
+Stop make.clean command: 2024-06-11 23:37:49 (1718167069.39797)
+Elapsed time for make.clean command: 00:00:00 (0.157621145248413)
+Issuing make command 'specmake --output-sync --jobs=1 build'
+Start make command: 2024-06-11 23:37:49 (1718167069.39856)
+/opt/lfi-amd64-baseline-old/bin/x86_64-linux-musl-g++ -std=c++03  -c -o attacks.o -DSPEC -DNDEBUG -DSMALL_MEMORY -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto         -DSPEC_LP64  attacks.cpp
+specmake: /opt/lfi-amd64-baseline-old/bin/x86_64-linux-musl-g++: Command not found
+specmake: *** [/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/Makefile.defaults:366: attacks.o] Error 127
+Stop make command: 2024-06-11 23:37:49 (1718167069.5546)
+Elapsed time for make command: 00:00:00 (0.156033992767334)
+Error with make 'specmake --output-sync --jobs=1 build':
+  ----------------------------------------------------------------------------
+  Please review this file:
+    "/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/531.deepsjeng_r/build/build_base_lfi-gcc-baseline-m64.0000/make.out"
+  ----------------------------------------------------------------------------
+  Command returned exit code 2
+  Error with make!
+  Compile for '531.deepsjeng_r' ended at: 2024-06-11 23:37:49 (1718167069)
+  Elapsed compile for '531.deepsjeng_r': 00:00:00 (0)
+*** Error building 531.deepsjeng_r base
+------------------------------------------------------------------------
+When checking options for /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/541.leela_r/exe/leela_r_base.lfi-gcc-baseline-m64, no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/541.leela_r/exe/leela_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+  Building 541.leela_r base lfi-gcc-baseline-m64: (build_base_lfi-gcc-baseline-m64.0000) [2024-06-11 23:37:49]
+  Compile for '541.leela_r' started at: 2024-06-11 23:37:49 (1718167069)
+Issuing make.clean command 'specmake --output-sync --jobs=1 clean'
+Start make.clean command: 2024-06-11 23:37:49 (1718167069.584)
+rm -rf *.o  train.out
+find . \( -name \*.o -o -name '*.fppized.f*' -o -name '*.i' -o -name '*.mod' \) -print | xargs rm -rf
+rm -rf leela_r
+rm -rf leela_r.exe
+rm -rf core
+Stop make.clean command: 2024-06-11 23:37:49 (1718167069.74213)
+Elapsed time for make.clean command: 00:00:00 (0.158133029937744)
+Issuing make command 'specmake --output-sync --jobs=1 build'
+Start make command: 2024-06-11 23:37:49 (1718167069.74275)
+/opt/lfi-amd64-baseline-old/bin/x86_64-linux-musl-g++ -std=c++03  -c -o FullBoard.o -DSPEC -DNDEBUG -I. -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto         -DSPEC_LP64  FullBoard.cpp
+specmake: /opt/lfi-amd64-baseline-old/bin/x86_64-linux-musl-g++: Command not found
+specmake: *** [/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/Makefile.defaults:366: FullBoard.o] Error 127
+Stop make command: 2024-06-11 23:37:49 (1718167069.89895)
+Elapsed time for make command: 00:00:00 (0.156203031539917)
+Error with make 'specmake --output-sync --jobs=1 build':
+  ----------------------------------------------------------------------------
+  Please review this file:
+    "/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/541.leela_r/build/build_base_lfi-gcc-baseline-m64.0000/make.out"
+  ----------------------------------------------------------------------------
+  Command returned exit code 2
+  Error with make!
+  Compile for '541.leela_r' ended at: 2024-06-11 23:37:49 (1718167069)
+  Elapsed compile for '541.leela_r': 00:00:00 (0)
+*** Error building 541.leela_r base
+------------------------------------------------------------------------
+When checking options for /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/557.xz_r/exe/xz_r_base.lfi-gcc-baseline-m64, no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/557.xz_r/exe/xz_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+  Building 557.xz_r base lfi-gcc-baseline-m64: (build_base_lfi-gcc-baseline-m64.0000) [2024-06-11 23:37:49]
+  Compile for '557.xz_r' started at: 2024-06-11 23:37:49 (1718167069)
+Issuing make.clean command 'specmake --output-sync --jobs=1 clean'
+Start make.clean command: 2024-06-11 23:37:49 (1718167069.91896)
+rm -rf *.o  IMG_2560.cr2-40-4.out input.combined-40-8.out
+find . \( -name \*.o -o -name '*.fppized.f*' -o -name '*.i' -o -name '*.mod' \) -print | xargs rm -rf
+rm -rf xz_r
+rm -rf xz_r.exe
+rm -rf core
+Stop make.clean command: 2024-06-11 23:37:50 (1718167070.07727)
+Elapsed time for make.clean command: 00:00:00 (0.158313035964966)
+Issuing make command 'specmake --output-sync --jobs=1 build'
+Start make command: 2024-06-11 23:37:50 (1718167070.07788)
+/opt/lfi-amd64-baseline-old/bin/x86_64-linux-musl-gcc     -std=c99    -c -o spec.o -DSPEC -DNDEBUG -DSPEC_AUTO_BYTEORDER=0x12345678 -DHAVE_CONFIG_H=1 -DSPEC_MEM_IO -DSPEC_XZ -DSPEC_AUTO_SUPPRESS_OPENMP -I. -Ispec_mem_io -Isha-2 -Icommon -Iliblzma/api -Iliblzma/lzma -Iliblzma/common -Iliblzma/check -Iliblzma/simple -Iliblzma/delta -Iliblzma/lz -Iliblzma/rangecoder  -O3 -fomit-frame-pointer -flto            -fno-strict-aliasing -fgnu89-inline   -DSPEC_LP64  spec.c
+specmake: /opt/lfi-amd64-baseline-old/bin/x86_64-linux-musl-gcc: Command not found
+specmake: *** [/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/Makefile.defaults:347: spec.o] Error 127
+Stop make command: 2024-06-11 23:37:50 (1718167070.23471)
+Elapsed time for make command: 00:00:00 (0.156831979751587)
+Error with make 'specmake --output-sync --jobs=1 build':
+  ----------------------------------------------------------------------------
+  Please review this file:
+    "/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/557.xz_r/build/build_base_lfi-gcc-baseline-m64.0000/make.out"
+  ----------------------------------------------------------------------------
+  Command returned exit code 2
+  Error with make!
+  Compile for '557.xz_r' ended at: 2024-06-11 23:37:50 (1718167070)
+  Elapsed compile for '557.xz_r': 00:00:01 (1)
+*** Error building 557.xz_r base
+
+Build successes for intrate: None
+Build errors for intrate: 502.gcc_r(base; CE), 505.mcf_r(base; CE), 520.omnetpp_r(base; CE), 523.xalancbmk_r(base; CE), 525.x264_r(base; CE), 531.deepsjeng_r(base; CE), 541.leela_r(base; CE), 557.xz_r(base; CE)
+
+NOTICE: Nothing to run!  No results will be generated.
+
+runcpu finished at 2024-06-11 23:37:50; 4 total seconds elapsed
+-------------------------------------------------------------------------------
+
+Setting up environment for running 508.namd_r, 510.parest_r, 511.povray_r, 519.lbm_r, 538.imagick_r, 544.nab_r...
+Starting runcpu for 508.namd_r, 510.parest_r, 511.povray_r, 519.lbm_r, 538.imagick_r, 544.nab_r...
+Running "specperl /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/sysinfo" to gather system information.
+sysinfo: r6365 of 2019-08-21 (295195f888a3d7edb1e6e46a485a0011)
+sysinfo: Getting system information for Linux...
+sysinfo: ...getting CPU info
+sysinfo: ...getting info from numactl
+sysinfo: ...getting memory info
+sysinfo: ...getting OS info
+sysinfo: ...getting CPU vulnerability status from the kernel
+sysinfo: ...getting disk info
+sysinfo: ...trying to get info from /sys/devices/virtual/dmi/id
+sysinfo: ...trying to get info from dmidecode
+Retrieving flags file (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/config/flags/gcc.xml)...
+Verbosity = 5
+Action    = validate
+Tune      = base
+Label     = lfi-gcc-baseline-m64
+Size      = refrate
+benchmarks= 508.namd_r,510.parest_r,511.povray_r,519.lbm_r,538.imagick_r,544.nab_r
+outputs   = txt,html,cfg,pdf,csv
+username  = shr
+Environment settings:
+LD_LIBRARY_PATH = "%{gcc_dir}/lib64/:%{gcc_dir}/lib/:/lib64"
+
+Benchmarks selected: 508.namd_r, 510.parest_r, 511.povray_r, 519.lbm_r, 538.imagick_r, 544.nab_r
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/508.namd_r/exe/namd_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/510.parest_r/exe/parest_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/511.povray_r/exe/imagevalidate_511_base.lfi-gcc-baseline-m64,/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/511.povray_r/exe/povray_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/exe/lbm_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/exe/imagevalidate_538_base.lfi-gcc-baseline-m64,/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/exe/imagick_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/exe/nab_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/508.namd_r/exe/namd_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/510.parest_r/exe/parest_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/511.povray_r/exe/imagevalidate_511_base.lfi-gcc-baseline-m64,/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/511.povray_r/exe/povray_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/exe/lbm_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/exe/imagevalidate_538_base.lfi-gcc-baseline-m64,/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/exe/imagick_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/exe/nab_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+Compiling Binaries
+------------------------------------------------------------------------
+When checking options for /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/508.namd_r/exe/namd_r_base.lfi-gcc-baseline-m64, no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/508.namd_r/exe/namd_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+  Building 508.namd_r base lfi-gcc-baseline-m64: (build_base_lfi-gcc-baseline-m64.0000) [2024-06-11 23:37:50]
+  Compile for '508.namd_r' started at: 2024-06-11 23:37:50 (1718167070)
+Issuing make.clean command 'specmake --output-sync --jobs=1 clean'
+Start make.clean command: 2024-06-11 23:37:50 (1718167070.94749)
+rm -rf *.o  apoa1.train.output
+find . \( -name \*.o -o -name '*.fppized.f*' -o -name '*.i' -o -name '*.mod' \) -print | xargs rm -rf
+rm -rf namd_r
+rm -rf namd_r.exe
+rm -rf core
+Stop make.clean command: 2024-06-11 23:37:51 (1718167071.10557)
+Elapsed time for make.clean command: 00:00:00 (0.158087968826294)
+Issuing make command 'specmake --output-sync --jobs=1 build'
+Start make command: 2024-06-11 23:37:51 (1718167071.10624)
+/opt/lfi-amd64-baseline-old/bin/x86_64-linux-musl-g++ -std=c++03  -c -o Compute.o -DSPEC -DNDEBUG  -DNAMD_DISABLE_SSE -DSPEC_AUTO_SUPPRESS_OPENMP -O3 -fomit-frame-pointer -flto         -DSPEC_LP64  Compute.C
+specmake: /opt/lfi-amd64-baseline-old/bin/x86_64-linux-musl-g++: Command not found
+specmake: *** [/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/Makefile.defaults:361: Compute.o] Error 127
+Stop make command: 2024-06-11 23:37:51 (1718167071.26291)
+Elapsed time for make command: 00:00:00 (0.156673908233643)
+Error with make 'specmake --output-sync --jobs=1 build':
+  ----------------------------------------------------------------------------
+  Please review this file:
+    "/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/508.namd_r/build/build_base_lfi-gcc-baseline-m64.0000/make.out"
+  ----------------------------------------------------------------------------
+  Command returned exit code 2
+  Error with make!
+  Compile for '508.namd_r' ended at: 2024-06-11 23:37:51 (1718167071)
+  Elapsed compile for '508.namd_r': 00:00:01 (1)
+*** Error building 508.namd_r base
+------------------------------------------------------------------------
+When checking options for /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/510.parest_r/exe/parest_r_base.lfi-gcc-baseline-m64, no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/510.parest_r/exe/parest_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+  Building 510.parest_r base lfi-gcc-baseline-m64: (build_base_lfi-gcc-baseline-m64.0000) [2024-06-11 23:37:51]
+  Compile for '510.parest_r' started at: 2024-06-11 23:37:51 (1718167071)
+Issuing make.clean command 'specmake --output-sync --jobs=1 clean'
+Start make.clean command: 2024-06-11 23:37:51 (1718167071.35344)
+rm -rf *.o  001-m0.vtk 002-m0.vtk log me.prm statistics
+find . \( -name \*.o -o -name '*.fppized.f*' -o -name '*.i' -o -name '*.mod' \) -print | xargs rm -rf
+rm -rf parest_r
+rm -rf parest_r.exe
+rm -rf core
+Stop make.clean command: 2024-06-11 23:37:51 (1718167071.51327)
+Elapsed time for make.clean command: 00:00:00 (0.159830093383789)
+Issuing make command 'specmake --output-sync --jobs=1 build'
+Start make command: 2024-06-11 23:37:51 (1718167071.51385)
+/opt/lfi-amd64-baseline-old/bin/x86_64-linux-musl-g++ -std=c++03  -c -o source/base/auto_derivative_function.o -DSPEC -DNDEBUG -Iinclude -I. -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto         -DSPEC_LP64  source/base/auto_derivative_function.cc
+specmake: /opt/lfi-amd64-baseline-old/bin/x86_64-linux-musl-g++: Command not found
+specmake: *** [/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/Makefile.defaults:356: source/base/auto_derivative_function.o] Error 127
+Stop make command: 2024-06-11 23:37:51 (1718167071.67002)
+Elapsed time for make command: 00:00:00 (0.15617299079895)
+Error with make 'specmake --output-sync --jobs=1 build':
+  ----------------------------------------------------------------------------
+  Please review this file:
+    "/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/510.parest_r/build/build_base_lfi-gcc-baseline-m64.0000/make.out"
+  ----------------------------------------------------------------------------
+  Command returned exit code 2
+  Error with make!
+  Compile for '510.parest_r' ended at: 2024-06-11 23:37:51 (1718167071)
+  Elapsed compile for '510.parest_r': 00:00:00 (0)
+*** Error building 510.parest_r base
+------------------------------------------------------------------------
+When checking options for /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/511.povray_r/exe/imagevalidate_511_base.lfi-gcc-baseline-m64,/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/511.povray_r/exe/povray_r_base.lfi-gcc-baseline-m64, no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/511.povray_r/exe/imagevalidate_511_base.lfi-gcc-baseline-m64,/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/511.povray_r/exe/povray_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+  Building 511.povray_r base lfi-gcc-baseline-m64: (build_base_lfi-gcc-baseline-m64.0000) [2024-06-11 23:37:51]
+  Compile for '511.povray_r' started at: 2024-06-11 23:37:51 (1718167071)
+Issuing make.clean.imagevalidate_511 command 'specmake --output-sync --jobs=1 clean TARGET=imagevalidate_511'
+Start make.clean.imagevalidate_511 command: 2024-06-11 23:37:51 (1718167071.70266)
+rm -rf *.o  imagevalidate_SPEC-benchmark.tga.out
+Info: file_tail(4019397): file 'make.clean.imagevalidate_511.out' was removed and will no longer be followed.  No action is required.
+Stop make.clean.imagevalidate_511 command: 2024-06-11 23:37:51 (1718167071.85955)
+Elapsed time for make.clean.imagevalidate_511 command: 00:00:00 (0.156896114349365)
+Issuing make.clean.povray_r command 'specmake --output-sync --jobs=1 clean TARGET=povray_r'
+Start make.clean.povray_r command: 2024-06-11 23:37:51 (1718167071.86027)
+rm -rf *.o  imagevalidate_SPEC-benchmark.tga.out
+Info: file_tail(4019409): file 'make.clean.povray_r.out' was removed and will no longer be followed.  No action is required.
+Stop make.clean.povray_r command: 2024-06-11 23:37:52 (1718167072.01847)
+Elapsed time for make.clean.povray_r command: 00:00:00 (0.158201932907104)
+Issuing make.imagevalidate_511 command 'specmake --output-sync --jobs=1 build TARGET=imagevalidate_511'
+Start make.imagevalidate_511 command: 2024-06-11 23:37:52 (1718167072.01926)
+/opt/lfi-amd64-baseline-old/bin/x86_64-linux-musl-gcc     -std=c99    -c -o image_validator/ImageValidator.o -DSPEC -DNDEBUG -Ifrontend -Ibase -I. -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto               -DSPEC_LP64  image_validator/ImageValidator.c
+specmake: /opt/lfi-amd64-baseline-old/bin/x86_64-linux-musl-gcc: Command not found
+specmake: *** [/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/Makefile.defaults:347: image_validator/ImageValidator.o] Error 127
+Stop make.imagevalidate_511 command: 2024-06-11 23:37:52 (1718167072.17674)
+Elapsed time for make.imagevalidate_511 command: 00:00:00 (0.157482147216797)
+Error with make.imagevalidate_511 'specmake --output-sync --jobs=1 build TARGET=imagevalidate_511':
+  ----------------------------------------------------------------------------
+  Please review this file:
+    "/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/511.povray_r/build/build_base_lfi-gcc-baseline-m64.0000/make.imagevalidate_511.out"
+  ----------------------------------------------------------------------------
+  Command returned exit code 2
+  Error with make!
+  Compile for '511.povray_r' ended at: 2024-06-11 23:37:52 (1718167072)
+  Elapsed compile for '511.povray_r': 00:00:01 (1)
+*** Error building 511.povray_r base
+------------------------------------------------------------------------
+When checking options for /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/exe/lbm_r_base.lfi-gcc-baseline-m64, no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/exe/lbm_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+  Building 519.lbm_r base lfi-gcc-baseline-m64: (build_base_lfi-gcc-baseline-m64.0000) [2024-06-11 23:37:52]
+  Compile for '519.lbm_r' started at: 2024-06-11 23:37:52 (1718167072)
+Issuing make.clean command 'specmake --output-sync --jobs=1 clean'
+Start make.clean command: 2024-06-11 23:37:52 (1718167072.20856)
+rm -rf *.o  lbm.out
+find . \( -name \*.o -o -name '*.fppized.f*' -o -name '*.i' -o -name '*.mod' \) -print | xargs rm -rf
+rm -rf lbm_r
+rm -rf lbm_r.exe
+rm -rf core
+Stop make.clean command: 2024-06-11 23:37:52 (1718167072.37273)
+Elapsed time for make.clean command: 00:00:00 (0.164163827896118)
+Issuing make command 'specmake --output-sync --jobs=1 build'
+Start make command: 2024-06-11 23:37:52 (1718167072.37379)
+/opt/lfi-amd64-baseline-old/bin/x86_64-linux-musl-gcc     -std=c99    -c -o lbm.o -DSPEC -DNDEBUG -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto               -DSPEC_LP64  lbm.c
+specmake: /opt/lfi-amd64-baseline-old/bin/x86_64-linux-musl-gcc: Command not found
+specmake: *** [/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/Makefile.defaults:347: lbm.o] Error 127
+Stop make command: 2024-06-11 23:37:52 (1718167072.53383)
+Elapsed time for make command: 00:00:00 (0.160041093826294)
+Error with make 'specmake --output-sync --jobs=1 build':
+  ----------------------------------------------------------------------------
+  Please review this file:
+    "/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/build/build_base_lfi-gcc-baseline-m64.0000/make.out"
+  ----------------------------------------------------------------------------
+  Command returned exit code 2
+  Error with make!
+  Compile for '519.lbm_r' ended at: 2024-06-11 23:37:52 (1718167072)
+  Elapsed compile for '519.lbm_r': 00:00:00 (0)
+*** Error building 519.lbm_r base
+------------------------------------------------------------------------
+When checking options for /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/exe/imagevalidate_538_base.lfi-gcc-baseline-m64,/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/exe/imagick_r_base.lfi-gcc-baseline-m64, no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/exe/imagevalidate_538_base.lfi-gcc-baseline-m64,/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/exe/imagick_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+  Building 538.imagick_r base lfi-gcc-baseline-m64: (build_base_lfi-gcc-baseline-m64.0000) [2024-06-11 23:37:52]
+  Compile for '538.imagick_r' started at: 2024-06-11 23:37:52 (1718167072)
+Issuing make.clean.imagevalidate_538 command 'specmake --output-sync --jobs=1 clean TARGET=imagevalidate_538'
+Start make.clean.imagevalidate_538 command: 2024-06-11 23:37:52 (1718167072.60178)
+rm -rf *.o  train_validate.out
+Info: file_tail(4019441): file 'make.clean.imagevalidate_538.out' was removed and will no longer be followed.  No action is required.
+Stop make.clean.imagevalidate_538 command: 2024-06-11 23:37:52 (1718167072.76632)
+Elapsed time for make.clean.imagevalidate_538 command: 00:00:00 (0.16454291343689)
+Issuing make.clean.imagick_r command 'specmake --output-sync --jobs=1 clean TARGET=imagick_r'
+Start make.clean.imagick_r command: 2024-06-11 23:37:52 (1718167072.76756)
+Stop make.clean.imagick_r command: 2024-06-11 23:37:52 (1718167072.93378)
+Elapsed time for make.clean.imagick_r command: 00:00:00 (0.166222095489502)
+Issuing make.imagevalidate_538 command 'specmake --output-sync --jobs=1 build TARGET=imagevalidate_538'
+Start make.imagevalidate_538 command: 2024-06-11 23:37:52 (1718167072.93502)
+/opt/lfi-amd64-baseline-old/bin/x86_64-linux-musl-gcc     -std=c99    -c -o image_validator/ImageValidator.o -DSPEC -DNDEBUG -I. -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto               -DSPEC_LP64  image_validator/ImageValidator.c
+specmake: /opt/lfi-amd64-baseline-old/bin/x86_64-linux-musl-gcc: Command not found
+specmake: *** [/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/Makefile.defaults:347: image_validator/ImageValidator.o] Error 127
+Stop make.imagevalidate_538 command: 2024-06-11 23:37:53 (1718167073.09476)
+Elapsed time for make.imagevalidate_538 command: 00:00:00 (0.159737110137939)
+Error with make.imagevalidate_538 'specmake --output-sync --jobs=1 build TARGET=imagevalidate_538':
+  ----------------------------------------------------------------------------
+  Please review this file:
+    "/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/build/build_base_lfi-gcc-baseline-m64.0000/make.imagevalidate_538.out"
+  ----------------------------------------------------------------------------
+  Command returned exit code 2
+  Error with make!
+  Compile for '538.imagick_r' ended at: 2024-06-11 23:37:53 (1718167073)
+  Elapsed compile for '538.imagick_r': 00:00:01 (1)
+*** Error building 538.imagick_r base
+------------------------------------------------------------------------
+When checking options for /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/exe/nab_r_base.lfi-gcc-baseline-m64, no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/exe/nab_r_base.lfi-gcc-baseline-m64), no checksums were
+  found in the config file.  They will be installed after build.
+  Building 544.nab_r base lfi-gcc-baseline-m64: (build_base_lfi-gcc-baseline-m64.0000) [2024-06-11 23:37:53]
+  Compile for '544.nab_r' started at: 2024-06-11 23:37:53 (1718167073)
+Issuing make.clean command 'specmake --output-sync --jobs=1 clean'
+Start make.clean command: 2024-06-11 23:37:53 (1718167073.12876)
+rm -rf *.o  aminos.out gcn4dna.out
+find . \( -name \*.o -o -name '*.fppized.f*' -o -name '*.i' -o -name '*.mod' \) -print | xargs rm -rf
+rm -rf nab_r
+rm -rf nab_r.exe
+rm -rf core
+Stop make.clean command: 2024-06-11 23:37:53 (1718167073.29414)
+Elapsed time for make.clean command: 00:00:00 (0.165373086929321)
+Issuing make command 'specmake --output-sync --jobs=1 build'
+Start make command: 2024-06-11 23:37:53 (1718167073.2952)
+/opt/lfi-amd64-baseline-old/bin/x86_64-linux-musl-gcc     -std=c99    -c -o nabmd.o -DSPEC -DNDEBUG -Ispecrand -Iregex-alpha -DNDEBUG -DNOPERFLIB -DNOREDUCE -DSPEC_AUTO_SUPPRESS_OPENMP  -O3 -fomit-frame-pointer -flto               -DSPEC_LP64  nabmd.c
+specmake: /opt/lfi-amd64-baseline-old/bin/x86_64-linux-musl-gcc: Command not found
+specmake: *** [/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/Makefile.defaults:347: nabmd.o] Error 127
+Stop make command: 2024-06-11 23:37:53 (1718167073.45499)
+Elapsed time for make command: 00:00:00 (0.159791946411133)
+Error with make 'specmake --output-sync --jobs=1 build':
+  ----------------------------------------------------------------------------
+  Please review this file:
+    "/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/build/build_base_lfi-gcc-baseline-m64.0000/make.out"
+  ----------------------------------------------------------------------------
+  Command returned exit code 2
+  Error with make!
+  Compile for '544.nab_r' ended at: 2024-06-11 23:37:53 (1718167073)
+  Elapsed compile for '544.nab_r': 00:00:00 (0)
+*** Error building 544.nab_r base
+
+Build successes for fprate: None
+Build errors for fprate: 508.namd_r(base; CE), 510.parest_r(base; CE), 511.povray_r(base; CE), 519.lbm_r(base; CE), 538.imagick_r(base; CE), 544.nab_r(base; CE)
+
+NOTICE: Nothing to run!  No results will be generated.
+
+runcpu finished at 2024-06-11 23:37:53; 3 total seconds elapsed
+The log for this run is in /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/result/CPU2017.002.log
+
+runcpu finished at 2024-06-11 23:37:53; 8 total seconds elapsed
