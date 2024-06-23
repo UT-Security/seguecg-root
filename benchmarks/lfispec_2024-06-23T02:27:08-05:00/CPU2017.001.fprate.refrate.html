@@ -1,0 +1,3550 @@
+<!DOCTYPE html
+      PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="SPEC CPU2017 Tools v6247 (HTML v6255)" />
+<meta http-equiv="X-UA-Compatible" content="IE=8;FF=2" />
+<meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+<meta name="author" content="My Corporation" />
+<meta name="description" content="Invalid CFP2017 result for ; SPECrate2017_fp_base: 4.22; SPECrate2017_fp_peak: Not Run" />
+<meta name="keywords" content="Invalid CFP2017 SPEC www.spec.org My Corporation  Base=4.22" />
+<style type="text/css" id="internalScreen" media="screen">
+<!--
+body {
+  margin:  1em;
+  border:  0;
+  padding: 0;
+  background: white;
+  color:      black;
+  font-family: "Times Roman", times, serif;
+}
+
+.tt {
+  font-family: monospace;
+}
+
+div.flagClass > h2 {
+  border-bottom: 1px dotted black;
+  width: 80%;
+  font-family: sans-serif;
+}
+
+div.flagDesc {
+  clear: both;
+  background-color: rgb(255, 245, 220);
+  border: 1px solid blue; /* XXX This is for debugging */ 
+  margin: 0 auto;
+  width: 90%;
+}
+
+li.flagName {
+  font-weight: bold;
+  width: 100%;
+  border-bottom: 1px solid black;
+  display: block;
+  margin: 0.5em 0 0.5em 0;
+  font-size: 125%;
+  white-space: nowrap;
+}
+
+/* (presumably short) informationals all get grouped together near the top
+ * of the flag description block.
+ */
+.flagOrigin, .flagDescClass, .flagDescCompiler, .flagDescRE, .flagDescParallel, .flagVar {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  float: left;
+  padding: 0.25em;
+  margin: 0 0 0.25em 0;
+}
+
+.flagDescClass::before {
+  content: "Flag Class: ";
+}
+.flagDescCompiler::before {
+  content: "Compilers that recognize this flag: ";
+}
+.flagDescRE::before {
+  content: "Regular Expression: ";
+}
+.flagDescParallel::before {
+  content: "Indicates automatic parallelization: ";
+}
+.flagVar::before {
+  content: "Found In: ";
+}
+
+span.flagDescInc {
+  border-bottom: 1px solid black;
+}
+
+/* The description text stands alone. */
+.descText {
+  clear: both;
+  padding: 0.5em 1em 0.5em 1em;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin: 0.5em 0 0.5em 0;
+}
+
+/* This is a separate class so that in the print style sheet it can
+ * be ignored.
+ * Also, 'style="clear:both;"' is longer than 'class="clear"'
+ */
+.clear {
+  clear: both;
+}
+
+/* This is really for the link _to_ the flag report */
+li.unknown > a:link, a:visited { text-decoration: none; }
+
+.monospace {
+  font-family: Courier, "Courier New", monospace;
+}
+
+ul.flagDescList {
+  clear: both;
+  list-style-type: none;
+}
+
+/* Arrange for each flag description to have some headroom. */
+ul.flagDescList > li {
+  margin: 2em 0 0 0;
+}
+
+ul.flagDesc {
+  list-style-type: none;
+}
+
+div.flagTOC {
+  border: 1px solid white;
+  padding: 0.5em 1em;
+  margin: 0 auto;
+  width: 95%;
+}
+
+ul.flagTOC {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.flagTOC > li {
+  border: thin dotted lightgray;
+  margin: 0 1em 0 0;
+  padding: 0.25em 0 0.25em 0;
+  float: left;
+  display: inline-block; /* Fix IE bug; compliant browsers will ignore this */
+  width: 22.3%;
+  min-height: 1.5em;
+  overflow: hidden; /* If the table gets squeezed too much, don't let the
+                     * text overlap
+                     */
+}
+
+ul.flagTOC > li > a {
+   color:blue;
+   text-decoration:none;
+}
+
+ul.SubMenu li {
+  border: 1px solid white; /* rgb(211, 211, 211); */
+}
+
+ul.SubMenu {
+  display: none;
+  position: absolute;
+  list-style-type: none;
+  border: 1px solid black;
+  background-color: white;
+  margin: 0 0 0 2em;
+  padding: 0.25em 5em 0.25em 0.5em;
+  white-space: nowrap;
+}
+
+li:hover > ul.SubMenu, ul.SubMenu:hover {
+  display: block;
+}
+
+ul.SubMenu > li:hover, ul.flagTOC > li:hover {
+  background-color: rgb(176, 196, 238); /* lightsteelgray... almost */
+  border: 1px solid rgb(128, 128, 128);
+}
+
+
+.resultpage a:link, .resultpage a:visited {
+  text-decoration: none;
+  border-bottom: 1px dashed black;
+  color: inherit;
+}
+
+.resultpage {
+  margin: auto;
+  padding: 0;
+  width: 1000px;
+}
+
+.resultpage_landscape {
+  width: 1200px;
+}
+
+div.logo {
+  float: left;
+  width: 38px;
+  height: 57px;
+}
+
+.titlebarcontainer, .resultstable, .ncsection {
+  border: solid 1px;
+  width: 100%;
+  float: left;
+}
+
+.ncsection {
+  background-color: white;
+  color: black;
+}
+
+.titlebar {
+  float: left;
+  padding: 0em 1em 0em 1em;
+  text-align: center;
+  width: 91%;
+}
+
+div.titlebar > h1, div.titlebar > p {
+  margin: 0 1em 0 1em;
+}
+
+div.ncsection {
+  font-size: 150%;
+  font-weight: bold;
+  text-align: center;
+}
+
+.systembar {
+  width: 65%;
+  font-size: 150%;
+  margin: 0;
+}
+
+td.systembar {
+  padding: 0.2em;
+}
+
+.metricbar {
+  margin: 0;
+  font-size: 120%;
+}
+
+/* CSS for the old-style div-based systembar */
+
+div.systembar {
+  float: left;
+  padding: 0.1em;
+  border-right: solid 1px black;
+}
+
+div.metricbar {
+  padding: 0.1em;
+  float: right;
+  width: 33%;
+  height: 50%;
+}
+
+.base, .metricbar#base {
+  background-color: #c8c8c8;
+  color: black;
+}
+
+.peak, .metricbar#peak {
+  background-color: transparent;
+  color: #2626b3;       /* peak blue */
+}
+
+.metricbar p {
+  margin: 0;
+  padding: 0.2em;
+}
+
+.datebar p, .systembar p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Datebar stuff for older results */
+.datebar p {
+  float: left;
+  border-left: solid 1px black;
+}
+
+span.item {
+  float: left;
+  margin: 0;
+  padding: 0.1em 0 0.1em 0.5em;
+}
+
+span.value {
+  float: right;
+  padding: 0.1em 0.5em 0.1em 0;
+}
+
+div.datebar {
+  width: 100%;
+  float: left;
+  min-height: 100%;
+  border: solid 1px black;
+}
+
+p#test_sponsor         { width: 48%; }
+p#tester               { width: 48%; }
+p#license_num          { width: 24%; }
+p#test_date            { width: 23%; }
+p#hw_avail, p#sw_avail { width: 25%; }
+
+/* Table-based datebar and systembar on newer results */
+table.datebar, table.titlebarcontainer {
+  float: left;
+  width: 100%;
+  min-height: 100%;
+  border-collapse: collapse;
+  border: solid 1px black;
+  table-layout: fixed;
+}
+
+table.datebar th {
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-left: 0.5em;
+  padding: 0 0.5em 0 0.25em;
+}
+
+table.datebar td {
+  text-align: left;
+  padding: 0 0.5em 0 0;
+}
+
+table.titlebarcontainer tr {
+  vertical-align: top;
+}
+table.titlebarcontainer td {
+  border-right: 1px solid black;
+}
+
+th#license_num          { width: 17%; }
+th#test_sponsor         { width: 17%; }
+th#tester               { width: 17%; }
+th#test_date            { width: 22%; }
+th#hw_avail             { width: 22%; }
+th#sw_avail             { width: 22%; }
+td#license_num_val      { width: 52%; }
+td#test_sponsor_val     { width: 52%; }
+td#tester_val           { width: 52%; }
+td#test_date_val        { width: 13%; white-space: nowrap; }
+td#hw_avail_val         { width: 13%; white-space: nowrap; }
+td#sw_avail_val         { width: 13%; white-space: nowrap; }
+
+
+div.graph {
+  width: 100%
+  margin: auto;
+}
+
+div.sysdesc > h2 {
+  text-align: center;
+  background-color: #c8c8c8;
+  color: black;
+  padding: 0.5em 0 0.5em 0;
+  margin: 0;
+} 
+  
+div.sysdesc {
+  margin: 0.5em 0 0.5em 0;
+}
+
+div.infobox, div.sysdesc {
+  float: left;
+  width: 100%;
+  padding: 0;
+  border: solid 1px black;
+}
+
+div.infobox table {
+  width: 49%;
+  float: left;
+}
+
+div.infobox table tr {
+  vertical-align: top;
+}
+
+div.infobox table#Hardware,
+div.infobox table#BenchmarkSoftware {
+  width: 50%;
+  border-right: 1px solid black;
+}
+
+div.infobox table#Systems {
+  width: 100%;
+}
+
+div.infobox table#Power {
+  width: 100%;
+  border-top: 1px solid black;
+}
+
+div.infobox table#Systems tbody th {
+  width: 20%;
+}
+
+div.infobox thead th {
+  font-size: 200%;
+}
+
+div.infobox tbody th {
+  text-align: left;
+}
+
+.resultstable h2, div.notes h2 {
+  text-align: center;
+  margin: 0.1em;
+}
+
+div.notes h3 {
+  margin: 0.1em;
+}
+
+div.notes table {
+  width: 100%;
+}
+
+div.notes table tr td {
+  text-align: right;
+  vertical-align: top;
+}
+
+/* Alas, IE6... if only you didn't suck so much...
+div.notes table tr td + td {
+*/
+div.notes table td.al {
+  text-align: left;
+  width: 85%;
+}
+
+div.notes table tr td {
+  padding-bottom: 1em;
+}
+
+div.notes table.portability tr td {
+  padding: 0em;
+}
+
+div.notes table.portability {
+  padding: 1em;
+}
+
+.resultstable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.resultstable th.basecol, .resultstable th.peakcol {
+  padding: 0.1em;
+  font-size: 90%;
+}
+
+.resultstable th {
+  border: solid 2px black;
+}
+
+.resultstable td {
+  border: solid 1px #b8b8b8;
+}
+
+td.bm, th.bm { 
+  border-right: solid 2px black;
+  border-left: solid 2px black;
+}
+
+td.l_edge { 
+  border-left: solid 2px black;
+}
+
+td.r_edge { 
+  border-right: solid 2px black;
+}
+
+.resultstable tfoot td {
+  text-align: center;
+  border: solid 2px black;
+}
+
+tr.table_metrics > td {
+  text-align: right;
+}
+
+th.basecol {
+  background-color: #c8c8c8;
+  color: black;
+}
+td.basecol {
+  text-align: right;
+  background-color: transparent;
+  color: black;
+}
+
+th.peakcol {
+  text-align: center;
+}
+
+.peakcol {
+  background-color: transparent;
+  color: #2626b3;       /* peak blue */
+  text-align: right;
+}
+
+td.bm {
+  /* Basically, the benchmark name and copies columns */
+  background-color: #c8c8c8;
+  color: black;
+}
+
+span.selected {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.selected a:link, .selected a:visited {
+  border-bottom: 0;
+}
+
+div.notes {
+  width: 100%;
+  float: left;
+  border: solid 1px black;
+}
+
+div.flagfooter {
+  text-align: center;
+}
+
+div.errors {
+  border: solid 2px red;
+}
+div.errors h2 {
+  background-color: transparent;
+  color: red;
+}
+
+div.footer {
+  border: none;
+}
+
+/* People find the "double underline" confusing.  And Safari 1.3 doesn't deal
+ * well with attempting to disable the border for userflag links.  So just
+ * give up and don't decorate user flags specially.
+********************
+span.userflag {
+  text-decoration: underline;
+}
+
+.userflag a:link {
+  border-bottom: 0;
+}
+********************
+*/
+
+/* Keep flags from being wrapped */
+span.userflag, span.flagtext {
+  white-space: nowrap;
+}
+/* Most of the screen-specific CSS is also the common CSS */
+
+/* Style for the non-image W3C marking at the bottom of the page, courtesy of
+ * Marek Prokop (http://www.sovavsiti.cz/css/w3c_buttons.html)
+ */
+.w3cbutton3 {
+  margin: 1em 1em 0 0;
+  width: 9em;
+  border: 1px solid #ccc;
+  font-family: helvetica,arial,sans-serif;
+  font-size: 70%;
+  font-weight: bold;
+  float: left;
+}
+.w3cbutton3 a {
+  display: block;
+  width: 100%;
+}
+.w3cbutton3 a:link,
+.w3cbutton3 a:visited,
+.w3cbutton3 a:hover {
+  background-color: #fc6;
+  color: #000;
+  text-decoration: none;
+  border-bottom: none;
+}
+.w3cbutton3 span.w3c {
+  padding: 0 0.4em;
+  background-color: #fff;
+  color: #0c479d;
+}
+
+-->
+</style>
+<style type="text/css" id="internalPrint" media="print">
+<!--
+body {
+  margin:  1em;
+  border:  0;
+  padding: 0;
+  background: white;
+  color:      black;
+  font-family: "Times Roman", times, serif;
+}
+
+.tt {
+  font-family: monospace;
+}
+
+div.flagClass > h2 {
+  border-bottom: 1px dotted black;
+  width: 80%;
+  font-family: sans-serif;
+}
+
+div.flagDesc {
+  clear: both;
+  background-color: rgb(255, 245, 220);
+  border: 1px solid blue; /* XXX This is for debugging */ 
+  margin: 0 auto;
+  width: 90%;
+}
+
+li.flagName {
+  font-weight: bold;
+  width: 100%;
+  border-bottom: 1px solid black;
+  display: block;
+  margin: 0.5em 0 0.5em 0;
+  font-size: 125%;
+  white-space: nowrap;
+}
+
+/* (presumably short) informationals all get grouped together near the top
+ * of the flag description block.
+ */
+.flagOrigin, .flagDescClass, .flagDescCompiler, .flagDescRE, .flagDescParallel, .flagVar {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  float: left;
+  padding: 0.25em;
+  margin: 0 0 0.25em 0;
+}
+
+.flagDescClass::before {
+  content: "Flag Class: ";
+}
+.flagDescCompiler::before {
+  content: "Compilers that recognize this flag: ";
+}
+.flagDescRE::before {
+  content: "Regular Expression: ";
+}
+.flagDescParallel::before {
+  content: "Indicates automatic parallelization: ";
+}
+.flagVar::before {
+  content: "Found In: ";
+}
+
+span.flagDescInc {
+  border-bottom: 1px solid black;
+}
+
+/* The description text stands alone. */
+.descText {
+  clear: both;
+  padding: 0.5em 1em 0.5em 1em;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin: 0.5em 0 0.5em 0;
+}
+
+/* This is a separate class so that in the print style sheet it can
+ * be ignored.
+ * Also, 'style="clear:both;"' is longer than 'class="clear"'
+ */
+.clear {
+  clear: both;
+}
+
+/* This is really for the link _to_ the flag report */
+li.unknown > a:link, a:visited { text-decoration: none; }
+
+.monospace {
+  font-family: Courier, "Courier New", monospace;
+}
+
+ul.flagDescList {
+  clear: both;
+  list-style-type: none;
+}
+
+/* Arrange for each flag description to have some headroom. */
+ul.flagDescList > li {
+  margin: 2em 0 0 0;
+}
+
+ul.flagDesc {
+  list-style-type: none;
+}
+
+div.flagTOC {
+  border: 1px solid white;
+  padding: 0.5em 1em;
+  margin: 0 auto;
+  width: 95%;
+}
+
+ul.flagTOC {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.flagTOC > li {
+  border: thin dotted lightgray;
+  margin: 0 1em 0 0;
+  padding: 0.25em 0 0.25em 0;
+  float: left;
+  display: inline-block; /* Fix IE bug; compliant browsers will ignore this */
+  width: 22.3%;
+  min-height: 1.5em;
+  overflow: hidden; /* If the table gets squeezed too much, don't let the
+                     * text overlap
+                     */
+}
+
+ul.flagTOC > li > a {
+   color:blue;
+   text-decoration:none;
+}
+
+ul.SubMenu li {
+  border: 1px solid white; /* rgb(211, 211, 211); */
+}
+
+ul.SubMenu {
+  display: none;
+  position: absolute;
+  list-style-type: none;
+  border: 1px solid black;
+  background-color: white;
+  margin: 0 0 0 2em;
+  padding: 0.25em 5em 0.25em 0.5em;
+  white-space: nowrap;
+}
+
+li:hover > ul.SubMenu, ul.SubMenu:hover {
+  display: block;
+}
+
+ul.SubMenu > li:hover, ul.flagTOC > li:hover {
+  background-color: rgb(176, 196, 238); /* lightsteelgray... almost */
+  border: 1px solid rgb(128, 128, 128);
+}
+
+
+.resultpage a:link, .resultpage a:visited {
+  text-decoration: none;
+  border-bottom: 1px dashed black;
+  color: inherit;
+}
+
+.resultpage {
+  margin: auto;
+  padding: 0;
+  width: 1000px;
+}
+
+.resultpage_landscape {
+  width: 1200px;
+}
+
+div.logo {
+  float: left;
+  width: 38px;
+  height: 57px;
+}
+
+.titlebarcontainer, .resultstable, .ncsection {
+  border: solid 1px;
+  width: 100%;
+  float: left;
+}
+
+.ncsection {
+  background-color: white;
+  color: black;
+}
+
+.titlebar {
+  float: left;
+  padding: 0em 1em 0em 1em;
+  text-align: center;
+  width: 91%;
+}
+
+div.titlebar > h1, div.titlebar > p {
+  margin: 0 1em 0 1em;
+}
+
+div.ncsection {
+  font-size: 150%;
+  font-weight: bold;
+  text-align: center;
+}
+
+.systembar {
+  width: 65%;
+  font-size: 150%;
+  margin: 0;
+}
+
+td.systembar {
+  padding: 0.2em;
+}
+
+.metricbar {
+  margin: 0;
+  font-size: 120%;
+}
+
+/* CSS for the old-style div-based systembar */
+
+div.systembar {
+  float: left;
+  padding: 0.1em;
+  border-right: solid 1px black;
+}
+
+div.metricbar {
+  padding: 0.1em;
+  float: right;
+  width: 33%;
+  height: 50%;
+}
+
+.base, .metricbar#base {
+  background-color: #c8c8c8;
+  color: black;
+}
+
+.peak, .metricbar#peak {
+  background-color: transparent;
+  color: #2626b3;       /* peak blue */
+}
+
+.metricbar p {
+  margin: 0;
+  padding: 0.2em;
+}
+
+.datebar p, .systembar p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Datebar stuff for older results */
+.datebar p {
+  float: left;
+  border-left: solid 1px black;
+}
+
+span.item {
+  float: left;
+  margin: 0;
+  padding: 0.1em 0 0.1em 0.5em;
+}
+
+span.value {
+  float: right;
+  padding: 0.1em 0.5em 0.1em 0;
+}
+
+div.datebar {
+  width: 100%;
+  float: left;
+  min-height: 100%;
+  border: solid 1px black;
+}
+
+p#test_sponsor         { width: 48%; }
+p#tester               { width: 48%; }
+p#license_num          { width: 24%; }
+p#test_date            { width: 23%; }
+p#hw_avail, p#sw_avail { width: 25%; }
+
+/* Table-based datebar and systembar on newer results */
+table.datebar, table.titlebarcontainer {
+  float: left;
+  width: 100%;
+  min-height: 100%;
+  border-collapse: collapse;
+  border: solid 1px black;
+  table-layout: fixed;
+}
+
+table.datebar th {
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-left: 0.5em;
+  padding: 0 0.5em 0 0.25em;
+}
+
+table.datebar td {
+  text-align: left;
+  padding: 0 0.5em 0 0;
+}
+
+table.titlebarcontainer tr {
+  vertical-align: top;
+}
+table.titlebarcontainer td {
+  border-right: 1px solid black;
+}
+
+th#license_num          { width: 17%; }
+th#test_sponsor         { width: 17%; }
+th#tester               { width: 17%; }
+th#test_date            { width: 22%; }
+th#hw_avail             { width: 22%; }
+th#sw_avail             { width: 22%; }
+td#license_num_val      { width: 52%; }
+td#test_sponsor_val     { width: 52%; }
+td#tester_val           { width: 52%; }
+td#test_date_val        { width: 13%; white-space: nowrap; }
+td#hw_avail_val         { width: 13%; white-space: nowrap; }
+td#sw_avail_val         { width: 13%; white-space: nowrap; }
+
+
+div.graph {
+  width: 100%
+  margin: auto;
+}
+
+div.sysdesc > h2 {
+  text-align: center;
+  background-color: #c8c8c8;
+  color: black;
+  padding: 0.5em 0 0.5em 0;
+  margin: 0;
+} 
+  
+div.sysdesc {
+  margin: 0.5em 0 0.5em 0;
+}
+
+div.infobox, div.sysdesc {
+  float: left;
+  width: 100%;
+  padding: 0;
+  border: solid 1px black;
+}
+
+div.infobox table {
+  width: 49%;
+  float: left;
+}
+
+div.infobox table tr {
+  vertical-align: top;
+}
+
+div.infobox table#Hardware,
+div.infobox table#BenchmarkSoftware {
+  width: 50%;
+  border-right: 1px solid black;
+}
+
+div.infobox table#Systems {
+  width: 100%;
+}
+
+div.infobox table#Power {
+  width: 100%;
+  border-top: 1px solid black;
+}
+
+div.infobox table#Systems tbody th {
+  width: 20%;
+}
+
+div.infobox thead th {
+  font-size: 200%;
+}
+
+div.infobox tbody th {
+  text-align: left;
+}
+
+.resultstable h2, div.notes h2 {
+  text-align: center;
+  margin: 0.1em;
+}
+
+div.notes h3 {
+  margin: 0.1em;
+}
+
+div.notes table {
+  width: 100%;
+}
+
+div.notes table tr td {
+  text-align: right;
+  vertical-align: top;
+}
+
+/* Alas, IE6... if only you didn't suck so much...
+div.notes table tr td + td {
+*/
+div.notes table td.al {
+  text-align: left;
+  width: 85%;
+}
+
+div.notes table tr td {
+  padding-bottom: 1em;
+}
+
+div.notes table.portability tr td {
+  padding: 0em;
+}
+
+div.notes table.portability {
+  padding: 1em;
+}
+
+.resultstable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.resultstable th.basecol, .resultstable th.peakcol {
+  padding: 0.1em;
+  font-size: 90%;
+}
+
+.resultstable th {
+  border: solid 2px black;
+}
+
+.resultstable td {
+  border: solid 1px #b8b8b8;
+}
+
+td.bm, th.bm { 
+  border-right: solid 2px black;
+  border-left: solid 2px black;
+}
+
+td.l_edge { 
+  border-left: solid 2px black;
+}
+
+td.r_edge { 
+  border-right: solid 2px black;
+}
+
+.resultstable tfoot td {
+  text-align: center;
+  border: solid 2px black;
+}
+
+tr.table_metrics > td {
+  text-align: right;
+}
+
+th.basecol {
+  background-color: #c8c8c8;
+  color: black;
+}
+td.basecol {
+  text-align: right;
+  background-color: transparent;
+  color: black;
+}
+
+th.peakcol {
+  text-align: center;
+}
+
+.peakcol {
+  background-color: transparent;
+  color: #2626b3;       /* peak blue */
+  text-align: right;
+}
+
+td.bm {
+  /* Basically, the benchmark name and copies columns */
+  background-color: #c8c8c8;
+  color: black;
+}
+
+span.selected {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.selected a:link, .selected a:visited {
+  border-bottom: 0;
+}
+
+div.notes {
+  width: 100%;
+  float: left;
+  border: solid 1px black;
+}
+
+div.flagfooter {
+  text-align: center;
+}
+
+div.errors {
+  border: solid 2px red;
+}
+div.errors h2 {
+  background-color: transparent;
+  color: red;
+}
+
+div.footer {
+  border: none;
+}
+
+/* People find the "double underline" confusing.  And Safari 1.3 doesn't deal
+ * well with attempting to disable the border for userflag links.  So just
+ * give up and don't decorate user flags specially.
+********************
+span.userflag {
+  text-decoration: underline;
+}
+
+.userflag a:link {
+  border-bottom: 0;
+}
+********************
+*/
+
+/* Keep flags from being wrapped */
+span.userflag, span.flagtext {
+  white-space: nowrap;
+}
+/* Classes that contain links - useless on paper */
+.flagTOC, .SubMenu, .NoPrint {
+  display: none;
+}
+
+/* Don't decorate links - they're not clickable */
+a {
+  text-decoration: none;
+  background: inherit;
+  color: inherit;
+}
+
+.resultpage {
+  width: 100%;
+}
+
+.w3cbutton3 {
+  display: none;
+}
+-->
+</style>
+<style type="text/css">
+<!--
+body { background-image: url(invalid.gif) }
+-->
+</style>
+
+<title>Invalid CPU2017 Floating Point Rate Result: My Corporation </title>
+</head>
+
+<body>
+<div class="resultpage">
+ <div class="titlebarcontainer">
+  <div class="logo">
+  </div>
+  <div class="titlebar">
+   <h1><span style="color: red">Invalid</span> SPEC CPU&reg;2017 Floating Point Rate Result</h1>
+   <p style="font-size: smaller">Copyright 2017-2024 Standard Performance Evaluation Corporation</p>
+  </div>
+ </div>
+ <table class="titlebarcontainer">
+  <tr>
+   <td class="systembar" rowspan="2">
+    <p>My Corporation    </p>
+    <p>    </p>
+   </td>
+   <td class="metricbar base">
+    <p><span class="item"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#SPECrate2017fpbase">SPECrate&reg;2017_fp_base</a> = </span>
+       <span class="value">4.22</span></p>
+   </td>
+  </tr>
+  <tr>
+   <td class="metricbar peak">
+    <p><span class="item"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#SPECrate2017fppeak">SPECrate&reg;2017_fp_peak</a> = </span>
+       <span class="value">Not Run</span></p>
+   </td>
+  </tr>
+ </table>
+ <table class="datebar">
+  <tbody>
+   <tr>
+    <th id="license_num"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#CPU2017License">CPU2017 License:</a></th>
+    <td id="license_num_val">nnn (Your SPEC license number)</td>
+    <th id="test_date"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#TestDate">Test Date:</a></th>
+    <td id="test_date_val">Jun-2024</td>
+   </tr>
+   <tr>
+    <th id="test_sponsor"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#TestSponsor">Test Sponsor:</a></th>
+    <td id="test_sponsor_val">My Corporation</td>
+    <th id="hw_avail"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#HardwareAvailability">Hardware Availability:</a></th>
+    <td id="hw_avail_val"></td>
+   </tr>
+   <tr>
+    <th id="tester"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Testedby">Tested by:</a></th>
+    <td id="tester_val">My Corporation</td>
+    <th id="sw_avail"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#SoftwareAvailability">Software Availability:</a></th>
+    <td id="sw_avail_val"></td>
+   </tr>
+  </tbody>
+ </table>
+ <div class="graph">
+  <p style="text-align: center">Benchmark result graphs are available in the <a href="CPU2017.001.fprate.refrate.pdf">PDF report</a>.</a>
+ </div>
+ <div class="infobox">
+  <table id="Hardware"
+         summary="Details of hardware configuration for the system under test">
+   <thead>
+    <tr><th colspan="2"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Hardware">Hardware</a></th></tr>
+   </thead>
+   <tbody>
+    <tr>
+     <th><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#CPUName">CPU Name</a>:</th>
+     <td>13th Gen Intel Core i9-13900KS</td>
+    </tr>
+    <tr>
+     <th>&nbsp;&nbsp;<a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#MaxMHz">Max MHz</a>:</th>
+     <td> </td>
+    </tr>
+    <tr>
+     <th>&nbsp;&nbsp;<a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Nominal">Nominal</a>:</th>
+     <td> </td>
+    </tr>
+    <tr>
+     <th><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Enabled">Enabled</a>:</th>
+     <td> cores, 1 chip,  threads/core</td>
+    </tr>
+    <tr>
+     <th><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Orderable">Orderable</a>:</th>
+     <td> </td>
+    </tr>
+    <tr>
+     <th><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#CacheL1">Cache L1</a>:</th>
+     <td> </td>
+    </tr>
+    <tr>
+     <th>&nbsp;&nbsp;<a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#L2">L2</a>:</th>
+     <td> </td>
+    </tr>
+    <tr>
+     <th>&nbsp;&nbsp;<a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#L3">L3</a>:</th>
+     <td> </td>
+    </tr>
+    <tr>
+     <th>&nbsp;&nbsp;<a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Other">Other</a>:</th>
+     <td> </td>
+    </tr>
+    <tr>
+     <th><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Memory">Memory</a>:</th>
+     <td>125.561 GB fixme: If using DDR4, the format is:<br />
+'N GB (N x N GB nRxn PC4-nnnnX-X)'<br /></td>
+    </tr>
+    <tr>
+     <th><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Storage">Storage</a>:</th>
+     <td>3.6 TB  add more disk info here</td>
+    </tr>
+    <tr>
+     <th><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Other">Other</a>:</th>
+     <td> </td>
+    </tr>
+   </tbody>
+  </table>
+  <table id="Software"
+         summary="Details of software configuration for the system under test">
+   <thead>
+    <tr><th colspan="2"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Software">Software</a></th></tr>
+   </thead>
+   <tbody>
+    <tr>
+     <th><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#OS">OS</a>:</th>
+     <td>Ubuntu 22.04.4 LTS<br />
+6.8.0-76060800daily20240311-generic<br /></td>
+    </tr>
+    <tr>
+     <th><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Compiler">Compiler</a>:</th>
+     <td>C/C++/Fortran: Version 7.2.1 of GCC, the<br />
+GNU Compiler Collection<br /></td>
+    </tr>
+    <tr>
+     <th><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Parallel">Parallel</a>:</th>
+     <td>No</td>
+    </tr>
+    <tr>
+     <th><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Firmware">Firmware</a>:</th>
+     <td> </td>
+    </tr>
+    <tr>
+     <th><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#FileSystem">File System</a>:</th>
+     <td>ext4</td>
+    </tr>
+    <tr>
+     <th><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#SystemState">System State</a>:</th>
+     <td>Run level 5 (add definition here)</td>
+    </tr>
+    <tr>
+     <th><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#BasePointers">Base Pointers</a>:</th>
+     <td>64-bit</td>
+    </tr>
+    <tr>
+     <th><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#PeakPointers">Peak Pointers</a>:</th>
+     <td>Not Applicable</td>
+    </tr>
+    <tr>
+     <th><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Other">Other</a>:</th>
+     <td> </td>
+    </tr>
+    <tr>
+     <th><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#PowerManagement">Power Management</a>:</th>
+     <td>--</td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <div class="errors notes">
+  <h2><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Errors">Errors</a></h2>
+  <pre>
+'reportable' flag not set during run
+554.roms_r (base) did not have enough runs!
+521.wrf_r (base) did not have enough runs!
+519.lbm_r (base) did not have enough runs!
+527.cam4_r (base) did not have enough runs!
+526.blender_r (base) did not have enough runs!
+549.fotonik3d_r (base) did not have enough runs!
+544.nab_r (base) did not have enough runs!
+507.cactuBSSN_r (base) did not have enough runs!
+538.imagick_r (base) did not have enough runs!
+508.namd_r (base) did not have enough runs!
+511.povray_r (base) did not have enough runs!
+503.bwaves_r (base) did not have enough runs!
+510.parest_r (base) did not have enough runs!
+Unknown flags were used! See
+     <a href="https://www.spec.org/cpu2017/Docs/runcpu.html#flagsurl">https://www.spec.org/cpu2017/Docs/runcpu.html#flagsurl</a>
+for information about how to get rid of this error.
+  </pre>
+ </div>
+ <div class="resultstable">
+  <h2><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#ResultsTable">Results Table</a></h2>
+  <table summary="Detailed per-benchmark result data">
+   <colgroup>
+    <col id="benchmark" />
+    <col id="basecopies" />
+    <col id="baseres" span="7" />
+    <col id="peakcopies" />
+    <col id="peakres" span="7" />
+   </colgroup>
+   <thead>
+    <tr>
+     <th rowspan="2"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Benchmark">Benchmark</a></th>
+     <th class="basecol" colspan="7">Base</th>
+     <th class="peakcol" colspan="7">Peak</th>
+    </tr>
+    <tr>
+     <th class="basecol copies"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Copies">Copies</a></th>
+     <th class="basecol time l_edge"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Seconds">Seconds</a></th>
+     <th class="basecol ratio r_edge"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Ratio">Ratio</a></th>
+     <th class="basecol time l_edge"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Seconds">Seconds</a></th>
+     <th class="basecol ratio r_edge"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Ratio">Ratio</a></th>
+     <th class="basecol time l_edge"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Seconds">Seconds</a></th>
+     <th class="basecol ratio r_edge"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Ratio">Ratio</a></th>
+     <th class="peakcol copies"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Copies">Copies</a></th>
+     <th class="peakcol time l_edge"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Seconds">Seconds</a></th>
+     <th class="peakcol ratio r_edge"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Ratio">Ratio</a></th>
+     <th class="peakcol time l_edge"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Seconds">Seconds</a></th>
+     <th class="peakcol ratio r_edge"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Ratio">Ratio</a></th>
+     <th class="peakcol time l_edge"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Seconds">Seconds</a></th>
+     <th class="peakcol ratio r_edge"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Ratio">Ratio</a></th>
+    </tr>
+   </thead>
+   <tfoot>
+    <tr class="table_metrics">
+     <td colspan="3"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#SPECrate2017fpbase">SPECrate&reg;2017_fp_base</a></td>
+     <td>4.22</td>
+     <td colspan="11"></td>
+    </tr>
+    <tr class="table_metrics">
+     <td colspan="3"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#SPECrate2017fppeak">SPECrate&reg;2017_fp_peak</a></td>
+     <td>Not Run</td>
+     <td colspan="11"></td>
+    </tr>
+    <tr>
+     <td colspan="15">Results appear in the <a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#RunOrder">order in which they were run</a>. Bold underlined text <a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Median">indicates a median measurement</a>.</td>
+    </tr>
+   </tfoot>
+   <tbody>
+    <tr>
+     <td class="bm"><a href="http://www.spec.org/auto/cpu2017/Docs/benchmarks/503.bwaves_r.html">503.bwaves_r</a></td>
+     <td class="basecol copies"></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="peakcol copies"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+    </tr>
+    <tr>
+     <td class="bm"><a href="http://www.spec.org/auto/cpu2017/Docs/benchmarks/507.cactuBSSN_r.html">507.cactuBSSN_r</a></td>
+     <td class="basecol copies"></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="peakcol copies"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+    </tr>
+    <tr>
+     <td class="bm"><a href="http://www.spec.org/auto/cpu2017/Docs/benchmarks/508.namd_r.html">508.namd_r</a></td>
+     <td class="basecol copies selected">1</td>
+     <td class="basecol time l_edge selected"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Median"><span class="selected">306</span></a></td>
+     <td class="basecol ratio r_edge selected"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Median"><span class="selected">3.11</span></a></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="peakcol copies"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+    </tr>
+    <tr>
+     <td class="bm"><a href="http://www.spec.org/auto/cpu2017/Docs/benchmarks/510.parest_r.html">510.parest_r</a></td>
+     <td class="basecol copies selected">1</td>
+     <td class="basecol time l_edge selected"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Median"><span class="selected">589</span></a></td>
+     <td class="basecol ratio r_edge selected"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Median"><span class="selected">4.44</span></a></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="peakcol copies"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+    </tr>
+    <tr>
+     <td class="bm"><a href="http://www.spec.org/auto/cpu2017/Docs/benchmarks/511.povray_r.html">511.povray_r</a></td>
+     <td class="basecol copies selected">1</td>
+     <td class="basecol time l_edge selected"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Median"><span class="selected">457</span></a></td>
+     <td class="basecol ratio r_edge selected"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Median"><span class="selected">5.11</span></a></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="peakcol copies"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+    </tr>
+    <tr>
+     <td class="bm"><a href="http://www.spec.org/auto/cpu2017/Docs/benchmarks/519.lbm_r.html">519.lbm_r</a></td>
+     <td class="basecol copies selected">1</td>
+     <td class="basecol time l_edge selected"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Median"><span class="selected">264</span></a></td>
+     <td class="basecol ratio r_edge selected"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Median"><span class="selected">3.99</span></a></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="peakcol copies"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+    </tr>
+    <tr>
+     <td class="bm"><a href="http://www.spec.org/auto/cpu2017/Docs/benchmarks/521.wrf_r.html">521.wrf_r</a></td>
+     <td class="basecol copies"></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="peakcol copies"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+    </tr>
+    <tr>
+     <td class="bm"><a href="http://www.spec.org/auto/cpu2017/Docs/benchmarks/526.blender_r.html">526.blender_r</a></td>
+     <td class="basecol copies"></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="peakcol copies"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+    </tr>
+    <tr>
+     <td class="bm"><a href="http://www.spec.org/auto/cpu2017/Docs/benchmarks/527.cam4_r.html">527.cam4_r</a></td>
+     <td class="basecol copies"></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="peakcol copies"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+    </tr>
+    <tr>
+     <td class="bm"><a href="http://www.spec.org/auto/cpu2017/Docs/benchmarks/538.imagick_r.html">538.imagick_r</a></td>
+     <td class="basecol copies selected">1</td>
+     <td class="basecol time l_edge selected"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Median"><span class="selected">547</span></a></td>
+     <td class="basecol ratio r_edge selected"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Median"><span class="selected">4.55</span></a></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="peakcol copies"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+    </tr>
+    <tr>
+     <td class="bm"><a href="http://www.spec.org/auto/cpu2017/Docs/benchmarks/544.nab_r.html">544.nab_r</a></td>
+     <td class="basecol copies selected">1</td>
+     <td class="basecol time l_edge selected"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Median"><span class="selected">381</span></a></td>
+     <td class="basecol ratio r_edge selected"><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Median"><span class="selected">4.42</span></a></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="peakcol copies"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+    </tr>
+    <tr>
+     <td class="bm"><a href="http://www.spec.org/auto/cpu2017/Docs/benchmarks/549.fotonik3d_r.html">549.fotonik3d_r</a></td>
+     <td class="basecol copies"></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="peakcol copies"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+    </tr>
+    <tr>
+     <td class="bm"><a href="http://www.spec.org/auto/cpu2017/Docs/benchmarks/554.roms_r.html">554.roms_r</a></td>
+     <td class="basecol copies"></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="basecol time l_edge"></td>
+     <td class="basecol ratio r_edge"></td>
+     <td class="peakcol copies"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+     <td class="peakcol time l_edge"></td>
+     <td class="peakcol ratio r_edge"></td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <div class="notes">
+  <h2><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#EnvironmentVariablesNotes">Environment Variables Notes</a></h2>
+  <pre>
+Environment variables set by runcpu before the start of the run:
+LD_LIBRARY_PATH = "/usr/lib64/:/usr/lib/:/lib64"
+
+</pre>
+ </div>
+ <div class="notes">
+  <h2><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#PlatformNotes">Platform Notes</a></h2>
+  <pre>
+
+ Sysinfo program /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/bin/sysinfo
+ Rev: r6365 of 2019-08-21 295195f888a3d7edb1e6e46a485a0011
+ running on shr-work Sun Jun 23 03:40:33 2024
+
+ SUT (System Under Test) info as seen by some common utilities.
+ For more information on this section, see
+    <a href="https://www.spec.org/cpu2017/Docs/config.html#sysinfo">https://www.spec.org/cpu2017/Docs/config.html#sysinfo</a>
+
+ From /proc/cpuinfo
+    model name : 13th Gen Intel(R) Core(TM) i9-13900KS
+       1  "physical id"s (chips)
+       24 "processors"
+    cores, siblings (Caution: counting these is hw and system dependent. The following
+    excerpts from /proc/cpuinfo might not be reliable.  Use with caution.)
+       cpu cores : 24
+       siblings  : 24
+       physical 0: cores 0 4 8 12 16 20 24 28 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46
+       47
+
+ From lscpu:
+      Architecture:                       x86_64
+      CPU op-mode(s):                     32-bit, 64-bit
+      Address sizes:                      46 bits physical, 48 bits virtual
+      Byte Order:                         Little Endian
+      CPU(s):                             32
+      On-line CPU(s) list:                0,2,4,6,8,10,12,14,16-31
+      Off-line CPU(s) list:               1,3,5,7,9,11,13,15
+      Vendor ID:                          GenuineIntel
+      Model name:                         13th Gen Intel(R) Core(TM) i9-13900KS
+      CPU family:                         6
+      Model:                              183
+      Thread(s) per core:                 1
+      Core(s) per socket:                 24
+      Socket(s):                          1
+      Stepping:                           1
+      CPU max MHz:                        6000.0000
+      CPU min MHz:                        0.0000
+      BogoMIPS:                           6374.40
+      Flags:                              fpu vme de pse tsc msr pae mce cx8 apic sep mtrr
+      pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx
+      pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology
+      nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx
+      smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm sse4_1 sse4_2 x2apic movbe popcnt
+      tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault
+      ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase
+      tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb intel_pt
+      sha_ni xsaveopt xsavec xgetbv1 xsaves split_lock_detect user_shstk avx_vnni dtherm
+      ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp hwp_pkg_req hfi vnmi umip pku
+      ospke waitpkg gfni vaes vpclmulqdq tme rdpid movdiri movdir64b fsrm md_clear
+      serialize pconfig arch_lbr ibt flush_l1d arch_capabilities
+      Virtualization:                     VT-x
+      L1d cache:                          896 KiB (24 instances)
+      L1i cache:                          1.3 MiB (24 instances)
+      L2 cache:                           32 MiB (12 instances)
+      L3 cache:                           36 MiB (1 instance)
+      NUMA node(s):                       1
+      NUMA node0 CPU(s):                  0,2,4,6,8,10,12,14,16-31
+      Vulnerability Gather data sampling: Not affected
+      Vulnerability Itlb multihit:        Not affected
+      Vulnerability L1tf:                 Not affected
+      Vulnerability Mds:                  Not affected
+      Vulnerability Meltdown:             Not affected
+      Vulnerability Mmio stale data:      Not affected
+      Vulnerability Retbleed:             Not affected
+      Vulnerability Spec rstack overflow: Not affected
+      Vulnerability Spec store bypass:    Mitigation; Speculative Store Bypass disabled
+      via prctl
+      Vulnerability Spectre v1:           Mitigation; usercopy/swapgs barriers and __user
+      pointer sanitization
+      Vulnerability Spectre v2:           Mitigation; Enhanced / Automatic IBRS, IBPB
+      conditional, RSB filling, PBRSB-eIBRS SW sequence
+      Vulnerability Srbds:                Not affected
+      Vulnerability Tsx async abort:      Not affected
+
+ /proc/cpuinfo cache data
+    cache size : 36864 KB
+
+ From numactl --hardware  WARNING: a numactl 'node' might or might not correspond to a
+ physical chip.
+
+ From /proc/meminfo
+    MemTotal:       131660528 kB
+    HugePages_Total:       0
+    Hugepagesize:       2048 kB
+
+ /usr/bin/lsb_release -d
+    Ubuntu 22.04.4 LTS
+
+ From /etc/*release* /etc/*version*
+    debian_version: bookworm/sid
+    os-release:
+       PRETTY_NAME="Ubuntu 22.04.4 LTS"
+       NAME="Ubuntu"
+       VERSION_ID="22.04"
+       VERSION="22.04.4 LTS (Jammy Jellyfish)"
+       VERSION_CODENAME=jammy
+       ID=ubuntu
+       ID_LIKE=debian
+       HOME_URL="<a href="https://www.ubuntu.com/%22">https://www.ubuntu.com/"</a>
+
+ uname -a:
+    Linux shr-work 6.8.0-76060800daily20240311-generic
+    #202403110203~1715181801~22.04~aba43ee~dev-Ubuntu SMP PREEMPT_DY x86_64 x86_64 x86_64
+    GNU/Linux
+
+ Kernel self-reported vulnerability status:
+
+ gather_data_sampling:                     Not affected
+ itlb_multihit:                            Not affected
+ CVE-2018-3620 (L1 Terminal Fault):        Not affected
+ Microarchitectural Data Sampling:         Not affected
+ CVE-2017-5754 (Meltdown):                 Not affected
+ mmio_stale_data:                          Not affected
+ retbleed:                                 Not affected
+ spec_rstack_overflow:                     Not affected
+ CVE-2018-3639 (Speculative Store Bypass): Mitigation: Speculative Store Bypass disabled
+                                           via prctl
+ CVE-2017-5753 (Spectre variant 1):        Mitigation: usercopy/swapgs barriers and __user
+                                           pointer sanitization
+ CVE-2017-5715 (Spectre variant 2):        Mitigation: Enhanced / Automatic IBRS, IBPB:
+                                           conditional, RSB filling, PBRSB-eIBRS: SW
+                                           sequence
+ srbds:                                    Not affected
+ tsx_async_abort:                          Not affected
+
+ run-level 5 Jun 22 18:34
+
+ SPEC is set to: /mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017
+    Filesystem     Type  Size  Used Avail Use% Mounted on
+    /dev/nvme0n1p1 ext4  3.6T  694G  2.8T  20% /mnt/seconddrive
+
+ From /sys/devices/virtual/dmi/id
+     BIOS:    System76 FH Z5 01/25/2024
+     Vendor:  System76
+     Product: Thelio Mira
+     Product Family: Z790 MB
+
+ Cannot run dmidecode; consider saying (as root)
+    chmod +s /usr/sbin/dmidecode
+
+ (End of data from sysinfo program)
+</pre>
+ </div>
+ <div class="notes">
+  <h2><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#CompilerVersionNotes">Compiler Version Notes</a></h2>
+  <pre>
+==============================================================================
+C      | 519.lbm_r(base pass 0)
+------------------------------------------------------------------------------
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+  --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+  --enable-languages=c,c++,fortran --enable-lto
+  --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-16
+  --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+specmake[1]: Leaving directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 538.imagick_r(base pass 0)
+------------------------------------------------------------------------------
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+  --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+  --enable-languages=c,c++,fortran --enable-lto
+  --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-16
+  --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+specmake[1]: Leaving directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 544.nab_r(base pass 0)
+------------------------------------------------------------------------------
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+  --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+  --enable-languages=c,c++,fortran --enable-lto
+  --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-16
+  --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+specmake[1]: Leaving directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 519.lbm_r(base pass )
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 538.imagick_r(base pass )
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 544.nab_r(base pass )
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 519.lbm_r(base pass 0)
+------------------------------------------------------------------------------
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+  --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+  --enable-languages=c,c++,fortran --enable-lto
+  --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-16
+  --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+specmake[1]: Leaving directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 538.imagick_r(base pass 0)
+------------------------------------------------------------------------------
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+  --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+  --enable-languages=c,c++,fortran --enable-lto
+  --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-16
+  --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+specmake[1]: Leaving directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 544.nab_r(base pass 0)
+------------------------------------------------------------------------------
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+  --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+  --enable-languages=c,c++,fortran --enable-lto
+  --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-16
+  --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+specmake[1]: Leaving directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 519.lbm_r(base pass )
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 538.imagick_r(base pass )
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 544.nab_r(base pass )
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 519.lbm_r(base pass 0)
+------------------------------------------------------------------------------
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+  --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+  --enable-languages=c,c++,fortran --enable-lto
+  --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-16
+  --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+specmake[1]: Leaving directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 538.imagick_r(base pass 0)
+------------------------------------------------------------------------------
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+  --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+  --enable-languages=c,c++,fortran --enable-lto
+  --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-16
+  --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+specmake[1]: Leaving directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 544.nab_r(base pass 0)
+------------------------------------------------------------------------------
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+  --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+  --enable-languages=c,c++,fortran --enable-lto
+  --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-16
+  --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+specmake[1]: Leaving directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 519.lbm_r(base pass )
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 538.imagick_r(base pass )
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 544.nab_r(base pass )
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 519.lbm_r(base pass 0)
+------------------------------------------------------------------------------
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+  --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+  --enable-languages=c,c++,fortran --enable-lto
+  --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-16
+  --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+specmake[1]: Leaving directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 538.imagick_r(base pass 0)
+------------------------------------------------------------------------------
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+  --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+  --enable-languages=c,c++,fortran --enable-lto
+  --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-16
+  --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+specmake[1]: Leaving directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 544.nab_r(base pass 0)
+------------------------------------------------------------------------------
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+  --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+  --enable-languages=c,c++,fortran --enable-lto
+  --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-16
+  --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+specmake[1]: Leaving directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 519.lbm_r(base pass )
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 538.imagick_r(base pass )
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 544.nab_r(base pass )
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 519.lbm_r(base pass 0)
+------------------------------------------------------------------------------
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+  --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+  --enable-languages=c,c++,fortran --enable-lto
+  --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-16
+  --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+specmake[1]: Leaving directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 538.imagick_r(base pass 0)
+------------------------------------------------------------------------------
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+  --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+  --enable-languages=c,c++,fortran --enable-lto
+  --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-16
+  --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+specmake[1]: Leaving directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 544.nab_r(base pass 0)
+------------------------------------------------------------------------------
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+  --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+  --enable-languages=c,c++,fortran --enable-lto
+  --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-16
+  --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+specmake[1]: Leaving directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 519.lbm_r(base pass )
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 538.imagick_r(base pass )
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 544.nab_r(base pass )
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 519.lbm_r(base pass 0)
+------------------------------------------------------------------------------
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+  --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+  --enable-languages=c,c++,fortran --enable-lto
+  --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-16
+  --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+specmake[1]: Leaving directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 538.imagick_r(base pass 0)
+------------------------------------------------------------------------------
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+  --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+  --enable-languages=c,c++,fortran --enable-lto
+  --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-16
+  --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+specmake[1]: Leaving directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 544.nab_r(base pass 0)
+------------------------------------------------------------------------------
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+  --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+  --enable-languages=c,c++,fortran --enable-lto
+  --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-16
+  --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+specmake[1]: Leaving directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 519.lbm_r(base pass )
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/519.lbm_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 538.imagick_r(base pass )
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/538.imagick_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C      | 544.nab_r(base pass )
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/544.nab_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C++    | 508.namd_r(base pass 0)
+------------------------------------------------------------------------------
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-g++
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+  --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+  --enable-languages=c,c++,fortran --enable-lto
+  --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-16
+  --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+specmake[1]: Leaving directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/508.namd_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C++    | 510.parest_r(base pass 0)
+------------------------------------------------------------------------------
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-g++
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+  --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+  --enable-languages=c,c++,fortran --enable-lto
+  --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-16
+  --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+specmake[1]: Leaving directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/510.parest_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C++    | 508.namd_r(base pass )
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/508.namd_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C++    | 510.parest_r(base pass )
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/510.parest_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C++    | 511.povray_r(base)
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/511.povray_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C++    | 508.namd_r(base pass 0)
+------------------------------------------------------------------------------
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-g++
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+  --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+  --enable-languages=c,c++,fortran --enable-lto
+  --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-16
+  --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+specmake[1]: Leaving directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/508.namd_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C++    | 510.parest_r(base pass 0)
+------------------------------------------------------------------------------
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-g++
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+  --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+  --enable-languages=c,c++,fortran --enable-lto
+  --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-16
+  --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+specmake[1]: Leaving directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/510.parest_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C++    | 508.namd_r(base pass )
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/508.namd_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C++    | 510.parest_r(base pass )
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/510.parest_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C++    | 511.povray_r(base)
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/511.povray_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C++    | 508.namd_r(base pass 0)
+------------------------------------------------------------------------------
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-g++
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+  --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+  --enable-languages=c,c++,fortran --enable-lto
+  --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-16
+  --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+specmake[1]: Leaving directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/508.namd_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C++    | 510.parest_r(base pass 0)
+------------------------------------------------------------------------------
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-g++
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+  --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+  --enable-languages=c,c++,fortran --enable-lto
+  --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-16
+  --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+specmake[1]: Leaving directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/510.parest_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C++    | 508.namd_r(base pass )
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/508.namd_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C++    | 510.parest_r(base pass )
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/510.parest_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C++    | 511.povray_r(base)
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/511.povray_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C++    | 508.namd_r(base pass 0)
+------------------------------------------------------------------------------
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-g++
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+  --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+  --enable-languages=c,c++,fortran --enable-lto
+  --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-16
+  --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+specmake[1]: Leaving directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/508.namd_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C++    | 510.parest_r(base pass 0)
+------------------------------------------------------------------------------
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-g++
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+  --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+  --enable-languages=c,c++,fortran --enable-lto
+  --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-16
+  --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+specmake[1]: Leaving directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/510.parest_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C++    | 508.namd_r(base pass )
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/508.namd_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C++    | 510.parest_r(base pass )
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/510.parest_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C++    | 511.povray_r(base)
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/511.povray_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C++    | 508.namd_r(base pass 0)
+------------------------------------------------------------------------------
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-g++
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+  --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+  --enable-languages=c,c++,fortran --enable-lto
+  --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-16
+  --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+specmake[1]: Leaving directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/508.namd_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C++    | 510.parest_r(base pass 0)
+------------------------------------------------------------------------------
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-g++
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+  --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+  --enable-languages=c,c++,fortran --enable-lto
+  --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-16
+  --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+specmake[1]: Leaving directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/510.parest_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C++    | 508.namd_r(base pass )
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/508.namd_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C++    | 510.parest_r(base pass )
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/510.parest_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C++    | 511.povray_r(base)
+------------------------------------------------------------------------------
+specmake[1]: Entering directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/511.povray_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+
+==============================================================================
+C++, C | 511.povray_r(base)
+------------------------------------------------------------------------------
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-g++
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+  --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+  --enable-languages=c,c++,fortran --enable-lto
+  --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-16
+  --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+Using built-in specs.
+COLLECT_GCC=/opt/lfi-amd64/bin/internal-x86_64-linux-musl-gcc
+COLLECT_LTO_WRAPPER=/opt/lfi-amd64/bin/../libexec/gcc/x86_64-linux-musl/13.2.0/lto-wrapper
+Target: x86_64-linux-musl
+Configured with: ../gcc/configure --target=x86_64-linux-musl --disable-docs
+  --disable-bootstrap --disable-libssp --disable-multilib --disable-shared
+  --enable-languages=c,c++,fortran --enable-lto
+  --prefix=/home/zyedidia/programming/lfi/toolchain/lfi-gcc/lfi-amd64-16
+  --with-pkgversion=LFI
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 13.2.0 (LFI) 
+specmake[1]: Leaving directory
+  '/mnt/seconddrive/Code/seguecg-root/segue-lfi/spec2017/benchspec/CPU/511.povray_r/build/build_base_lfi-gcc-m64.0000'
+------------------------------------------------------------------------------
+</pre>
+ </div>
+ <div class="flags notes" id="unknown">
+  <h2><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#BaseUnknownFlags">Base Unknown Flags</a></h2>
+  <table class="unknown">
+   <tr>
+   <td>508.namd_r:</td>
+   <td class="al">
+    "<span class="tt">/opt/lfi-amd64/bin/x86_64-linux-musl-</span>" (in <span class="tt">CXX</span>)
+    "<span class="tt">/opt/lfi-amd64/bin/x86_64-linux-musl-</span>" (in <span class="tt">LD</span>)
+    "<span class="tt">-fomit-frame-pointer</span>" (in <span class="tt">OPTIMIZE</span>)
+   </td>
+   </tr>
+   <tr>
+   <td>510.parest_r:</td>
+   <td class="al">
+    "<span class="tt">/opt/lfi-amd64/bin/x86_64-linux-musl-</span>" (in <span class="tt">CXX</span>)
+    "<span class="tt">/opt/lfi-amd64/bin/x86_64-linux-musl-</span>" (in <span class="tt">LD</span>)
+    "<span class="tt">-fomit-frame-pointer</span>" (in <span class="tt">OPTIMIZE</span>)
+   </td>
+   </tr>
+   <tr>
+   <td>511.povray_r:</td>
+   <td class="al">
+    "<span class="tt">/opt/lfi-amd64/bin/x86_64-linux-musl-</span>" (in <span class="tt">CXX</span>)
+    "<span class="tt">/opt/lfi-amd64/bin/x86_64-linux-musl-</span>" (in <span class="tt">CC</span>)
+    "<span class="tt">/opt/lfi-amd64/bin/x86_64-linux-musl-</span>" (in <span class="tt">LD</span>)
+    "<span class="tt">-fomit-frame-pointer</span>" (in <span class="tt">OPTIMIZE</span>)
+   </td>
+   </tr>
+   <tr>
+   <td>519.lbm_r:</td>
+   <td class="al">
+    "<span class="tt">/opt/lfi-amd64/bin/x86_64-linux-musl-</span>" (in <span class="tt">CC</span>)
+    "<span class="tt">/opt/lfi-amd64/bin/x86_64-linux-musl-</span>" (in <span class="tt">LD</span>)
+    "<span class="tt">-fomit-frame-pointer</span>" (in <span class="tt">OPTIMIZE</span>)
+   </td>
+   </tr>
+   <tr>
+   <td>538.imagick_r:</td>
+   <td class="al">
+    "<span class="tt">/opt/lfi-amd64/bin/x86_64-linux-musl-</span>" (in <span class="tt">CC</span>)
+    "<span class="tt">/opt/lfi-amd64/bin/x86_64-linux-musl-</span>" (in <span class="tt">LD</span>)
+    "<span class="tt">-fomit-frame-pointer</span>" (in <span class="tt">OPTIMIZE</span>)
+   </td>
+   </tr>
+   <tr>
+   <td>544.nab_r:</td>
+   <td class="al">
+    "<span class="tt">/opt/lfi-amd64/bin/x86_64-linux-musl-</span>" (in <span class="tt">CC</span>)
+    "<span class="tt">/opt/lfi-amd64/bin/x86_64-linux-musl-</span>" (in <span class="tt">LD</span>)
+    "<span class="tt">-fomit-frame-pointer</span>" (in <span class="tt">OPTIMIZE</span>)
+   </td>
+   </tr>
+  </table>
+ </div>
+ <div class="flags notes" id="base_runtime">
+  <h2><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#BaseRuntimeEnvironment">Base Runtime Environment</a></h2>
+  <h3><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#BenchmarksusingbothCandCXX">Benchmarks using both C and C++</a>:</h3>
+  <table class="runtime">
+   <tr>
+   <td>511.povray_r:</td>
+   <td class="al">
+    &nbsp;<span class="flagtext">No flags used</span>&nbsp;
+   </td>
+   </tr>
+  </table>
+ </div>
+ <div class="flags notes" id="base_compiler">
+  <h2><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#BaseCompilerInvocation">Base Compiler Invocation</a></h2>
+  <h3><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Cbenchmarks">C benchmarks</a>:</h3>
+  <table class="compiler">
+   <tr>
+   <td></td>
+   <td class="al">
+    &nbsp;<span class="userflag"><a href="CPU2017.001.fprate.refrate.flags.html#user_CCbase_gcc">gcc</a></span>&nbsp;
+   </td>
+   </tr>
+  </table>
+  <h3><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#CXXbenchmarks">C++ benchmarks</a>:</h3>
+  <table class="compiler">
+   <tr>
+   <td></td>
+   <td class="al">
+    &nbsp;<span class="userflag"><a href="CPU2017.001.fprate.refrate.flags.html#user_CXXbase_gxx">g++</a></span>&nbsp;
+   </td>
+   </tr>
+  </table>
+  <h3><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#BenchmarksusingbothCandCXX">Benchmarks using both C and C++</a>:</h3>
+  <table class="compiler">
+   <tr>
+   <td>511.povray_r:</td>
+   <td class="al">
+    &nbsp;<span class="userflag"><a href="CPU2017.001.fprate.refrate.flags.html#user_baseCXXLD511_povray_r_gxx">g++</a></span>&nbsp;
+    &nbsp;<span class="userflag"><a href="CPU2017.001.fprate.refrate.flags.html#user_baseCC511_povray_r_gcc">gcc</a></span>&nbsp;
+   </td>
+   </tr>
+  </table>
+ </div>
+ <div class="flags notes" id="base_portability">
+  <h2><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#BasePortabilityFlags">Base Portability Flags</a></h2>
+  <table class="portability">
+   <tr>
+   <td>508.namd_r:</td>
+   <td class="al">
+    &nbsp;<span class="flagtext"><a href="CPU2017.001.fprate.refrate.flags.html#suite_baseEXTRA_PORTABILITY508_namd_r_DSPEC_LP64">-DSPEC_LP64</a></span>&nbsp;
+   </td>
+   </tr>
+   <tr>
+   <td>510.parest_r:</td>
+   <td class="al">
+    &nbsp;<span class="flagtext"><a href="CPU2017.001.fprate.refrate.flags.html#suite_baseEXTRA_PORTABILITY510_parest_r_DSPEC_LP64">-DSPEC_LP64</a></span>&nbsp;
+   </td>
+   </tr>
+   <tr>
+   <td>511.povray_r:</td>
+   <td class="al">
+    &nbsp;<span class="flagtext"><a href="CPU2017.001.fprate.refrate.flags.html#suite_baseEXTRA_PORTABILITY511_povray_r_DSPEC_LP64">-DSPEC_LP64</a></span>&nbsp;
+   </td>
+   </tr>
+   <tr>
+   <td>519.lbm_r:</td>
+   <td class="al">
+    &nbsp;<span class="flagtext"><a href="CPU2017.001.fprate.refrate.flags.html#suite_baseEXTRA_PORTABILITY519_lbm_r_DSPEC_LP64">-DSPEC_LP64</a></span>&nbsp;
+   </td>
+   </tr>
+   <tr>
+   <td>538.imagick_r:</td>
+   <td class="al">
+    &nbsp;<span class="flagtext"><a href="CPU2017.001.fprate.refrate.flags.html#suite_baseEXTRA_PORTABILITY538_imagick_r_DSPEC_LP64">-DSPEC_LP64</a></span>&nbsp;
+   </td>
+   </tr>
+   <tr>
+   <td>544.nab_r:</td>
+   <td class="al">
+    &nbsp;<span class="flagtext"><a href="CPU2017.001.fprate.refrate.flags.html#suite_baseEXTRA_PORTABILITY544_nab_r_DSPEC_LP64">-DSPEC_LP64</a></span>&nbsp;
+   </td>
+   </tr>
+  </table>
+ </div>
+ <div class="flags notes" id="base_optimization">
+  <h2><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#BaseOptimizationFlags">Base Optimization Flags</a></h2>
+  <h3><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#Cbenchmarks">C benchmarks</a>:</h3>
+  <table class="optimization">
+   <tr>
+   <td></td>
+   <td class="al">
+    &nbsp;<span class="userflag"><a href="CPU2017.001.fprate.refrate.flags.html#user_CCbase_std-c99-gcc_b483f20141260605300df3a95df05c104fc3b8b9e7126624f06b7a673b28c400f0009b411e0a9f72a46bab5fa1d96dd55e2b47e35e742f19a92c2442f3891f52">-std=c99</a></span>&nbsp;
+    &nbsp;<span class="userflag"><a href="CPU2017.001.fprate.refrate.flags.html#user_CCbase_Olevel-gcc_2a8c613e11e2962ae78d693398304d6f1c12fa10320380cff05dd109643c60bb04214353a55f02d8022371d19f6dd940085da69c3a4516b2b7029e64f867e782">-O3</a></span>&nbsp;
+    &nbsp;<span class="userflag"><a href="CPU2017.001.fprate.refrate.flags.html#user_CCbase_F-flto">-flto</a></span>&nbsp;
+   </td>
+   </tr>
+  </table>
+  <h3><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#CXXbenchmarks">C++ benchmarks</a>:</h3>
+  <table class="optimization">
+   <tr>
+   <td></td>
+   <td class="al">
+    &nbsp;<span class="userflag"><a href="CPU2017.001.fprate.refrate.flags.html#user_CXXbase_std-cxx03-gcc">-std=c++03</a></span>&nbsp;
+    &nbsp;<span class="userflag"><a href="CPU2017.001.fprate.refrate.flags.html#user_CXXbase_Olevel-gcc_2a8c613e11e2962ae78d693398304d6f1c12fa10320380cff05dd109643c60bb04214353a55f02d8022371d19f6dd940085da69c3a4516b2b7029e64f867e782">-O3</a></span>&nbsp;
+    &nbsp;<span class="userflag"><a href="CPU2017.001.fprate.refrate.flags.html#user_CXXbase_F-flto">-flto</a></span>&nbsp;
+   </td>
+   </tr>
+  </table>
+  <h3><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#BenchmarksusingbothCandCXX">Benchmarks using both C and C++</a>:</h3>
+  <table class="optimization">
+   <tr>
+   <td>511.povray_r:</td>
+   <td class="al">
+    &nbsp;<span class="userflag"><a href="CPU2017.001.fprate.refrate.flags.html#user_baseCXXLD511_povray_r_std-cxx03-gcc">-std=c++03</a></span>&nbsp;
+    &nbsp;<span class="userflag"><a href="CPU2017.001.fprate.refrate.flags.html#user_baseCC511_povray_r_std-c99-gcc_b483f20141260605300df3a95df05c104fc3b8b9e7126624f06b7a673b28c400f0009b411e0a9f72a46bab5fa1d96dd55e2b47e35e742f19a92c2442f3891f52">-std=c99</a></span>&nbsp;
+    &nbsp;<span class="userflag"><a href="CPU2017.001.fprate.refrate.flags.html#user_baseOPTIMIZE511_povray_r_Olevel-gcc_2a8c613e11e2962ae78d693398304d6f1c12fa10320380cff05dd109643c60bb04214353a55f02d8022371d19f6dd940085da69c3a4516b2b7029e64f867e782">-O3</a></span>&nbsp;
+    &nbsp;<span class="userflag"><a href="CPU2017.001.fprate.refrate.flags.html#user_baseOPTIMIZE511_povray_r_F-flto">-flto</a></span>&nbsp;
+   </td>
+   </tr>
+  </table>
+ </div>
+ <div class="flags notes" id="base_other">
+  <h2><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#BaseOtherFlags">Base Other Flags</a></h2>
+  <h3><a href="http://www.spec.org/auto/cpu2017/Docs/result-fields.html#BenchmarksusingbothCandCXX">Benchmarks using both C and C++</a>:</h3>
+  <table class="other">
+   <tr>
+   <td>511.povray_r:</td>
+   <td class="al">
+    &nbsp;<span class="flagtext">No flags used</span>&nbsp;
+   </td>
+   </tr>
+  </table>
+ </div>
+ <div class="notes footer">
+<p>
+  SPEC CPU and SPECrate are registered trademarks of the Standard
+    Performance Evaluation Corporation.  All other brand and product names
+    appearing in this result are trademarks or registered trademarks of
+    their respective holders.
+</p>
+ </div>
+ <div class="notes footer">
+  <p>For questions about this result, please contact the tester.
+   For other inquiries, please contact <a href="mailto:info@spec.org">info@spec.org</a><br />
+   Copyright 2017-2024 Standard Performance Evaluation Corporation<br />
+   Tested with SPEC CPU&reg;2017 v0.0.0 on 2024-06-23 03:40:33-0500.<br />
+   Report generated on 2024-06-23 04:30:15 by SPEC CPU&reg;2017 HTML formatter v6255.<br />
+</p>
+ </div>
+ <div class="w3cbutton3">
+   <a href="http://validator.w3.org/check?uri=referer">
+     <span class="w3c">W3C</span>
+     <span class="spec">XHTML 1.0</span>
+   </a>
+ </div>
+ <div class="w3cbutton3">
+   <a href="http://jigsaw.w3.org/css-validator/check/referer">
+     <span class="w3c">W3C</span>
+     <span class="spec">CSS</span>
+   </a>
+ </div>
+</div>
+</body>
+</html>
+<!-- The following is an encoded version of the raw file that was used to
+     produce this result. Use the extract_raw script to retrieve it. -->
+<!-- BEGIN BZIP2 CPU2017.001.fprate.refrate.rsf
+&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
+4v/qLuSKcKEgm8BePA==
+END -->
