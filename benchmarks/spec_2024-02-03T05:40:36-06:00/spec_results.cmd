@@ -1,1 +1,1 @@
-Command: ['spec_stats.py', '-i', 'spec_benchmarks/result', '--filter', 'spec_benchmarks/result/spec_results_bounds=seguecg_wasm2c_boundschecks:BoundCheck,seguecg_wasm2c_boundschecks_fsgs:BoundCheck + Segue', '-n', '5', '--usePercent', '--baseline', 'native_clang']
+Command: ['spec_stats.py', '-i', 'benchmarks/spec_2024-02-03T05:40:36-06:00', '--filter', 'benchmarks/spec_2024-02-03T05:40:36-06:00/spec_results_guard=seguecg_wasm2c_guardpages:Stock Wasm2c,seguecg_wasm2c_guardpages_fsgs:Wasm2c + Segue', '-n', '5', '--usePercent', '--baseline', 'native_clang']

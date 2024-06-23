@@ -249,7 +249,7 @@ benchmark_spec:
 
 spec_graph:
 	python3 spec_stats.py -i benchmarks/spec_2024-02-03T05:40:36-06:00 --filter  \
-		"benchmarks/spec_2024-02-03T05:40:36-06:00/spec_results_guard=seguecg_wasm2c_guardpages:GuardPage,seguecg_wasm2c_guardpages_fsgs:GuardPage + Segue" \
+		"benchmarks/spec_2024-02-03T05:40:36-06:00/spec_results_guard=seguecg_wasm2c_guardpages:Stock Wasm2c,seguecg_wasm2c_guardpages_fsgs:Wasm2c + Segue" \
 		-n $(words $(SPEC_BUILDS)) --usePercent --baseline native_clang
 
 build_lfisegue_spec:
