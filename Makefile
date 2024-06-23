@@ -260,7 +260,9 @@ build_lfisegue_spec:
 
 benchmark_lfisegue_spec:
 	# export PATH=$(ROOT_PATH)/segue-lfi/lfi-bench/bin:$(PATH) &&
-	mv segue-lfi/spec2017/result/ benchmarks/old_lfispec_$(CURR_TIME)
+	if [ -e "segue-lfi/spec2017/result/" ]; then \
+		mv segue-lfi/spec2017/result/ benchmarks/old_lfispec_$(CURR_TIME); \
+	fi
 	cd segue-lfi/spec2017 && \
 		export SPEC_NOCHECK=1 && \
 		source shrc && \
@@ -279,5 +281,6 @@ benchmark_lfisegue_spec:
 	python spec_stats.py -i "benchmarks/lfispec_$(CURR_TIME)" --spec2017 --filter \
 		"result/spec17_results_32=lfi-gcc-baseline-32-m64:Baseline,lfi-gcc-32-m64:Segue" \
 		-n 5 --usePercent --baseline gcc-m64
+
 clean:
 	echo "Done"
