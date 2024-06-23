@@ -9,4 +9,5 @@ spec_benchmarks
 benchmark_shell.pid
 wasmtime
 seguecg-firefox*
-segue-wamr-*
+segue-wamr*
+segue-lfi/
