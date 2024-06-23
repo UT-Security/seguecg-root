@@ -7,9 +7,9 @@ import os
 def generate_graph(test_x, testtimingsarray_map, outputFile):
 
     plt.rcParams['pdf.fonttype'] = 42 # true type font
-    plt.rcParams['font.size'] = '8'
+    plt.rcParams['font.size'] = '10'
 
-    fig, ax = plt.subplots(figsize=(5.5, 2))
+    fig, ax = plt.subplots(figsize=(5.5, 2.2))
 
     # https://colorbrewer2.org/#type=diverging&scheme=Spectral&n=5
     colors = ['#D7191C', '#2B83BA', '#FDAE61', '#ABDDA4', '#FFFFBF']
@@ -26,7 +26,7 @@ def generate_graph(test_x, testtimingsarray_map, outputFile):
     ax.legend(loc='lower left', ncols=1)
     ax.grid(axis="y", linestyle="dotted")
     ax.yaxis.set_major_formatter(mtick.FormatStrFormatter('%.0f%%'))
-    plt.subplots_adjust(left=0.095, right=1, top=0.99, bottom=0.18)
+    plt.subplots_adjust(left=0.11, right=1, top=0.99, bottom=0.2)
 
 
     plt.savefig(outputFile, format="pdf")
