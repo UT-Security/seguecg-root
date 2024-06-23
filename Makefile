@@ -252,7 +252,7 @@ spec_graph:
 		"benchmarks/spec_2024-02-03T05:40:36-06:00/spec_results_guard=seguecg_wasm2c_guardpages:Wasm2c,seguecg_wasm2c_guardpages_fsgs:Wasm2c with Segue" \
 		-n 5 --usePercent --baseline native_clang
 	python spec_stats.py -i "benchmarks/lfispec_2024-06-23T02:27:08-05:00" --spec2017 --filter \
-		"benchmarks/lfispec_2024-06-23T02:27:08-05:00/spec17_results_32=lfi-gcc-baseline-32-m64:Stock LFI,lfi-gcc-32-m64:LFI with Segue" \
+		"benchmarks/lfispec_2024-06-23T02:27:08-05:00/spec17_results_32=lfi-gcc-baseline-32-m64:LFI,lfi-gcc-32-m64:LFI with Segue" \
 		-n 5 --usePercent --baseline gcc-m64
 
 build_lfisegue_spec:

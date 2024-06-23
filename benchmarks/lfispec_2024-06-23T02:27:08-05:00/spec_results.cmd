@@ -1,1 +1,1 @@
-Command: ['spec_stats.py', '-i', 'benchmarks/lfispec_2024-06-23T02:27:08-05:00', '--spec2017', '--filter', 'benchmarks/lfispec_2024-06-23T02:27:08-05:00/spec17_results_32=lfi-gcc-baseline-32-m64:Stock LFI,lfi-gcc-32-m64:LFI with Segue', '-n', '5', '--usePercent', '--baseline', 'gcc-m64']
+Command: ['spec_stats.py', '-i', 'benchmarks/lfispec_2024-06-23T02:27:08-05:00', '--spec2017', '--filter', 'benchmarks/lfispec_2024-06-23T02:27:08-05:00/spec17_results_32=lfi-gcc-baseline-32-m64:LFI,lfi-gcc-32-m64:LFI with Segue', '-n', '5', '--usePercent', '--baseline', 'gcc-m64']
