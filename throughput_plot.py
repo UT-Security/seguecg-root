@@ -23,7 +23,7 @@ def generate_graph(test_x, testtimingsarray_map, outputFile):
         plt.plot(test_x, measurement, label=attribute, color=colors[idx], marker='o')
 
     plt.xticks(np.arange(min(test_x), max(test_x)+1, 1))
-    plt.yticks(np.arange(0, 25, 5))
+    plt.yticks(np.arange(0, 30, 5))
     ax.legend(loc='upper left', ncols=1)
     ax.grid(axis="y", linestyle="dotted")
     ax.yaxis.set_major_formatter(mtick.FormatStrFormatter('%.0f%%'))
@@ -42,22 +42,22 @@ def main():
     jobs_per_process = 14582
     multiproc_throughput_hash = []
     colorguard_throughput_hash = []
-    throughputdrop_hash = []
+    throughputinc_hash = []
 
     for i in range(len(multiproc_time_hash)):
         jobs = jobs_per_process * (i + 1)
         multiproc_throughput_hash.append(jobs / multiproc_time_hash[i])
         colorguard_throughput_hash.append(jobs / colorguard_time_hash[i])
-        throughputdrop_hash.append(100 * (colorguard_throughput_hash[i] - multiproc_throughput_hash[i]) / colorguard_throughput_hash[i])
+        throughputinc_hash.append(100 * (colorguard_throughput_hash[i] - multiproc_throughput_hash[i]) / multiproc_throughput_hash[i])
 
     print("Hash-based load-balance")
     print("------------------------")
     print("multiproc_throughput_hash: " + str(multiproc_throughput_hash))
     print("colorguard_throughput_hash: " + str(colorguard_throughput_hash))
-    print("throughputdrop_hash: " + str(throughputdrop_hash))
+    print("throughputdrop_hash: " + str(throughputinc_hash))
 
     testtimingsarray_map = {
-        "Hash-based load-balance" : throughputdrop_hash,
+        "Hash-based load-balance" : throughputinc_hash,
         # "HTML templating"         : [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
     }
     outputdir = os.path.dirname(os.path.realpath(__file__))
