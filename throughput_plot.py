@@ -15,7 +15,7 @@ def generate_graph(test_x, testtimingsarray_map, outputFile):
     colors = ['#D7191C', '#2B83BA', '#FDAE61', '#ABDDA4', '#FFFFBF']
 
     ax.set_xlabel('Number of processes')
-    ax.set_ylabel('Throughput drop (%)')
+    ax.set_ylabel('Throughput gain (%)')
 
     for idx,attribute in enumerate(testtimingsarray_map):
         measurement = testtimingsarray_map[attribute]
