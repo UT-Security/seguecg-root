@@ -26,7 +26,9 @@ def generate_graph(test_x, testtimingsarray_map, outputFile):
     ax.legend(loc='upper left', ncols=1)
     ax.grid(axis="y", linestyle="dotted")
     ax.yaxis.set_major_formatter(mtick.FormatStrFormatter('%.0f%%'))
-    plt.subplots_adjust(left=0.11, right=1, top=0.99, bottom=0.2)
+    ax.yaxis.set_label_coords(-0.09,0.45)
+    plt.subplots_adjust(left=0.11, right=1, top=0.99, bottom=0.23)
+
 
 
     plt.savefig(outputFile, format="pdf")
