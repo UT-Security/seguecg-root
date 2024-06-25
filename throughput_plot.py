@@ -57,7 +57,7 @@ def main():
     multiproc_time_hash = [864, 1786, 2684, 3630, 4685, 5708, 6679, 7942, 8845, 10147, 11296, 12541, 13611, 14944, 16200,]
     colorguard_time_hash = [848, 1708, 2549, 3360, 4227, 5058, 5869, 6710, 7546, 8404, 9227, 10103, 10968, 11741, 12562,]
 
-    print("Hash-based load-balance")
+    print("Hash load-balance")
     print("------------------------")
     throughputinc_hash = compute(multiproc_time_hash, colorguard_time_hash)
 
@@ -68,10 +68,17 @@ def main():
     print("------------------------")
     throughputinc_regex = compute(multiproc_time_regex, colorguard_time_regex)
 
+    multiproc_time_html = [1773, 3682, 5670, 7710, 9884, 11965, 14197, 16384, 18928, 21301, 23676, 25806, 28180, 30877, 33214,]
+    colorguard_time_html = [1758, 3534, 5276, 7049, 8818, 10551, 12322, 14084, 15866, 17654, 19476, 21221, 23147, 24918, 26949,]
+
+    print("HTML templating")
+    print("------------------------")
+    throughputinc_html = compute(multiproc_time_html, colorguard_time_html)
+
     testtimingsarray_map = {
-        "Hash-based load-balance" : throughputinc_hash,
-        "Regex filtering" : throughputinc_regex,
-        # "HTML templating"         : [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+        "Hash load-balance" : throughputinc_hash,
+        "Regex filtering"   : throughputinc_regex,
+        "HTML templating"   : throughputinc_html
     }
     outputdir = os.path.dirname(os.path.realpath(__file__))
     benchfile = os.path.join(outputdir, "benchmarks", "faas-throughput.pdf")
