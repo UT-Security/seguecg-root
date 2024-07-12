@@ -11,3 +11,7 @@ wasmtime
 seguecg-firefox*
 segue-wamr*
 segue-lfi/
+lfi
+lfi-amd64
+lfi-amd64-baseline
+native-gcc

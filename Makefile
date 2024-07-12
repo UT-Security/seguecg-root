@@ -18,7 +18,7 @@ bootstrap: get_source
 		python3 python3-dev python-is-python3 python3-pip \
 		cpuset cpufrequtils curl gnuplot \
 		build-essential g++-multilib libgcc-11-dev lib32gcc-11-dev ccache \
-		python3.10-venv jq
+		python3.10-venv jq peg
 	curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain 1.73.0 -y
 	rustup target add wasm32-unknown-unknown wasm32-wasi
 	pip3 install simplejson matplotlib
@@ -60,6 +60,9 @@ fetch_colorguard_benchmarks:
 fetch_wasmtime:
 	git clone --recursive https://github.com/bytecodealliance/wasmtime
 	cd wasmtime && git checkout -b fixed 220139b026d81f01a152c0bd9f0f0daa965bc75c
+
+fetch_lfi:
+	git clone --recursive https://github.com/zyedidia/lfi
 
 get_source: $(addprefix fetch_,$(DIRS)) wasi-sdk
 	touch ./get_source
@@ -120,6 +123,12 @@ build_firefox_release:
 
 build_firefox_debug:
 	cd seguecg-firefox/mybuild && $(MAKE) build-debug
+
+build_lfi:
+	cd lfi/lfi-leg && ./build.sh
+	LFIFLAGS="--cfi=bundle32" PATH="$(ROOT_PATH)/lfi/lfi-leg:$(CURR_PATH)" cd lfi/toolchain/lfi-gcc && ./install-toolchain.sh $(ROOT_PATH)/lfi-amd64 x86_64 && rm -rf build-gcc build-binutils
+	LFIFLAGS="--cfi=bundle32 --no-segue" PATH="$(ROOT_PATH)/lfi/lfi-leg:$(CURR_PATH)" cd lfi/toolchain/lfi-gcc && ./install-toolchain.sh $(ROOT_PATH)/lfi-amd64-baseline x86_64 && rm -rf build-gcc build-binutils
+	LFIFLAGS="--sandbox=none" PATH="$(ROOT_PATH)/lfi/lfi-leg:$(CURR_PATH)" cd lfi/toolchain/lfi-gcc && ./install-toolchain.sh $(ROOT_PATH)/native-gcc x86_64 && rm -rf build-gcc build-binutils
 
 build: bootstrap get_source build_wasm2c_release build_wasmtime_release build_wamr_release build_libjpeg_release build_firefox_release
 	echo "Build complete!"
