@@ -18,7 +18,7 @@ bootstrap: get_source
 		python3 python3-dev python-is-python3 python3-pip \
 		cpuset cpufrequtils curl gnuplot \
 		build-essential g++-multilib libgcc-11-dev lib32gcc-11-dev ccache \
-		python3.10-venv jq peg
+		python3.10-venv jq peg ldc
 	curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain 1.73.0 -y
 	rustup target add wasm32-unknown-unknown wasm32-wasi
 	pip3 install simplejson matplotlib
@@ -126,9 +126,16 @@ build_firefox_debug:
 
 build_lfi:
 	cd lfi/lfi-leg && ./build.sh
-	LFIFLAGS="--cfi=bundle32" PATH="$(ROOT_PATH)/lfi/lfi-leg:$(CURR_PATH)" cd lfi/toolchain/lfi-gcc && ./install-toolchain.sh $(ROOT_PATH)/lfi-amd64 x86_64 && rm -rf build-gcc build-binutils
-	LFIFLAGS="--cfi=bundle32 --no-segue" PATH="$(ROOT_PATH)/lfi/lfi-leg:$(CURR_PATH)" cd lfi/toolchain/lfi-gcc && ./install-toolchain.sh $(ROOT_PATH)/lfi-amd64-baseline x86_64 && rm -rf build-gcc build-binutils
-	LFIFLAGS="--sandbox=none" PATH="$(ROOT_PATH)/lfi/lfi-leg:$(CURR_PATH)" cd lfi/toolchain/lfi-gcc && ./install-toolchain.sh $(ROOT_PATH)/native-gcc x86_64 && rm -rf build-gcc build-binutils
+	cd lfi/liblfi && ./build.sh
+	cd lfi/lfi-veribdd && ./build.sh
+	cd lfi/lfi-run && ./build.sh
+	mkdir -p $(ROOT_PATH)/segue-lfi/bin
+	mv lfi/lfi-run/lfi-run $(ROOT_PATH)/segue-lfi/bin
+	mv lfi/lfi-leg/lfi-leg $(ROOT_PATH)/segue-lfi/bin
+	LFIFLAGS="--cfi=bundle32" PATH="$(ROOT_PATH)/segue-lfi/bin:$(CURR_PATH)" cd lfi/toolchain/lfi-gcc && ./install-toolchain.sh $(ROOT_PATH)/lfi-amd64 x86_64 && rm -rf build-gcc build-binutils
+	LFIFLAGS="--cfi=bundle32 --no-segue" PATH="$(ROOT_PATH)/segue-lfi/bin:$(CURR_PATH)" cd lfi/toolchain/lfi-gcc && ./install-toolchain.sh $(ROOT_PATH)/lfi-amd64-baseline x86_64 && rm -rf build-gcc build-binutils
+	LFIFLAGS="--sandbox=none" PATH="$(ROOT_PATH)/segue-lfi/bin:$(CURR_PATH)" cd lfi/toolchain/lfi-gcc && ./install-toolchain.sh $(ROOT_PATH)/native-gcc x86_64 && rm -rf build-gcc build-binutils
+	# TODO: move toolchains to /tmp or /opt?
 
 build: bootstrap get_source build_wasm2c_release build_wasmtime_release build_wamr_release build_libjpeg_release build_firefox_release
 	echo "Build complete!"
@@ -270,13 +277,14 @@ spec_graph:
 	cp benchmarks/spec_2024-02-03T05:40:36-06:00/spec_results_guard.pdf ../seguecg-full-paper/figures/spec/spec_results_guard.pdf
 
 build_lfisegue_spec:
+	PATH=$(ROOT_PATH)/segue-lfi/bin:$(PATH) \
 	cd segue-lfi/spec2017 && \
 		export SPEC_NOCHECK=1 && \
 		source shrc && \
 		./build.sh
 
 benchmark_lfisegue_spec:
-	# export PATH=$(ROOT_PATH)/segue-lfi/lfi-bench/bin:$(PATH) &&
+	export PATH=$(ROOT_PATH)/segue-lfi/bin:$(PATH) &&
 	if [ -e "segue-lfi/spec2017/result/" ]; then \
 		mv segue-lfi/spec2017/result/ benchmarks/old_lfispec_$(CURR_TIME); \
 	fi
