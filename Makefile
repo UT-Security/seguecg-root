@@ -10,6 +10,9 @@ CURR_TIME=$(shell date --iso=seconds)
 PARALLEL_COUNT=$(shell nproc)
 ROOT_PATH=$(shell realpath .)
 
+# contact zyedidia for spec2017 download password
+SPEC17_PASSWORD=
+
 DIRS=seguecg-libjpeg seguecg-wasm2c rlbox rlbox_wasm2c_sandbox wasmtime seguecg-wamr seguecg-firefox mte_benchmarks colorguard_benchmarks
 
 bootstrap: get_source
@@ -63,6 +66,22 @@ fetch_wasmtime:
 
 fetch_lfi:
 	git clone --recursive https://github.com/zyedidia/lfi
+
+fetch_spec17:
+	wget --user=protected --password=$(SPEC17_PASSWORD) https://stanford.edu/~zyedidia/protected/cpu2017-1.1.0.iso.zip
+	unzip cpu2017-1.1.0.iso.zip
+	sudo mount -t iso9660 -o ro,exec,loop cpu2017-1.1.0.iso /mnt
+	mkdir -p $(ROOT_PATH)/segue-lfi
+	cd /mnt && ./install.sh -d $(ROOT_PATH)/segue-lfi/spec2017
+
+# must have lfi downloaded already
+setup_spec17:
+	cd $(ROOT_PATH)/segue-lfi/spec2017 && cp $(ROOT_PATH)/lfi/specinvoke/bench/segue/bench.sh .
+	cd $(ROOT_PATH)/segue-lfi/spec2017/config && cp $(ROOT_PATH)/lfi/specinvoke/config/segue/*.cfg .
+	cd $(ROOT_PATH)/segue-lfi/spec2017 && $(ROOT_PATH)/lfi/specinvoke/patches/apply.sh
+	cd lfi/specinvoke && go build
+	cd $(ROOT_PATH)/segue-lfi/spec2017/bin && mv specinvoke specinvoke.orig && mv $(ROOT_PATH)/lfi/specinvoke/specinvoke .
+	cd $(ROOT_PATH)/segue-lfi/spec2017 && mv version.txt version.txt.old && echo "0.0.0" > version.txt
 
 get_source: $(addprefix fetch_,$(DIRS)) wasi-sdk
 	touch ./get_source
@@ -135,7 +154,9 @@ build_lfi:
 	LFIFLAGS="--cfi=bundle32" PATH="$(ROOT_PATH)/segue-lfi/bin:$(CURR_PATH)" cd lfi/toolchain/lfi-gcc && ./install-toolchain.sh $(ROOT_PATH)/lfi-amd64 x86_64 && rm -rf build-gcc build-binutils
 	LFIFLAGS="--cfi=bundle32 --no-segue" PATH="$(ROOT_PATH)/segue-lfi/bin:$(CURR_PATH)" cd lfi/toolchain/lfi-gcc && ./install-toolchain.sh $(ROOT_PATH)/lfi-amd64-baseline x86_64 && rm -rf build-gcc build-binutils
 	LFIFLAGS="--sandbox=none" PATH="$(ROOT_PATH)/segue-lfi/bin:$(CURR_PATH)" cd lfi/toolchain/lfi-gcc && ./install-toolchain.sh $(ROOT_PATH)/native-gcc x86_64 && rm -rf build-gcc build-binutils
-	# TODO: move toolchains to /tmp or /opt?
+	sudo mv $(ROOT_PATH)/lfi-amd64 /opt
+	sudo mv $(ROOT_PATH)/lfi-amd64-baseline /opt
+	sudo mv $(ROOT_PATH)/native-gcc /opt
 
 build: bootstrap get_source build_wasm2c_release build_wasmtime_release build_wamr_release build_libjpeg_release build_firefox_release
 	echo "Build complete!"
