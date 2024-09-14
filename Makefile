@@ -66,6 +66,7 @@ fetch_wasmtime:
 
 fetch_lfi:
 	git clone --recursive https://github.com/zyedidia/lfi
+	git checkout seguecg-pinned
 
 fetch_spec17:
 	wget --user=protected --password=$(SPEC17_PASSWORD) https://stanford.edu/~zyedidia/protected/cpu2017-1.1.0.iso.zip
