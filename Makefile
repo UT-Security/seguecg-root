@@ -66,6 +66,7 @@ fetch_wasmtime:
 	if [ ! -e "./wasmtime" ]; then \
 		git clone --recursive https://github.com/bytecodealliance/wasmtime; \
 		cd wasmtime && git checkout -b fixed 220139b026d81f01a152c0bd9f0f0daa965bc75c ;\
+		git submodule update --init ; \
 	fi
 
 fetch_lfi:
