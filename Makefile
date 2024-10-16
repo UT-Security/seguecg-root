@@ -15,14 +15,16 @@ SPEC17_PASSWORD=
 
 DIRS=seguecg-libjpeg seguecg-wasm2c rlbox rlbox_wasm2c_sandbox wasmtime seguecg-wamr seguecg-firefox mte_benchmarks colorguard_benchmarks
 
+# assumes bash is used as shell
 bootstrap: get_source
 	echo "Bootstrapping"
 	sudo apt install -y gcc g++ g++-12 libc++-dev clang make cmake nasm \
 		python3 python3-dev python-is-python3 python3-pip \
 		cpuset cpufrequtils curl gnuplot \
 		build-essential g++-multilib libgcc-11-dev lib32gcc-11-dev ccache \
-		python3.10-venv jq peg ldc
+		python3.12-venv jq peg ldc npm
 	curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain 1.73.0 -y
+	source ~/.bashrc
 	rustup target add wasm32-unknown-unknown wasm32-wasi
 	pip3 install simplejson matplotlib
 	pip3 install --upgrade requests
@@ -61,8 +63,10 @@ fetch_colorguard_benchmarks:
 	fi
 
 fetch_wasmtime:
-	git clone --recursive https://github.com/bytecodealliance/wasmtime
-	cd wasmtime && git checkout -b fixed 220139b026d81f01a152c0bd9f0f0daa965bc75c
+	if [ ! -e "./wasmtime" ]; then \
+		git clone --recursive https://github.com/bytecodealliance/wasmtime; \
+		cd wasmtime && git checkout -b fixed 220139b026d81f01a152c0bd9f0f0daa965bc75c ;\
+	fi
 
 fetch_lfi:
 	git clone --recursive https://github.com/zyedidia/lfi
