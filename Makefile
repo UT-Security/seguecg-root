@@ -292,6 +292,8 @@ rerun_graphs:
 	cp benchmarks/lfispec_2024-06-23T02:27:08-05:00/spec17_results_32.pdf ../seguecg-full-paper/figures/lfi.pdf
 	cp benchmarks/spec_2024-02-03T05:40:36-06:00/spec_results_guard.pdf ../seguecg-full-paper/figures/spec/spec_results_guard.pdf
 	./throughput_plot.py && cp ./benchmarks/faas-throughput.pdf ../seguecg-full-paper/figures/faas-throughput.pdf
+
+tt:
 	./tsv_to_plot.py "$(ROOT_PATH)/benchmarks/wamr_segue_2024-02-09T01:10:32-06:00/sightglass.txt" "$(ROOT_PATH)/benchmarks/wamr_segue_2024-02-09T01:10:32-06:00/sightglass.pdf" -s "$(ROOT_PATH)/benchmarks/wamr_segue_2024-02-09T01:10:32-06:00/sightglass.stats" -r "iwasm-aot:Wamr" -r "iwasm-aot-segue:Wamr with Segue" -f "iwasm-aot-segue-store" -r "iwasm-aot-segue-load:Wamr with Segue on Loads" -b native -f native -kr -p
 	cp benchmarks/wamr_segue_2024-02-09T01:10:32-06:00/sightglass.pdf ../seguecg-full-paper/figures/wamr/sightglass.pdf
 
