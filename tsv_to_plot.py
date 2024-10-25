@@ -30,7 +30,7 @@ def generate_graph(test_names, build_testtimingsarray_map, keyright, percent, ou
 
     plt.rcParams['pdf.fonttype'] = 42 # true type font
     plt.rcParams['font.size'] = '9'
-    fig, ax = plt.subplots(figsize=(5.8, 2.6))
+    fig, ax = plt.subplots(figsize=(6.1, 2.4))
     # plt.tight_layout(pad=0)
     plt.subplots_adjust(left=0.08, right=0.99, top=0.99, bottom=0.3)
     plt.margins(0,0)
