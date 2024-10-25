@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import csv
 import matplotlib.pyplot as plt
+from matplotlib.ticker import FuncFormatter
 import numpy as np
 import argparse
 import statistics
@@ -15,7 +16,7 @@ def replace(val, replacements):
 def first_or_none(a):
     return a[0] if a else None
 
-def generate_graph(test_names, build_testtimingsarray_map, keyright, outputFile):
+def generate_graph(test_names, build_testtimingsarray_map, keyright, percent, outputFile):
     # test_names = ['astar', 'sightglass', 'coremark']
     # build_testtimingsarray_map = {
     #     "Normal"     : [18.35, 18.43, 14.98],
@@ -33,6 +34,11 @@ def generate_graph(test_names, build_testtimingsarray_map, keyright, outputFile)
     # plt.tight_layout(pad=0)
     plt.subplots_adjust(left=0.08, right=0.99, top=0.99, bottom=0.3)
     plt.margins(0,0)
+
+    plt.axhline(y=1.0, color='black', linestyle='dashed')
+
+    if percent:
+        ax.yaxis.set_major_formatter(FuncFormatter(lambda y, _: '{:.0%}'.format(y)))
 
     # https://colorbrewer2.org/#type=diverging&scheme=Spectral&n=5
     colors = ['#D7191C', '#2B83BA', '#FDAE61', '#ABDDA4', '#FFFFBF']
@@ -74,6 +80,7 @@ def main():
     parser.add_argument('-f',  dest='filter', default=[], action='append', help='filter data from particular builds. You can specify this flag multiple times for multiple filters')
     parser.add_argument('-s',  dest='statsfile', help='output stats file')
     parser.add_argument('-kr', dest='keyright', help='put the key on the right', default=False, action='store_true')
+    parser.add_argument('-p', dest='percent', help='convert the data to percent', default=False, action='store_true')
 
     args = parser.parse_args()
 
@@ -108,6 +115,9 @@ def main():
             print("Skipping row with zero value")
         else:
             testdata = [ round(float(el) / divisor, 2) for el in row[1:] ]
+            # if args.percent:
+            # else:
+            #     testdata = [ round(100 * float(el) / divisor, 2) for el in row[1:] ]
 
             assert len(testdata) == len(builds)
 
@@ -137,6 +147,6 @@ def main():
     print("test_names: " + str(test_names))
     print("build_testtimingsarray_map: " + str(build_testtimingsarray_map))
 
-    generate_graph(test_names, build_testtimingsarray_map, args.keyright, args.outputFile)
+    generate_graph(test_names, build_testtimingsarray_map, args.keyright, args.percent, args.outputFile)
 
 main()
