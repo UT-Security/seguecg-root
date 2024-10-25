@@ -87,7 +87,7 @@ def make_graph(all_times, output_path, use_percent=False):
     print("Making graph! all_times = " )
     for name, times in all_times.items():
         print(name, times)
-    fig = plt.figure(figsize=(6.1,2.4))
+    fig = plt.figure(figsize=(6.1,3))
     num_mitigations = len(all_times)
     num_benches = len(next(iter(all_times.values()))) # get any element
     mitigations = list(all_times.keys())
@@ -132,14 +132,14 @@ def make_graph(all_times, output_path, use_percent=False):
 
     if use_percent:
         ax.yaxis.set_major_formatter(FuncFormatter(lambda y, _: '{:.0%}'.format(y)))
-        ax.yaxis.set_major_locator(FixedLocator(np.arange(-.5,10,.5)))
+        # ax.yaxis.set_major_locator(FixedLocator(np.arange(-.5,10,.5)))
     else:
         ax.yaxis.set_major_formatter(FuncFormatter(lambda y, _: '{:.2f}×'.format(y)))
         ax.yaxis.set_major_locator(FixedLocator(list([0, 0.25, 0.50, 0.75, 1, 1.25, 1.5])))
 
     ax.set_xticklabels(labels)
     if use_percent:
-        ax.legend( tuple(rects), all_times.keys(), frameon=True, ncol=2, loc=(0, .75), prop={'size':10.5})
+        ax.legend( tuple(rects), all_times.keys(), frameon=True, ncol=2, loc=(0, .85), prop={'size':10.5})
     else:
         ax.legend( tuple(rects), all_times.keys(), frameon=False, ncol=1, loc=(0.7, .79))
     #fig.subplots_adjust(bottom=0.25)

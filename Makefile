@@ -288,7 +288,7 @@ benchmark_spec:
 	./spec_file_size.sh | tee spec_benchmarks/result/spec_results_size.txt
 	mv spec_benchmarks/result/ benchmarks/spec_$(CURR_TIME)
 
-spec_graph:
+rerun_graphs:
 	python3 spec_stats.py -i benchmarks/spec_2024-02-03T05:40:36-06:00 --filter  \
 		"benchmarks/spec_2024-02-03T05:40:36-06:00/spec_results_guard=seguecg_wasm2c_guardpages:Wasm2c,seguecg_wasm2c_guardpages_fsgs:Wasm2c with Segue" \
 		-n 5 --usePercent --baseline native_clang
@@ -297,6 +297,7 @@ spec_graph:
 		-n 5 --usePercent --baseline gcc-m64
 	cp benchmarks/lfispec_2024-06-23T02:27:08-05:00/spec17_results_32.pdf ../seguecg-full-paper/figures/lfi.pdf
 	cp benchmarks/spec_2024-02-03T05:40:36-06:00/spec_results_guard.pdf ../seguecg-full-paper/figures/spec/spec_results_guard.pdf
+	./throughput_plot.py && cp ./benchmarks/faas-throughput.pdf ../seguecg-full-paper/figures/faas-throughput.pdf 
 
 build_lfisegue_spec:
 	PATH=$(ROOT_PATH)/segue-lfi/bin:$(PATH) \

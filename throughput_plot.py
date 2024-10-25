@@ -9,7 +9,7 @@ def generate_graph(test_x, testtimingsarray_map, outputFile):
     plt.rcParams['pdf.fonttype'] = 42 # true type font
     plt.rcParams['font.size'] = '10'
 
-    fig, ax = plt.subplots(figsize=(5.5, 1.8))
+    fig, ax = plt.subplots(figsize=(5.5, 2.2))
 
     # https://colorbrewer2.org/#type=diverging&scheme=Spectral&n=5
     colors = ['#D7191C', '#2B83BA', '#FDAE61', '#ABDDA4', '#FFFFBF']
