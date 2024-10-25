@@ -1,5 +1,5 @@
-Geomean. Wamr: 1.1 +Segue: 1.16 +Segue Store: 1.13 +Segue Load: 1.1 
-Median. Wamr: 1.02 +Segue: 1.06 +Segue Store: 1.03 +Segue Load: 1.02 
-Mean. Wamr: 1.12 +Segue: 1.2 +Segue Store: 1.17 +Segue Load: 1.13 
-Min. Wamr: 0.86 +Segue: 0.86 +Segue Store: 0.86 +Segue Load: 0.86 
-Max. Wamr: 1.77 +Segue: 1.88 +Segue Store: 1.88 +Segue Load: 1.77 
+Geomean. Wamr: 1.1 Wamr with Segue: 1.16 Wamr with Segue on Loads: 1.1 
+Median. Wamr: 1.02 Wamr with Segue: 1.06 Wamr with Segue on Loads: 1.02 
+Mean. Wamr: 1.12 Wamr with Segue: 1.2 Wamr with Segue on Loads: 1.13 
+Min. Wamr: 0.86 Wamr with Segue: 0.86 Wamr with Segue on Loads: 0.86 
+Max. Wamr: 1.77 Wamr with Segue: 1.88 Wamr with Segue on Loads: 1.77 

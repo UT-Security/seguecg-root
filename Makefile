@@ -225,7 +225,7 @@ benchmark_wamr_segue:
 	cd $(ROOT_PATH)/seguecg-wamr/tests/benchmarks/polybench/ && ./run_aot.sh && mv ./report.txt $(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/polybench.txt
 	cd $(ROOT_PATH)/seguecg-wamr/tests/benchmarks/sightglass/ && ./run_aot.sh && mv ./report.txt $(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/sightglass.txt
 	./tsv_to_plot.py "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/polybench.txt" "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/polybench.pdf" -s "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/polybench.stats" -r "iwasm-aot:GuardPage" -r "iwasm-aot-segue:GuardPage + Segue" -b native -f "native" -f "iwasm-aot-segue-store" -f "iwasm-aot-segue-load" -g
-	./tsv_to_plot.py "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/sightglass.txt" "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/sightglass.pdf" -s "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/sightglass.stats" -r "iwasm-aot:Wamr" -r "iwasm-aot-segue:+Segue" -r "iwasm-aot-segue-store:+Segue Store" -r "iwasm-aot-segue-load:+Segue Load" -b native -f native -kr
+	./tsv_to_plot.py "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/sightglass.txt" "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/sightglass.pdf" -s "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/sightglass.stats"  -r "iwasm-aot:Wamr" -r "iwasm-aot-segue:Wamr with Segue" -f "iwasm-aot-segue-store" -r "iwasm-aot-segue-load:Wamr with Segue on Loads" -b native -f native -kr
 
 benchmark_wamr_segue_coremark:
 	mkdir -p $(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)
@@ -234,13 +234,7 @@ benchmark_wamr_segue_coremark:
 benchmark_wamr_segue_sightglass:
 	mkdir -p $(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)
 	cd $(ROOT_PATH)/seguecg-wamr/tests/benchmarks/sightglass/ && ./run_aot.sh && mv ./report.txt $(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/sightglass.txt
-	./tsv_to_plot.py "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/sightglass.txt" "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/sightglass.pdf" -s "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/sightglass.stats" -r "iwasm-aot:Wamr" -r "iwasm-aot-segue:+Segue" -r "iwasm-aot-segue-store:+Segue Store" -r "iwasm-aot-segue-load:+Segue Load" -b native -f native -kr
-
-poly_graph:
-	./tsv_to_plot.py "$(ROOT_PATH)/benchmarks/wamr_segue_2024-02-04T14:59:40-06:00/polybench.txt" "$(ROOT_PATH)/benchmarks/wamr_segue_2024-02-04T14:59:40-06:00/polybench.pdf" -s "$(ROOT_PATH)/benchmarks/wamr_segue_2024-02-04T14:59:40-06:00/polybench.stats" -r "iwasm-aot:GuardPage" -r "iwasm-aot-segue:GuardPage + Segue" -b native -f "native" -f "iwasm-aot-segue-store" -f "iwasm-aot-segue-load" -g
-
-sight_graph:
-	./tsv_to_plot.py "$(ROOT_PATH)/benchmarks/wamr_segue_2024-02-09T01:10:32-06:00/sightglass.txt" "$(ROOT_PATH)/benchmarks/wamr_segue_2024-02-09T01:10:32-06:00/sightglass.pdf" -s "$(ROOT_PATH)/benchmarks/wamr_segue_2024-02-09T01:10:32-06:00/sightglass.stats" -r "iwasm-aot:Wamr" -r "iwasm-aot-segue:+Segue" -r "iwasm-aot-segue-store:+Segue Store" -r "iwasm-aot-segue-load:+Segue Load" -b native -f native -kr
+	./tsv_to_plot.py "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/sightglass.txt" "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/sightglass.pdf" -s "$(ROOT_PATH)/benchmarks/wamr_segue_$(CURR_TIME)/sightglass.stats" -r "iwasm-aot:Wamr" -r "iwasm-aot-segue:Wamr with Segue" -f "iwasm-aot-segue-store" -r "iwasm-aot-segue-load:Wamr with Segue on Loads" -b native -f native -kr
 
 benchmark_graphite_segue:
 	cd seguecg-firefox && ./testsRunBenchmark "../benchmarks/graphite_test_segue_$(CURR_TIME)" "graphite_perf_test" "native stock segue"
@@ -297,7 +291,9 @@ rerun_graphs:
 		-n 5 --usePercent --baseline gcc-m64
 	cp benchmarks/lfispec_2024-06-23T02:27:08-05:00/spec17_results_32.pdf ../seguecg-full-paper/figures/lfi.pdf
 	cp benchmarks/spec_2024-02-03T05:40:36-06:00/spec_results_guard.pdf ../seguecg-full-paper/figures/spec/spec_results_guard.pdf
-	./throughput_plot.py && cp ./benchmarks/faas-throughput.pdf ../seguecg-full-paper/figures/faas-throughput.pdf 
+	./throughput_plot.py && cp ./benchmarks/faas-throughput.pdf ../seguecg-full-paper/figures/faas-throughput.pdf
+	./tsv_to_plot.py "$(ROOT_PATH)/benchmarks/wamr_segue_2024-02-09T01:10:32-06:00/sightglass.txt" "$(ROOT_PATH)/benchmarks/wamr_segue_2024-02-09T01:10:32-06:00/sightglass.pdf" -s "$(ROOT_PATH)/benchmarks/wamr_segue_2024-02-09T01:10:32-06:00/sightglass.stats" -r "iwasm-aot:Wamr" -r "iwasm-aot-segue:Wamr with Segue" -f "iwasm-aot-segue-store" -r "iwasm-aot-segue-load:Wamr with Segue on Loads" -b native -f native -kr
+	cp benchmarks/wamr_segue_2024-02-09T01:10:32-06:00/sightglass.pdf ../seguecg-full-paper/figures/wamr/sightglass.pdf
 
 build_lfisegue_spec:
 	PATH=$(ROOT_PATH)/segue-lfi/bin:$(PATH) \

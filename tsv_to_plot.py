@@ -49,7 +49,7 @@ def generate_graph(test_names, build_testtimingsarray_map, keyright, outputFile)
     ax.set_xticks(x + width, test_names, fontsize='9', horizontalalignment='right')
     plt.xticks(rotation=45, ha='right', rotation_mode='anchor')
     if keyright:
-        ax.legend(loc='upper right', bbox_to_anchor=(0.9, 1), ncols=2)
+        ax.legend(loc='upper right', bbox_to_anchor=(0.9, 1), ncols=1)
     else:
         ax.legend(loc='upper left', ncols=1)
     ax.grid(axis="y", linestyle="dotted")
