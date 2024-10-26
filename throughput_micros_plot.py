@@ -8,7 +8,14 @@ import argparse
 import statistics
 import sys
 
-def generate_my_graph(data, outputfile, y_axis_label):
+
+def millions(x, pos):
+    return '%1.0f Mill' % (x * 1e-6)
+
+def thousands(x, pos):
+    return '%1.0f K' % (x * 1e-3)
+
+def generate_my_graph(data, outputfile, y_axis_label, use_millions):
     plt.rcParams['pdf.fonttype'] = 42 # true type font
     plt.rcParams['font.size'] = '9'
     colors = ['#d53e4f', '#fc8d59', "#fee08b", "#800020", "#99d594", "#3288bd"]
@@ -20,37 +27,46 @@ def generate_my_graph(data, outputfile, y_axis_label):
     blue = colors[5]
 
     # Plot each series
-    plt.figure(figsize=(10, 6))
+    plt.figure(figsize=(5.5, 3.4))
 
     for (label, values) in data.items():
         if label == "regex_baseline":
+            name = "Regex filtering (Multiprocess)"
             color = green
             marker = 'x'
         elif label == "load_balancing_baseline":
-            color = burgundy 
+            name = "Hash load-balance (Multiprocess)"
+            color = burgundy
             marker = 'x'
         elif label == "templating_baseline":
+            name = "HTML templating (Multiprocess)"
             color = yellow
             marker = 'x'
         elif label == "regex_cg":
-            color = blue    
+            name = "Regex filtering (Colorguard)"
+            color = blue
             marker = 'o'
         elif label == "load_balancing_cg":
-            color = red     
+            name = "Hash load-balance (Colorguard)"
+            color = red
             marker = 'o'
         elif label == "templating_cg":
+            name = "HTML templating (Colorguard)"
             color = orange
             marker = 'o'
         else:
-            assert(false)     
+            assert(false)
 
-        plt.plot(range(1, len(values) + 1), values, color=color, marker=marker, label=label)
+        plt.plot(range(1, len(values) + 1), values, color=color, marker=marker, label=name)
 
     # Labeling the plot
     plt.xlabel('# of Processes')
     plt.ylabel(y_axis_label)
     plt.legend()
-    plt.gca().yaxis.set_major_formatter(ticker.StrMethodFormatter('{x:,.0f}')) # add commas to labels 
+    if use_millions:
+        plt.gca().yaxis.set_major_formatter(FuncFormatter(millions)) # make y axis in millions
+    else:
+        plt.gca().yaxis.set_major_formatter(FuncFormatter(thousands)) # make y axis in thousands
     plt.xticks(range(1, len(values) + 1))
     plt.grid(axis="y", linestyle="dotted")
 
@@ -86,7 +102,7 @@ def main():
         csw_map[filename.rstrip(".tsv")] = csw_l
         tlb_map[filename.rstrip(".tsv")] = tlb_l
 
-    generate_my_graph(csw_map, "csw_graph.pdf", "# context switches")
-    generate_my_graph(tlb_map, "dtlb_graph.pdf", "# dTLB misses")
+    generate_my_graph(csw_map, "csw_graph.pdf", "# context switches in Thousands", False)
+    generate_my_graph(tlb_map, "dtlb_graph.pdf", "# dTLB misses in Millions", True)
 
 main()
