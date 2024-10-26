@@ -50,59 +50,12 @@ def generate_my_graph(data, outputfile, y_axis_label):
     plt.xlabel('# of Processes')
     plt.ylabel(y_axis_label)
     plt.legend()
-    # plt.grid(True)
     plt.gca().yaxis.set_major_formatter(ticker.StrMethodFormatter('{x:,.0f}')) # add commas to labels 
-    # fig, ax = plt.subplots()
     plt.xticks(range(1, len(values) + 1))
-    # ax.set_xticks(range(1, len(values) + 1))
     plt.grid(axis="y", linestyle="dotted")
-    # ax.set_xticks(x + width, test_names, fontsize='9', horizontalalignment='right')
-    # plt.xticks(rotation=45, ha='right', rotation_mode='anchor')
-    # ax.legend(loc='upper left', ncols=1)
-    # ax.grid(axis="y", linestyle="dotted")
 
     # Save the plot as a PDF
     plt.savefig(outputfile, format="pdf")
-
-def generate_graph(test_names, build_testtimingsarray_map, outputFile):
-    # test_names = ['astar', 'sightglass', 'coremark']
-    # build_testtimingsarray_map = {
-    #     "Normal"     : [18.35, 18.43, 14.98],
-    #     "GuardPages" : [38.79, 48.83, 47.50],
-    #     "Segue"      : [189.95, 195.82, 217.19],
-    # }
-
-    x = np.arange(len(test_names))  # the label locations
-    width = 1 / (1+len(build_testtimingsarray_map.keys()))  # the width of the bars
-    multiplier = 0
-
-    plt.rcParams['pdf.fonttype'] = 42 # true type font
-    plt.rcParams['font.size'] = '9'
-    fig, ax = plt.subplots(figsize=(6.1, 2.4))
-    # plt.tight_layout(pad=0)
-    plt.subplots_adjust(left=0.08, right=0.99, top=0.99, bottom=0.3)
-    plt.margins(0,0)
-
-    plt.axhline(y=1.0, color='black', linestyle='dashed')
-
-    # https://colorbrewer2.org/#type=diverging&scheme=Spectral&n=5
-    colors = ['#D7191C', '#2B83BA', '#FDAE61', '#ABDDA4', '#FFFFBF']
-
-    for idx,attribute in enumerate(build_testtimingsarray_map):
-        measurement = build_testtimingsarray_map[attribute]
-        offset = width * multiplier
-        rects = ax.bar(x + offset, measurement, width, label=attribute, color=colors[idx], edgecolor="black")
-        multiplier += 1
-
-
-    # Add some text for labels, title and custom x-axis tick labels, etc.
-    ax.set_ylabel('Norm. runtime')
-    ax.set_xticks(x + width, test_names, fontsize='9', horizontalalignment='right')
-    plt.xticks(rotation=45, ha='right', rotation_mode='anchor')
-    ax.legend(loc='upper left', ncols=1)
-    ax.grid(axis="y", linestyle="dotted")
-
-    plt.savefig(outputFile, format="pdf")
 
 def parse_to_lists(filename):
     with open(filename, mode ='r')as f:
@@ -132,9 +85,6 @@ def main():
         (csw_l,tlb_l) = parse_to_lists(filename)
         csw_map[filename.rstrip(".tsv")] = csw_l
         tlb_map[filename.rstrip(".tsv")] = tlb_l
-
-    print(csw_map)
-    print(tlb_l)
 
     generate_my_graph(csw_map, "csw_graph.pdf", "# context switches")
     generate_my_graph(tlb_map, "dtlb_graph.pdf", "# dTLB misses")
