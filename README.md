@@ -1,4 +1,4 @@
-# hfi-root
+# seguecg-root
 
 This is the top level repo for the Segue, Colorguard paper. This repo will
 download and build all tools used in the paper such as modified compilers,
